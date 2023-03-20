@@ -1,0 +1,22 @@
+.container1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .caja{
+   margin: 15px;
+  }
+  #boton{
+    display: block;
+    background-color: rgb(153, 112, 170);
+    color: white;
+    width: 10em;
+ 
+  }
+  .caja img{
+    width: 220px;
+    height: 310px;
+  } 
+#letras{
+    color: aliceblue;
+}
