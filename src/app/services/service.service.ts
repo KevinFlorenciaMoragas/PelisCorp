@@ -5,7 +5,6 @@ import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { RegisterComponent } from '../user/register/register.component';
 import { LoginComponent } from '../user/login/login.component';
-import { User } from '../user/register/register.component'; 
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +28,7 @@ export class Service {
       )
   }
   //login
+  //CAMBIAR EL LOGIN PARA UNA PETICION GET
   login(loginForm: LoginComponent):Observable<LoginComponent>{
     let url:string = "http://localhost:8080/login"
     return this.http.post<LoginComponent>(url,JSON.stringify(loginForm),this.httpOptions).pipe(
