@@ -1,0 +1,51 @@
+<section class="col-12 col-md-5 col-lg-5 offset-md-3 offset-lg-3">
+    <form [formGroup]="registerForm" (ngSubmit)="postUser()">
+        <!--(ngSubmit)="postData()"-->
+        <div class="mb-3">
+          <label for="name" class="form-label">name*</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+           <div *ngIf="name.touched && name.errors?.['required']" class="alert alert-danger">name obligado</div>
+           <div *ngIf="name.touched && name.errors?.['minlength']" class="alert alert-danger">No puede ser menor a 3 caracteres</div>
+           <div *ngIf="name.touched && name.errors?.['maxlength']" class="alert alert-danger">No puede ser mayor a 15 caracteres</div>
+           <div *ngIf="name.touched && name.errors?.['checkName']" class="alert alert-danger">No se puede usar ese name</div>
+           <div *ngIf="name.touched && name.invalid" class="alert alert-danger">No se puede usar ese name</div>
+           
+           <div class="mb-3">
+            <label for="lastName" class="form-label">Primer Apellido*</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName">
+          </div>
+          <div *ngIf="lastName.touched && lastName.errors?.['required']" class="alert alert-danger">Primer apellido obligado</div>
+          <div *ngIf="lastName.touched && lastName.errors?.['minlength']" class="alert alert-danger">No puede ser menor a 3 caracteres</div>
+          <div *ngIf="lastName.touched && lastName.errors?.['maxlength']" class="alert alert-danger">No puede ser mayor a 15 caracteres</div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username*</label>
+            <input type="text" class="form-control" id="username" formControlName="username">
+          </div>
+          <div *ngIf="username.touched && username.errors?.['required']" class="alert alert-danger">Primer apellido obligado</div>
+          <div *ngIf="username.touched && username.errors?.['minlength']" class="alert alert-danger">No puede ser menor a 3 caracteres</div>
+          <div *ngIf="username.touched && username.errors?.['maxlength']" class="alert alert-danger">No puede ser mayor a 15 caracteres</div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+          <div *ngIf="email.touched && email.invalid" class="alert alert-danger">Email no valido</div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="text" class="form-control" id="password" formControlName="password">
+          </div>
+          <div *ngIf="password.touched && password.errors?.['required']" class="alert alert-danger">La contraseña es obligatoria</div>
+          <div *ngIf="password.touched && password.errors?.['minlength']" class="alert alert-danger">La contraseña es muy corta</div>
+          <div *ngIf="password.touched && password.errors?.['maxlength']" class="alert alert-danger">La contraseña es muy larga</div>
+        
+          <div class="mb-3">
+            <label for="repeatPassword" class="form-label">Contraseña:</label>
+            <input type="text" class="form-control" id="repeatPassword" formControlName="repeatPassword">
+          </div>
+          <div *ngIf="repeatPassword.touched && repeatPassword.errors?.['required']" class="alert alert-danger">La contraseña es obligatoria</div>
+          <div *ngIf="repeatPassword.touched && repeatPassword.errors?.['minlength']" class="alert alert-danger">La contraseña es muy corta</div>
+          <div *ngIf="repeatPassword.touched && repeatPassword.errors?.['maxlength']" class="alert alert-danger">La contraseña es muy larga</div>
+        <button  type="submit"  class="offset-5 btn btn-primary">Submit</button>
+      </form>
+    </section>
