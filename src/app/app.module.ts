@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
- 
+ import { FooterComponent } from './footer/footer/footer.component';
+import { HeaderComponent } from './header/header/header.component';
+import { PrincipalComponent } from './principal/principal/principal.component';
+import { FilmsComponent } from './list/films/films.component';
+
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { Injectable } from '@angular/core';
@@ -16,6 +20,9 @@ import { Service } from './services/service.service';
     AppComponent,
     RegisterComponent,
     LoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    PrincipalComponent,
 
   ],
   imports: [
@@ -23,7 +30,8 @@ import { Service } from './services/service.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
 
   ],
   providers: [Service],
