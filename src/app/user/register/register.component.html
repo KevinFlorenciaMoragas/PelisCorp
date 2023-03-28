@@ -1,5 +1,6 @@
 <section class="col-12 col-md-5 col-lg-5 offset-md-3 offset-lg-3">
     <form [formGroup]="registerForm" (ngSubmit)="postUser()">
+      <h1>{{usernameLocalStorage}}</h1>
         <!--(ngSubmit)="postData()"-->
         <div class="mb-3">
           <label for="name" class="form-label">name*</label>
@@ -46,6 +47,6 @@
           <div *ngIf="repeatPassword.touched && repeatPassword.errors?.['required']" class="alert alert-danger">La contraseña es obligatoria</div>
           <div *ngIf="repeatPassword.touched && repeatPassword.errors?.['minlength']" class="alert alert-danger">La contraseña es muy corta</div>
           <div *ngIf="repeatPassword.touched && repeatPassword.errors?.['maxlength']" class="alert alert-danger">La contraseña es muy larga</div>
-        <button  type="submit"  class="offset-5 btn btn-primary">Submit</button>
+        <button  type="submit"   class="offset-5 btn btn-primary">Submit</button>
       </form>
     </section>

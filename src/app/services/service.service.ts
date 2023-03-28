@@ -5,12 +5,13 @@ import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { RegisterComponent } from '../user/register/register.component';
 import { LoginComponent } from '../user/login/login.component';
+import {CookieService} from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
 export class Service {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private cookieService: CookieService) { }
   httpOptions = {
     headers: new HttpHeaders({
     'Content-Type': 'application/json'  
@@ -28,12 +29,10 @@ export class Service {
       )
   }
   //login
-  //CAMBIAR EL LOGIN PARA UNA PETICION GET
   login(loginForm: LoginComponent):Observable<LoginComponent>{
     let url:string = "http://localhost:8080/login"
     return this.http.post<LoginComponent>(url,JSON.stringify(loginForm),this.httpOptions).pipe(
       catchError((err) =>{
-        console.log("hay un error")
         console.error(err)
         return throwError(err)
       })
