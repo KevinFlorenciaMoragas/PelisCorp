@@ -8,7 +8,7 @@ import { Service } from 'src/app/services/service.service';
 })
 export class RegisterComponent implements OnInit {
   user: User[] = []
-
+  usernameLocalStorage = localStorage.getItem('username')
   constructor(private http:Service){
   }
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
       console.log(data)
     })
   }
+ 
   name: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)]})
   lastName: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)]})
   username: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)]})
