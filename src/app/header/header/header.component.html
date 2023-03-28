@@ -20,12 +20,14 @@
             <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li>
-                        <button [routerLink]="['principal']" class="nav-link" style="background-color:transparent;"><a >Home</a>
+                        <button [routerLink]="['principal']" class="nav-link"
+                            style="background-color:transparent;"><a>Home</a>
 
                         </button>
                     </li>
                     <li>
-                        <button [routerLink]="['films']" class="nav-link" style="background-color:transparent;"><a >Films</a>
+                        <button [routerLink]="['films']" class="nav-link"
+                            style="background-color:transparent;"><a>Films</a>
 
                         </button>
                     </li>
@@ -34,8 +36,11 @@
                     <li class="nav-item col-lg-12"><a id="navLinks" class="nav-link active" href="#">Support</a> </li>
                 </ul>
                 <div class="col-md-7">
-                    <div class="d-flex justify-content-end"> <button class="btn ml-auto" id="log">Log In</button>
-                        <button class="btn ml-2" id="sign"mat-menu-item [routerLink]="['signup']">Sign Up</button> </div>
+                    <div class="d-flex justify-content-end"> 
+                        
+                        <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
+                        <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
+                    </div>
                 </div>
             </div>
         </div>
