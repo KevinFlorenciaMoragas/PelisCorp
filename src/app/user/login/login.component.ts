@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       console.log(data)
       this.cookieService.set('username', data.username.toString())
       localStorage.setItem('username', data.username.toString())
+      this.usernameLocalStorage = localStorage.getItem('username')
       console.log( "Cookie Username " + data.username.toString())
       console.log( "Local Storage Username " + localStorage.getItem('username'))
       console.log(this.username)
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
     rol: this.password.value
   }
 usernameLocalStorage = localStorage.getItem('username')
+
 }
 export interface UserStorage {
   username: string;
