@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <img
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav"> <img
             class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/imagenes/logo.png" alt="">
         <div class="container-fluid"> <a class="navbar-brand" id="title">FilmCorp</a> <button
                 class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -28,6 +28,12 @@
                     <li>
                         <button [routerLink]="['films']" class="nav-link"
                             style="background-color:transparent;"><a>Films</a>
+
+                        </button>
+                    </li>
+                    <li>
+                        <button [routerLink]="['view']" class="nav-link"
+                            style="background-color:transparent;"><a>View</a>
 
                         </button>
                     </li>
