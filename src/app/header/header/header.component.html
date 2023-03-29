@@ -4,44 +4,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <title>FilmCorp</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <img
-            class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/imagenes/logo.png" alt="">
-        <div class="container-fluid"> <a class="navbar-brand" id="title">FilmCorp</a> <button
-                class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span
-                    class="navbar-toggler-icon"></span> </button>
-            <div class="navbar-collapse collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li>
-                        <button [routerLink]="['principal']" class="nav-link"
-                            style="background-color:transparent;"><a>Home</a>
-
-                        </button>
-                    </li>
-                    <li>
-                        <button [routerLink]="['films']" class="nav-link"
-                            style="background-color:transparent;"><a>Films</a>
-
-                        </button>
-                    </li>
-                    <li class="nav-item"><a id="navLinks" class="nav-link active" href="#">Series</a> </li>
-                    <li class="nav-item"><a id="navLinks" class="nav-link active" href="#">Community</a> </li>
-                    <li class="nav-item col-lg-12"><a id="navLinks" class="nav-link active" href="#">Support</a> </li>
-                </ul>
-                <div class="col-md-7">
-                    <div class="d-flex justify-content-end"> 
-                        
-                        <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
-                        <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
+    <body class="p-1 m-0" id="mainNav">
+        
+        <nav class="navbar navbar-expand-lg" >
+            <img class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/img/logo.png">
+          <div class="container-fluid" id="mainNav">
+            <a id="title" class="navbar-brand" [routerLink]= "['principal']">FilmCorp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a id="navLinks" class="nav-link active" aria-current="page" [routerLink]= "['principal']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navLinks" class="nav-link" [routerLink]= "['films']">Films</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navLinks" class="nav-link active" href="#">Series</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navLinks" class="nav-link active" href="#">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navLinks" class="nav-link active" href="#">Support</a>
+                </li>
+                <li>
+                    <div class="d-lg-none d-sm-block d-block">
+                        <button class="btn ml-auto" id="log" [routerLink]= "['login']">Log In</button>
+                        <button class="btn ml-2" id="sign" mat-menu-item [routerLink]= "['register']">Sign Up</button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+                </li>
+              </ul>
+            </div> 
+            <form class="d-flex d-lg-block d-sm-none d-none">
+                <button class="btn ml-auto" id="log" [routerLink]= "['login']">Log In</button>
+                <button class="btn ml-2" id="sign" mat-menu-item [routerLink]= "['register']">Sign Up</button>
+              </form> 
+          </div>
+        </nav>
+
+        
