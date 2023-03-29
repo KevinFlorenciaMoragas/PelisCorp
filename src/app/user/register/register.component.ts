@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators, FormArray } from '@angular/forms';
 import { Service } from 'src/app/services/service.service';
+import { User } from 'src/app/interfaces/interfaces/interfaces.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -34,11 +35,4 @@ export class RegisterComponent implements OnInit {
     email: this.email,
     password: this.password,
 })
-}
-export interface User {
-  name: string;
-  lastName: string;
-  username: string;
-  email: string;
-  password: string;
 }

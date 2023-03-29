@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { Service } from './services/service.service';
+import { InterfacesComponent } from './interfaces/interfaces/interfaces.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { Service } from './services/service.service';
     FooterComponent,
     PrincipalComponent,
     FilmsComponent,
-    FilmViewComponent
+    FilmViewComponent,
+    InterfacesComponent
 
   ],
   imports: [
