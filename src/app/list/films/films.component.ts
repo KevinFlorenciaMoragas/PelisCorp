@@ -10,11 +10,10 @@ import { Movies } from 'src/app/interfaces/interfaces/interfaces.component';
 })
 export class FilmsComponent implements OnInit {
   movies: Movies[] = []
-  constructor(private http: HttpClient) { }
+  constructor(private http: MoviesService) { }
   
   getAllMovies() {
-  let url : string = "http://localhost:8080/allMovies"
-  this.http.get(url).subscribe(data => {
+  this.http.listAllMovies().subscribe(data => {
     console.log(data)
     this.movies = data as Movies[]
     console.log(this.movies)

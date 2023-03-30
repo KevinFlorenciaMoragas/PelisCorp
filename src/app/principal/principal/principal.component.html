@@ -1,4 +1,7 @@
 <h1>Welcome to FilmCorp</h1>
+<ul *ngFor="let item of movies">
+    <li>{{item.movieName}}</li>
+</ul>
 <div class="masthead">
     <div class="container">
         <div class="row">
@@ -6,7 +9,7 @@
                 <h1 id="index-text">Welcome to FilmCorp</h1>
                 <div id="trailer"> <img src="../../../assets/img/trailerAnt.jpg" width="80%" height="auto">
                     <div id="textTrailer">
-                        <h3 id="index-sub">Ant-Man & Wasp: Quantumania</h3>
+                        <h3 id="index-sub">{{movies[1].movieName}}</h3>
                         <div class="col-lg-9 col-12">
                             <p>Amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore
