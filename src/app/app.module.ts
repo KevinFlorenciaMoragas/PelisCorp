@@ -12,7 +12,6 @@ import { FilmViewComponent } from './film-view/film-view.component';
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { Injectable } from '@angular/core';
-import { FilmViewComponent } from './film-view/film-view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
