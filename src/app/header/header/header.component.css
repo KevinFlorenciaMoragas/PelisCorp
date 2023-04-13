@@ -31,3 +31,12 @@
     font-family: helvetica;
     font-size: 15px;
 }
+#log:hover {
+    background-color: #EEC24F;
+    color: black;
+}
+#sign:hover {
+    background-color: #EEC24F;
+    color: black;
+    border: 2px solid white;
+}
