@@ -1,9 +1,26 @@
-#iconFooter{
+#iconFooter {
     padding: 0.5em;
     width: 10em;
     height: auto;
 }
-#logoFooter{
-    width: 9em;
-    height: auto;
+
+.list-inline-item img {
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+
+.instagram :hover{
+    background-color: rgb(245, 163, 227);
+    border-radius: 50%;
+}
+
+.twitter :hover{
+    background-color: rgb(163, 189, 245);
+    border-radius: 50%;
+}
+
+.google :hover{
+    background-color: rgb(245, 163, 163);
+    border-radius: 50%;
 }

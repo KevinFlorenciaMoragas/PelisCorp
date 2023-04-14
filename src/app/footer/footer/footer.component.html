@@ -1,21 +1,21 @@
-<div class="row">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-5 border">
-        <img class="align-items-centerf" id="logoFooter" src="../../../assets/imagenes/logo.png" alt="">
-        <div class="col-md-4 d-flex align-items-center">
-
-            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-            </a>
-            <span class="mb-3 mb-md-0 text-muted">© 2023 PelisCorp, SA</span>
+<div class="container-fluid">
+    <footer class="row py-3 my-5 border justify-content-center">
+        <div class="d-flex flex-line align-items-center justify-content-center" style="flex-direction: row;"> <img
+                class="align-items-center" id="logoFooter" src="../../../assets/img/logoSin.png" alt="" width="75px">
+            <h3 class="mb-0 ms-3">PelisCorp</h3>
         </div>
-        <div class="row col-lg-2">
-            <ul>
-                <a href="#"><i id="iconFooter"></i><img src="../../../assets/imagenes/logoTwiter.png" width="45pm"></a>
-                <a href="#"><i id="iconFooter"></i><img src="../../../assets/imagenes/iconoInst.jpg" width="45pm"></a>
-                <a href="#"><i id="iconFooter"></i><img src="../../../assets/imagenes/logoGma.png" width="45pm"></a>
-            </ul>
+        <hr>
+        <div class="col-md-4 text-center">
+            <div class="d-flex flex-column align-items-center">
+                <ul class="list-inline mt-4">
+                    <li class="list-inline-item twitter"> <a href="#"> <img src="../../../assets/img/logoTwiter.png"
+                                id="" width="45pm"> </a> </li>
+                    <li class="list-inline-item instagram"> <a href="#"> <img src="../../../assets/img/logoInst.png"
+                                id="" width="45pm"> </a> </li>
+                    <li class="list-inline-item google"> <a href="#"> <img src="../../../assets/img/logoGma.png" 
+                                id="" width="45pm"> </a> </li>
+                </ul>
+            </div> <span id="year" class="text-muted">&copy; {{this.date}} PelisCorp, SA</span>
         </div>
     </footer>
 </div>

@@ -3,7 +3,7 @@
 
 @media(max-width:2000px) {
     .container{
-        border: 2px solid black;
+        border: 2px solid rgba(0, 0, 0, 0.678);
     }
     .wallpaperView {
         background-color: rgb(88, 60, 101, 0.534);
