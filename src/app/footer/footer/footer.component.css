@@ -1,9 +1,12 @@
 #iconFooter {
-    padding: 0.5em;
+
     width: 10em;
     height: auto;
 }
-
+.tittleFooter{
+    color: gray;
+    font-family: Arial;
+}
 .list-inline-item img {
     border-radius: 50%;
     border: 1px solid black;
