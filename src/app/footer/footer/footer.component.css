@@ -1,9 +1,11 @@
 #iconFooter{
-    padding: 0.5em;
-    width: 10em;
-    height: auto;
+  padding: 0.5em;
+  width: 10em;
+  height: auto;
 }
-#logoFooter{
-    width: 9em;
-    height: auto;
+
+.list-inline-item img {
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #9c949456;
 }
