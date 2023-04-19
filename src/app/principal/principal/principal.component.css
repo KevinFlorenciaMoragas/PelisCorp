@@ -1,13 +1,15 @@
-
-
-
+#padrino {
+  width: 20em;
+  height: auto;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
 
 #boton {
   background-color: rgb(153, 112, 170);
   color: white;
   width: 10em;
   border: none;
-
 }
 
 #lista {
@@ -19,6 +21,17 @@
   background-color: rgb(153, 112, 170);
   margin-left: 2em;
   border: none;
+}
+
+#botonfans {
+  background-color: rgb(153, 112, 170);
+  border: none;
+  margin-left: 1em;
+  margin-top: 8.5em;
+}
+
+#video {
+  margin-bottom: 2em;
 }
 
 .caja img {
@@ -38,8 +51,7 @@
 }
 
 .masthead {
-  padding: 7rem 0;
-  background-color: rgb(229, 229, 229);
+  padding: 3.5rem 0;
 }
 
 #trailer,
@@ -74,14 +86,14 @@
 
   .masthead {
     padding: 1rem 0;
-    background-color: rgb(229, 229, 229);
   }
 }
-
-
-
 
 .img-responsive {
   width: 100%;
   height: 80%;
+}
+
+body {
+  background-color: rgb(229, 229, 229);
 }
