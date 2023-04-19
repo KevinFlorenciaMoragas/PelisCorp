@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Genre } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -13,15 +14,24 @@ import { OnInit } from '@angular/core';
 export class FilmViewComponent {
   constructor(private http: MoviesService) { }
   movies: Movies[] = []
+  genres: Genre[] = []
 
   ngOnInit() {
-    this.getAllMovies()
+    this.getAllMovies(),
+    this.getAllGenres()
   }
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
       console.log(data)
       this.movies = data as Movies[]
       console.log(this.movies)
+    })
+  }
+  getAllGenres() {
+    this.http.listAllGenres().subscribe(data => {
+      console.log(data)
+      this.genres = data as Genre[]
+      console.log(this.genres)
     })
   }
 }
