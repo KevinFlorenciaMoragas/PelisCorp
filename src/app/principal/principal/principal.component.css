@@ -29,6 +29,7 @@
   margin-top: 8.5em;
 }
 
+
 #video {
   margin-bottom: 2em;
 }
@@ -78,7 +79,10 @@
   .welcome {
     text-align: center;
   }
-
+  #dest{
+    height: 21em;
+    width: auto;
+  }
   .destacadas {
     text-align: center;
   }
