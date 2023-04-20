@@ -24,19 +24,19 @@
   font-size: 15px;
 }
 #sign{
-  background-color: white;
-  color: rgb(88, 60, 101);
-  padding-inline: 1.5em;
-  margin-left: 10px;
-  font-family: helvetica;
-  font-size: 15px;
+    background-color: white;
+    color: rgb(88, 60, 101);
+    padding-inline: 1.5em;
+    margin-left: 10px;
+    font-family: helvetica;
+    font-size: 15px;
 }
 #log:hover {
-  background-color: #EEC24F;
-  color: black;
+    background-color: #EEC24F;
+    color: black;
 }
 #sign:hover {
-  background-color: #EEC24F;
-  color: black;
-  border: 2px solid white;
+    background-color: #EEC24F;
+    color: black;
+    border: 2px solid white;
 }

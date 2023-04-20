@@ -1,9 +1,10 @@
+
 <section class="col-12 col-md-5 col-lg-5 offset-md-3 offset-lg-3">
     <form [formGroup]="registerForm" (ngSubmit)="postUser()">
       <h1>{{usernameLocalStorage}}</h1>
         <!--(ngSubmit)="postData()"-->
         <div class="mb-3">
-          <label for="name" class="form-label">name*</label>
+          <label id="box" for="name" class="form-label">name*</label>
           <input type="text" class="form-control" id="name" formControlName="name">
         </div>
            <div *ngIf="name.touched && name.errors?.['required']" class="alert alert-danger">name obligado</div>

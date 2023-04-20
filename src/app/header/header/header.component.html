@@ -8,10 +8,11 @@
 </head>
 
     <body class="p-1 m-0 fixed-top" id="mainNav">
-
+        
         <nav class="navbar navbar-expand-lg">
             <img class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/img/logo.png">
-          <div class="container-fluid" id="mainNav">
+          <div class="container-fluid">
+
             <a id="title" class="navbar-brand" [routerLink]= "['principal']">FilmCorp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -21,7 +22,7 @@
                 <li class="nav-item">
                   <a id="navLinks" class="nav-link active" aria-current="page" [routerLink]= "['principal']">Home</a>
                 </li>
-
+                
                 <li class="nav-item">
                     <a id="navLinks" class="nav-link" [routerLink]= "['films']">Films</a>
                 </li>
@@ -41,11 +42,14 @@
                     </div>
                 </li>
               </ul>
-            </div>
+
+            </div> 
             <form class="d-flex d-lg-block d-sm-none d-none">
                 <button class="btn ml-auto" id="log" [routerLink]= "['login']">Log In</button>
                 <button class="btn ml-2" id="sign" mat-menu-item [routerLink]= "['register']">Sign Up</button>
-              </form>
+              </form> 
           </div>
         </nav>
+
+        
 

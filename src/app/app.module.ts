@@ -7,8 +7,6 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { HeaderComponent } from './header/header/header.component';
 import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
-import { FilmViewComponent } from './film-view/film-view.component';
-
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { Injectable } from '@angular/core';
@@ -16,7 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Service } from './services/service.service';
-import { InterfacesComponent } from './interfaces/interfaces/interfaces.component';
+
+import { InterfacesComponent } from './interfaces/interfaces.component';
+import { FilmViewComponent } from './film-view/film-view.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +27,8 @@ import { InterfacesComponent } from './interfaces/interfaces/interfaces.componen
     PrincipalComponent,
     FilmsComponent,
     FilmViewComponent,
+    InterfacesComponent
     FooterComponent
-
-
-
   ],
   imports: [
     BrowserModule,

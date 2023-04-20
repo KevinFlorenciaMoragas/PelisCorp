@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'header', component: HeaderComponent},
   {path:'principal', component: PrincipalComponent},
   {path:'films', component: FilmsComponent},
-  {path:'filmview', component: FilmViewComponent},
+  {path:'series', component: FilmViewComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 
