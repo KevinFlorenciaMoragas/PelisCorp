@@ -1,7 +1,7 @@
+
 #padrino {
   width: 30em;
   height: auto;
-
 }
 
 #boton {
@@ -22,12 +22,14 @@
   border: none;
 }
 
+
 #botonfans {
   background-color: rgb(153, 112, 170);
   border: none;
   margin-left: 1em;
   margin-top: 8.5em;
 }
+
 
 #video {
   margin-bottom: 2em;
@@ -78,15 +80,15 @@
   .welcome {
     text-align: center;
   }
-
   .destacadas {
     text-align: center;
   }
-
   .masthead {
     padding: 1rem 0;
+
   }
 }
+
 
 .img-responsive {
   width: 100%;
@@ -95,4 +97,6 @@
 
 body {
   background-color: rgb(229, 229, 229);
+
 }
+

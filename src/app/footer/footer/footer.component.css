@@ -1,11 +1,37 @@
-#iconFooter{
+
+#iconFooter {
     padding: 0.5em;
     width: 10em;
     height: auto;
 }
-
+.tittleFooter{
+    color: gray;
+    font-family: Arial;
+}
 .list-inline-item img {
     border-radius: 50%;
     border: 1px solid black;
-    background-color: #9c949456;
-  }
+
+}
+
+.instagram :hover{
+    background-color: rgb(245, 163, 227);
+    border-radius: 50%;
+}
+
+.twitter :hover{
+    background-color: rgb(163, 189, 245);
+    border-radius: 50%;
+
+
+.list-inline-item img {
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #9c949456;
+
+}
+
+.google :hover{
+    background-color: rgb(245, 163, 163);
+    border-radius: 50%;
+}
