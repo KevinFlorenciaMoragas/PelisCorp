@@ -1,23 +1,37 @@
-<div style="background-color:rgb(175, 154, 185) ">
-<H1>Top 100 rated films</H1>
-<div class="row col-lg-10"class="text-center">
-<p>Films</p><p>Rating</p>
-<hr>
-</div>
-<div class="container">
-<ul>
-    <li>
+<div class="container align-items-center"  >
+  <div class="btn-group">
+      <button type="button" class="btn btn-danger">Tipo</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Peliculas</a></li>
+        <li><a class="dropdown-item" href="#">Series</a></li>
+        <li><a class="dropdown-item" href="#">Documentales</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger">Genero</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Accion</a></li>
+            <li><a class="dropdown-item" href="#">Romance</a></li>
+            <li><a class="dropdown-item" href="#">Thriller</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Policiacas</a></li>
+          </ul>
+        </div>
 
-    </li>
-    <li>
-
-    </li>
-    <li>
-
-    </li>
-</ul>
-</div>
-</div>
-<div class="col-lg-2"style="background-color:rgb(175, 154, 185)">
-
-</div>
+    </div>
+  </div>
+  <hr>
+  <div class="row" style="background-color:rgb(153, 112, 170) ;">
+    <div class="container">
+    <ul *ngFor="let item of movies">
+      <li>{{item.movieName}}</li>
+  </ul>
+  </div>
+  </div>

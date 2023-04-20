@@ -17,7 +17,9 @@ export class MoviesService {
     })
   }
   listAllMovies(): Observable<any> {
+
     let url: string = "http://localhost:8080/allMovies"
+
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -25,6 +27,7 @@ export class MoviesService {
       })
     )
   }
+
   listAllMoviesByTitle(title: string): Observable<any> {
     let url: string = "http://localhost:8080/movies/title/" + title
     return this.http.get<any>(url).pipe(
@@ -73,3 +76,4 @@ export class MoviesService {
   
 
 }
+
