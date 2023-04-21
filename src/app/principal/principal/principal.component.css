@@ -80,6 +80,11 @@
   .welcome {
     text-align: center;
   }
+
+  #dest{
+    height: 21em;
+    width: auto;
+  }
   .destacadas {
     text-align: center;
   }
