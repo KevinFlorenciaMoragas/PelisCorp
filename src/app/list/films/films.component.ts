@@ -13,8 +13,9 @@ export class FilmsComponent implements OnInit {
   constructor(private http: HttpClient) { }
   
   getAllMovies() {
-  let url : string = "http://localhost:8080/allMovies"
+  let url : string = "http://localhost:8080/movies"
   this.http.get(url).subscribe(data => {
+
     console.log(data)
     this.movies = data as Movies[]
     console.log(this.movies)

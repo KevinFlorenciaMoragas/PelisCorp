@@ -27,7 +27,7 @@ import { FilmViewComponent } from './film-view/film-view.component';
     PrincipalComponent,
     FilmsComponent,
     FilmViewComponent,
-    InterfacesComponent
+    InterfacesComponent,
     FooterComponent
   ],
   imports: [
