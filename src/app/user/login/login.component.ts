@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators, FormArray } from '@angular/forms';
 import { Service } from 'src/app/services/service.service';
 import { CookieService } from 'ngx-cookie-service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +14,7 @@ export class LoginComponent implements OnInit {
       
   }
   constructor(private http:Service, private cookieService: CookieService) { }
+
 
   
   userLogin(){

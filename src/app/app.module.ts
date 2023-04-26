@@ -28,7 +28,8 @@ import { FilmViewComponent } from './film-view/film-view.component';
     FilmsComponent,
     FilmViewComponent,
     InterfacesComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,

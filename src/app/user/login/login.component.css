@@ -3,18 +3,20 @@ h1{
 	background-color: rgb(229, 229, 229);
 }
 
-#body-structure{
-	background-image: url(/src/assets/img/wallpaperLogin.jpg);
+.bg{
+
+	background:url(../../../assets/img/wallpaper_def.png);
 	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-#registerBlock{
+.bgSecond{
     background-color: #583C65;
-    width: 400px;
-	height: 450px;
-	overflow: hidden;
-    border: 2px solid white;
+}
+
+.btnlog:hover{
+	background-color: #EEC24F;
+    color: black;
 }
 

@@ -8,6 +8,7 @@ import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 
+
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
