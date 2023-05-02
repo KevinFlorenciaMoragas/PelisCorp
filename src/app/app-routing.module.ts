@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header/header.component';
 import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
 import { FilmViewComponent } from './film-view/film-view.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'principal', component: PrincipalComponent},
   {path:'films', component: FilmsComponent},
   {path:'series', component: FilmViewComponent},
+  {path:'profileUser', component: ProfileComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 
