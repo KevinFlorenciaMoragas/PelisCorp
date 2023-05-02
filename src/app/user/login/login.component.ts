@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   ngOnInit(): void {
       
   }

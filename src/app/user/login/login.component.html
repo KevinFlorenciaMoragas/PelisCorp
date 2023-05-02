@@ -1,5 +1,7 @@
 <br>
-<body class="bg d-flex justify-content-center align-items-center vh-100">
+<body>
+<div class="d-lg-block d-sm-none d-none">
+<div class="bg d-flex justify-content-center align-items-center vh-100">
   <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
     <h1>{{usernameLocalStorage}}</h1>
     <div class="bgSecond p-5 rounded-5 text-secondary shadow" style="width: 25rem">
@@ -36,9 +38,9 @@
       </div>
       <div class="d-flex gap-1 justify-content-center mt-1 text-white">
         <div>Don't have an account?</div>
-        <button class="text-decoration-none text-info fw-semibold" [routerLink]= "['register']">
-          Register
-        </button>
+        <a class="text-decoration-none text-info fw-semibold" [routerLink]= "['register']">
+          Register 
+        </a> 
       </div>
       <div class="p-3">
         <div class="border-bottom text-center" style="height: 0.9rem">
@@ -51,6 +53,14 @@
       </div>
     </div>
   </form>
+</div>
+</div>
+
+
+<!--
+FONDO POR COLUMNAS, PREGUNTAR CHAT
+-->
+
 </body>
 <!--
 <div class="d-flex justify-content-center align-items-center vh-100" id="body-structure">

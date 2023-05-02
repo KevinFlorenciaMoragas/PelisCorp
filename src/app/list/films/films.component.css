@@ -1,6 +1,96 @@
-button{
+/*button {
     background-color: rgb(153, 112, 170);
     border: none;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1em;
+    width: 5.7em;
 }
+
+#lista {
+    margin-top: 10em;
+}
+
+#botones {
+    margin-right: 10px;
+}
+
+#imagen {
+    height: 20em;
+    width: auto;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+#imagen {
+    box-shadow: 1px 20px 20px rgb(0, 0, 0);
+}
+
+#caja {
+    width: 200px;
+    height: 150px;
+    background-color: rgb(119, 52, 148);
+    box-shadow: 1px 20px 20px rgb(0, 0, 0);
+    border-radius: 0.5em;
+}
+
+.fa-star {
+    color: yellow;
+}
+
+input {
+    margin-left: 10em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px #9A86FD;
+    outline: none;
+    border-radius: 35px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #9A86FD;
+}
+
+input::placeholder {
+    font-family: var(--font-style);
+    color: #efefef;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+input::focus::placeholder {
+    opacity: 1;
+}
+
+input::hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+}
+
+input:focus,
+input:not(:placeholder-shown) {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+}
+
+tr:hover {
+    background-color: rgb(255, 255, 255, 0.3);
+    cursor: default;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(41, 129, 141, 0.7);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255, 0.4);
+}*/
+
+
+

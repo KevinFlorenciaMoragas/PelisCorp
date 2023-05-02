@@ -27,6 +27,7 @@ export class FilmViewComponent {
       console.log(this.movies)
     })
   }
+  
   getAllGenres() {
     this.http.listAllGenres().subscribe(data => {
       console.log(data)
@@ -34,4 +35,27 @@ export class FilmViewComponent {
       console.log(this.genres)
     })
   }
+
+  selectedOption = 1;
+  result = '';
+
+  selectOption(option: number) {
+    switch (option) {
+      case 1:
+        this.result = 'Opción 1 seleccionada';
+        break;
+      case 2:
+        this.result = 'Opción 2 seleccionada';
+        break;
+      case 3:
+        this.result = 'Opción 3 seleccionada';
+        break;
+      default:
+        this.result = 'Opción no válida';
+        break;
+    }
+  }
+
+
+
 }
