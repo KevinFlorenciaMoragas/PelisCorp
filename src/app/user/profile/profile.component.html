@@ -1,43 +1,42 @@
 <body>
-    <div style="text-align: center; margin-top: 150px;">
-        <img src="../../../assets/img/logoInst.png" width="150px" height="">
-        <h1 style="margin-top: 20px; margin-bottom: 30px;">Usuario</h1>
-    </div>
-    <br>
-    <div class="container">
-        <div class="row" style="border-top: 1px solid black;">
-            <div class="col-lg-2 col-md-2 col-1">
-            </div>
-            <div class="col-lg-4 col-md-4 col-10 " style="margin-bottom: 10px; margin-top: 20px;">
-                <h3 class="titleedit">Email</h3>
-                <input type="text" class="form-control input" id="email" [disabled]="true" placeholder="EMAIL">
-                <br>
-                <form action="">
-                    <h3 class="titleedit">Cambiar contraseña</h3>
-                    <input type="text" class="form-control input" id="password" formControlName="password" placeholder="Nueva contraseña">
+    <div class="fondo">
+    <br><br><br><br><br><br>
+        <div style="text-align: center;">
+            <img src="../../../assets/img/logoInst.png" width="150px" height="">
+            <h1 style="margin-top: 20px; margin-bottom: 30px;">Usuario</h1>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-4 col-md-4 col-12 linea-orizontal" style="margin-bottom: 10px; ">
                     <br>
-                    <input type="text" class="form-control input" id="password" formControlName="password" placeholder="Repetir nueva contraseña">
-                    <div style="text-align: center; margin-top: 30px;">
-                        <button type="button" class="btn btn-save btn-lg">Guardar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-1 col-md-1 col-1">
-                <br>
-                <div class="linea-vertical"></div>
-            </div>
-            <div class=" col-1">
-            </div>
-            <div class="col-lg-3 col-md-3 col-10" style="margin-top: 70px;">
-                <div style="text-align: center; ">
-                    <button type="button" class="btn-profile">Privacidad</button>
-                    <button type="button" class="btn-profile">Idioma</button>
-                    <button type="button" class="btn-profile">Amigos</button>
+                    <h3 class="titleedit">Email</h3>
+                    <input type="text" class="form-control input" id="email" [disabled]="true" placeholder="EMAIL">
+                    <br>
+                    <form action="">
+                        <h3 class="titleedit">Cambiar contraseña</h3>
+                        <input type="password" class="form-control input" id="password" formControlName="password"
+                            placeholder="Nueva contraseña">
+                        <br>
+                        <input type="password" class="form-control input" id="password" formControlName="password"
+                            placeholder="Repetir nueva contraseña">
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button type="button" class="btn btn-save btn-lg">Guardar</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-2">
+                
+                <div class="col-lg-1 col-md-1 col-0" >
+                    <div class="linea-orizontal2"></div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-10 linea-orizontal" >
+                    <div style="text-align: center; " style="margin-top: 70px;">
+                        <button type="button" class="btn-profile">Privacidad</button>
+                        <button type="button" class="btn-profile">Idioma</button>
+                        <button type="button" class="btn-profile">Amigos</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </body>

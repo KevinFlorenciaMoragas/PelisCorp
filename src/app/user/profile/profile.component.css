@@ -21,10 +21,8 @@ body{
     background-color: rgb(88, 60, 101, 0.534);
 }
 
-
-
 .titleedit{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .input{
@@ -50,8 +48,18 @@ body{
 }
 
 @media (min-width: 768px) {
-    .linea-vertical {
-        border-right: 1px solid black; /* o border-right para la línea vertical del lado derecho */
-        height: 90%; /* Altura deseada de la línea */
+    .linea-orizontal2 {
+        border-top: 1px solid black ;
+    }
+}
+
+.linea-orizontal{
+    border-top: 1px solid black ;
+}
+
+@media (min-width: 992px) {
+    .fondo{
+        background:url(../../../assets/img/wallpaper_def.png);
+        background-size:cover;
     }
 }
