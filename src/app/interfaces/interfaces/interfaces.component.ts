@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 export class InterfacesComponent {
 
 }
-//1
 export interface Movies {
   id: number;
   movieName: string;
@@ -131,7 +130,7 @@ export interface UserReview{
   id: number;
   id_user: number;
   id_review: number;
-} 
+}
 //17
 export interface Screenwritter{
   id: number;
@@ -146,4 +145,3 @@ export interface MovieScreenwritter{
   id_movie: number;
   id_screenwritter: number;
 }
-//19

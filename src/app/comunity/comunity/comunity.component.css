@@ -1,0 +1,53 @@
+.bg{
+
+	background:url(../../../assets/img/wallpaper_def.png);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bgSecond{
+    background-color:rgb(153, 112, 170);
+    height: 90%;
+    border-radius: none;
+}
+#imgPerfil{
+  border-radius: 50%;
+}
+.boton {
+  background-color: rgb(228, 197, 96);
+  color: rgb(7, 7, 7);
+  width: 12em;
+  margin-left: 0.5em;
+  border: solid;
+  border-color:rgb(206, 179, 91);
+  font-size: large;
+
+}
+.boton:hover{
+  background-color: #e2673a65;
+  cursor: pointer;
+}
+.rectangulo {
+  width: 65em;
+  height: 37em;
+  background-color: rgba(81, 40, 109, 0.452);
+  clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
+
+}
+#imagenes{
+  width: 10em;
+}
+
+#boton {
+  background-color: rgb(153, 112, 170);
+  color: white;
+  width: 7em;
+  border: none;
+}
+.caja img {
+  margin-top: 4em;
+  width: 15em;
+  height: 15em;
+
+}
