@@ -1,6 +1,99 @@
-button{
-    background-color: rgb(153, 112, 170);
+.button {
     border: none;
     justify-content: center;
     align-items: center;
 }
+
+.button:hover {
+    background-color: #eec14f85;
+    border: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    border: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEC24F;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.fondo {
+    background-color: #93819b;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.title {
+    color: white;
+    margin-bottom: 40px;
+}
+
+
+@media (min-width: 421px) {
+
+    .margintop{
+        margin-top: 70px;
+    }
+}
+
+body{
+    background-color: #d6cfd9;
+}
+
+.star{
+    width: 60%;
+}
+
+@media (max-width: 576px) {
+    .center-title{
+        text-align: center;
+    }
+
+    .star{
+        width: 10%;
+    }
+
+    .img-movie{
+        width: 70%;
+        height: auto;
+    }
+
+}
+
+@media (min-width: 577px) and (max-width: 767px){
+
+    .img-movie{
+        width: 40%;
+        height: auto;
+    }
+
+    .star{
+        width: 10%;
+    }
+}
+
+@media (min-width: 767px) {
+    .img-movie{
+        width: 70%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .border-left{
+        border-left: 1px solid white;
+    }
+}
+
+
+
+.featured-text {
+    padding: 5px;
+    border-left: 0.7rem solid #EEC24F;
+    border-radius: 0.5rem;
+    font-size: 20px;
+}
+
