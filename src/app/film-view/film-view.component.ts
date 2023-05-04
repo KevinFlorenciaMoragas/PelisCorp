@@ -5,6 +5,9 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
+import { Actor } from '../interfaces/interfaces/interfaces.component';
+import { MovieReview } from '../interfaces/interfaces/interfaces.component';
+import { Reviews } from '../interfaces/interfaces/interfaces.component';
 
 @Component({
   selector: 'app-film-view',
@@ -15,10 +18,15 @@ export class FilmViewComponent {
   constructor(private http: MoviesService) { }
   movies: Movies[] = []
   genres: Genre[] = []
+  actor: Actor[] = []
+  movieReview: MovieReview[] = []
+  reviews: Reviews[] = []
 
   ngOnInit() {
     this.getAllMovies(),
-    this.getAllGenres()
+    this.getAllGenres(),
+    this.getAllActor(),
+    this.getAllMovieReview()
   }
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
@@ -36,25 +44,36 @@ export class FilmViewComponent {
     })
   }
 
-  selectedOption = 1;
-  result = '';
-
-  selectOption(option: number) {
-    switch (option) {
-      case 1:
-        this.result = 'Opción 1 seleccionada';
-        break;
-      case 2:
-        this.result = 'Opción 2 seleccionada';
-        break;
-      case 3:
-        this.result = 'Opción 3 seleccionada';
-        break;
-      default:
-        this.result = 'Opción no válida';
-        break;
-    }
+  getAllActor() {
+    this.http.listAllActor().subscribe(data => {
+      console.log(data)
+      this.actor = data as Actor[]
+      console.log(this.actor)
+    })
   }
+  getAllMovieReview() {
+    this.http.listAllMovieReview().subscribe(data => {
+      console.log(data)
+      this.movieReview = data as MovieReview[]
+      console.log(this.movieReview)
+    })
+  }
+  getAllReviews() {
+    this.http.listAllReview().subscribe(data => {
+      console.log(data)
+      this.reviews = data as Reviews[]
+      console.log(this.reviews)
+    })
+  }
+
+
+  contenidoActual: string = '';
+
+  cambiarContenido(boton: string) {
+    this.contenidoActual = boton;
+  }
+
+
 
 
 

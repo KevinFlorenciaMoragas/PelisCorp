@@ -73,6 +73,33 @@ export class MoviesService {
       })
     )
   }
+  listAllActor(): Observable<any> {
+    let url: string = "http://localhost:8080/allActors"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllMovieReview(): Observable<any> {
+    let url: string = "http://localhost:8080/movieReview"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllReview(): Observable<any> {
+    let url: string = "http://localhost:8080/reviews"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
   
 
 }

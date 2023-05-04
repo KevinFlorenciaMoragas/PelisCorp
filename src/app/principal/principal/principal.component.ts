@@ -10,16 +10,24 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./principal.component.css']
 })
 
-export class PrincipalComponent {
-
-  private apiUrl = 'https://mi-api.com/elementos';
+export class PrincipalComponent implements OnInit{
 
   constructor(private http: MoviesService) { }
-  movies: Movies[] = []
-  ngOnInit() {
-    this.getAllMovies()
+
+  movies: any[] = [
+    {
+      photo:'../../../assets/img/interestelar.jpg',
+    },
+    {
+      photo:'../../../assets/img/interestelar.jpg',
+    }
+  ]
+
+  ngOnInit(){
+    
   }
 
+  /*
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
       console.log(data)
@@ -27,5 +35,13 @@ export class PrincipalComponent {
       console.log(this.movies)
     })
   }
+
+  obtenerDatos() {
+    this.http.listAllMovies().subscribe((data: any[]) => {
+      this.movies = data;
+    });
+  }*/
+
+
 
 }

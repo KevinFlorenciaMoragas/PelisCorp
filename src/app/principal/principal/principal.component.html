@@ -56,17 +56,12 @@
                 
                 <div id="letras" class="caja zoom text-align-center"> 
                     <div id="carouselExample" class="carousel slide">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="..." class="d-block w-100" alt="...">
+                        <div *ngFor="let dato of movies">
+                            <img [src]="dato.img" alt=""><br>
+                            <button id="boton" type="button"
+                        class="btn btn-primary mb-3">More</button>
                           </div>
-                          <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                          </div>
-                        </div>
+                    
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Previous</span>
@@ -88,7 +83,7 @@
                         class="img-fluid" alt="Cocain Bear">
                     <p>Cocain Bear</p>
                     <p>Elizabeth Banks<br />Terror</p> <button id="boton" type="button"
-                        class="btn btn-primary mb-3">Información</button>
+                    class="btn btn-primary mb-3">Información</button>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-4 col-6">

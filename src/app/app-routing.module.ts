@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'principal', component: PrincipalComponent},
   {path:'films', component: FilmsComponent},
   {path:'series', component: FilmViewComponent},
+  {path:'carousel', component: PrincipalComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 

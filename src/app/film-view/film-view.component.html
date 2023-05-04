@@ -9,15 +9,17 @@
                     </ul>
                 </h1>
                 <br>
-                <img class="imgSize" src="../../../assets/img/creed.jpg">
+                <ul *ngFor="let item of movies">
+                    <img class="imgSize" [src]="item.photo" alt="">
+                </ul>
             </div>
             <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
                 <div class="featured-text text-center">
                     <h2>Genero</h2>
                     <p class="txt">
-                        <ul *ngFor="let item of genres">
-                            <a>{{item.genre}}</a>
-                        </ul>
+                    <ul *ngFor="let item of genres">
+                        <a>{{item.genre}}</a>
+                    </ul>
                 </div>
                 <hr>
                 <div class="featured-text text-center">
@@ -39,7 +41,8 @@
                 <div class=" text-center ">
                     <hr>
                     <h2>Synopsis</h2>
-                    <p id="txt" class="col-lg-12">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y en su vida
+                    <p id="txt" class="col-lg-12">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y
+                        en su vida
                         familiar.
                         Cuando un amigo de la infancia y antiguo prodigio del boxeo resurge, el enfrentamiento
                         entre ellos será más que una pelea.</p>
@@ -55,14 +58,35 @@
                     <iframe class="trailerSize" width="680" height="415" src="https://www.youtube.com/embed/jdEEZeRiyeQ"
                         frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                     <br>
+
                 </div><br>
+                <hr>
             </div>
             <div class="butonNav col-lg-12">
-            <button (click)="selectOption(1)">Opción 1</button>
-            <button (click)="selectOption(2)">Opción 2</button>
-            <button (click)="selectOption(3)">Opción 3</button>
-        </div>
-        {{ result }}
+                <button (click)="cambiarContenido('boton1')">Main cast</button>
+                <button (click)="cambiarContenido('boton2')">Critics</button>
+                <button (click)="cambiarContenido('boton3')">Did you know...?</button>
+
+                <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
+                    <div class="col-lg-3 text-center" *ngFor="let item of actor">
+                        <img class="imgMainCast" [src]="item.photo" alt=""><br>
+                        <p class="namesMainCast">{{item.name}}
+                         {{item.lastName}}</p>
+                    </div><br>
+                </div>
+
+                <div class="result" *ngIf="contenidoActual === 'boton2'">
+                    <div class="col-lg-3" *ngFor="let item of reviews">
+                        <p class="namesMainCast">{{item.text}}</p>
+                    </div>
+                </div>
+
+                <div class="result" *ngIf="contenidoActual === 'boton3'">
+                <p>Contenido del botón 3</p>
+                </div>
+            </div>
+
+
         </div>
     </div>
 

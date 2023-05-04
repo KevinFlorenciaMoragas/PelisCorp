@@ -1,6 +1,4 @@
 
-
-
 @media(max-width:2000px) {
     .container{
         border: 2px solid rgba(0, 0, 0, 0.678);
@@ -126,6 +124,30 @@
       border: 1px solid rgb(0, 0, 0);
 
   }
+  .result{
+    background-color: #583c654b;
+  }
+  button{
+    background-color: #583c65d7;
+    font-size: 20px;
+    border: transparent;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    padding-top: 10px;
+  }
+  button:hover{
+    background-color: #583c654b;
+  }
+  .imgMainCast{
+    border-radius: 50%;
+    width: 15em;
+    padding: 30px;
+  }
+  .namesMainCast{
+    color: white;
+    font-size: 25px;
+  }
 }
 
 
@@ -246,6 +268,7 @@
       border: 1px solid rgb(0, 0, 0);
 
   }
+
 
 }
 
