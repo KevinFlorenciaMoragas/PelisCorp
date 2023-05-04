@@ -1,7 +1,7 @@
 <body class="bg d-flex justify-content-center align-items-center vh-100">
   <div
     class="bgSecond p-5 text-secondary shadow d-flex flex-column align-items-center justify-content-between"
-    style="width: 78rem"
+
   >
     <div class="d-flex align-items-start">
       <img
@@ -44,7 +44,7 @@
     </div>
     <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
     <div class="rectangulo">
-      <h2 style="color: aliceblue; margin-left: 85px; margin-top: 10px">
+      <h2 id="favourites" >
         Favourites<b
           ><i class="fas fa-star" style="color: yellow">&#9733;</i></b
         >
@@ -54,80 +54,11 @@
           class="row text-white justify-content-center"
           *ngFor="let item of movies"
         >
-          <div class="col-md-4 col-lg-12 col-sm-4 col-6 p-3">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-12 p-3">
             <div class="caja zoom">
               <img id="imagenes" class="img-fluid" [src]="item.photo" />
               <p>{{ item.movieName }}</p>
               <p>Chris Miller</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Chris Miller</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Christopher Nolan</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Chris Miller</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Quentin Tarantino</p>
               <button id="boton" class="btn btn-primary mb-3">
                 Información
               </button>
@@ -136,11 +67,11 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
 
   <div class="row result text-center" *ngIf="contenidoActual === 'boton2'">
     <div class="rectangulo">
-      <h2 style="color: aliceblue; margin-left: 85px; margin-top: 10px">
+      <h2 id="recomends" >
         Recomends<b
           ><i class="fas fa-star" style="color: yellow">&#9733;</i></b
         >
@@ -150,80 +81,11 @@
           class="row text-white justify-content-center"
           *ngFor="let item of movies"
         >
-          <div class="col-md-4 col-lg-12 col-sm-4 col-6 p-3">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-12 p-3">
             <div class="caja zoom">
               <img id="imagenes" class="img-fluid" [src]="item.photo" />
               <p>{{ item.movieName }}</p>
               <p>Chris Miller</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Chris Miller</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Christopher Nolan</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Chris Miller</p>
-              <button id="boton" class="btn btn-primary mb-3">
-                Información
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="caja" class="d-flex align-items-center justify-content-center">
-        <div
-          class="row text-white justify-content-center"
-          *ngFor="let item of movies"
-        >
-          <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom">
-              <img id="imagenes" class="img-fluid" [src]="item.photo" />
-              <p>{{ item.movieName }}</p>
-              <p>Quentin Tarantino</p>
               <button id="boton" class="btn btn-primary mb-3">
                 Información
               </button>
@@ -233,9 +95,10 @@
       </div>
     </div>
   </div>
+
   <div class="row result text-center" *ngIf="contenidoActual === 'boton3'">
     <div class="rectangulo">
-      <h2 style="color: aliceblue; margin-left: 85px; margin-top: 10px">
+      <h2 id="reviews">
         Your reviews<b
           ><i class="fas fa-star" style="color: yellow">&#9733;</i></b
         >

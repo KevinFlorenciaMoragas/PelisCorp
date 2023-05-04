@@ -1,41 +1,60 @@
-.bg{
+/* Estilos para pantallas grandes */
+.bg {
+  background: url(../../../assets/img/wallpaper_def.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#favourites {
+  color: aliceblue;
+  margin-left: 85px;
+  margin-top: 10px;
+}
+#recomends {
+  color: aliceblue;
+  margin-left: 85px;
+  margin-top: 10px;
+}
+#reviews {
+  color: aliceblue;
+  margin-left: 85px;
+  margin-top: 10px;
+}
+.bgSecond {
+  background-color: rgb(153, 112, 170);
+  height: 90%;
+  border-radius: none;
+  width: 78rem
+}
 
-	background:url(../../../assets/img/wallpaper_def.png);
-	background-size: cover;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.bgSecond{
-    background-color:rgb(153, 112, 170);
-    height: 90%;
-    border-radius: none;
-}
-#imgPerfil{
+#imgPerfil {
   border-radius: 50%;
 }
+
 .boton {
   background-color: rgb(228, 197, 96);
   color: rgb(7, 7, 7);
   width: 12em;
   margin-left: 0.5em;
   border: solid;
-  border-color:rgb(206, 179, 91);
+  border-color: rgb(206, 179, 91);
   font-size: large;
-
 }
-.boton:hover{
+
+.boton:hover {
   background-color: #e2673a65;
   cursor: pointer;
 }
+
 .rectangulo {
   width: 65em;
   height: 37em;
   background-color: rgba(81, 40, 109, 0.452);
   clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
-
 }
-#imagenes{
+
+#imagenes {
   width: 10em;
 }
 
@@ -45,9 +64,84 @@
   width: 7em;
   border: none;
 }
+
 .caja img {
   margin-top: 4em;
   width: 15em;
   height: 15em;
+}
 
+/* Estilos para pantallas medianas */
+@media only screen and (max-width: 768px) {
+  .bg {
+    height: 90vh;
+  }
+
+  .rectangulo {
+    width: 10em;
+    height: 10em;
+    background-color: rgba(81, 40, 109, 0.452);
+    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
+  }
+  .bgSecond {
+    height: 100%;
+    border-radius: 1em;
+    width: 30rem;
+  }
+
+  .boton {
+    width: 7em;
+    margin-left: 0.2em;
+    font-size: medium;
+  }
+
+  .rectangulo {
+    width: 100%;
+    height: 100%;
+    clip-path: none;
+  }
+
+  #imagenes {
+    width: 6em;
+  }
+
+  .caja img {
+    width: 40px;
+    height: 10em;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 480px) {
+  .bg {
+    height: auto;
+    padding: 1em;
+  }
+
+  .bgSecond {
+    height: 60%;
+    border-radius: 0.5em;
+  }
+
+  .boton {
+    width: 8em;
+    margin-left: 0.2em;
+    font-size: small;
+  }
+
+  .rectangulo {
+    width: 100%;
+    height: auto;
+    clip-path: none;
+  }
+
+  #imagenes {
+    width: 6em;
+  }
+
+  .caja img {
+    width: 8em;
+    height: 8em;
+
+  }
 }
