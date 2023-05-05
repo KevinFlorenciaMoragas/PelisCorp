@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { HeaderComponent } from './header/header/header.component';
 import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
+
 import { FilmViewComponent } from './film-view/film-view.component';
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'films', component: FilmsComponent},
   {path:'series', component: FilmViewComponent},
   {path:'carousel', component: PrincipalComponent},
+  {path:'principal/film-view/:id', component: FilmViewComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 

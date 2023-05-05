@@ -1,8 +1,37 @@
+/* CSS DEL CAROUSEL */
+.container {
+  position: relative;
+}
+
+.imgCarousel {
+  width:200px;
+  height: 300px;
+}
+
+
+.carousel-item {
+  margin-bottom: 2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+
 #padrino {
   width: 30em;
   height: auto;
 }
 
+.carousel-container {
+  width: 1800px;
+  height: 400px;
+  
+}
 #boton {
   background-color: rgb(153, 112, 170);
   color: white;

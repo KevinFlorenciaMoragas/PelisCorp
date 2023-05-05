@@ -4,32 +4,28 @@
         <div class="row wallpaperView">
             <div class="d-lg-block col-lg-6  d-sm-none d-none imageView">
                 <h1>
-                    <ul *ngFor="let item of movies">
-                        <a>{{item.movieName}}</a>
-                    </ul>
+                    {{movie.movieName}}
                 </h1>
                 <br>
-                <ul *ngFor="let item of movies">
-                    <img class="imgSize" [src]="item.photo" alt="">
-                </ul>
+
             </div>
             <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
                 <div class="featured-text text-center">
                     <h2>Genero</h2>
-                    <p class="txt">
-                    <ul *ngFor="let item of genres">
+                    <ul class="txt" *ngFor="let item of genres">
                         <a>{{item.genre}}</a>
                     </ul>
                 </div>
                 <hr>
                 <div class="featured-text text-center">
                     <h2>Director</h2>
-                    <p class="txt">Michael B. Jordan</p>
                 </div>
                 <hr>
                 <div class="featured-text text-center">
                     <h2>Guíon</h2>
-                    <p class="txt">Keenan Coogler, Zach Baylin, Ryan Coogler</p>
+                    <div class="txt">
+
+                </div>
                 </div>
                 <hr>
                 <div class="featured-text text-center">
@@ -68,17 +64,17 @@
                 <button (click)="cambiarContenido('boton3')">Did you know...?</button>
 
                 <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
-                    <div class="col-lg-3 text-center" *ngFor="let item of actor">
+                    <!-- <div class="col-lg-3 text-center" *ngFor="let item of actor">
                         <img class="imgMainCast" [src]="item.photo" alt=""><br>
                         <p class="namesMainCast">{{item.name}}
                          {{item.lastName}}</p>
-                    </div><br>
+                    </div><br> -->
                 </div>
 
                 <div class="result" *ngIf="contenidoActual === 'boton2'">
-                    <div class="col-lg-3" *ngFor="let item of reviews">
+                    <!-- <div class="col-lg-3" *ngFor="let item of reviews">
                         <p class="namesMainCast">{{item.text}}</p>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="result" *ngIf="contenidoActual === 'boton3'">

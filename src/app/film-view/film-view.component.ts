@@ -5,9 +5,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
-import { Actor } from '../interfaces/interfaces/interfaces.component';
-import { MovieReview } from '../interfaces/interfaces/interfaces.component';
-import { Reviews } from '../interfaces/interfaces/interfaces.component';
+import { Actor, Director, Reviews, MovieReview, Screenwritter } from '../interfaces/interfaces/interfaces.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-film-view',
@@ -15,56 +14,39 @@ import { Reviews } from '../interfaces/interfaces/interfaces.component';
   styleUrls: ['./film-view.component.css']
 })
 export class FilmViewComponent {
-  constructor(private http: MoviesService) { }
-  movies: Movies[] = []
-  genres: Genre[] = []
-  actor: Actor[] = []
-  movieReview: MovieReview[] = []
-  reviews: Reviews[] = []
+  constructor(private http: MoviesService, private route: ActivatedRoute) {
 
-  ngOnInit() {
-    this.getAllMovies(),
-    this.getAllGenres(),
-    this.getAllActor(),
-    this.getAllMovieReview()
-  }
-  getAllMovies() {
-    this.http.listAllMovies().subscribe(data => {
-      console.log(data)
-      this.movies = data as Movies[]
-      console.log(this.movies)
-    })
-  }
-  
-  getAllGenres() {
-    this.http.listAllGenres().subscribe(data => {
-      console.log(data)
-      this.genres = data as Genre[]
-      console.log(this.genres)
-    })
-  }
-
-  getAllActor() {
-    this.http.listAllActor().subscribe(data => {
-      console.log(data)
-      this.actor = data as Actor[]
-      console.log(this.actor)
-    })
-  }
-  getAllMovieReview() {
-    this.http.listAllMovieReview().subscribe(data => {
-      console.log(data)
-      this.movieReview = data as MovieReview[]
-      console.log(this.movieReview)
-    })
-  }
-  getAllReviews() {
-    this.http.listAllReview().subscribe(data => {
-      console.log(data)
-      this.reviews = data as Reviews[]
-      console.log(this.reviews)
-    })
-  }
+  } 
+  movie: Movies = { 
+   id: 0, movieName: '', 
+   releaseDate: new Date(), 
+   plot: '', duration: 0, 
+   income: 0, 
+   score: 0, 
+   photo: '', 
+   favorites: [], 
+   director: [], 
+   actors: [], 
+   genres: [], 
+   awards: [], 
+   reviews: [], 
+   screenwritters: [] 
+ } 
+ genres: Genre[] = [] 
+ movieId: any 
+ id: any 
+ 
+ ngOnInit() {
+   console.log("Estoy en ngOnInit") 
+   const movieIdParam = this.route.snapshot.paramMap.get('id'); console.log(movieIdParam) 
+   if (movieIdParam !== null) { 
+     this.id = +movieIdParam; 
+     console.log(this.id) 
+   } 
+   this.http.getMovieById(this.id).subscribe(data => { 
+     this.movie = data; }) 
+     //this.getAllMovies(), // this.getAllGenres() }
+   }
 
 
   contenidoActual: string = '';

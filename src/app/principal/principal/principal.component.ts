@@ -14,20 +14,28 @@ export class PrincipalComponent implements OnInit{
 
   constructor(private http: MoviesService) { }
 
-  movies: any[] = [
-    {
-      photo:'../../../assets/img/interestelar.jpg',
-    },
-    {
-      photo:'../../../assets/img/interestelar.jpg',
-    }
-  ]
+  // firstImages = [
+  //   { url: 'https://via.placeholder.com/200x300/ff0000', alt: 'Imagen 1' },
+  //   { url: 'https://via.placeholder.com/200x300/00ff00', alt: 'Imagen 2' },
+  //   { url: 'https://via.placeholder.com/200x300/0000ff', alt: 'Imagen 3' },
+  //   { url: 'https://via.placeholder.com/200x300/ffff00', alt: 'Imagen 4' },
+  //   { url: 'https://via.placeholder.com/200x300/ff00ff', alt: 'Imagen 5' },
+  //   { url: 'https://via.placeholder.com/200x300/00ffff', alt: 'Imagen 6' },
+  //   { url: 'https://via.placeholder.com/200x300/ff0000', alt: 'Imagen 7' },
+  //   { url: 'https://via.placeholder.com/200x300/00ff00', alt: 'Imagen 8' },
+  //   { url: 'https://via.placeholder.com/200x300/0000ff', alt: 'Imagen 9' },
+  //   { url: 'https://via.placeholder.com/200x300/ffff00', alt: 'Imagen 10' },
+  // ];
+
+  // showFirstImages = true;
+
+  movies: Movies[] = []
 
   ngOnInit(){
-    
+    this.getAllMovies()
   }
+ 
 
-  /*
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
       console.log(data)
@@ -40,7 +48,7 @@ export class PrincipalComponent implements OnInit{
     this.http.listAllMovies().subscribe((data: any[]) => {
       this.movies = data;
     });
-  }*/
+  }
 
 
 
