@@ -9,17 +9,20 @@ import { Actor } from '../../../app/interfaces/interfaces/interfaces.component';
 import { MovieReview } from '../../../app/interfaces/interfaces/interfaces.component';
 import { Reviews } from '../../../app/interfaces/interfaces/interfaces.component';
 @Component({
+
   selector: 'app-comunity',
   templateUrl: './comunity.component.html',
   styleUrls: ['./comunity.component.css']
 })
 export class ComunityComponent {
+
   constructor(private http: MoviesService) { }
   movies: Movies[] = []
   genres: Genre[] = []
   actor: Actor[] = []
   movieReview: MovieReview[] = []
   reviews: Reviews[] = []
+
 
   ngOnInit() {
     this.getAllMovies(),

@@ -2,18 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators, FormArray } from '@angular/forms';
 import { Service } from 'src/app/services/service.service';
 import { CookieService } from 'ngx-cookie-service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   ngOnInit(): void {
-      
+
   }
   constructor(private http:Service, private cookieService: CookieService) { }
 
-  
+
+
   userLogin(){
     this.http.login(this.loginForm.value).subscribe(data =>{
       console.log(data)
