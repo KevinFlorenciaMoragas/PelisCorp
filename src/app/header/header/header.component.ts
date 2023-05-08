@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   usernameLocalStorage = localStorage.getItem('username')
-  rolLocalStorage = localStorage.getItem('rol')
+
 }
