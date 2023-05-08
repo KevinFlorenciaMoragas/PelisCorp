@@ -15,11 +15,16 @@ export class FilmsComponent implements OnInit {
   getAllMovies() {
 
   let url : string = "http://localhost:8080/movies"
-  this.http.get(url).subscribe(data => {
+  this.http.listAllMovies().subscribe(data => {
     console.log(data)
     this.movies = data as Movies[]
     console.log(this.movies)
   })
+  /*this.http.get(url).subscribe(data => {
+    console.log(data)
+    this.movies = data as Movies[]
+    console.log(this.movies)
+  })*/
 }
 ngOnInit() {
   this.getAllMovies()
