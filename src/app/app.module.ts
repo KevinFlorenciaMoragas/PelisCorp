@@ -18,6 +18,7 @@ import { Service } from './services/service.service';
 import { InterfacesComponent } from './interfaces/interfaces.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { ComunityComponent } from './comunity/comunity/comunity.component';
+import { SeriesComponent } from './list/series/series.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ComunityComponent } from './comunity/comunity/comunity.component';
     FilmViewComponent,
     InterfacesComponent,
     FooterComponent,
-    ComunityComponent
+    ComunityComponent,
+    SeriesComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { ComunityComponent } from './comunity/comunity/comunity.component';
+import { SeriesComponent } from './list/series/series.component';
 const routes: Routes = [
   { path: 'comunity', component: ComunityComponent },
   { path: 'login', component: LoginComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'principal', component: PrincipalComponent },
   { path: 'films', component: FilmsComponent },
-  { path: 'series', component: FilmViewComponent },
+  { path: 'series', component: SeriesComponent },
+  { path: 'view', component: FilmViewComponent },
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
 ];
 
