@@ -11,6 +11,8 @@ import { ComunityComponent } from './comunity/comunity/comunity.component';
 import { SeriesComponent } from './list/series/series.component';
 const routes: Routes = [
   { path: 'comunity', component: ComunityComponent },
+  { path: 'comunity/view', component: FilmViewComponent },
+  { path: 'principal/view', component: FilmViewComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'footer', component: FooterComponent },
@@ -18,7 +20,7 @@ const routes: Routes = [
   { path: 'principal', component: PrincipalComponent },
   { path: 'films', component: FilmsComponent },
   { path: 'series', component: SeriesComponent },
-  { path: 'view', component: FilmViewComponent },
+
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
 ];
 
