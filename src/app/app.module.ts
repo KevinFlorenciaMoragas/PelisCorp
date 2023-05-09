@@ -18,6 +18,7 @@ import { Service } from './services/service.service';
 import { InterfacesComponent } from './interfaces/interfaces.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { PrivacyComponent } from './privacy/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProfileComponent } from './user/profile/profile.component';
     FilmViewComponent,
     InterfacesComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

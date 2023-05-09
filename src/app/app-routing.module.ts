@@ -8,6 +8,7 @@ import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { PrivacyComponent } from './privacy/privacy/privacy.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'films', component: FilmsComponent},
   {path:'series', component: FilmViewComponent},
   {path:'profileUser', component: ProfileComponent},
+  {path:'privacy', component: PrivacyComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 
