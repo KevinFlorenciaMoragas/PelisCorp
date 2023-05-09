@@ -8,9 +8,9 @@
     <title>FilmCorp</title>
 </head>
 
-    <body class="p-1 m-0 fixed-top" id="mainNav">
+    <body class="m-0 fixed-top" id="mainNav">
         
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" [ngClass]="{'navbar-scrolled': isScrolled}">
             <img class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/img/logo.png">
           <div class="container-fluid">
             <a id="title" class="navbar-brand" [routerLink]= "['principal']">FilmCorp</a>

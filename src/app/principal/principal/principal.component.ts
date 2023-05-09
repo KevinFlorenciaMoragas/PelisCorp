@@ -2,37 +2,44 @@ import { Component } from '@angular/core';
 import { Movies } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'; 
+import { Observable, from } from 'rxjs'; 
 import { OnInit } from '@angular/core';
+import { CarouselConfig } from 'ngx-bootstrap/carousel';
+
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'],
+  providers: [
+    { provide: CarouselConfig, useValue: { interval: 5000, noPause: true, showIndicators: false } }
+  ]
+  
 })
 
 export class PrincipalComponent implements OnInit{
 
   constructor(private http: MoviesService) { }
 
-  // firstImages = [
-  //   { url: 'https://via.placeholder.com/200x300/ff0000', alt: 'Imagen 1' },
-  //   { url: 'https://via.placeholder.com/200x300/00ff00', alt: 'Imagen 2' },
-  //   { url: 'https://via.placeholder.com/200x300/0000ff', alt: 'Imagen 3' },
-  //   { url: 'https://via.placeholder.com/200x300/ffff00', alt: 'Imagen 4' },
-  //   { url: 'https://via.placeholder.com/200x300/ff00ff', alt: 'Imagen 5' },
-  //   { url: 'https://via.placeholder.com/200x300/00ffff', alt: 'Imagen 6' },
-  //   { url: 'https://via.placeholder.com/200x300/ff0000', alt: 'Imagen 7' },
-  //   { url: 'https://via.placeholder.com/200x300/00ff00', alt: 'Imagen 8' },
-  //   { url: 'https://via.placeholder.com/200x300/0000ff', alt: 'Imagen 9' },
-  //   { url: 'https://via.placeholder.com/200x300/ffff00', alt: 'Imagen 10' },
-  // ];
-
-  // showFirstImages = true;
-
+  carouselImg: any[] =[
+    {img: '../../../assets/img/creedCarousel.jpg', movieName:'Creed III'},
+    {img: '../../../assets/img/padrinoCarousel.jpg', movieName:'The Godfather'},
+    {img: '../../../assets/img/geatoCarousel.jpg', movieName:'Puss in Boots'},
+    {img: '../../../assets/img/bearCarousel.jpg', movieName:'Cocaine bear'},
+    {img: '../../../assets/img/pulpCarousel.jpg', movieName:'Pulp Fiction'},
+    {img: '../../../assets/img/pearlCarousel.jpg', movieName:'Pearl Harbor'},
+  ];
   movies: Movies[] = []
+  displayedMovies: any[] = [];
+  showLoadMoreButton: boolean = true;
+  showLoadLessButton: boolean = false;
+  initialLoad = true;
+  showAllMovies: boolean = false;
+
 
   ngOnInit(){
     this.getAllMovies()
+    this.displayedMovies = this.movies.slice(0, 3);
+    this.initialLoad = false;
   }
  
 
@@ -50,6 +57,31 @@ export class PrincipalComponent implements OnInit{
     });
   }
 
+  loadMore() {
+    const startIndex = this.displayedMovies.length;
+    const endIndex = startIndex + 3;
+    this.displayedMovies = this.displayedMovies.concat(this.movies.slice(startIndex, endIndex));
+    if (endIndex >= this.movies.length) {
+      this.showLoadMoreButton = false;
+      this.showLoadLessButton = true;
+    }
+    this.showAllMovies = true;
+  }
+
+  loadLess() {
+    this.displayedMovies = this.movies.slice(0, 3);
+    this.showLoadMoreButton = true;
+    this.showLoadLessButton = false;
+  }
+
+
+
+
+  // showAllMovies() {
+  //   this.displayedMovies = this.movies;
+  //   this.showLoadMoreButton = false;
+  // }
+  
 
 
 }

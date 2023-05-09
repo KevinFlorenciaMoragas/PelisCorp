@@ -1,71 +1,74 @@
 <div class="masthead">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 col-md-8 col-12 welcome"> <br /> <br />
+            <div class="col-lg-7 col-md-8 col-12 welcome"><br><br>
                 <h1 id="index-text">Welcome to FilmCorp</h1>
-                <div id="trailer"> <img src="../../../assets/img/trailerAnt.jpg" width="80%" height="auto" />
-                    <div id="textTrailer">
-                        <h3 id="index-sub">Ant-Man & Wasp: Quantumania</h3>
-                        <div class="col-lg-9 col-12">
-                            <p> Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-                            </p>
-                        </div>
-                    </div>
-                    <div *ngFor="let movie of movies"> 
-                        <button [routerLink]="['film-view',movie.id]"> {{movie.id}}
-                            {{movie.movieName}} </button> </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-12">
-                <h2 id="index-subtext" class="destacadas">Destacadas</h2>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-6">
-                        <div class="card mb-2">
-                            <div class="row g-0">
-                                <div class="col-md-5 col-12"> <img src="../../../assets/img/bear.jpg"
-                                        class="img-fluid rounded-start" alt="..." /> </div>
-                                <div class="col-md-7 col-12">
-                                    <div class="card-body" style="text-align: center">
-                                        <h5 class="card-title">Cocain Bear</h5> <button type="button"
-                                            class="btn">Más</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-6">
-                        <div class="card mb-2">
-                            <div class="row g-0">
-                                <div class="col-md-5 col-12"> <img src="../../../assets/img/gato.jpg"
-                                        class="img-fluid rounded-start" alt="..." /> </div>
-                                <div class="col-md-7 col-12">
-                                    <div class="card-body" style="text-align: center">
-                                        <h5 class="card-title">El gato con botas</h5> <button type="button"
-                                            class="btn">Más</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="background-color: rgb(88, 60, 101)">
-            <h2 style="color: aliceblue">The most popular</h2>
-            <div class="col-lg-12 col-md-4 col-sm-4 col-6">
                 <div class="carousel text-center">
-                    <carousel [itemsPerSlide]="3" [interval]="5000" [noWrap]="true" [showIndicators]="false">
-                        <slide *ngFor="let image of movies">
-                            <img class="imgCarousel" [src]="image.photo" [alt]="image.photo">
-                            <div class="card-body" *ngFor="let info of movies">
-                                <!-- <h5 class="card-title" style="color: aliceblue">{{image.movieName}}</h5> 
-                                <button id="boton" class="btn btn-primary mb-3">MORE</button>-->
+                    <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
+                        [noPause]="true">
+                        <slide *ngFor="let carouselImg of carouselImg">
+                            <img class="starterImg" [src]="carouselImg.img" style="object-fit: cover;">
+                            <div class="card-body">
+                                <h5 id="bgNameCarousel" class="cardTitle">{{carouselImg.movieName}}</h5>
                             </div>
                         </slide>
                     </carousel>
+                </div>
+            </div>
+            <div class="col-lg-5 options">
+                <h1 id="index-text">We recommend you...</h1>
+                <button class="buttonFeatured w-100">Top Films</button>
+                <button class="buttonFeatured w-100">Top Series</button>
+                <button class="buttonFeatured w-100">Most Popular</button>
+                <button class="buttonFeatured w-100">Most Interesting</button>
+            </div>
+
+
+            <h1 id="subtitleFreatured">Featured</h1>
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
+                    <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img [src]="movie.photo" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div id="bgCard" class="col-md-8">
+                                <div class="card-body">
+                                    <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
+                                    <p id="colorLetterCard" class="card-text">{{movie.description}}</p>
+                                    <p class="card-text"><small id="colorLetterCard">Last updated 3 mins ago</small></p>
+                                    <button class="cardInfoButton" [routerLink]="['film-view',movie.id]">More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="buttonFeatured" *ngIf="showLoadMoreButton" (click)="loadMore()">Show more</button>
+            <button class="buttonFeatured" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
+        </div>
+    </div>
+
+<div  id="rest">
+    <div class="container">
+        <div class="bgSecondSlice row" style="background-color: rgb(88, 60, 101)">
+            <h2 id="index-textSlice">The most popular</h2>
+            <div class="col-lg-12 col-md-4 col-sm-4 col-6">
+                <div class="carousel text-center">
+                    <carousel [itemsPerSlide]="1" [interval]="5000" [noWrap]="true" [showIndicators]="false">
+                        <slide *ngFor="let image of movies">
+                            <img class="imgCarousel" [src]="image.photo" [alt]="image.photo">
+                            <div class="card-body">
+                            <h5 class="card-title" style="color: aliceblue">{{image.movieName}}</h5> 
+                              <button id="buttonCarousel" class="btn mb-3">MORE</button>
+                            </div>
+                        </slide>
+                    </carousel>
+                    <!-- <ngb-carousel> 
+                        <ng-template ngbSlide *ngFor="let pelicula of movies"> <img
+                                src="{{ pelicula.photo }}" alt="Random slide" class="img-fluid d-block" />
+                        </ng-template> 
+                    </ngb-carousel> -->
 
                     <ng-template #customPrevArrow>
                         <button class="btn btn-primary carousel-control-prev">
@@ -82,6 +85,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="container">
