@@ -18,6 +18,10 @@ export class RegisterComponent implements OnInit {
   postUser(){
     this.http.registerUser(this.registerForm.value).subscribe(data =>{
       console.log(data)
+      // this.http.login(this.registerForm.value).subscribe(data =>{
+      //   console.log(data)
+      // } 
+      // )
     })
   }
  
@@ -31,5 +35,6 @@ export class RegisterComponent implements OnInit {
     username: this.username,
     email: this.email,
     password: this.password,
+    repeatPassword: this.repeatPassword
 })
 }

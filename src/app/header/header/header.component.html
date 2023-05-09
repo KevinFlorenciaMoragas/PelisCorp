@@ -33,9 +33,10 @@
                     <a id="navLinks" class="nav-link active" href="#">Community</a>
                 </li>
                 <li class="nav-item">
-                    <a id="navLinks" class="nav-link active" href="#">Support</a>
+                    <a id="navLinks" class="nav-link active" [routerLink]="['aboutus']">Sobre Nosotros</a>
                 </li>
                 <li>
+                  
                     <div class="d-lg-none d-sm-block d-block">
                         <button class="btn ml-auto" id="log" [routerLink]= "['login']">Log In</button>
                         <button class="btn ml-2" id="sign" mat-menu-item [routerLink]= "['register']">Sign Up</button>

@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 export class InterfacesComponent {
 
 }
+export interface Credentials {
+  username: string;
+  password: string;
+}
 export interface Movies {
   id: number;
   movieName: string;
