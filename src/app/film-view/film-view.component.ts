@@ -6,9 +6,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
-import { Actor, Director, Reviews, MovieReview, Screenwritter } from '../interfaces/interfaces/interfaces.component';
 import { ActivatedRoute } from '@angular/router';
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-film-view',
@@ -17,55 +16,50 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class FilmViewComponent {
-  constructor(private http: MoviesService, private route: ActivatedRoute) {
+  constructor(private http: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
 
   }
+  movieArray: any
   movie: Movies = {
-    id: 0, 
+    id: 0,
     movieName: '',
     releaseDate: new Date(),
     plot: '',
     duration: 0,
     income: 0,
     score: 0,
-    photo: '',
+    poster: [],
+    trailer: '',
     favorites: [],
     director: [],
     actors: [],
-    genres: [],
+    genre: [],
     awards: [],
     reviews: [],
-    screenwritters: []
+    screenwritter: []
   }
+  moviePrueba: Movies [] = []
   genres: Genre[] = []
   movieId: any
   id: any
-  formatDate() {
-    // this.movie.releaseDate = new Date(this.movie.releaseDate).getFullYear()
-
-  }
+  trailer : any
   ngOnInit() {
     console.log("Estoy en ngOnInit")
-    const movieIdParam = this.route.snapshot.paramMap.get('id'); console.log(movieIdParam)
+    const movieIdParam = this.route.snapshot.paramMap.get('id');
     if (movieIdParam !== null) {
       this.id = +movieIdParam;
-      console.log(this.id)
     }
     this.http.getMovieById(this.id).subscribe(data => {
-      this.movie = data;
+      this.movie = data.movie;
+    //  this.movieArray = Array.from(this.movie)
+
+     console.log(data.movie)
     })
-    //this.getAllMovies(), // this.getAllGenres() }
+    this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailer)
   }
-
-
   contenidoActual: string = '';
-
   cambiarContenido(boton: string) {
     this.contenidoActual = boton;
   }
-
-
-
-
 
 }

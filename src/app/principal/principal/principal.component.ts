@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Movies } from 'src/app/interfaces/interfaces/interfaces.component';
+import { Movies } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

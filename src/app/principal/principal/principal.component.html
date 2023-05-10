@@ -61,7 +61,7 @@
                 <div class="carousel text-center">
                     <carousel [itemsPerSlide]="3" [interval]="5000" [noWrap]="true" [showIndicators]="false">
                         <slide *ngFor="let image of movies">
-                            <img class="imgCarousel" [src]="image.photo" [alt]="image.photo">
+                            <img class="imgCarousel" [src]="image.poster" [alt]="image.poster">
                             <div class="card-body" *ngFor="let info of movies">
                                 <!-- <h5 class="card-title" style="color: aliceblue">{{image.movieName}}</h5> 
                                 <button id="boton" class="btn btn-primary mb-3">MORE</button>-->

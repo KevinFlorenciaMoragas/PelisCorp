@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { Movies } from '../interfaces/interfaces.component';
 
 @Injectable({
   providedIn: 'root'
