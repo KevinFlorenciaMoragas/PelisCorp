@@ -12,4 +12,5 @@ export class FooterComponent {
     const now = new Date();
     return now.getFullYear();
   }
+
 }

@@ -1,18 +1,22 @@
+
+
 <div class="masthead">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-8 col-12 welcome"><br><br>
                 <h1 id="index-text">Welcome to FilmCorp</h1>
-                <div class="carousel text-center">
-                    <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
-                        [noPause]="true">
-                        <slide *ngFor="let carouselImg of carouselImg">
-                            <img class="starterImg" [src]="carouselImg.img" style="object-fit: cover;">
-                            <div class="card-body">
-                                <h5 id="bgNameCarousel" class="cardTitle">{{carouselImg.movieName}}</h5>
-                            </div>
-                        </slide>
-                    </carousel>
+                <div id="trailer"> <img src="../../../assets/img/trailerAnt.jpg" width="80%" height="auto" />
+                    <div id="textTrailer">
+                        <h3 id="index-sub">Ant-Man & Wasp: Quantumania</h3>
+                        <div class="col-lg-9 col-12">
+                            <p> Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                            </p>
+                        </div>
+                    </div>
+                    <div *ngFor="let movie of movies"> 
+                        <button [routerLink]="['film-view',movie.id]"> {{movie.id}}
+                            {{movie.movieName}} </button> </div>
                 </div>
             </div>
             <div class="col-lg-5 options">
