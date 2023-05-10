@@ -19,11 +19,9 @@
                 <h1 id="index-text">We recommend you...</h1>
                 <button class="buttonFeatured w-100">Top Films</button>
                 <button class="buttonFeatured w-100">Top Series</button>
-                <button class="buttonFeatured w-100">Most Popular</button>
-                <button class="buttonFeatured w-100">Most Interesting</button>
+                <button class="buttonFeatured w-100" >Most Popular</button>
+                <button class="buttonFeatured w-100" href="">Most Interesting</button>
             </div>
-
-
             <h1 id="subtitleFreatured">Featured</h1>
             <div class="d-flex justify-content-center row">
                 <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
@@ -49,13 +47,13 @@
         </div>
     </div>
 
-<div  id="rest">
+<div id="rest">
     <div class="container">
         <div class="bgSecondSlice row" style="background-color: rgb(88, 60, 101)">
             <h2 id="index-textSlice">The most popular</h2>
             <div class="col-lg-12 col-md-4 col-sm-4 col-6">
                 <div class="carousel text-center">
-                    <carousel [itemsPerSlide]="1" [interval]="5000" [noWrap]="true" [showIndicators]="false">
+                    <carousel [itemsPerSlide]="3" [interval]="5000" [noWrap]="true" [showIndicators]="false">
                         <slide *ngFor="let image of movies">
                             <img class="imgCarousel" [src]="image.photo" [alt]="image.photo">
                             <div class="card-body">

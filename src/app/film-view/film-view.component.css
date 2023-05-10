@@ -1,11 +1,19 @@
+.fondo {
+    background-color: #93819b;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+
+body{
+    background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+  }
+
 
 @media(max-width:2000px) {
     .container{
         border: 2px solid rgba(0, 0, 0, 0.678);
     }
-    .wallpaperView {
-        background-color: rgb(88, 60, 101, 0.534);
-    }
+
     .imageView{
         padding-top: 5em;
     }
@@ -17,18 +25,14 @@
         width: 21em;
         box-shadow: 1px 20px 20px rgb(0, 0, 0);
     }
-    body{
-    background-color: rgba(88, 60, 101, 0.247);
-    }
-
     .txtInf,
     .txtMid {
         padding-top: 8rem;
         height: 680px;
  
     }
-
-    #txt, .txt {
+    #txt, 
+    .txt {
         font-size: 20px;
         color: white;
         background-color: rgba(88, 60, 101, 0.411);
@@ -38,121 +42,103 @@
         border-bottom-right-radius: 50px;
         border: 1px solid black;
     }
-
     h1 {
         font-size: 48px;
     }
-
     h2,
     h1 {
-
         color: white;
     }
-
     .featured-text {
         margin-left: 20px;
         padding: 4px;
         border-left: 0.7rem solid #EEC24F;
         border-radius: 0.5rem;
     }
-
     #trailer{
         background: rgb(88,60,101);
         background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
         border: 1px solid rgb(0, 0, 0);
 
     }
-  .container{
+    .container{
       border: 2px solid black;
-  }
-  .wallpaperView {
+    }
+    .wallpaperView {
       background-color: rgb(88, 60, 101, 0.534);
-  }
-  .imageView{
+    }
+    .imageView{
       padding-top: 5em;
-  }
-  .imageView, #trailerTitle {
+    }
+    .imageView, #trailerTitle {
       text-align: center;
-
-  }
-  .imgSize {
+    }
+    .imgSize {
       width: 21em;
       box-shadow: 1px 20px 20px rgb(0, 0, 0);
-  }
-  body{
-  background-color: rgba(88, 60, 101, 0.247);
-  }
-
-  .txtInf,
-  .txtMid {
-      padding-top: 8rem;
-      height: 680px;
-
-  }
-
-  #txt, .txt {
-      font-size: 20px;
-      color: white;
-      background-color: rgba(88, 60, 101, 0.411);
-      margin: 5px;
-      padding: 8px;
-      border-top-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-      border: 1px solid black;
-  }
-
-  h1 {
-      font-size: 48px;
-  }
-
-  h2,
-  h1 {
-
-      color: white;
-  }
-
-  .featured-text {
-      margin-left: 20px;
-      padding: 4px;
-      border-left: 0.7rem solid #EEC24F;
-      border-radius: 0.5rem;
-  }
-
-  #trailer{
-      background: rgb(88,60,101);
-      background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
-      border: 1px solid rgb(0, 0, 0);
-
-  }
-  .result{
-    background-color: #583c654b;
-  }
-  button{
-    background-color: #583c65d7;
-    font-size: 20px;
-    border: transparent;
-    padding-left: 30px;
-    padding-right: 30px;
-    color: white;
-    padding-top: 10px;
-  }
-  button:hover{
-    background-color: #583c654b;
-  }
-  .imgMainCast{
-    border-radius: 50%;
-    width: 15em;
-    padding: 30px;
-  }
-  .namesMainCast{
-    color: white;
-    font-size: 25px;
-  }
+    }
+    body{
+    background-color: rgba(88, 60, 101, 0.247);
+    }
+    .txtInf,
+    .txtMid {
+        padding-top: 8rem;
+        height: 680px;
+    }
+    #txt, 
+    .txt {
+        font-size: 20px;
+        color: white;
+        background-color: rgba(88, 60, 101, 0.411);
+        margin: 5px;
+        padding: 8px;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border: 1px solid black;
+    }
+    h1 {
+        font-size: 48px;
+    }
+    h2,
+    h1 {
+        color: white;
+    }
+    .featured-text {
+        margin-left: 20px;
+        padding: 4px;
+        border-left: 0.7rem solid #EEC24F;
+        border-radius: 0.5rem;
+    }
+    #trailer{
+        background: rgb(88,60,101);
+        background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
+        border: 1px solid rgb(0, 0, 0);
+    }
+    .result{
+        background-color: #583c654b;
+    }
+    button{
+        background-color: #583c65d7;
+        font-size: 20px;
+        border: transparent;
+        padding-left: 30px;
+        padding-right: 30px;
+        color: white;
+        padding-top: 10px;
+    }
+    button:hover{
+        background-color: #583c654b;
+    }
+    .imgMainCast{
+        border-radius: 50%;
+        width: 15em;
+        padding: 30px;
+    }
+    .namesMainCast{
+        color: white;
+        font-size: 25px;
+    }
 }
-
-
-
-
 
 
 @media(max-width:990px) {
@@ -167,19 +153,15 @@
         text-align: center;
 
     }
-
     .imgSize {
         width: 20em;
         box-shadow: 1px 20px 20px rgb(0, 0, 0);
     }
-
     .txtInf,
     .txtMid {
         padding-top: 8rem;
         height: 680px;
- 
     }
-
    #txt {
         font-size: 20px;
         color: white;
@@ -189,105 +171,87 @@
         border-top-left-radius: 50px;
         border-bottom-right-radius: 50px;
     }
-
     h1 {
         font-size: 45px;
     }
-
     h2,
     h1 {
         color: white;
     }
-
     .featured-text {
         margin-left: 25px;
         padding: 5px;
         border-left: 0.7rem solid #EEC24F;
         border-radius: 0.5rem;
     }
-
     #trailer{
         background: rgb(88,60,101);
         background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
         border: 1px solid rgb(0, 0, 0);
 
     }
+    .wallpaperView {
+        background-color: rgb(88, 60, 101, 0.534);
+    }
+    .imageView{
+        padding-top: 4em;
+    }
+    .imageView, #trailerTitle {
+        text-align: center;
 
-  .wallpaperView {
-      background-color: rgb(88, 60, 101, 0.534);
-  }
-  .imageView{
-      padding-top: 4em;
-  }
-  .imageView, #trailerTitle {
-      text-align: center;
+    }
+    .imgSize {
+        width: 20em;
+        box-shadow: 1px 20px 20px rgb(0, 0, 0);
+    }
+    .txtInf,
+    .txtMid {
+        padding-top: 8rem;
+        height: 680px;
 
-  }
-
-  .imgSize {
-      width: 20em;
-      box-shadow: 1px 20px 20px rgb(0, 0, 0);
-  }
-
-  .txtInf,
-  .txtMid {
-      padding-top: 8rem;
-      height: 680px;
-
-  }
-
- #txt {
-      font-size: 20px;
-      color: white;
-      background-color: rgba(88, 60, 101, 0.411);
-      padding: 10px;
-      margin-top: 10px;
-      border-top-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-  }
-
-  h1 {
-      font-size: 45px;
-  }
-
-  h2,
-  h1 {
-      color: white;
-  }
-
-  .featured-text {
-      margin-left: 25px;
-      padding: 5px;
-      border-left: 0.7rem solid #EEC24F;
-      border-radius: 0.5rem;
-  }
-
-  #trailer{
-      background: rgb(88,60,101);
-      background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
-      border: 1px solid rgb(0, 0, 0);
-
-  }
+    }
+    #txt {
+        font-size: 20px;
+        color: white;
+        background-color: rgba(88, 60, 101, 0.411);
+        padding: 10px;
+        margin-top: 10px;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    h1 {
+        font-size: 45px;
+    }
+    h2,
+    h1 {
+        color: white;
+    }
+    .featured-text {
+        margin-left: 25px;
+        padding: 5px;
+        border-left: 0.7rem solid #EEC24F;
+        border-radius: 0.5rem;
+    }
+    #trailer{
+        background: rgb(88,60,101);
+        background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
+        border: 1px solid rgb(0, 0, 0);
+    }
 
 
 }
 
 
 
-
-
 @media(max-width:576px) {
-
 
     .wallpaperView {
         background-color: rgb(88, 60, 101, 0.534);
     }
-
     .imgView {
         text-align: center;
         padding-top: 4em;
     }
-
     .imgSize {
         width: 20em;
         box-shadow: 1px 20px 20px rgb(0, 0, 0);
@@ -295,8 +259,6 @@
     .trailerSize {
         width: 20em;
     }
-
-
     .txtInf{
         padding-top: 1em;
         height: 500px;
@@ -308,7 +270,6 @@
         font-size: 26px;
         text-align: left;
     }
-
     #txt {
         font-size: 20px;
         color: white;
@@ -316,31 +277,28 @@
         border-top-left-radius: 50px;
         border-bottom-right-radius: 50px;
     }
-
     h1 {
         font-size: 45px;
     }
-
     h2,
     h1 {
         color: white;
     }
-
     .featured-text {
         margin-left: 6px;
         padding: 3px;
         border-left: 0.7rem solid #EEC24F;
         border-radius: 0.5rem;
     }
-
     #trailer{
-
         background: rgb(88,60,101);
         background: linear-gradient(90deg, rgba(88,60,101,0.8029586834733894) 0%, rgba(0,0,0,1) 50%, rgba(88,60,101,0.80015756302521) 100%);
         border: 1px solid rgb(0, 0, 0);
-
     }
     #trailerTitle{
         padding-top: 2em;
     }
 }
+
+  
+  
