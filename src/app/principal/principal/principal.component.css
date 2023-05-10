@@ -7,8 +7,8 @@
   height: 300px;
 }
 .starterImg{
-  width: 47em;
-  
+  width: 100%;
+  height: auto;
 }
 .carousel-item {
   margin-bottom: 2rem;
@@ -23,7 +23,6 @@
 .carousel-container {
   width: 1800px;
   height: 400px;
-  
 }
 
 .carousel-wrapper {
