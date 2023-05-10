@@ -6,9 +6,10 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { HeaderComponent } from './header/header/header.component';
 import { PrincipalComponent } from './principal/principal/principal.component';
 import { FilmsComponent } from './list/films/films.component';
-
+import { ConditionsComponent } from './conditions/conditions/conditions.component';
+import { PrivacyComponent } from './privacy/privacy/privacy.component';
 import { FilmViewComponent } from './film-view/film-view.component';
-
+import { SeriesComponent } from './list/series/series.component'; 
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -18,9 +19,11 @@ const routes: Routes = [
   {path:'header', component: HeaderComponent},
   {path:'principal', component: PrincipalComponent},
   {path:'films', component: FilmsComponent},
-  {path:'series', component: FilmViewComponent},
   {path:'carousel', component: PrincipalComponent},
   {path:'principal/film-view/:id', component: FilmViewComponent},
+  {path:'privacy', component: PrivacyComponent},
+  {path:'conditions', component: ConditionsComponent},
+  {path:'series', component: SeriesComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 
