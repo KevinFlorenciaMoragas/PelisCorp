@@ -1,22 +1,41 @@
-<div class="container-fluid">
-    <footer class="row py-3 my-5  justify-content-center">
-        <div class="d-flex flex-line align-items-center justify-content-center" style="flex-direction: row;"> <img
-                class="align-items-center" id="logoFooter" src="../../../assets/img/logoSin.png" alt="" width="75px">
-            <h3 class="mb-0 ms-3 tittleFooter">PelisCorp</h3>
-        </div>
-        <hr>
-        <div class="col-md-4 text-center">
-            <div class="d-flex flex-column align-items-center">
-                <ul class="list-inline mt-4">
-                    <li class="list-inline-item twitter"> <a href="#"> <img src="../../../assets/img/logoTwiter.png"
-                                id="" width="45pm"> </a> </li>
-                    <li class="list-inline-item instagram"> <a href="#"> <img src="../../../assets/img/logoInst.png"
-                                id="" width="45pm"> </a> </li>
-                    <li class="list-inline-item google"> <a href="#"> <img src="../../../assets/img/logoGma.png" 
-                                id="" width="45pm"> </a> </li>
-                </ul>
-            </div> <span id="year" class="text-muted">&copy; {{this.date}} PelisCorp, SA</span>
+<footer class="text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0 ">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-1 col-md-12 col-12 center">
+        <p>
+          <a [routerLink]="['privacy']" class="text-reset" style="text-decoration: none;">Privacy</a>
+        </p>
+      </div>
+      <div class="col-lg-1 col-md-12 col-12 center">
+        <p>
+          <a  [routerLink]="['conditions']" class="text-reset" style="text-decoration: none;">Conditions</a>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-8 col-12">
+        <section class="mb-4">
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <img src="../../../assets/img/logoTwiter.png" id="" width="45pm"></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+              src="../../../assets/img/logoGma.png" id="" width="45pm"></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img
+              src="../../../assets/img/logoInst.png" id="" width="45pm"></a>
+        </section>
+      </div>
+      <div class="col-lg-1 col-md-12 col-12 center">
+        <p>
+          <a  [routerLink]="['principal']" class="text-reset" style="text-decoration: none;">Home</a>
+        </p>
+      </div>
+      <div class="col-lg-1 col-md-12 col-12 center">
+        <p>
+          <a [routerLink]="['privacy']" class="text-reset" style="text-decoration: none;">Community</a>
+        </p>
+      </div>
+    </div>
+  </div>
 
-        </div>
-    </footer>
-</div>
+  <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
+    © {{date}} Copyright: Filmcorp
+  </div>
+</footer>
