@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Genre, Movies } from 'src/app/interfaces/interfaces.component';
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -10,23 +10,26 @@ import { Movies } from 'src/app/interfaces/interfaces.component';
 })
 export class FilmsComponent implements OnInit {
   movies: Movies[] = []
+  genres : Genre[] = []
   constructor(private http: MoviesService) { }
   
   getAllMovies() {
-
-  let url : string = "http://localhost:8080/movies"
   this.http.listAllMovies().subscribe(data => {
     console.log(data)
     this.movies = data as Movies[]
     console.log(this.movies)
   })
-  /*this.http.get(url).subscribe(data => {
+}
+getAllGenres() {
+
+  this.http.listAllGenres().subscribe(data => {
     console.log(data)
-    this.movies = data as Movies[]
+    this.genres = data as Genre[]
     console.log(this.movies)
-  })*/
+  })
 }
 ngOnInit() {
   this.getAllMovies()
+  this.getAllGenres()
 }
 }

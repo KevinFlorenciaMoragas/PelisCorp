@@ -1,134 +1,54 @@
-<!--<div class="row" id="lista">
-  <div id="collage"
-    class="col-lg-9 col-md-11 col-sm-12 col-12 container-fluid align-items-center justify-content-center text-center">
-    <div class="d-inline-flex align-items-center">
-      <div class="btn-group mr-2 mb-2" id="botones"> <button type="button" class="btn btn-danger">Tipo</button> <button
-          type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"> <span class="visually-hidden">Toggle Dropdown</span> </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Peliculas</a></li>
-          <li><a class="dropdown-item" href="#">Series</a></li>
-          <li><a class="dropdown-item" href="#">Documentales</a></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+<div class="container fondo">
+  <br /><br /><br /><br /><br />
+  <div class="row">
+    <div class="col-lg-2 col-md-12 col-12">
+      <div class="title">
+        <h2>Filtros</h2>
       </div>
-      <div class="btn-group mr-2 mb-2" id="botones"> <button type="button" class="btn btn-danger">Genero</button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"> <span class="visually-hidden">Toggle Dropdown</span> </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Accion</a></li>
-          <li><a class="dropdown-item" href="#">Romance</a></li>
-          <li><a class="dropdown-item" href="#">Thriller</a></li>
-          <li><a class="dropdown-item" href="#">Policiacas</a></li>
-        </ul>
-      </div>
-      <div class="btn-group mr-2 mb-2" id="botones"> <button type="button" class="btn btn-danger">Plataforma</button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"> <span class="visually-hidden">Toggle Dropdown</span> </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Netflix</a></li>
-          <li><a class="dropdown-item" href="#">Amazon</a></li>
-          <li><a class="dropdown-item" href="#">HBO</a></li>
-          <li><a class="dropdown-item" href="#">Disney</a></li>
-        </ul>
-      </div>
-      <div class="btn-group mr-2 mb-2" id="botones"> <button type="button" class="btn btn-danger">Puntuacion</button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"> <span class="visually-hidden">Toggle Dropdown</span> </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">1-2</a></li>
-          <li><a class="dropdown-item" href="#">3-4</a></li>
-          <li><a class="dropdown-item" href="#">5-6</a></li>
-          <li><a class="dropdown-item" href="#">7-8</a></li>
-          <li><a class="dropdown-item" href="#">9-10</a></li>
-        </ul>
-        <div class="ml-auto">
-          <div class="searsh"> <input id="buscador" type="text" placeholder="Search . . ." /> </div>
+      <button type="button" class="btn button" *ngFor="let genre of genres">
+        <div class="featured-text">{{genre.genre}}</div>
+      </button>
+      <br />
+      <br />
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+          style="max-width: 200px" />
+        <button class="btn search" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="col-lg-10 col-md-12 col-12 border-left">
+      <h1 style="color: white">Top 100 rated Films</h1>
+      <div class="card mb-3" style="max-width: 100%; background-color: #7a6585" *ngFor="let movie of movies">
+        <div class="row g-0">
+          <div class="col-12 col-md-1">
+            <div style="text-align: center">
+              <h1 class="id">{{ movie.id }}</h1>
+            </div>
+          </div>
+          <div class="col-12 col-md-2" style="display: flex; align-items: center;">
+            <img [src]="movie.poster" class="rounded-start img-movie" alt="..." />
+            <div class="col-12 col-md-1">
+              <div style="align-items: center; text-align: center;">
+                <h1 class="score">{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 id="name" class="card-title center-title mr-3">{{ movie.movieName }}</h4>
+              <span id="estreno" style="font-size: 15px; font-weight: normal" class="ml-3">{{ movie.releaseDate
+                }}</span>
+            </div>
+            <span class="card-text center-title" *ngFor="let director of movie.director">
+              {{director.name}} {{director.lastName}}
+            </span>
+            <br />
+             <span class="card-text" *ngFor="let actor of movie.actors ">
+              {{actor.name}} {{actor.lastName}}
+             </span> 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div style="width: 100%">
-    <hr />
   </div>
 </div>
-<div class="col-lg-10 col-md-10 col-sm-10 col-10 container-fluid" style="background-color: rgb(153, 112, 170)">
-  <div class="d-flex flex-column">
-    <div class="col-auto my-3">
-      <div class="d-flex align-items-center"> <img class="img-fluid" id="imagen" src="../../../assets/img/gato.jpg" />
-        <div class="container justify-content-start">
-          <div class="align-items-start" style="text-align: center">
-            <p><b>El Gato con Botas(2023)</b></p>
-            <p>Chris Miller</p>
-            <div class="justify-content">
-              <p style="font-size: 15px"> Antonio Banderas, Salma Hayek, Zach Galifianakis, Billy Bob Thornton y Amy
-                Sedaris... </p>
-            </div>
-          </div>
-        </div>
-        <div id="caja" class="d-flex align-items-center justify-content-center">
-          <p class="text-center" style="color: aliceblue"> <b>8,8<i class="fas fa-star"
-                style="color: yellow">&#9733;</i> </b> </p>
-        </div>
-      </div>
-    </div>
-    <hr />
-    <div class="col-auto my-3">
-      <div class="d-flex align-items-center"> <img class="img-fluid" id="imagen" src="../../../assets/img/pearl.jpg" />
-        <div class="container justify-content-start">
-          <div class="align-items-start" style="text-align: center">
-            <p><b>Pearl Harbor(2001)</b></p>
-            <p>Michael Bay</p>
-            <div class="justify-content">
-              <p style="font-size: 15px"> Ben Affleck, Josh Hartnett, Kate Beckinsale, Jon Voight, Alec Baldwin, Cuba
-                Gooding Jr., Tom Sizemore... </p>
-            </div>
-          </div>
-        </div>
-        <div id="caja" class="d-flex align-items-center justify-content-center">
-          <p class="text-center" style="color: aliceblue"> <b>8,8<i class="fas fa-star"
-                style="color: yellow">&#9733;</i> </b> </p>
-        </div>
-      </div>
-    </div>
-    <hr />
-    <div class="col-auto my-3">
-      <div class="d-flex align-items-center"> <img class="img-fluid" id="imagen"
-          src="../../../assets/img/padrino.jpg" />
-        <div class="container justify-content-start">
-          <div class="align-items-start" style="text-align: center">
-            <p><b>El padrino(1972)</b></p>
-            <p>Francis Coppola</p>
-            <div class="justify-content">
-              <p style="font-size: 15px"> Marlon Brando, Al Pacino, James Caan, Richard S. Castellano, Robert Duvall,
-                Sterling Hayden, John Marley, Richard Conte... </p>
-            </div>
-          </div>
-        </div>
-        <div id="caja" class="d-flex align-items-center justify-content-center">
-          <p class="text-center" style="color: aliceblue"> <b>8,8<i class="fas fa-star"
-                style="color: yellow">&#9733;</i> </b> </p>
-        </div>
-      </div>
-    </div>
-    <hr />
-    <div class="col-auto my-3">
-      <div class="d-flex align-items-center"> <img class="img-fluid" id="imagen" src="../../../assets/img/bear.jpg" />
-        <div class="container justify-content-start">
-          <div class="align-items-start" style="text-align: center">
-            <p><b>Cocain Bear(2023)</b></p>
-            <p>Elizabeth Banks</p>
-            <div class="justify-content">
-              <p style="font-size: 15px"> Keri Russell, O'Shea Jackson Jr., Christian Convery, Alden Ehrenreich, Jesse
-                Tyler Ferguson, Brooklynn Prince, Isiah Whitlock Jr... </p>
-            </div>
-          </div>
-        </div>
-        <div id="caja" class="d-flex align-items-center justify-content-center">
-          <p class="text-center" style="color: aliceblue"> <b>8,8<i class="fas fa-star"
-                style="color: yellow">&#9733;</i> </b> </p>
-        </div>
-      </div>
-    </div>
-  </div> <br />
-</div>-->
