@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   usernameLocalStorage = localStorage.getItem('username')
 
+  constructor() { }
+  searchMovie() {
+    let search = (document.getElementById("search") as HTMLInputElement).value;
+    console.log(search)
+    //localStorage.setItem('search', search)
+  }
 }

@@ -37,6 +37,15 @@ export class MoviesService {
       })
     )
   }
+  listAllMovieByTitleInput(title: string): Observable<any> {
+    let url: string = "http://localhost:8080/movies/titleInput/" + title
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
   getMovieById(id: number): Observable<any> {
     let url: string = "http://localhost:8080/movies/" + id;
     return this.http.get<any>(url).pipe(
