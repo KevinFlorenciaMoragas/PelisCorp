@@ -218,3 +218,20 @@
   height: 80%;
 }
 
+.carousel-slide {
+  animation-name: slide;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

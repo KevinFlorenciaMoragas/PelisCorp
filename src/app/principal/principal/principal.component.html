@@ -4,8 +4,8 @@
         <div class="row">
             <h1 id="index-text">Welcome to FilmCorp</h1>
             <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
-                [noPause]="true">
-                <slide *ngFor="let movie of movies">
+                [noPause]="true" >
+                <slide *ngFor="let movie of movies" class="carousel-slide">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="carousel text-center">
@@ -17,16 +17,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" style="background-color: rgb(88, 60, 101); font-family: monospace; color: white; ">
                             <div class="carousel text-center">
-                                <div class="featured-text text-center" *ngFor="let genre of movie.genre">
+                                <div class="featured-text text-center" >
                                     <h2>Genre</h2>
-                                    <p>{{movie.genre}}</p>
+                                    <p *ngFor="let genre of movie.genre">{{genre.genre}}</p>
                                 </div>
                                 <hr>
-                                <div class="featured-text text-center" *ngFor="let director of movie.director">
+                                <div class="featured-text text-center" >
                                     <h2>Director</h2>
-                                    <p>{{movie.director}}</p>
+                                    <p *ngFor="let director of movie.director">{{director.name}} {{director.lastName}}</p>
                                 </div>
                                 <hr>
                                 <div class="featured-text text-center">
