@@ -2,6 +2,7 @@
   border: none;
   justify-content: center;
   align-items: center;
+  font-size: small;
 }
 
 .button:hover {
@@ -30,7 +31,10 @@
   color: white;
   margin-bottom: 40px;
 }
-
+.id{
+  color: aliceblue;
+  margin-top: 1.6em;
+}
 
 @media (min-width: 421px) {
 

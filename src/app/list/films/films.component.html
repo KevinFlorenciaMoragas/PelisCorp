@@ -6,18 +6,20 @@
         <div class="title">
           <h2>Filtros</h2>
         </div>
-        <button type="button" class="btn button">
-          <div class="featured-text">Terror</div>
-        </button>
-        <button type="button" class="btn button">
-          <div class="featured-text">Terror</div>
-        </button>
-        <button type="button" class="btn button">
-          <div class="featured-text">Terror</div>
-        </button>
-        <button type="button" class="btn button">
-          <div class="featured-text">Terror</div>
-        </button>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn button">
+            <div class="featured-text">Terror</div>
+          </button>
+          <button type="button" class="btn button">
+            <div class="featured-text">Amor</div>
+          </button>
+          <button type="button" class="btn button">
+            <div class="featured-text">Culto</div>
+          </button>
+          <button type="button" class="btn button">
+            <div class="featured-text">Drama</div>
+          </button>
+        </div>
         <br />
         <br />
         <form class="form-inline">
@@ -33,31 +35,62 @@
       </div>
       <div class="col-lg-10 col-md-12 col-12 border-left">
         <h1 style="color: white">Top 100 rated Films</h1>
-        <div class="card mb-3" style="max-width: 100%; background-color: #7a6585" *ngFor="let item of movies">
+        <div
+          class="card mb-3"
+          style="max-width: 100%; background-color: #7a6585"
+          *ngFor="let item of movies"
+        >
           <div class="row g-0">
             <div class="col-12 col-md-1">
               <div style="text-align: center">
                 <h1 class="id">{{ item.id }}</h1>
               </div>
             </div>
-            <div class="col-12 col-md-2" style="display: flex; align-items: center;">
-              <img [src]="item.photo" class="rounded-start img-movie" alt="..." />
+            <div
+              class="col-12 col-md-2"
+              style="display: flex; align-items: center"
+            >
+              <img
+                [src]="item.photo"
+                class="rounded-start img-movie"
+                alt="..."
+              />
               <div class="col-12 col-md-1">
-                <div style="align-items: center; text-align: center;">
-                  <h1 class="score">{{item.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></h1>
+                <div style="align-items: center; text-align: center">
+                  <h1 class="score" style="color: aliceblue">
+                    {{ item.score
+                    }}<i class="fas fa-star" style="color: yellow">&#9733;</i>
+                  </h1>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-8">
               <div class="d-flex justify-content-between align-items-center">
-                <h4 id="name" class="card-title center-title mr-3">{{ item.movieName }}</h4>
-                <span id="estreno" style="font-size: 15px; font-weight: normal" class="ml-3">{{ item.releaseDate }}</span>
+                <h4
+                  id="name"
+                  class="card-title center-title mr-3"
+                  style="color: aliceblue; margin-top: 0.5em; "
+                >
+                  {{ item.movieName }}
+                </h4>
+                <span
+                  id="estreno"
+                  style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                  class="ml-3"
+                  >{{ item.releaseDate }}</span
+                >
               </div>
-              <p class="card-text center-title">Michael B. Jordan</p>
-              <p class="card-text">
-                Michael B. Jordan, Tessa Thompson, Jonathan Majors, Phylicia Rashad, Mila Davis-Kent, Florian Munteanu, Selenis Leyva, Spence Moore II, Tony Bellew
+              <p class="card-text center-title"style="color: aliceblue; ">Michael B. Jordan</p>
+              <p class="card-text" style="color: aliceblue; ">
+                Michael B. Jordan, Tessa Thompson, Jonathan Majors, Phylicia
+                Rashad, Mila Davis-Kent, Florian Munteanu, Selenis Leyva, Spence
+                Moore II, Tony Bellew
               </p>
             </div>
           </div>
         </div>
-
+      </div>
+    </div>
+  </div>
+</body>
+<img src="../../../assets/img/john.jpg" alt="">
