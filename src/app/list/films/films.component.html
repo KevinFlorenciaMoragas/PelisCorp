@@ -36,8 +36,7 @@
           <div class="col-12 col-md-8">
             <div class="d-flex justify-content-between align-items-center">
               <h4 id="name" class="card-title center-title mr-3">{{ movie.movieName }}</h4>
-              <span id="estreno" style="font-size: 15px; font-weight: normal" class="ml-3">{{ movie.releaseDate
-                }}</span>
+              <span id="estreno" style="font-size: 15px; font-weight: normal" class="ml-3">{{ movie.releaseDate}}</span>
             </div>
             <span class="card-text center-title" *ngFor="let director of movie.director">
               {{director.name}} {{director.lastName}}

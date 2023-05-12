@@ -22,6 +22,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ConditionsComponent } from './conditions/conditions.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { ConditionsComponent } from './conditions/conditions.component';
 
   ],
   providers: [Service,
-  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  
   ],
   bootstrap: [AppComponent]
 })
