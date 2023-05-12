@@ -37,7 +37,7 @@
                 <li class="nav-item">
                     <a id="navLinks" class="nav-link active" [routerLink]="['aboutus']">Sobre Nosotros</a>
                 </li>
-                <input type ="text" id="search" (click)="searchMovie()" placeholder="Introduzca su busqueda">
+                <input type ="text" id="search" (change)="searchMovie()" placeholder="Introduzca su busqueda">
                 
                 <li>
                   
@@ -54,6 +54,6 @@
               </form> 
           </div>
         </nav>
-        <div *ngIf="searchMovie() == true">
+        <div class="col-12 col-md-4 col-lg-4" *ngIf="searchMovie() == true">
           <h1>hello</h1>
         </div>

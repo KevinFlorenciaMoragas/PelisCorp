@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'series', component: FilmViewComponent },
   { path: 'carousel', component: PrincipalComponent },
   { path: 'principal/film-view/:id', component: FilmViewComponent },
+  { path: 'films/film-view/:id', component: FilmViewComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },

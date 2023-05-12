@@ -26,6 +26,7 @@ export class HeaderComponent {
       // }
      
       // )
+      
       return true;
     }
     //localStorage.setItem('search', search)
