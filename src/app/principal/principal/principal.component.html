@@ -5,44 +5,34 @@
             <h1 id="index-text">Welcome to FilmCorp</h1>
             <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
                 [noPause]="true">
-                <slide *ngFor="let carouselImg of carouselImg">
+                <slide *ngFor="let movie of movies">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="carousel text-center">
-                                <img class="starterImg" [src]="carouselImg.img" style="object-fit: cover;">
+                                <p *ngFor="let poster of movie.poster">
+                                    <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
+                                </p>
                                 <div class="card-body">
-                                    <h5 id="bgNameCarousel" class="cardTitle">{{carouselImg.movieName}}</h5>
+                                    <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="carousel text-center">
-                                <div class="featured-text text-center">
-                                    <h2>Genero</h2>
-                                    <ul class="txt">
-                                        <a>Terror</a>
-                                    </ul>
+                                <div class="featured-text text-center" *ngFor="let genre of movie.genre">
+                                    <h2>Genre</h2>
+                                    <p>{{movie.genre}}</p>
                                 </div>
-                                    <div class="featured-text text-center">
-                                        <h2>Genero</h2>
-                                    </div>
-                                    <hr>
-                                    <div class="featured-text text-center">
-                                        <h2>Director</h2>
-                                    </div>
-                                    <hr>
-                                    <div class="featured-text text-center">
-                                        <h2>Guíon</h2>
-                                        <div class="txt">
-                    
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="featured-text text-center">
-                                        <h2>Reparto</h2>
-                                        <p class="txt">Michael B. Jordan, Jonathan Majors</p>
-                                    </div>
-                               
+                                <hr>
+                                <div class="featured-text text-center" *ngFor="let director of movie.director">
+                                    <h2>Director</h2>
+                                    <p>{{movie.director}}</p>
+                                </div>
+                                <hr>
+                                <div class="featured-text text-center">
+                                    <h2>Sinopsis</h2>
+                                    <p>{{movie.plot}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
