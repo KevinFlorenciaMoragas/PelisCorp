@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-import { Movies } from 'src/app/interfaces/interfaces/interfaces.component';
-import { MovieReview } from '../../../app/interfaces/interfaces/interfaces.component';
-import { Actor } from '../../../app/interfaces/interfaces/interfaces.component';
+import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Actor } from 'src/app/interfaces/interfaces.component';
 import { Genre } from 'src/app/interfaces/interfaces.component';
-import { Reviews } from '../../../app/interfaces/interfaces/interfaces.component';
+import { Reviews } from 'src/app/interfaces/interfaces.component';
+import { Poster } from 'src/app/interfaces/interfaces.component';
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -18,15 +18,14 @@ export class FilmsComponent implements OnInit {
   movies: Movies[] = []
   genres: Genre[] = []
   actor: Actor[] = []
-  movieReview: MovieReview[] = []
   reviews: Reviews[] = []
+  poster: Poster[] = []
 
 
   ngOnInit() {
     this.getAllMovies(),
     this.getAllGenres(),
-    this.getAllActor(),
-    this.getAllMovieReview()
+    this.getAllActor()
   }
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
@@ -51,13 +50,7 @@ export class FilmsComponent implements OnInit {
       console.log(this.actor)
     })
   }
-  getAllMovieReview() {
-    this.http.listAllMovieReview().subscribe(data => {
-      console.log(data)
-      this.movieReview = data as MovieReview[]
-      console.log(this.movieReview)
-    })
-  }
+
   getAllReviews() {
     this.http.listAllReview().subscribe(data => {
       console.log(data)

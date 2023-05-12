@@ -5,9 +5,9 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
-import { Actor } from '../interfaces/interfaces/interfaces.component';
-import { MovieReview } from '../interfaces/interfaces/interfaces.component';
-import { Reviews } from '../interfaces/interfaces/interfaces.component';
+import { Actor } from 'src/app/interfaces/interfaces.component';
+
+import { Reviews } from 'src/app/interfaces/interfaces.component';
 @Component({
   selector: 'app-film-view',
   templateUrl: './film-view.component.html',
@@ -18,14 +18,12 @@ export class FilmViewComponent {
   movies: Movies[] = [];
   genres: Genre[] = [];
   actor: Actor[] = [];
-  movieReview: MovieReview[] = [];
   reviews: Reviews[] = [];
 
   ngOnInit() {
     this.getAllMovies(),
       this.getAllGenres(),
-      this.getAllActor(),
-      this.getAllMovieReview();
+      this.getAllActor();
   }
   getAllMovies() {
     this.http.listAllMovies().subscribe((data) => {
@@ -50,13 +48,7 @@ export class FilmViewComponent {
       console.log(this.actor);
     });
   }
-  getAllMovieReview() {
-    this.http.listAllMovieReview().subscribe((data) => {
-      console.log(data);
-      this.movieReview = data as MovieReview[];
-      console.log(this.movieReview);
-    });
-  }
+
   getAllReviews() {
     this.http.listAllReview().subscribe((data) => {
       console.log(data);

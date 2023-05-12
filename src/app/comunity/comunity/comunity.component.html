@@ -51,15 +51,15 @@
         <div id="caja" class="d-flex align-items-center justify-content-center">
           <div
             class="row text-white justify-content-center"
-            *ngFor="let item of movies"
+            *ngFor="let movie of movies"
           >
             <div
               id="contenedor"
               class="col-md-12 col-lg-12 col-sm-12 col-12"
               style="margin-left: 1em"
             >
-              <img id="imagenes" class="" [src]="item.photo" />
-              <p style="margin-bottom: 0.5rem">{{ item.movieName }}</p>
+              <img id="imagenes" class="" [src]="movie.poster[0].url" />
+              <p style="margin-bottom: 0.5rem">{{ movie.movieName }}</p>
               <p style="margin-bottom: 0.5rem">Chris Miller</p>
               <button id="boton2" class="btn btn-primary mb-3" mat-menu-item [routerLink]= "['view']">
                 Información
@@ -75,10 +75,10 @@
           Recomended<b><i class="fas fa-star" style="color: yellow">&#9733;</i></b>
         </h2>
         <div id="caja" class="d-flex align-items-center justify-content-center">
-          <div class="row text-white justify-content-center" *ngFor="let item of movies">
+          <div class="row text-white justify-content-center" *ngFor="let movie of movies">
             <div id="contenedor" class="col-md-12 col-lg-12 col-sm-12 col-12" style="margin-left: 1em">
-              <img id="imagenes" class="" [src]="item.photo" />
-              <p style="margin-bottom: 0.5rem">{{ item.movieName }}</p>
+              <img id="imagenes" class="" [src]="movie.poster[0].url" />
+              <p style="margin-bottom: 0.5rem">{{ movie.movieName }}</p>
               <p style="margin-bottom: 0.5rem">Chris Miller</p>
               <button id="boton2" class="btn btn-primary mb-3" mat-menu-item [routerLink]= "['view']">Información</button>
             </div>

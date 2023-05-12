@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-interfaces',
@@ -144,4 +144,4 @@ export interface MovieScreenwritter{
   id: number;
   id_movie: number;
   id_screenwritter: number;
-}
+}*/

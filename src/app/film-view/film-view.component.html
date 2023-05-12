@@ -4,21 +4,21 @@
       <div class="row wallpaperView">
           <div class="d-lg-block col-lg-6  d-sm-none d-none imageView">
               <h1>
-                  <ul *ngFor="let item of movies">
-                      <a>{{item.movieName}}</a>
+                  <ul *ngFor="let movie of movies">
+                      <a>{{movie.movieName}}</a>
                   </ul>
               </h1>
               <br>
-              <ul *ngFor="let item of movies">
-                  <img class="imgSize" [src]="item.photo" alt="">
+              <ul *ngFor="let movie of movies">
+                  <img class="imgSize" [src]="movie.poster" alt="">
               </ul>
           </div>
           <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
               <div class="featured-text text-center">
                   <h2>Genero</h2>
                   <p class="txt">
-                  <ul *ngFor="let item of genres">
-                      <a>{{item.genre}}</a>
+                  <ul *ngFor="let movie of genres">
+                      <a>{{movie.genre}}</a>
                   </ul>
               </div>
               <hr>
@@ -68,10 +68,10 @@
               <button (click)="cambiarContenido('boton3')">Did you know...?</button>
 
               <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
-                  <div class="col-lg-3 text-center" *ngFor="let item of actor">
-                      <img class="imgMainCast" [src]="item.photo" alt=""><br>
-                      <p class="namesMainCast">{{item.name}}
-                       {{item.lastName}}</p>
+                  <div class="col-lg-3 text-center" *ngFor="let movie of actor">
+                      <img class="imgMainCast" [src]="movie.photo" alt=""><br>
+                      <p class="namesMainCast">{{movie.name}}
+                       {{movie.lastName}}</p>
                   </div><br>
               </div>
 

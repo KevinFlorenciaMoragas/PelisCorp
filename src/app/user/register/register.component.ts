@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators, FormArray } from '@angular/forms';
 import { Service } from 'src/app/services/service.service';
-import { User } from 'src/app/interfaces/interfaces/interfaces.component';
+import { User } from 'src/app/interfaces/interfaces.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
