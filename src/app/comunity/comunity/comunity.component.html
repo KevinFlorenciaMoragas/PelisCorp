@@ -49,10 +49,8 @@
           >
         </h2>
         <div id="caja" class="d-flex align-items-center justify-content-center">
-          <div
-            class="row text-white justify-content-center"
-            *ngFor="let movie of movies"
-          >
+          <div class="row text-white justify-content-center" *ngFor="let movie of movies.slice(0, 5)">
+
             <div
               id="contenedor"
               class="col-md-12 col-lg-12 col-sm-12 col-12"
@@ -75,7 +73,8 @@
           Recomended<b><i class="fas fa-star" style="color: yellow">&#9733;</i></b>
         </h2>
         <div id="caja" class="d-flex align-items-center justify-content-center">
-          <div class="row text-white justify-content-center" *ngFor="let movie of movies">
+          <div class="row text-white justify-content-center" *ngFor="let movie of movies.slice(0, 5)">
+
             <div id="contenedor" class="col-md-12 col-lg-12 col-sm-12 col-12" style="margin-left: 1em">
               <img id="imagenes" class="" [src]="movie.poster[0].url" />
               <p style="margin-bottom: 0.5rem">{{ movie.movieName }}</p>

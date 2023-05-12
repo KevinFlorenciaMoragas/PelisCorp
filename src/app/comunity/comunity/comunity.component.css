@@ -6,39 +6,26 @@
     justify-content: center;
     align-items: center;
   }
-  #caja {
-    margin-top: 2em;
-  }
-  #letras {
-    font-size: 2em;
-  }
-  #arriba {
-    margin-top: 5em;
-  }
-  #favourites {
-    color: aliceblue;
-    margin-left: 85px;
-    margin-top: 10px;
-  }
-  #recomends {
-    color: aliceblue;
-    margin-left: 85px;
-    margin-top: 10px;
-  }
-  #reviews {
-    color: aliceblue;
-    margin-left: 85px;
-    margin-top: 10px;
-  }
+
   .bgSecond {
     background-color: rgb(153, 112, 170);
     height: 100%;
-    border-radius: none;
     width: 78rem;
+    border-radius: none;
+  }
+
+  #arriba {
+    margin-top: 5em;
   }
 
   #imgPerfil {
     border-radius: 50%;
+    max-width: 150px;
+    width: 100%;
+  }
+
+  #letras {
+    font-size: 2em;
   }
 
   .boton {
@@ -49,7 +36,6 @@
     border: solid;
     border-color: rgb(206, 179, 91);
     font-size: large;
-    margin-top: -40px;
   }
 
   .boton:hover {
@@ -66,85 +52,65 @@
 
   #imagenes {
     margin-top: 1em;
-    width: 10em;
-    margin-top: 2em;
-  }
 
-  #boton2 {
-    background-color: rgb(153, 112, 170);
-    color: white;
-    width: 7em;
-    border: none;
-  }
+    width: 100%;
+  max-width: 10em;
+  height: auto;
+}
 
-  .caja img {
-    margin-top: 5em;
-    width: 15em;
-    height: 15em;
-  }
+#boton2 {
+  background-color: rgb(153, 112, 170);
+  color: white;
+  width: 7em;
+  border: none;
+}
+
+.caja img {
+  margin-top: 5em;
+  width: 15em;
+  height: 15em;
 }
 
 @media only screen and (max-width: 769px) {
   #imgPerfil {
-    border-radius: 50%;
     width: 7em;
   }
   #letras {
     font-size: 1em;
   }
+
   .bg {
     background-color: rgb(153, 112, 170);
-    background: rgb(153, 112, 170);
   }
 
   #arriba {
     margin-top: -1em;
     margin-right: 5em;
   }
-  #favourites {
-    color: aliceblue;
-  }
-  #boton2 {
-    background-color: rgb(153, 112, 170);
-    color: white;
+
+  .boton {
     width: 7em;
-    border: none;
+    font-size: medium;
   }
+
   .rectangulo {
     margin-top: 6px;
     margin-right: 5em;
     width: 40em;
     height: auto;
-    background-color: rgba(81, 40, 109, 0.452);
-    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
   }
+
   .bgSecond {
     background-color: rgb(153, 112, 170);
     border: none;
     height: 91%;
     margin-left: 5em;
     margin-top: 3em;
-    width: 100em;
-  }
-
-  .boton {
-    width: 7em;
-    size: 1px;
-    margin-left: 0.2em;
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .rectangulo {
-    width: 45em;
-    height: 100%;
-    clip-path: none;
+    width: 100%;
+    max-width: 100em;
   }
 
   #imagenes {
-    margin-top: none;
     width: 4em;
     height: auto;
     margin-bottom: 2em;
@@ -161,11 +127,13 @@
   .bg {
     height: 9em;
   }
+
   #arriba {
     margin-left: 5em;
   }
+
   #contenedor {
-    display: flex-column;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -173,17 +141,12 @@
 
   .boton {
     width: 8em;
-    margin-left: 0.2em;
     font-size: small;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .rectangulo {
     width: 100%;
     height: auto;
-    clip-path: none;
     margin-left: 2.1em;
     display: flex;
     flex-direction: column;
@@ -192,12 +155,11 @@
 
   #imagenes {
     width: 3em;
-    display: block;
   }
 
   .caja img {
     width: 1em;
     height: 1em;
-    display: block;
   }
+}
 }
