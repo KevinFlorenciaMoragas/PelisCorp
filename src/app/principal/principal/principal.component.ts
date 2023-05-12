@@ -20,29 +20,38 @@ export class PrincipalComponent implements OnInit{
 
   constructor(private http: MoviesService) { }
 
-  carouselImg: any[] =[
-    {img: '../../../assets/img/creedCarousel.jpg', movieName:'Creed III'},
-    {img: '../../../assets/img/padrinoCarousel.jpg', movieName:'The Godfather'},
-    {img: '../../../assets/img/geatoCarousel.jpg', movieName:'Puss in Boots'},
-    {img: '../../../assets/img/bearCarousel.jpg', movieName:'Cocaine bear'},
-    {img: '../../../assets/img/pulpCarousel.jpg', movieName:'Pulp Fiction'},
-    {img: '../../../assets/img/pearlCarousel.jpg', movieName:'Pearl Harbor'},
-  ];
+
   movies: Movies[] = []
   displayedMovies: any[] = [];
   showLoadMoreButton: boolean = true;
   showLoadLessButton: boolean = false;
   initialLoad = true;
   showAllMovies: boolean = false;
-
-
+  movie: Movies = {
+    id: 0,
+    movieName: '',
+    releaseDate: new Date(),
+    plot: '',
+    duration: 0,
+    income: 0,
+    score: 0,
+    poster: [],
+    trailer: '',
+    favorites: [],
+    director: [],
+    actors: [],
+    genre: [],
+    awards: [],
+    reviews: [],
+    screenwritter: []
+  }
+  
   ngOnInit(){
     this.getAllMovies()
     this.displayedMovies = this.movies.slice(0, 3);
     this.initialLoad = false;
   }
- 
-
+  
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
       console.log(data)

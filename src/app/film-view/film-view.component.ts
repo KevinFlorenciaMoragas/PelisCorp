@@ -17,21 +17,24 @@ export class FilmViewComponent {
   constructor(private http: MoviesService, private route: ActivatedRoute) {
 
   } 
-  movie: Movies = { 
-   id: 0, movieName: '', 
-   releaseDate: new Date(), 
-   plot: '', duration: 0, 
-   income: 0, 
-   score: 0, 
-   photo: '', 
-   favorites: [], 
-   director: [], 
-   actors: [], 
-   genres: [], 
-   awards: [], 
-   reviews: [], 
-   screenwritters: [] 
- } 
+  movie: Movies = {
+    id: 0,
+    movieName: '',
+    releaseDate: new Date(),
+    plot: '',
+    duration: 0,
+    income: 0,
+    score: 0,
+    poster: [],
+    trailer: '',
+    favorites: [],
+    director: [],
+    actors: [],
+    genre: [],
+    awards: [],
+    reviews: [],
+    screenwritter: []
+  }
  genres: Genre[] = [] 
  movieId: any 
  id: any 
@@ -46,6 +49,7 @@ export class FilmViewComponent {
    this.http.getMovieById(this.id).subscribe(data => { 
      this.movie = data; }) 
      //this.getAllMovies(), // this.getAllGenres() }
+    
    }
 
 

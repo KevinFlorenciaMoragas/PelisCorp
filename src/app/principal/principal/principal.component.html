@@ -5,23 +5,43 @@
                 <h1 id="index-text">Welcome to FilmCorp</h1>
                 <div class="carousel text-center">
                     <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
-                        [noPause]="true">
-                        <slide *ngFor="let carouselImg of carouselImg">
-                            <img class="starterImg" [src]="carouselImg.img" style="object-fit: cover;">
-                            <div class="card-body">
-                                <h5 id="bgNameCarousel" class="cardTitle">{{carouselImg.movieName}}</h5>
+                [noPause]="true" >
+                <slide *ngFor="let movie of movies" class="carousel-slide">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="carousel text-center">
+                                <p *ngFor="let poster of movie.poster">
+                                    <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
+                                </p>
+                                <div class="card-body">
+                                    <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
+                                </div>
                             </div>
-                        </slide>
-                    </carousel>
+                        </div>
+                        <div class="col-lg-6" style="background-color: rgb(88, 60, 101); font-family: monospace; color: white; ">
+                            <div class="carousel text-center">
+                                <div class="featured-text text-center" >
+                                    <h2>Genre</h2>
+                                    <p *ngFor="let genre of movie.genre">{{genre.genre}}</p>
+                                </div>
+                                <hr>
+                                <div class="featured-text text-center" >
+                                    <h2>Director</h2>
+                                    <p *ngFor="let director of movie.director">{{director.name}} {{director.lastName}}</p>
+                                </div>
+                                <hr>
+                                <div class="featured-text text-center">
+                                    <h2>Sinopsis</h2>
+                                    <p>{{movie.plot}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </slide>
+            </carousel>
                 </div>
             </div>
-            <div class="col-lg-5 options">
-                <h1 id="index-text">We recommend you...</h1>
-                <button class="buttonFeatured w-100">Top Films</button>
-                <button class="buttonFeatured w-100">Top Series</button>
-                <button class="buttonFeatured w-100" >Most Popular</button>
-                <button class="buttonFeatured w-100" href="">Most Interesting</button>
-            </div>
+
 
 
             <h1 id="subtitleFreatured">Featured</h1>
@@ -30,7 +50,7 @@
                     <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img [src]="movie.photo" class="img-fluid rounded-start" alt="...">
+                                <img [src]="movie.poster" class="img-fluid rounded-start" alt="...">
                             </div>
                             <div id="bgCard" class="col-md-8">
                                 <div class="card-body">
@@ -49,27 +69,20 @@
         </div>
     </div>
 
-<div id="rest">
-    <div class="container">
-        <div class="bgSecondSlice row" style="background-color: rgb(88, 60, 101)">
+    <div id="rest">
+        <div class="container">
             <h2 id="index-textSlice">The most popular</h2>
-            <div class="col-lg-12 col-md-4 col-sm-4 col-6">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="carousel text-center">
-                    <carousel [itemsPerSlide]="3" [interval]="5000" [noWrap]="true" [showIndicators]="false">
-                        <slide *ngFor="let image of movies">
-                            <img class="imgCarousel" [src]="image.photo" [alt]="image.photo">
+                    <carousel [itemsPerSlide]="1" [interval]="5000" [noWrap]="false" [showIndicators]="false">
+                        <slide *ngFor="let movie of movies">
+                            <img class="imgCarousel" [src]="movie?.poster" [alt]="movie?.poster">
                             <div class="card-body">
-                            <h5 class="card-title" style="color: aliceblue">{{image.movieName}}</h5> 
-                              <button id="buttonCarousel" class="btn mb-3">MORE</button>
+                                <h5 class="card-title" style="color: aliceblue">{{movie?.movieName}}</h5>
+                                <button id="buttonCarousel" class="btn mb-3">MORE</button>
                             </div>
                         </slide>
                     </carousel>
-                    <!-- <ngb-carousel> 
-                        <ng-template ngbSlide *ngFor="let pelicula of movies"> <img
-                                src="{{ pelicula.photo }}" alt="Random slide" class="img-fluid d-block" />
-                        </ng-template> 
-                    </ngb-carousel> -->
-
                     <ng-template #customPrevArrow>
                         <button class="btn btn-primary carousel-control-prev">
                             <i class="fa fa-chevron-left"></i>
@@ -85,136 +98,139 @@
             </div>
         </div>
     </div>
-</div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-4 col-12"> <img src="../../../assets/img/padrino.jpg"
-                class="img-fluid rounded-start" id="padrino"> </div>
-        <div class="col-lg-3 col-md-5 col-sm-8 col-12" style="margin-bottom: 1rem;">
-            <div class="card-body">
-                <h2 class="card-title">El padrino</h2>
-                <h5>Sinopsis</h5>
-                <p class="card-text" style="font-size: 0.9rem; max-height: 6.5rem; overflow-y: auto;">Es una película de
-                    Francis Ford Coppola de 1972, basada en la novela de Mario Puzo. La historia sigue a la familia
-                    Corleone, una poderosa familia de la mafia italoamericana, liderada por Don Vito Corleone (Marlon
-                    Brando).</p>
-                <p class="card-text" style="font-size: 0.9rem; max-height: 6.5rem; overflow-y: auto;">La película
-                    explora temas como la lealtad, el poder y la violencia en el mundo del crimen organizado.</p>
-            </div> <button id="botonfans" type="button" class="btn btn-primary">Ver más</button>
+    <h2 id="index-textSlice" style="color:black;">Recomended</h2><br>
+    <div class="card-container">
+        <div class="image-container">
+            <img class="imgCarousel" src="../../../assets/img/padrino.jpg">
         </div>
-        <div class="col-lg-5 col-md-4 col-sm-6 col-12" id="trailer">
-            <div class="ratio ratio-16x9"> <iframe class="embed-responsive-item" id="video"
-                    src="https://www.youtube.com/embed/v72XprPxy3E" allowfullscreen></iframe> </div>
+        <div class=" text-container col-lg-12 col-md-4 col-sm-4 col-2">
+            <h2 class="title">The Godfather</h2>
+            <p class="subtitle">Plot</p>
+            <p class="plot">Don Vito Corleone is the respected and feared boss of one of the five mafia
+                families in New York in the 40s. The man has four children: Connie, Sonny, Fredo and Michael,
+                who wants nothing to do with Corleone's dirty business. his father. When another capo,
+                Sollozzo, tries to assassinate Corleone, a bloody fight between the different clans begins.
+            </p>
+        </div>
+        <div class="trailer-container">
+            <div class="ratio ratio-16x9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v72XprPxy3E"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        
+    </div>
+    <div class="button-container">
+            <button class="container buttonFeatured w-100">More</button>
+        </div>
+    <div class="container-fluid">
+        <div class="row bg-purple text-white justify-content-center" style="background-color: rgb(88, 60, 101)">
+            <h2 class="col-12 text-center">The most Interesting</h2>
+            <div class="col-md-4 col-lg-2 col-sm-4 col-6">
+                <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/gato.jpg" />
+                    <p>El Gato con Botas</p>
+                    <p>Chris Miller</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 col-sm-4 col-6">
+                <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/bear.jpg" />
+                    <p>Cocain Bear</p>
+                    <p>Elizabeth Banks</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 col-sm-4 col-6">
+                <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/interestelar.jpg" />
+                    <p>Interestellar</p>
+                    <p>Christopher Nolan</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 col-sm-4 col-6">
+                <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/padrino.jpg" />
+                    <p>El padrino</p>
+                    <p>Francis Coppola</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 col-sm-4 col-6">
+                <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/pulp.jpg" />
+                    <p>Pulp Fiction</p>
+                    <p>Quentin Tarantino</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 col-sm-4 col-6">
+                <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/pearl.jpg" />
+                    <p>Pearl Harbor</p>
+                    <p>Michael Bay</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row bg-purple text-white justify-content-center" style="background-color: rgb(88, 60, 101)">
-        <h2 class="col-12 text-center">The most Interesting</h2>
-        <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/gato.jpg" />
-                <p>El Gato con Botas</p>
-                <p>Chris Miller</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+    <div class="container" style="background-color: rgba(153, 112, 170, 0.692);">
+        <h1 class="text-center">Highest-grossing films</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-center" style="color: rgb(13, 13, 14)">
+                <p>1. Ant-Man & Wasp <button type="button" class="btn btn-secondary">Más</button></p>
+                <p>2. Babylon <button type="button" class="btn btn-secondary">Más</button></p>
+                <p>3. Avatar: The way of water <button type="button" class="btn btn-secondary">Más</button></p>
             </div>
-        </div>
-        <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/bear.jpg" />
-                <p>Cocain Bear</p>
-                <p>Elizabeth Banks</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
-            </div>
-        </div>
-        <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/interestelar.jpg" />
-                <p>Interestellar</p>
-                <p>Christopher Nolan</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
-            </div>
-        </div>
-        <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/padrino.jpg" />
-                <p>El padrino</p>
-                <p>Francis Coppola</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
-            </div>
-        </div>
-        <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/pulp.jpg" />
-                <p>Pulp Fiction</p>
-                <p>Quentin Tarantino</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
-            </div>
-        </div>
-        <div class="col-md-4 col-lg-2 col-sm-4 col-6">
-            <div class="caja zoom"> <img class="img-fluid" src="../../../assets/img/pearl.jpg" />
-                <p>Pearl Harbor</p>
-                <p>Michael Bay</p> <button id="boton" class="btn btn-primary mb-3">Información</button>
+            <div class="col-6 text-center" style="color: rgb(13, 13, 14)">
+                <p>4. Jurassic World <button type="button" class="btn btn-secondary">Más</button></p>
+                <p>5. Transformers <button type="button" class="btn btn-secondary">Más</button></p>
+                <p>6. Cocaine Bear <button type="button" class="btn btn-secondary">Más</button></p>
             </div>
         </div>
     </div>
-</div>
-<div class="container" style="background-color: rgba(153, 112, 170, 0.692);">
-    <h1 class="text-center">Highest-grossing films</h1>
-    <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-center" style="color: rgb(13, 13, 14)">
-            <p>1. Ant-Man & Wasp <button type="button" class="btn btn-secondary">Más</button></p>
-            <p>2. Babylon <button type="button" class="btn btn-secondary">Más</button></p>
-            <p>3. Avatar: The way of water <button type="button" class="btn btn-secondary">Más</button></p>
-        </div>
-        <div class="col-6 text-center" style="color: rgb(13, 13, 14)">
-            <p>4. Jurassic World <button type="button" class="btn btn-secondary">Más</button></p>
-            <p>5. Transformers <button type="button" class="btn btn-secondary">Más</button></p>
-            <p>6. Cocaine Bear <button type="button" class="btn btn-secondary">Más</button></p>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row " style="background-color: rgb(88, 60, 101); justify-content: center">
-        <h2 style="color: aliceblue">Last news</h2> <br /> <br />
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4 ">
-            <div class="card mb-3" style="background-color: transparent; border: none">
-                <div class="row g-0">
-                    <div class="col-md-4"> <img src="../../../assets/img/bear.jpg" class="img-fluid rounded-start"
-                            alt="..." /> </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: aliceblue">Cocain Bear</h5>
-                            <p class="card-text" style="color: aliceblue">Se confirma que Cocain Bear es una historia
-                                basada en hechos reales</p> <button type="button" class="btn btn-secondary">Más</button>
+    <div class="container-fluid">
+        <div class="row " style="background-color: rgb(88, 60, 101); justify-content: center">
+            <h2 style="color: aliceblue">Last news</h2> <br /> <br />
+            <div class="col-6 col-sm-6 col-md-6 col-lg-4 ">
+                <div class="card mb-3" style="background-color: transparent; border: none">
+                    <div class="row g-0">
+                        <div class="col-md-4"> <img src="../../../assets/img/bear.jpg" class="img-fluid rounded-start"
+                                alt="..." /> </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: aliceblue">Cocain Bear</h5>
+                                <p class="card-text" style="color: aliceblue">Se confirma que Cocain Bear es una
+                                    historia
+                                    basada en hechos reales</p> <button type="button"
+                                    class="btn btn-secondary">Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-4">
+                <div class="card mb-3" style="background-color: transparent; border: none">
+                    <div class="row g-0">
+                        <div class="col-md-4"> <img src="../../../assets/img/gato.jpg" class="img-fluid rounded-start"
+                                alt="..." /> </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: aliceblue">El gato con botas</h5>
+                                <p class="card-text" style="color: aliceblue">El gato con botas ya no sera doblado por
+                                    Antonio Banderas en ninguna de sus versiones.</p> <button type="button"
+                                    class="btn btn-secondary mb-3">Más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-6 col-sm-6 col-md-6 col-lg-4">
+                <div class="card mb-3" style="background-color: transparent; border: none">
+                    <div class="row g-0">
+                        <div class="col-md-4"> <img src="../../../assets/img/pulp.jpg" class="img-fluid rounded-start"
+                                alt="..." /> </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: aliceblue">Pulp Fiction</h5>
+                                <p class="card-text" style="color: aliceblue">El esperado remake se confirma, además de
+                                    darnos la lista de los nuevos protagonistas.</p> <button type="button"
+                                    class="btn btn-secondary mb-3">Más</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="card mb-3" style="background-color: transparent; border: none">
-                <div class="row g-0">
-                    <div class="col-md-4"> <img src="../../../assets/img/gato.jpg" class="img-fluid rounded-start"
-                            alt="..." /> </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: aliceblue">El gato con botas</h5>
-                            <p class="card-text" style="color: aliceblue">El gato con botas ya no sera doblado por
-                                Antonio Banderas en ninguna de sus versiones.</p> <button type="button"
-                                class="btn btn-secondary mb-3">Más</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=" col-6 col-sm-6 col-md-6 col-lg-4">
-            <div class="card mb-3" style="background-color: transparent; border: none">
-                <div class="row g-0">
-                    <div class="col-md-4"> <img src="../../../assets/img/pulp.jpg" class="img-fluid rounded-start"
-                            alt="..." /> </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: aliceblue">Pulp Fiction</h5>
-                            <p class="card-text" style="color: aliceblue">El esperado remake se confirma, además de
-                                darnos la lista de los nuevos protagonistas.</p> <button type="button"
-                                class="btn btn-secondary mb-3">Más</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>

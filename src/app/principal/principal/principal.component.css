@@ -1,4 +1,4 @@
-/* CSS DEL CAROUSEL */
+* CSS DEL CAROUSEL */
 .container {
   position: relative;
 }
@@ -7,8 +7,8 @@
   height: 300px;
 }
 .starterImg{
-  width: 47em;
-  
+  width: 100%;
+  height: auto;
 }
 .carousel-item {
   margin-bottom: 2rem;
@@ -23,7 +23,6 @@
 .carousel-container {
   width: 1800px;
   height: 400px;
-  
 }
 
 .carousel-wrapper {
@@ -219,3 +218,78 @@
   height: 80%;
 }
 
+.carousel-slide {
+  animation-name: slide;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* CARD MID */
+.card-container, #cardMid{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.card-container{
+  width: 1600px;
+  height: auto;
+  background-color: #d2d2d2;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgb(0, 0, 0);
+  display: flex;
+  margin: auto;
+  border-radius: 5px;
+}
+.image-container{
+  width: 20%;
+}
+.image-container img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+.text-container, .trailer-container{
+  width: 40%;
+}
+.title{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+.subtitle{
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.plot{
+  color: rgb(26, 24, 24);
+  font-size: 16px;
+  text-align: center;
+}
+.trailer-container{
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(90deg, rgba(210,210,210,1) 0%, rgba(0,0,0,1) 3%);
+  border-radius: 5px;
+}
+.button-container{
+  margin: auto;
+  height: auto;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
