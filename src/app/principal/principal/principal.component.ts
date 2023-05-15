@@ -32,14 +32,14 @@ export class PrincipalComponent implements OnInit{
 
   movies: Movies[] = []
 
-  
- 
+  youtubeApiLoaded = false;
+   number: number = 0;
   displayedMovies: any[] = [];
   showLoadMoreButton: boolean = true;
   showLoadLessButton: boolean = false;
   initialLoad = true;
   showAllMovies: boolean = false;
-  movie: Movies = {
+  movieRecommended: Movies = {
     id: 0,
     movieName: '',
     releaseDate: new Date(),
@@ -59,13 +59,30 @@ export class PrincipalComponent implements OnInit{
   }
   
   ngOnInit(){
+    if(!this.youtubeApiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+      this.youtubeApiLoaded = true;
+    }
     this.getAllMovies()
+    this.getMovieRecommended()
     this.displayedMovies = this.movies.slice(0, 3);
     this.initialLoad = false;
   }
   
+  getMovieRecommended() {
+    let random : number = Math.floor(Math.random() * 28) + 1
+    this.http.getMovieById(random).subscribe(data => {
+      console.log(data)
+      this.movieRecommended = data.movie as Movies
+      console.log(this.movieRecommended)
+    })
+  }
+
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
+      this.number = data.length
       console.log(data)
       this.movies = data as Movies[]
       console.log(this.movies)

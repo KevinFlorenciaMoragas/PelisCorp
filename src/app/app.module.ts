@@ -22,6 +22,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ConditionsComponent } from './conditions/conditions.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ConditionsComponent } from './conditions/conditions.component';
     AboutusComponent,
     PrivacyComponent,
     ConditionsComponent,
+    
 
   ],
   imports: [
@@ -46,6 +48,7 @@ import { ConditionsComponent } from './conditions/conditions.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    YouTubePlayerModule,
     CarouselModule.forRoot()
 
   ],
