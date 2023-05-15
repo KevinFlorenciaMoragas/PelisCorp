@@ -14,7 +14,7 @@ export class FilmsComponent implements OnInit {
   constructor(private http: MoviesService) { }
   
   getAllMovies() {
-  this.http.listAllMovies().subscribe(data => {
+  this.http.movieByScoreDesc().subscribe(data => {
     console.log(data)
     this.movies = data as Movies[]
     console.log(this.movies)

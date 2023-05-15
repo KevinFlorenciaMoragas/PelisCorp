@@ -82,6 +82,16 @@ export class MoviesService {
       })
     )
   }
+  movieByScoreDesc(): Observable<any> {
+    let url: string = "http://localhost:8080/movies/topDesc"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
 
 
   

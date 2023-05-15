@@ -23,44 +23,44 @@
         <h1 style="color: white">Top 100 rated Films</h1>
         <div class="card mb-3" style="max-width: 100%; background-color: #7a6585"
           *ngFor="let movie of movies index as i" [routerLink]="['film-view',movie.id]">
-          
-            <div class="row g-0">
-              <div class="col-12 col-md-1">
-                <div style="text-align: center">
-                  <h1 class="id">{{ i+1}}</h1>
-                </div>
-              </div>
-              <div class="col-12 col-md-2" style="display: flex; align-items: center">
-
-                <img [src]="movie.poster[0].url" class="rounded-start img-movie" alt="..." />
-
-                <div class="col-12 col-md-1">
-                  <div style="align-items: center; text-align: center">
-                    <h1 class="score" style="color: aliceblue">
-                      {{ movie.score
-                      }}<i class="fas fa-star" style="color: yellow">&#9733;</i>
-                    </h1>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-8">
-                <div class="d-flex justify-content-between align-items-center">
-                  <h4 id="name" class="card-title center-title mr-3" style="color: aliceblue; margin-top: 0.5em; ">
-                    {{ movie.movieName }}
-                  </h4>
-                  <span id="estreno" style="font-size: 15px; font-weight: normal;color: aliceblue; " class="ml-3">{{
-                    movie.releaseDate }}</span>
-                </div>
-                <span class="card-text center-title" style="font-size: 15px; font-weight: normal;color: aliceblue; "
-                  *ngFor="let director of movie.director">
-                  {{director.name}} {{director.lastName}} </span> <br />
-                <span class="card-text" style="font-size: 15px; font-weight: normal;color: aliceblue; "
-                  *ngFor="let actor of movie.actors ">
-                  {{actor.name}} {{actor.lastName}}
-                </span>
+          <div class="row g-0">
+            <div class="col-12 col-md-1 col-sm-1">
+              <div style="text-align: center">
+                <h1 class="id">{{i+1}}</h1>
               </div>
             </div>
-           
+            <div class="col-12 col-md-2" style="display: flex; align-items: center">
+              <img [src]="movie.poster[0].url" class="rounded-start img-movie" alt="..." />
+              <div class="col-12 col-md-1">
+                <div style="align-items: center; text-align: center">
+                  <h1 class="score" style="color: aliceblue">
+                    {{ movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i>
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 id="name" class="card-title center-title mr-3" style="color: aliceblue; margin-top: 0.5em; ">
+                  {{ movie.movieName }}
+                </h4>
+
+              </div>
+              <span class="card-text center-title" style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                *ngFor="let director of movie.director">
+                {{director.name}} {{director.lastName}} </span> <br />
+              <span class="card-text" style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                *ngFor="let actor of movie.actors ">
+                {{actor.name}} {{actor.lastName}} |
+              </span>
+              <br />
+              <span class="card-text" style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                *ngFor="let genre of movie.genre">
+                {{genre.genre}} |
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
