@@ -1,218 +1,151 @@
-@media only screen and (min-width: 990px) {
-  .bg {
-    background: url(../../../assets/img/wallpaper_def.png);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .bgSecond {
-    background-color: rgb(153, 112, 170);
-    height: 100%;
-    width: 78rem;
-    border-radius: none;
-  }
-
-  #arriba {
-    margin-top: 5em;
-  }
-
-  #imgPerfil {
-    border-radius: 50%;
-    max-width: 150px;
-    width: 100%;
-  }
-
-  #letras {
-    font-size: 2em;
-  }
-
-  .boton {
-    background-color: rgb(228, 197, 96);
-    color: rgb(7, 7, 7);
-    width: 12em;
-    margin-left: 0.5em;
-    border: solid;
-    border-color: rgb(206, 179, 91);
-    font-size: large;
-  }
-
-  .boton:hover {
-    background-color: #e2673a65;
-    cursor: pointer;
-  }
-
-  .rectangulo {
-    height: 39em;
-    width: 64em;
-    background-color: rgba(81, 40, 109, 0.452);
-    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
-  }
-
-  #imagenes {
-    margin-top: 1em;
-    width: 100%;
-    max-width: 10em;
-    height: auto;
-  }
-
-  #boton2 {
-    background-color: rgb(153, 112, 170);
-    color: white;
-    width: 7em;
-    border: none;
-  }
-
-  .caja img {
-    margin-top: 5em;
-    width: 15em;
-    height: 15em;
-  }
-
-  /* Nuevos estilos para pantallas medianas */
-  @media only screen and (max-width: 1200px) {
-    #imgPerfil {
-      max-width: 120px;
-    }
-  }
+/* Estilos generales */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@media only screen and (max-width: 769px) {
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
+  background: url(../../../assets/img/wallpaper_def.png);
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: left top, right top;
+}
+
+.bgSecond {
+  background-color: rgb(153, 112, 170);
+  color: white;
+  padding: 5rem;
+  text-align: center;
+  min-height: 100%; /* Utiliza min-height en lugar de height */
+  border-radius: none;
+}
+
+#arriba {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  margin-top: 2.9em;
+}
+
+#imgPerfil {
+  width: 150px;
+  border-radius: 50%;
+}
+
+#letras {
+  font-size: 2em;
+}
+
+.botonNav {
+  margin-top: 2rem;
+}
+
+.boton {
+  background-color: rgb(228, 197, 96);
+  color: rgb(7, 7, 7);
+  width: 16.7em;
+  margin-left: 0.5em;
+  border: solid;
+  border-color: rgb(206, 179, 91);
+  font-size: large;
+}
+
+.boton:hover {
+  background-color: #e2673a65;
+  cursor: pointer;
+}
+
+.rectangulo {
+  height: auto;
+  width: 100%;
+  background-color: rgba(81, 40, 109, 0.452);
+  clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 5em;
+}
+
+#caja {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#imagenes {
+  width: 10em;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+#boton2 {
+  background-color: rgb(153, 112, 170);
+  color: white;
+  width: 7em;
+  border: none;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
   #imgPerfil {
     width: 7em;
+    margin-left: 15em;
   }
 
   #letras {
     font-size: 1em;
   }
 
-  .bg {
-    background-color: rgb(153, 112, 170);
-  }
-
-  #arriba {
-    margin-top: -1em;
-    margin-right: 5em;
-  }
-
-  .boton {
-    width: 7em;
-    font-size: medium;
-  }
-
   .rectangulo {
-    margin-top: 6px;
-    margin-right: 5em;
-    width: 40em;
-    height: auto;
-    background-color: rgba(81, 40, 109, 0.452);
-    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
+    clip-path: none;
   }
 
-  .bgSecond {
-    background-color: rgb(153, 112, 170);
-    border: none;
-    height: 91%;
-    margin-left: 5em;
-    margin-top: 3em;
-    width: 100%;
-    max-width: 100em;
+  #caja {
+    flex-direction: column;
   }
 
   #imagenes {
-    width: 4em;
-    height: auto;
-    margin-bottom: 2em;
-    max-height: 200px;
-  }
-
-  .caja img {
-    width: 40px;
-    height: 40px;
-  }
-
-  /* Nuevos estilos para pantallas más pequeñas */
-  @media only screen and (max-width: 899px) {
-    #imgPerfil {
-      width: 5em;
-      border-radius:50% ;
-    }
-    .boton {
-      background-color: rgb(228, 197, 96);
-      color: rgb(7, 7, 7);
-      width: 12em;
-      margin-left: 0.5em;
-      border: solid;
-      border-color: rgb(206, 179, 91);
-      font-size: large;
-    }
-
-    .boton:hover {
-      background-color: #e2673a65;
-      cursor: pointer;
-    }
-    .bg {
-      background-color: rgb(153, 112, 170);
-    }
-    #letras {
-      font-size: 0.8em;
-    }
-
-    .rectangulo {
-      margin-right: 2em;
-      width: 30em;
-      background-color: rgba(81, 40, 109, 0.452);
-      clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
-    }
-
-    .bgSecond {
-      background-color: rgb(153, 112, 170);
-      margin-left: 2em;
-      margin-top: 2em;
-    }
+    width: 15em;
   }
 }
-
-
 @media only screen and (max-width: 480px) {
-  .bg {
-    height: 9em;
-  }
+  #imgPerfil {
+    width: 6em;
 
-  #arriba {
-    margin-left: 5em;
-  }
-
-  #contenedor {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
 
-  .boton {
-    width: 8em;
-    font-size: small;
+  #letras {
+    font-size: 0.9em;
   }
 
   .rectangulo {
     width: 100%;
-    height: auto;
-    margin-left: 2.1em;
-    display: flex;
+  }
+#arriba{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+  #caja {
     flex-direction: column;
-    align-items: center;
-    background-color: rgba(81, 40, 109, 0.452);
-    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
   }
-
+.boton{
+  width: 100%;
+    margin-bottom: 1em;
+}
   #imagenes {
-    width: 3em;
-  }
-
-  .caja img {
-    width: 1em;
-    height: 1em;
+    width: 20em;
   }
 }
