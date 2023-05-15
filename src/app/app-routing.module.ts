@@ -9,6 +9,7 @@ import { FilmsComponent } from './list/films/films.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { ComunityComponent } from './comunity/comunity/comunity.component';
 import { SeriesComponent } from './list/series/series.component';
+import { PrivacyComponent } from './privacy/privacy/privacy.component';
 const routes: Routes = [
   { path: 'comunity', component: ComunityComponent },
   { path: 'comunity/view', component: FilmViewComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'principal', component: PrincipalComponent },
   { path: 'films', component: FilmsComponent },
   { path: 'series', component: SeriesComponent },
-
+  {path:'privacy', component: PrivacyComponent},
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
 ];
 

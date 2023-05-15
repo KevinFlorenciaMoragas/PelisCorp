@@ -11,15 +11,15 @@ import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Service } from './services/service.service';
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InterfacesComponent } from './interfaces/interfaces.component';
 import { FilmViewComponent } from './film-view/film-view.component';
-import { ComunityComponent } from './comunity/comunity/comunity.component';
+import { PrivacyComponent } from './privacy/privacy/privacy.component';
 import { SeriesComponent } from './list/series/series.component';
-
+import { ComunityComponent } from './comunity/comunity/comunity.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +31,9 @@ import { SeriesComponent } from './list/series/series.component';
     FilmViewComponent,
     InterfacesComponent,
     FooterComponent,
+    PrivacyComponent,
     ComunityComponent,
-    SeriesComponent
+    SeriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,8 @@ import { SeriesComponent } from './list/series/series.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    CarouselModule.forRoot()
 
   ],
   providers: [Service],

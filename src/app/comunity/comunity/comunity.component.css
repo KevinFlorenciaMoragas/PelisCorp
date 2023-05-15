@@ -52,29 +52,37 @@
 
   #imagenes {
     margin-top: 1em;
-
     width: 100%;
-  max-width: 10em;
-  height: auto;
-}
+    max-width: 10em;
+    height: auto;
+  }
 
-#boton2 {
-  background-color: rgb(153, 112, 170);
-  color: white;
-  width: 7em;
-  border: none;
-}
+  #boton2 {
+    background-color: rgb(153, 112, 170);
+    color: white;
+    width: 7em;
+    border: none;
+  }
 
-.caja img {
-  margin-top: 5em;
-  width: 15em;
-  height: 15em;
+  .caja img {
+    margin-top: 5em;
+    width: 15em;
+    height: 15em;
+  }
+
+  /* Nuevos estilos para pantallas medianas */
+  @media only screen and (max-width: 1200px) {
+    #imgPerfil {
+      max-width: 120px;
+    }
+  }
 }
 
 @media only screen and (max-width: 769px) {
   #imgPerfil {
     width: 7em;
   }
+
   #letras {
     font-size: 1em;
   }
@@ -98,6 +106,8 @@
     margin-right: 5em;
     width: 40em;
     height: auto;
+    background-color: rgba(81, 40, 109, 0.452);
+    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
   }
 
   .bgSecond {
@@ -119,9 +129,51 @@
 
   .caja img {
     width: 40px;
-    height: 1px;
+    height: 40px;
+  }
+
+  /* Nuevos estilos para pantallas más pequeñas */
+  @media only screen and (max-width: 899px) {
+    #imgPerfil {
+      width: 5em;
+      border-radius:50% ;
+    }
+    .boton {
+      background-color: rgb(228, 197, 96);
+      color: rgb(7, 7, 7);
+      width: 12em;
+      margin-left: 0.5em;
+      border: solid;
+      border-color: rgb(206, 179, 91);
+      font-size: large;
+    }
+
+    .boton:hover {
+      background-color: #e2673a65;
+      cursor: pointer;
+    }
+    .bg {
+      background-color: rgb(153, 112, 170);
+    }
+    #letras {
+      font-size: 0.8em;
+    }
+
+    .rectangulo {
+      margin-right: 2em;
+      width: 30em;
+      background-color: rgba(81, 40, 109, 0.452);
+      clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
+    }
+
+    .bgSecond {
+      background-color: rgb(153, 112, 170);
+      margin-left: 2em;
+      margin-top: 2em;
+    }
   }
 }
+
 
 @media only screen and (max-width: 480px) {
   .bg {
@@ -151,6 +203,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(81, 40, 109, 0.452);
+    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
   }
 
   #imagenes {
@@ -161,5 +215,4 @@
     width: 1em;
     height: 1em;
   }
-}
 }

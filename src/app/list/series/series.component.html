@@ -34,7 +34,7 @@
         </form>
       </div>
       <div class="col-lg-10 col-md-12 col-12 border-left">
-        <h1 style="color: white">Top 100 rated Films</h1>
+        <h1 style="color: white">Top 100 rated Series</h1>
         <div
           class="card mb-3"
           style="max-width: 100%; background-color: #7a6585"
@@ -82,9 +82,9 @@
                   >{{ movie.releaseDate }}</span
                 >
               </div>
-              <span class="card-text center-title" *ngFor="let director of movie.director">
+              <span style="color: aliceblue;" class="card-text center-title" *ngFor="let director of movie.director">
                 {{director.name}} {{director.lastName}} </span> <br />
-                 <span class="card-text" *ngFor="let actor of movie.actors ">
+                 <span style="color: aliceblue;" class="card-text" *ngFor="let actor of movie.actors ">
                   {{actor.name}} {{actor.lastName}}
                    </span>
                   </div>
