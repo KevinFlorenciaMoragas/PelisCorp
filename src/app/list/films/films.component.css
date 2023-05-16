@@ -4,7 +4,15 @@
   align-items: center;
   font-size: small;
 }
+.score{
+  color: aliceblue;
+  font-size: 3em;
+  position: absolute;
+}
+#img{
+  margin-top: 1em;
 
+ }
 .button:hover {
   background-color: #eec14f85;
   border: none;
@@ -39,10 +47,25 @@
 @media (min-width: 421px) {
 
   .score{
-    position: absolute;
+    position: end;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1.5em;
+  }
+  #img{
+    width: 10em;
+    height: 12em;
+  }
+  #name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .id{
+    justify-content: left;
   }
 }
 

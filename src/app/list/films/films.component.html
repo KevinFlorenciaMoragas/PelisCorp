@@ -46,22 +46,18 @@
                 <h1 class="id">{{ i+1}}</h1>
               </div>
             </div>
-            <div
-              class="col-12 col-md-2"
-              style="display: flex; align-items: center"
-            >
-
+            <div class="col-12 col-md-2 text-center text-md-left">
               <img
+                id="img"
                 [src]="movie.poster[0].url"
-                class="rounded-start img-movie"
+                class="rounded-start img-movie mx-auto mx-md-0"
                 alt="..."
               />
-
-              <div class="col-12 col-md-1">
+              <div class="col-12 mt-3 text-center text-md-left">
                 <div style="align-items: center; text-align: center">
-                  <h1 class="score" style="color: aliceblue">
-                    {{ movie.score
-                    }}<i class="fas fa-star" style="color: yellow">&#9733;</i>
+                  <h1 class="score " >
+                    {{ movie.score }}
+                    <i class="fas fa-star" style="color: yellow">&#9733;</i>
                   </h1>
                 </div>
               </div>
@@ -78,7 +74,7 @@
                 <span
                   id="estreno"
                   style="font-size: 15px; font-weight: normal;color: aliceblue; "
-                  class="ml-3"
+                  class=""
                   >{{ movie.releaseDate }}</span
                 >
               </div>

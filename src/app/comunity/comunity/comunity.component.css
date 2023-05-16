@@ -83,7 +83,7 @@ html, body {
 
 #imagenes {
   width: 10em;
-  height: auto;
+  height: 13em;
   margin-bottom: 1em;
 }
 
@@ -94,7 +94,6 @@ html, body {
   border: none;
 }
 
-/* Estilos para pantallas más pequeñas */
 @media only screen and (max-width: 768px) {
   #imgPerfil {
     width: 7em;
@@ -147,5 +146,6 @@ html, body {
 }
   #imagenes {
     width: 20em;
+    height: auto;
   }
 }
