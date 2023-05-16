@@ -42,36 +42,6 @@
                     </div>
                 </slide>
             </carousel>
-
-
-            <h1 id="subtitleFreatured">Featured</h1>
-            <div class="d-flex justify-content-center row">
-                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
-                    <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-
-                                <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start" alt="...">
-
-                            </div>
-                            <div id="bgCard" class="col-md-8">
-                                <div class="card-body">
-                                    <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
-                                    <span *ngFor="let director of movie.director" id="colorLetterCard"
-                                        class="card-text">{{director.name}} {{director.lastName}}</span>
-                                    <br>
-                                    <span *ngFor="let genre of movie.genre" id="colorLetterCard"
-                                        class="card-text">{{genre.genre}} </span>
-                                    <br>
-                                    <button class="cardInfoButton" [routerLink]="['film-view',movie.id]">More</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="buttonFeatured" *ngIf="showLoadMoreButton" (click)="loadMore()">Show more</button>
-            <button class="buttonFeatured" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
         </div>
     </div>
 
@@ -150,7 +120,37 @@
         </div>
 
     </div>
+    <br>
+    <div class="container">
+    <h1 id="subtitleFreatured">Featured</h1>
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
+                    <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
+                        <div class="row g-0">
+                            <div class="col-md-4">
 
+                                <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start" alt="...">
+
+                            </div>
+                            <div id="bgCard" class="col-md-8">
+                                <div class="card-body">
+                                    <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
+                                    <span *ngFor="let director of movie.director" id="colorLetterCard"
+                                        class="card-text">{{director.name}} {{director.lastName}}</span>
+                                    <br>
+                                    <span *ngFor="let genre of movie.genre" id="colorLetterCard"
+                                        class="card-text">{{genre.genre}} </span>
+                                    <br>
+                                    <button class="cardInfoButton" [routerLink]="['film-view',movie.id]">More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="buttonFeatured w-100" *ngIf="showLoadMoreButton" (click)="loadMore()">Show more</button>
+            <button class="buttonFeatured" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
+    </div>
 
 
 </div>

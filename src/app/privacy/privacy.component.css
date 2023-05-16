@@ -1,0 +1,28 @@
+.background{
+    background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+}
+.cards{
+    background-color: rgb(153, 112, 170);
+}
+
+@media (min-width: 1200px) {
+    .cards {
+        background-color: rgb(153, 112, 170);
+        height: 320px;
+        border: 1px solid black;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .cards {
+        background-color: rgb(153, 112, 170);
+        height: 400px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 999px) {
+    .cards{
+        background-color: rgb(153, 112, 170);
+        height: 350px;
+    }
+  }

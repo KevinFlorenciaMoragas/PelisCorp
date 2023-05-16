@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./conditions.component.css']
 })
 export class ConditionsComponent {
-name:string = 'PelisCorp'
-country:string = 'Spain'
+  name:string = 'PelisCorp'
+  country:string = 'Spain'
+  date :number = new Date().getFullYear();
 }
