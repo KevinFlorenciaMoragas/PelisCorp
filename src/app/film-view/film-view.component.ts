@@ -23,6 +23,7 @@ export class FilmViewComponent {
     releaseDate: new Date(),
     plot: '',
     duration: 0,
+    photo: '',
     income: 0,
     score: 0,
     poster: [],

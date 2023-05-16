@@ -9,7 +9,7 @@
 }
 
 .starterImg {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
@@ -59,7 +59,6 @@
 #bgNameCarousel {
   background-color: #eec14f94;
   border: 1px solid black;
-  margin-top: 10px;
 }
 
 .bgSecondSlice {
@@ -369,13 +368,13 @@ body {
   }
   100% {
     -webkit-transform: translateX(calc(-250px * 7));
-            transform: translateX(calc(-250px * 1));
+            transform: translateX(calc(-250px * 3));
   }
 }
 .slider {
 
   /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);*/
-  height: 100px;
+  height: 25em;
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -401,15 +400,15 @@ body {
 }
 .slider .slide-track {
   -webkit-animation: scroll 40s linear infinite;
-          animation: scroll 10s linear infinite;
+          animation: scroll 30s linear infinite;
   display: flex;
   width: calc(250px * 14);
 }
 .slider .slide {
-  height: 50px;
-  width: 250px;
+
 }
 
-.slide img{
-  
+.infiniteCarousel{
+  height: 20em;
+  margin-right: 10em;
 }

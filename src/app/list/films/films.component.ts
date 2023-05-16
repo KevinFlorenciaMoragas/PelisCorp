@@ -20,6 +20,7 @@ export class FilmsComponent implements OnInit {
   actor: Actor[] = []
   movieReview: MovieReview[] = []
   reviews: Reviews[] = []
+  
 
 
   ngOnInit() {

@@ -1,10 +1,10 @@
 <br>
 <body>
-<div class="d-lg-block d-sm-none d-none">
+<div class="d-lg-block ">
 <div class="bg d-flex justify-content-center align-items-center vh-100">
   <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
     <h1>{{usernameLocalStorage}}</h1>
-    <div class="bgSecond p-5 rounded-5 text-secondary shadow" style="width: 25rem">
+    <div class="bgSecond p-5 rounded-5 text-secondary shadow" >
       <div class="text-center text-white fs-1 fw-bold">Login</div>
       <div class="input-group mt-4">
         <div class="input-group-text bgSecond">
@@ -39,8 +39,8 @@
       <div class="d-flex gap-1 justify-content-center mt-1 text-white">
         <div>Don't have an account?</div>
         <a class="text-decoration-none text-info fw-semibold" [routerLink]= "['register']">
-          Register 
-        </a> 
+          Register
+        </a>
       </div>
       <div class="p-3">
         <div class="border-bottom text-center" style="height: 0.9rem">
@@ -55,36 +55,4 @@
   </form>
 </div>
 </div>
-
-
-<!--
-FONDO POR COLUMNAS, PREGUNTAR CHAT
--->
-
 </body>
-<!--
-<div class="d-flex justify-content-center align-items-center vh-100" id="body-structure">
-<section id="registerBlock" class="col-12 col-md-12 col-lg-12">
-  <div class="d-flex justify-content-center">
-  </div>
-    <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
-        <h1>{{usernameLocalStorage}}</h1>
-        <div  class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" formControlName="username">
-          </div>
-          <div *ngIf="username.touched && username.invalid" class="alert alert-danger">Email no valido</div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Contraseña:</label>
-            <input type="text" class="form-control" id="password" formControlName="password">
-          </div>
-          <div *ngIf="password.touched && password.errors?.['required']" class="alert alert-danger">La contraseña es obligatoria</div>
-          <div *ngIf="password.touched && password.errors?.['minlength']" class="alert alert-danger">La contraseña es muy corta</div>
-          <div *ngIf="password.touched && password.errors?.['maxlength']" class="alert alert-danger">La contraseña es muy larga</div>
-
-
-        <button  type="submit"  class="offset-5 btn btn-primary">Submit</button>
-    </form>
-  </section>
-</div>
--->

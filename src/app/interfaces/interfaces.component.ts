@@ -16,6 +16,7 @@ export interface Movies {
   duration: number; 
   income: number; 
   score: number; 
+  photo: string;
   poster: Poster[]; 
   trailer: string; 
   favorites: Favorites[]; 

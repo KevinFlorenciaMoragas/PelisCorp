@@ -32,6 +32,7 @@ export class PrincipalComponent implements OnInit{
     movieName: '',
     releaseDate: new Date(),
     plot: '',
+    photo: '',
     duration: 0,
     income: 0,
     score: 0,
