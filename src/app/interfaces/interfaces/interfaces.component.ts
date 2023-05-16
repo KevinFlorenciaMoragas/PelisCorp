@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class InterfacesComponent {
 
-}
+}/*
 //1
 export interface Movies {
   id: number;
@@ -146,4 +146,4 @@ export interface MovieScreenwritter{
   id_movie: number;
   id_screenwritter: number;
 }
-//19
+//19*/

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators, FormArray } from '@angular/forms';
 import { Service } from 'src/app/services/service.service';
-import { User } from 'src/app/interfaces/interfaces/interfaces.component';
+import { User } from 'src/app/interfaces/interfaces.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,6 +18,10 @@ export class RegisterComponent implements OnInit {
   postUser(){
     this.http.registerUser(this.registerForm.value).subscribe(data =>{
       console.log(data)
+      // this.http.login(this.registerForm.value).subscribe(data =>{
+      //   console.log(data)
+      // } 
+      // )
     })
   }
  
@@ -31,5 +35,6 @@ export class RegisterComponent implements OnInit {
     username: this.username,
     email: this.email,
     password: this.password,
+    repeatPassword: this.repeatPassword
 })
 }
