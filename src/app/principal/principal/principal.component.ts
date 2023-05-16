@@ -1,37 +1,26 @@
 import { Component } from '@angular/core';
-
 import { Movies } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
+import { Observable, from } from 'rxjs'; 
 import { OnInit } from '@angular/core';
+import { CarouselConfig } from 'ngx-bootstrap/carousel';
+
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'],
+  providers: [
+    { provide: CarouselConfig, useValue: { interval: 5000, noPause: true, showIndicators: false } }
+  ]
+  
 })
+
 export class PrincipalComponent implements OnInit{
 
   constructor(private http: MoviesService) { }
 
-  // firstImages = [
-  //   { url: 'https://via.placeholder.com/200x300/ff0000', alt: 'Imagen 1' },
-  //   { url: 'https://via.placeholder.com/200x300/00ff00', alt: 'Imagen 2' },
-  //   { url: 'https://via.placeholder.com/200x300/0000ff', alt: 'Imagen 3' },
-  //   { url: 'https://via.placeholder.com/200x300/ffff00', alt: 'Imagen 4' },
-  //   { url: 'https://via.placeholder.com/200x300/ff00ff', alt: 'Imagen 5' },
-  //   { url: 'https://via.placeholder.com/200x300/00ffff', alt: 'Imagen 6' },
-  //   { url: 'https://via.placeholder.com/200x300/ff0000', alt: 'Imagen 7' },
-  //   { url: 'https://via.placeholder.com/200x300/00ff00', alt: 'Imagen 8' },
-  //   { url: 'https://via.placeholder.com/200x300/0000ff', alt: 'Imagen 9' },
-  //   { url: 'https://via.placeholder.com/200x300/ffff00', alt: 'Imagen 10' },
-  // ];
-
-  // showFirstImages = true;
-
   movies: Movies[] = []
-
   youtubeApiLoaded = false;
    number: number = 0;
   displayedMovies: any[] = [];
@@ -39,6 +28,7 @@ export class PrincipalComponent implements OnInit{
   showLoadLessButton: boolean = false;
   initialLoad = true;
   showAllMovies: boolean = false;
+
   movieRecommended: Movies = {
     id: 0,
     movieName: '',
@@ -66,6 +56,7 @@ export class PrincipalComponent implements OnInit{
       this.youtubeApiLoaded = true;
     }
     this.getAllMovies()
+
     this.getMovieRecommended()
     this.displayedMovies = this.movies.slice(0, 3);
     this.initialLoad = false;
@@ -79,6 +70,11 @@ export class PrincipalComponent implements OnInit{
       console.log(this.movieRecommended)
     })
   }
+
+    this.displayedMovies = this.movies.slice(0, 3);
+    this.initialLoad = false;
+  }
+  
 
   getAllMovies() {
     this.http.listAllMovies().subscribe(data => {
@@ -111,4 +107,6 @@ export class PrincipalComponent implements OnInit{
     this.showLoadMoreButton = true;
     this.showLoadLessButton = false;
   }
+
 }
+

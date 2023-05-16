@@ -18,6 +18,7 @@ export class MoviesService {
     })
   }
   listAllMovies(): Observable<any> {
+
     let url: string = "http://localhost:8080/allMovies"
 
     return this.http.get<any>(url).pipe(
@@ -82,6 +83,7 @@ export class MoviesService {
       })
     )
   }
+
   movieByScoreDesc(): Observable<any> {
     let url: string = "http://localhost:8080/movies/topDesc"
     return this.http.get<any>(url).pipe(
@@ -91,12 +93,6 @@ export class MoviesService {
       })
     )
   }
-
-
-
-  
-
-
 
   listAllScreenWritter(): Observable<any> {
     let url: string = "http://localhost:8080/screenwritter"

@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+
+
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Movies } from 'src/app/interfaces/interfaces.component';
 import { OnInit } from '@angular/core';
+import { Component, HostListener  } from '@angular/core';
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,6 +14,7 @@ import { OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit{
   usernameLocalStorage = localStorage.getItem('username')
+
   movies: Movies[] = []
   constructor(private http:MoviesService) { }
   youtubeApiLoaded = false;
@@ -40,4 +45,18 @@ export class HeaderComponent implements OnInit{
     }
     //localStorage.setItem('search', search)
   }
+
+
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrollTop > 100) {
+      this.isScrolled = true;
+    } else {
+      this.isScrolled = false;
+    }
+  }
+
 }

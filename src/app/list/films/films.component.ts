@@ -3,17 +3,27 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Genre, Movies } from 'src/app/interfaces/interfaces.component';
+
+
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
   styleUrls: ['./films.component.css']
 })
 export class FilmsComponent implements OnInit {
+
   movies: Movies[] = []
   genres : Genre[] = []
-  constructor(private http: MoviesService) { }
-  
+
+
+  ngOnInit() {
+    this.getAllMovies(),
+    this.getAllGenres(),
+    this.getAllActor(),
+    this.getAllMovieReview()
+  }
   getAllMovies() {
+
   this.http.movieByScoreDesc().subscribe(data => {
     console.log(data)
     this.movies = data as Movies[]
@@ -33,3 +43,4 @@ ngOnInit() {
   this.getAllGenres()
 }
 }
+

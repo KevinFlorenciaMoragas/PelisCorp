@@ -10,6 +10,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ConditionsComponent } from './conditions/conditions.component';
+import { SeriesComponent } from './list/series/series.component'; 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'principal', component: PrincipalComponent },
   { path: 'films', component: FilmsComponent },
-  { path: 'series', component: FilmViewComponent },
+  {path:'series', component: SeriesComponent},
   { path: 'carousel', component: PrincipalComponent },
   { path: 'principal/film-view/:id', component: FilmViewComponent },
   { path: 'films/film-view/:id', component: FilmViewComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },
   { path: '', redirectTo: '/principal', pathMatch: 'full' }
+
 ];
 
 @NgModule({
