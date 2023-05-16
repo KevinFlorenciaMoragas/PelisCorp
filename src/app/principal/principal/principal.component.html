@@ -44,21 +44,25 @@
             </carousel>
 
 
-
-
             <h1 id="subtitleFreatured">Featured</h1>
             <div class="d-flex justify-content-center row">
                 <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
                     <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
                         <div class="row g-0">
-                            <div class="col-md-4" *ngFor="let poster of movie.poster">
-                                <img [src]="poster.url" class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-4">
+
+                                <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start" alt="...">
+
                             </div>
                             <div id="bgCard" class="col-md-8">
                                 <div class="card-body">
                                     <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
-                                    <p id="colorLetterCard" class="card-text">{{movie.description}}</p>
-                                    <p class="card-text"><small id="colorLetterCard">Last updated 3 mins ago</small></p>
+                                    <span *ngFor="let director of movie.director" id="colorLetterCard"
+                                        class="card-text">{{director.name}} {{director.lastName}}</span>
+                                    <br>
+                                    <span *ngFor="let genre of movie.genre" id="colorLetterCard"
+                                        class="card-text">{{genre.genre}} </span>
+                                    <br>
                                     <button class="cardInfoButton" [routerLink]="['film-view',movie.id]">More</button>
                                 </div>
                             </div>
@@ -71,71 +75,60 @@
         </div>
     </div>
 
-    <div id="rest">
-        <div class="container">
-            <h2 id="index-textSlice">The most popular</h2>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="carousel text-center">
-                    <carousel [itemsPerSlide]="1" [interval]="5000" [noWrap]="false" [showIndicators]="false">
-                        <slide *ngFor="let movie of movies">
-
-                            <img class="imgCarousel"  src="{{movie.poster[0].url}}">
+    <div class="container-fluid">
+        <div class="row bg-purple text-white justify-content-center" style="background-color: rgb(88, 60, 101)">
+            <h2 class="col-12 text-center">The most Popular</h2>
+            <div class="col-md-4 col-lg-8 col-sm-4 col-6">
+                <div class="slider">
+                    <div class="slide-track">
+                        <div class="slide" *ngFor="let movie of movies">
+                            <div class="slide" *ngFor="let poster of movie.poster">
+                                <img class="infiniteCarousel" [src]="poster.url">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title" style="color: aliceblue">{{movie.movieName}}</h5>
-
                                 <button id="buttonCarousel" class="btn mb-3">MORE</button>
                             </div>
-                        </slide>
-                    </carousel>
-                    <ng-template #customPrevArrow>
-                        <button class="btn btn-primary carousel-control-prev">
-                            <i class="fa fa-chevron-left"></i>
-                        </button>
-                    </ng-template>
-
-                    <ng-template #customNextArrow>
-                        <button class="btn btn-primary carousel-control-next">
-                            <i class="fa fa-chevron-right"></i>
-                        </button>
-                    </ng-template>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h2 id="index-textSlice" style="color:black;">Recomended</h2><br>
-    <div class="card-container">
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-xs-12 trailer-container2" style="display: flex;
-            justify-content: center;">
-                <img class="img-responsive" style="display:block; margin-left: auto; margin-right: auto;"
-                    src="../../../assets/img/padrino.jpg">
-            </div>
-            <div class="col-lg-5 col-md-8 col-xs-12">
-                <h2 class="title">The Godfather</h2>
-                <p class="subtitle">Plot</p>
-                <p class="plot">Don Vito Corleone is the respected and feared boss of one of the five mafia families in
-                    New
-                    York in the 40s. The man has four children: Connie, Sonny, Fredo and Michael, who wants nothing to
-                    do
-                    with Corleone's dirty business. his father. When another capo, Sollozzo, tries to assassinate
-                    Corleone,
-                    a bloody fight between the different clans begins. </p>
-            </div>
-            <div class="trailer-container col-lg-5 col-md-12 col-xs-12 " style="margin: auto; display: block;">
-                <div class="col-lg-12 d-lg-block d-md-none d-none">
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v72XprPxy3E"
-                            allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+
+
+
+    <h2 id="index-textSlice" style="color:black;">Recomended</h2><br>
+    <div class="card-container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-xs-12 trailer-container2" style="display: flex; justify-content: center;">
+                <img class="img-responsive" style="display:block; margin-left: auto; margin-right: auto;"
+                    src="{{movieRecommended.poster[0].url}}">
+            </div>
+            <div class="col-lg-5 col-md-8 col-xs-12">
+                <h2 class="title">{{movieRecommended.movieName}}</h2>
+                <p class="subtitle">Plot</p>
+                <p class="plot">{{movieRecommended.plot}}</p>
+            </div>
+            <div class="trailer-container col-lg-5 col-md-12 col-xs-12 " style="margin: auto; display: block;">
+                <div class="col-lg-12 d-lg-block d-md-none d-none">
+                    <div class="ratio ratio-16x9">
+                        <youtube-player class="embed-responsive-item" videoId="{{movieRecommended.trailer}}"
+                            allowfullscreen></youtube-player>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
     <div class="button-container">
         <button class="container buttonFeatured w-100">More</button>
     </div>
+
     <div class="container-fluid">
         <div class="row bg-purple text-white justify-content-center" style="background-color: rgb(88, 60, 101)">
             <h2 class="col-12 text-center">The most Interesting</h2>
@@ -146,14 +139,18 @@
                             <div class="slide" *ngFor="let poster of movie.poster">
                                 <img class="infiniteCarousel" [src]="poster.url">
                             </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="color: aliceblue">{{movie.movieName}}</h5>
-                                    <button id="buttonCarousel" class="btn mb-3">MORE</button>
-                                </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: aliceblue">{{movie.movieName}}</h5>
+                                <button id="buttonCarousel" class="btn mb-3">MORE</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+
+    </div>
+
+
+
 </div>

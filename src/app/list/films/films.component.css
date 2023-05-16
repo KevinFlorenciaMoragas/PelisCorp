@@ -2,6 +2,8 @@
     border: none;
     justify-content: center;
     align-items: center;
+    font-size: small;
+
   }
   
   .button:hover {
@@ -30,7 +32,12 @@
     color: white;
     margin-bottom: 40px;
   }
-  
+
+  .id{
+    color: aliceblue;
+    margin-top: 1.6em;
+  }
+
   
   @media (min-width: 421px) {
   
@@ -43,7 +50,9 @@
   }
   
   body{
+
     background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+
   }
   
   .star{

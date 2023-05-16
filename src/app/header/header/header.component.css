@@ -13,15 +13,14 @@
 #navLinks{
   color: white;
   font-family: helvetica;
-  font-size: 17px;
+  font-size: 15px;
   padding-left: 30px;
-  font-family: monospace;
 }
 #log{
   border: 2px solid rgb(255, 255, 255);
   padding-inline: 1.5em;
   color: white;
-  font-family: monospace;
+  font-family: helvetica;
   font-size: 15px;
 }
 #sign{
@@ -29,7 +28,7 @@
     color: rgb(88, 60, 101);
     padding-inline: 1.5em;
     margin-left: 10px;
-    font-family: monospace;
+    font-family: helvetica;
     font-size: 15px;
 }
 #log:hover {

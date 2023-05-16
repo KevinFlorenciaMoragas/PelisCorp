@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { Movies } from '../interfaces/interfaces.component';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,15 @@ export class MoviesService {
 
   listAllMoviesByTitle(title: string): Observable<any> {
     let url: string = "http://localhost:8080/movies/title/" + title
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllMovieByTitleInput(title: string): Observable<any> {
+    let url: string = "http://localhost:8080/movies/titleInput/" + title
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -66,6 +76,16 @@ export class MoviesService {
   }
   listAllGenres(): Observable<any> {
     let url: string = "http://localhost:8080/genre"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
+  movieByScoreDesc(): Observable<any> {
+    let url: string = "http://localhost:8080/movies/topDesc"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)

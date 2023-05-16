@@ -1,14 +1,13 @@
-/* CSS DEL CAROUSEL */
+* CSS DEL CAROUSEL */
 .container {
   position: relative;
 }
-
 .imgCarousel {
   width: 100%;
   height: auto;
 }
 
-.starterImg {
+.starterImg{
   width: 50%;
   height: auto;
 }
@@ -16,13 +15,109 @@
 .carousel-item {
   margin-bottom: 2rem;
 }
-
 .carousel-control-prev,
 .carousel-control-next {
   font-size: 1.5rem;
   width: 2rem;
   height: 2rem;
   line-height: 2rem;
+}
+.carousel-container {
+  width: 1800px;
+  height: 400px;
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+.cardTitle{
+  font-size: 30px;
+  color: black;
+  font-family: monospace;
+}
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+}
+
+/*CSS COLORES & WALLPAPERS*/
+#bgCard{
+  background: linear-gradient(90deg, rgba(0,0,0,0.80015756302521) 0%, rgba(88,60,101,1) 4%, rgba(88,60,101,0.8029586834733894) 61%, rgba(210,210,210,1) 100%);
+  border-radius: 1px;
+  border: 1px solid black;
+}
+#bgNameCarousel{
+  background-color: #eec14f94;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+.bgSecondSlice{
+  background-color: rgb(153, 112, 170);
+}
+.cardInfoButton{
+  background-color: rgb(153, 112, 170);
+  color: white;
+  border: 1px solid black;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+.cardInfoButton:hover{
+  background-color: #EEC24F;
+  color: black;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+#colorLetterCard{
+  color: white;
+}
+#subtitleFreatured{
+  font-family: monospace;
+}
+.options{
+  padding-top: 7em;
+}
+#index-text{
+  color: white;
+}
+#index-textSlice{
+  color: white;
+  margin: 10px;
+  font-family: monospace;
+  text-align: center;
+}
+.masthead {
+  padding: 1.5rem 0;
+  background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+}
+#rest{
+  background-color: #583C65;
+}
+.buttonFeatured{
+  background-color: rgb(153, 112, 170);
+  color: white;
+  margin-bottom: 3em;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: monospace;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+}
+
+.buttonFeatured:hover{
+  background-color: #EEC24F;
+  color: black;
+  margin-bottom: 3em;
+  border-radius: 10px;
+}
+
+.card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .carousel-container {
@@ -59,6 +154,7 @@
 #bgNameCarousel {
   background-color: #eec14f94;
   border: 1px solid black;
+  margin-top: 10px;
 }
 
 .bgSecondSlice {
@@ -242,6 +338,13 @@
   animation-fill-mode: both;
 }
 
+
+.carousel-slide {
+  animation-name: slide;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
 @keyframes slide {
   from {
     opacity: 0;
@@ -254,12 +357,15 @@
   }
 }
 
-.card-container,
-#cardMid {
+
+/* CARD MID */
+.card-container, #cardMid{
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 .card-container {
   width: 85%;
@@ -285,17 +391,20 @@
   margin-top: 50px;
 }
 
+
 .subtitle {
   font-size: 25px;
   margin-bottom: 20px;
   text-align: center;
 }
 
+
 .plot {
   color: rgb(26, 24, 24);
   font-size: 16px;
   text-align: center;
 }
+
 
 @media (min-width: 992px) {
   .trailer-container {
@@ -339,6 +448,7 @@
   margin: 0;
   padding: 0;
   margin-top: 10px;
+
 }
 
 /* CAROUSEL INFINITO */
@@ -412,3 +522,4 @@ body {
   height: 20em;
   margin-right: 10em;
 }
+

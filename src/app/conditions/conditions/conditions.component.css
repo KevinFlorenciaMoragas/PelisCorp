@@ -4,49 +4,25 @@
 
 .cards {
     background-color: rgb(153, 112, 170);
-    border: solid 1px black;
-}
-.title{
-    background-color: #eec14f94;
-    border: solid 1px black;
-    padding: 5px;
 }
 
 @media (min-width: 1200px) {
     .cards {
         background-color: rgb(153, 112, 170);
-        border: solid 1px black;
         height: 320px;
-    }
-    .title{
-        background-color: #eec14f94;
-        border: solid 1px black;
-        padding: 5px;
     }
 }
 
 @media (min-width: 1000px) and (max-width: 1199px) {
     .cards {
         background-color: rgb(153, 112, 170);
-        border: solid 1px black;
         height: 400px;
-    }
-    .title{
-        background-color: #eec14f94;
-        border: solid 1px black;
-        padding: 5px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 999px) {
     .cards{
         background-color: rgb(153, 112, 170);
-        border: solid 1px black;
         height: 350px;
-    }
-    .title{
-        background-color: #eec14f94;
-        border: solid 1px black;
-        padding: 5px;
     }
   }

@@ -1,85 +1,36 @@
-@media (max-width: 2000px) {
-	h1 {
-	  background-color: rgb(229, 229, 229);
+
+h1{
+	background-color: rgb(229, 229, 229);
+}
+
+.bg{
+
+	background:url(../../../assets/img/wallpaper_def.png);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bgSecond{
+    background-color: #583C65;
+}
+
+.btnlog:hover{
+	background-color: #EEC24F;
+    color: black;
+}
+
+@media(max-width:990px) {
+	.bg2{
+		background-color: rgb(229, 229, 229);	
 	}
-  
-	.bg {
-	  background: url(../../../assets/img/wallpaper_def.png);
-	  background-size: cover;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
+}
+
+@media(max-width:576px) {
+	.bg{
+		background-color: rgb(229, 229, 229);	
 	}
-  
-	.bgSecond {
-	  background-color: #583c65;
-	}
-  
-	.btnlog:hover {
-	  background-color: #eec24f;
-	  color: black;
-	}
-  }
-  @media only screen and (max-width: 768px) {
-	h1 {
-	  background-color: rgb(229, 229, 229);
-	}
-  .bg{
-	background-color: none;
-	background: none;
-  }
-  
-  
-	.bgSecond {
-	  background-color: #583c65;
-	  width: auto;
-	}
-  
-	.btnlog:hover {
-	  background-color: #eec24f;
-	  color: black;
-	}
-  }
-  
-  @media (max-width: 576px) {
-	h1 {
-	  background-color: rgb(229, 229, 229);
-	}
-  
-	.bg {
-	  background: url(../../../assets/img/wallpaper_def.png);
-	  background-size: cover;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	}
-  
-	.bgSecond {
-	  background-color: #583c65;
-	}
-  
-	.btnlog:hover {
-	  background-color: #eec24f;
-	  color: black;
-	}
-  }
-  @media only screen and (max-width: 768px) {
-	h1 {
-	  background-color: rgb(229, 229, 229);
-	}
-  .bg{
-	background-color: none;
-	background: none;
-  }
-  
-  
-	.bgSecond {
-	  background-color: #583c65;
-	  width: auto;
-	}
-  
-	.btnlog:hover {
-	  background-color: #eec24f;
-	  color: black;
-	}
-  }
+	
+}
+

@@ -17,6 +17,12 @@ import { Service } from './services/service.service';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InterfacesComponent } from './interfaces/interfaces.component';
 import { FilmViewComponent } from './film-view/film-view.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './helpers/auth.interceptor';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { ConditionsComponent } from './conditions/conditions.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,10 @@ import { FilmViewComponent } from './film-view/film-view.component';
     FilmViewComponent,
     InterfacesComponent,
     FooterComponent,
+    AboutusComponent,
+    PrivacyComponent,
+    ConditionsComponent,
+    
 
   ],
   imports: [
@@ -38,10 +48,14 @@ import { FilmViewComponent } from './film-view/film-view.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    YouTubePlayerModule,
     CarouselModule.forRoot()
 
   ],
-  providers: [Service],
+  providers: [Service,
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
