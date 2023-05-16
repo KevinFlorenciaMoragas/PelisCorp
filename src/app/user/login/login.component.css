@@ -1,18 +1,36 @@
-/*body{
-    background-color: rgb(229, 229, 229);
-    margin: 0;
-	padding: 0;
+
+h1{
+	background-color: rgb(229, 229, 229);
+}
+
+.bg{
+
+	background:url(../../../assets/img/wallpaper_def.png);
+	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-}*/
-#registerBlock{
+}
+
+.bgSecond{
     background-color: #583C65;
-    padding-top: 1em;
-    width: 400px;
-	height: 450px;
-	overflow: hidden;
-    border: 2px solid white;
+}
+
+.btnlog:hover{
+	background-color: #EEC24F;
+    color: black;
+}
+
+@media(max-width:990px) {
+	.bg2{
+		background-color: rgb(229, 229, 229);	
+	}
+}
+
+@media(max-width:576px) {
+	.bg{
+		background-color: rgb(229, 229, 229);	
+	}
+	
 }
 

@@ -5,6 +5,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
+import { Actor, Director, Reviews, MovieReview, Screenwritter } from '../interfaces/interfaces/interfaces.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-film-view',
@@ -12,26 +14,53 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./film-view.component.css']
 })
 export class FilmViewComponent {
-  constructor(private http: MoviesService) { }
-  movies: Movies[] = []
-  genres: Genre[] = []
+  constructor(private http: MoviesService, private route: ActivatedRoute) {
 
-  ngOnInit() {
-    this.getAllMovies(),
-    this.getAllGenres()
+  } 
+  movie: Movies = {
+    id: 0,
+    movieName: '',
+    releaseDate: new Date(),
+    plot: '',
+    duration: 0,
+    income: 0,
+    score: 0,
+    poster: [],
+    trailer: '',
+    favorites: [],
+    director: [],
+    actors: [],
+    genre: [],
+    awards: [],
+    reviews: [],
+    screenwritter: []
   }
-  getAllMovies() {
-    this.http.listAllMovies().subscribe(data => {
-      console.log(data)
-      this.movies = data as Movies[]
-      console.log(this.movies)
-    })
+ genres: Genre[] = [] 
+ movieId: any 
+ id: any 
+ 
+ ngOnInit() {
+   console.log("Estoy en ngOnInit") 
+   const movieIdParam = this.route.snapshot.paramMap.get('id'); console.log(movieIdParam) 
+   if (movieIdParam !== null) { 
+     this.id = +movieIdParam; 
+     console.log(this.id) 
+   } 
+   this.http.getMovieById(this.id).subscribe(data => { 
+     this.movie = data; }) 
+     //this.getAllMovies(), // this.getAllGenres() }
+    
+   }
+
+
+  contenidoActual: string = '';
+
+  cambiarContenido(boton: string) {
+    this.contenidoActual = boton;
   }
-  getAllGenres() {
-    this.http.listAllGenres().subscribe(data => {
-      console.log(data)
-      this.genres = data as Genre[]
-      console.log(this.genres)
-    })
-  }
+
+
+
+
+
 }

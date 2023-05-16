@@ -56,7 +56,7 @@ export class MoviesService {
     )
   }
   listAllDirectors(): Observable<any> {
-    let url: string = "http://localhost:8080/allDirectors"
+    let url: string = "http://localhost:8080/director"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -65,7 +65,45 @@ export class MoviesService {
     )
   }
   listAllGenres(): Observable<any> {
-    let url: string = "http://localhost:8080/allGenres"
+    let url: string = "http://localhost:8080/genre"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
+  listAllScreenWritter(): Observable<any> {
+    let url: string = "http://localhost:8080/screenwritter"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
+  listAllActor(): Observable<any> {
+    let url: string = "http://localhost:8080/allActors"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllMovieReview(): Observable<any> {
+    let url: string = "http://localhost:8080/movieReview"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllReview(): Observable<any> {
+    let url: string = "http://localhost:8080/reviews"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)

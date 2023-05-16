@@ -1,38 +1,62 @@
-<div class=" col-lg-9 container-fluid align-items-center"  >
-<div class="btn-group">
-    <button type="button" class="btn btn-danger">Tipo</button>
-    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-      <span class="visually-hidden">Toggle Dropdown</span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Peliculas</a></li>
-      <li><a class="dropdown-item" href="#">Series</a></li>
-      <li><a class="dropdown-item" href="#">Documentales</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Separated link</a></li>
-    </ul>
-    <div class="btn-group">
-        <button type="button" class="btn btn-danger">Genero</button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
+<body>
+  <div class="container fondo">
+    <br /><br /><br /><br /><br />
+    <div class="row">
+      <div class="col-lg-2 col-md-12 col-12">
+        <div class="title">
+          <h2>Filtros</h2>
+        </div>
+        <button type="button" class="btn button">
+          <div class="featured-text">Terror</div>
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Accion</a></li>
-          <li><a class="dropdown-item" href="#">Romance</a></li>
-          <li><a class="dropdown-item" href="#">Thriller</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Policiacas</a></li>
-        </ul>
+        <button type="button" class="btn button">
+          <div class="featured-text">Terror</div>
+        </button>
+        <button type="button" class="btn button">
+          <div class="featured-text">Terror</div>
+        </button>
+        <button type="button" class="btn button">
+          <div class="featured-text">Terror</div>
+        </button>
+        <br />
+        <br />
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            style="max-width: 200px" />
+          <button class="btn search" type="submit">Search</button>
+        </form>
       </div>
-    
+      <div class="col-lg-10 col-md-12 col-12 border-left">
+        <h1 style="color: white">Top 100 rated Films</h1>
+        <div class="card mb-3" style="max-width: 100%; background-color: #7a6585" *ngFor="let item of movies">
+          <div class="row g-0">
+            <div class="col-12 col-md-1">
+              <div style="text-align: center">
+                <h1 class="id">{{ item.id }}</h1>
+              </div>
+            </div>
+            <div class="col-12 col-md-2" style="display: flex; align-items: center;">
+              <img [src]="item.photo" class="rounded-start img-movie" alt="..." />
+              <div class="col-12 col-md-1">
+                <div style="align-items: center; text-align: center;">
+                  <h1 class="score">{{item.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></h1>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 id="name" class="card-title center-title mr-3">{{ item.movieName }}</h4>
+                <span id="estreno" style="font-size: 15px; font-weight: normal" class="ml-3">{{ item.releaseDate
+                  }}</span>
+              </div>
+              <p class="card-text center-title">Michael B. Jordan</p>
+              <p class="card-text">
+                Michael B. Jordan, Tessa Thompson, Jonathan Majors, Phylicia Rashad, Mila Davis-Kent, Florian Munteanu,
+                Selenis Leyva, Spence Moore II, Tony Bellew
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<hr>
-<div class="row" style="background-color:rgb(153, 112, 170) ;">
-  <div class="container">
-  <ul *ngFor="let item of movies">
-    <li>{{item.movieName}}</li>
-</ul>
-</div>
-</div>
-
