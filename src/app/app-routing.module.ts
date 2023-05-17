@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'films', component: FilmsComponent },
   { path: 'series', component: SeriesComponent },
   {path:'privacy', component: PrivacyComponent},
+  {path:'view', component: FilmViewComponent},
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
 ];
 
