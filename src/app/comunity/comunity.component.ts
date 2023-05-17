@@ -72,7 +72,7 @@ export class ComunityComponent implements OnInit {
 
   loadMore() {
     const startIndex = this.displayedMovies.length;
-    const endIndex = startIndex + 2;
+    const endIndex = startIndex + 3;
     this.displayedMovies = this.displayedMovies.concat(this.movies.slice(startIndex, endIndex));
     if (endIndex >= this.movies.length) {
       this.showLoadMoreButton = false;

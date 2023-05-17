@@ -1,3 +1,11 @@
+
+.bg{
+    background: linear-gradient(0deg, rgba(210, 210, 210, 1) 45%, rgba(88, 60, 101, 1) 93%);
+}
+#favourites{
+    padding: 20px;
+
+}
 #caja {
     display: flex;
     flex-wrap: wrap;
@@ -5,47 +13,76 @@
     align-items: center;
   }
   #img-midium {
-    height: 20em;
-    margin-right: 10em;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  #bgCard{
+    background: linear-gradient(90deg, rgba(0,0,0,0.80015756302521) 0%, rgba(88,60,101,1) 4%, rgba(88,60,101,0.8029586834733894) 61%, rgba(210,210,210,1) 100%);
+    border-radius: 1px;
+    border: 1px solid black;
+  }
+  .cardInfoButton{
+    background-color: rgb(153, 112, 170);
+    color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+  }
+  .cardInfoButton:hover{
+    background-color: #EEC24F;
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+  }
+  #colorLetterCard{
+    color: white;
   }
   .buttonFeatured{
     background-color: rgb(153, 112, 170);
     color: white;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     border-radius: 10px;
     font-size: 20px;
     font-family: monospace;
     transition: all 0.3s ease-in-out;
     border: 1px solid black;
   }
+  .buttonFeatured:hover {
+    background-color: #EEC24F;
+    color: black;
+    margin-bottom: 1em;
+    border-radius: 10px;
+  }
+  
   
   
   .rectangulo {
     height: auto;
     width: 100%;
-    background-color: rgba(81, 40, 109, 0.452);
-    clip-path: polygon(0% 0%, 80% 0%, 100% 30%, 100% 100%, 20% 100%, 0% 70%);
+    background-image: linear-gradient(45deg, rgb(161, 127, 175), rgba(236, 225, 191, 0.158));
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
     margin-bottom: 5em;
-    border: 1px ;
+    border: 1px solid black;
+    border-radius: 40px 0 40px 0;
   }
   
   .boton {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    text-align: center;
+    margin: 20px;
     background-color: #eec14f94;
     color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-bottom: 3em;
+    padding-inline: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: monospace;
+    transition: all 0.3s ease-in-out;
     border: 1px solid black;
-    transition: background-color 0.3s, color 0.3s;
   }
   
   .boton:hover {
@@ -62,6 +99,7 @@
   
   
   * {
+    font-family: monospace;
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -89,7 +127,7 @@
     margin-bottom: 1.25rem;
   }
   
-  .seccion-perfil-usuario .perfil-usuario-portada {
+  .seccion-perfil-usuario .perfil-usuario-portada  {
     display: block;
     position: relative;
     width: 90%;
@@ -98,8 +136,8 @@
     border-radius: 0 0 20px 20px;
     border: 1px solid black;
   }
-  
-  .seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
     position: absolute;
     top: 1rem;
     right: 1rem;
