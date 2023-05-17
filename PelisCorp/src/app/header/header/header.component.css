@@ -1,0 +1,48 @@
+#logoNavbar{
+  width: 3.5%;
+  margin-left: 2em;
+}
+#mainNav{
+  background-color: rgb(88, 60, 101);
+}
+#title{
+  color: white;
+  font-family: monospace;
+  font-size: 23px;
+}
+#navLinks{
+  color: white;
+  font-family: helvetica;
+  font-size: 15px;
+  padding-left: 30px;
+}
+#log{
+  border: 2px solid rgb(255, 255, 255);
+  padding-inline: 1.5em;
+  color: white;
+  font-family: helvetica;
+  font-size: 15px;
+}
+#sign{
+    background-color: white;
+    color: rgb(88, 60, 101);
+    padding-inline: 1.5em;
+    margin-left: 10px;
+    font-family: helvetica;
+    font-size: 15px;
+}
+#log:hover {
+    background-color: #EEC24F;
+    color: black;
+}
+#sign:hover {
+    background-color: #EEC24F;
+    color: black;
+    border: 2px solid white;
+}
+.navbar-scrolled {
+  background-color: #333;
+  color: #fff;
+  transition: background-color 0.5s ease-out;
+}
+

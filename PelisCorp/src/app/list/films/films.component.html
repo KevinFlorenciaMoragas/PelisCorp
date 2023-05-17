@@ -1,0 +1,121 @@
+<body>
+  <!--  <div class="container fondo">
+    <br /><br /><br /><br /><br />
+    <div class="row">
+      <div class="col-lg-2 col-md-12 col-12">
+        <div class="title">
+          <h2>Filtros</h2>
+        </div>
+
+        <div class="btn-group-vertical">
+          <button *ngFor="let genre of genres" class="btn button">
+            <div class="featured-text">{{genre.genre}}</div>
+          </button>
+        </div>
+
+        <br />
+        <br />
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            style="max-width: 200px" />
+          <button class="btn search" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="col-lg-10 col-md-12 col-12 border-left">
+        <h1 style="color: white">Top 100 rated Films</h1>
+
+        <div class="card mb-3" style="max-width: 100%; background-color: #7a6585"
+          *ngFor="let movie of movies index as i" [routerLink]="['film-view',movie.id]">
+          <div class="row g-0">
+            <div class="col-12 col-md-1 col-sm-1">
+              <div style="text-align: center">
+                <h1 class="id">{{i+1}}</h1>
+              </div>
+            </div>
+            <div class="col-12 col-md-2" style="display: flex; align-items: center">
+              <img [src]="movie.poster[0].url" class="rounded-start img-movie" alt="..." />
+              <div class="col-12 col-md-1">
+                <div style="align-items: center; text-align: center">
+                  <h1 class="score" style="color: aliceblue">
+                    {{ movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i>
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 id="name" class="card-title center-title mr-3" style="color: aliceblue; margin-top: 0.5em; ">
+                  {{ movie.movieName }}
+                </h4>
+
+              </div>
+              <span class="card-text center-title" style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                *ngFor="let director of movie.director">
+                {{director.name}} {{director.lastName}} </span> <br />
+              <span class="card-text" style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                *ngFor="let actor of movie.actors ">
+                {{actor.name}} {{actor.lastName}} |
+              </span>
+              <br />
+              <span class="card-text" style="font-size: 15px; font-weight: normal;color: aliceblue; "
+                *ngFor="let genre of movie.genre">
+                {{genre.genre}} |
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+     </div> -->
+
+  <div class="container-fluid fondo">
+    <br><br><br><br><br><br>
+    <div class="row">
+      <aside class="col-lg-2 col-md-2 col-12 offset-lg-2">
+
+        <div class="btn-group-vertical d-none d-sm-none d-md-block">
+          <h2 class="title">Filtros</h2>
+          <button *ngFor="let genre of genres" class="btn button" [routerLink]="['movies-by-genre',genre.id]">
+            <div class="featured-text">{{genre.genre}}</div>
+          </button>
+        </div>
+        <form class="form-inline">
+          <input class="form-control" id="movieName"  type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn search" type="submit" >Search</button>
+        </form>
+      </aside>
+      <main class="col-lg-6 col-md-10 col-sm-12 border-left">
+        <h1 class="title">Top Films</h1>
+        <div *ngFor="let movie of movies" class="card mb-3" style="background-color: #7a6585"
+          [routerLink]="['film-view',movie.id]">
+          <div class="row g-0">
+            <div class="col-md-2">
+              <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start image-size" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="title d-flex d-sm-block d-md-none justify-content-between">{{movie.movieName}}
+                  <span>{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></span></h2>
+                <h2 class="title d-none d-sm-none d-md-block">{{movie.movieName}} </h2>
+                <span *ngFor="let director of movie.director" class="card-text title">{{director.name}}
+                  {{director.lastName}}
+                </span>
+
+                <span *ngFor="let actor of movie.actors" class="card-text title">{{actor.name}} {{actor.lastName}}
+                </span>
+                <br>
+                <span *ngFor="let genre of movie.genre" class="card-text"><small class="title">{{genre.genre}}
+                  </small></span>
+              </div>
+            </div>
+            <div class="col-md-2 d-none d-sm-none d-md-block ">
+              <h2 class="title score">{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></h2>
+            </div>
+          </div>
+        </div>
+
+
+
+      </main>
+    </div>
+  </div>

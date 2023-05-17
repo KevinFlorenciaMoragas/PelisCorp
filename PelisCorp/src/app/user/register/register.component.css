@@ -1,0 +1,12 @@
+
+.bg{
+
+	background:url(../../../assets/img/wallpaper_def.png);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bgSecond{
+    background-color: #583C65;
+}
