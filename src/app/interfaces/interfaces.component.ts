@@ -11,6 +11,7 @@ export class InterfacesComponent {
 export interface Credentials {
   username: string;
   password: string;
+  role: string;
 }
 export interface Movies {
   id: number;

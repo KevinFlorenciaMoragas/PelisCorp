@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -29,7 +29,7 @@ export class MoviesService {
   }
 
   listAllMoviesByTitle(title: string): Observable<any> {
-    let url: string = "http://localhost:8080/movies/title/" + title
+    let url: string = "http://localhost:8080/moviesByMovieName/" + title
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -49,8 +49,10 @@ export class MoviesService {
   getMovieById(id: number): Observable<any> {
     let url: string = "http://localhost:8080/movies/" + id;
     return this.http.get<any>(url).pipe(
-      catchError((err) => {
-        console.log(err)
+      catchError((err:HttpErrorResponse) => {
+        if(err.status === 404){
+          console.log("No se ha encontrado la pelicula")
+        }
         return throwError(err)
       })
     )
@@ -91,7 +93,17 @@ export class MoviesService {
       })
     )
   }
-
+  getMovieByGenreId(id:number): Observable<any> {
+    let url: string = "http://localhost:8080/movies/genre/" + id;
+    return this.http.get<any>(url).pipe(
+      catchError((err:HttpErrorResponse) => {
+        if(err.status === 404){
+          console.log("No se ha encontrado la pelicula")
+        }
+        return throwError(err)
+      })
+    )
+  }
 
 
   

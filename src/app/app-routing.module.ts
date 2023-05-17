@@ -10,6 +10,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { FilmViewComponent } from './film-view/film-view.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ConditionsComponent } from './conditions/conditions.component';
+import { MoviesByGenreComponent } from './list/movies-by-genre/movies-by-genre.component';
+import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-by-movie-name.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,9 +26,12 @@ const routes: Routes = [
   { path: 'carousel', component: PrincipalComponent },
   { path: 'principal/film-view/:id', component: FilmViewComponent },
   { path: 'films/film-view/:id', component: FilmViewComponent },
+  { path: 'films/movies-by-genre/:id', component: MoviesByGenreComponent },
+  { path: 'films/movies-by-movie-name/:id', component: MoviesByMovieNameComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },
+  { path: 'pageNotFound', component: PageNotFoundComponent },
   { path: '', redirectTo: '/principal', pathMatch: 'full' }
 ];
 

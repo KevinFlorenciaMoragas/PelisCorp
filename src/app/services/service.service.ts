@@ -32,15 +32,10 @@ export class Service {
   //login
   login(creds:Credentials): Observable<LoginComponent> {
     let url: string = "http://localhost:8080/login"
-   /* return this.http.post<LoginComponent>(url, JSON.stringify(loginForm), this.httpOptions).pipe(
-      catchError((err) => {
-        console.error(err)
-        return throwError(err)
-      })
-    )*/
     return this.http.post(url, creds, {observe: 'response'})
     .pipe(map((response: HttpResponse<any>) => {
       const body = response.body;
+      console.log(body)
       const headers = response.headers;
       const bearerToken = headers.get('Authorization')!;
       const token = bearerToken.replace('Bearer ', '');
