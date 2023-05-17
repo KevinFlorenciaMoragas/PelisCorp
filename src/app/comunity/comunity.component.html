@@ -1,0 +1,101 @@
+<div class="bg">
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="../../../assets/img/perfil.jpg" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <img src="../../assets/img/pencil.svg" style="width: 25px;">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">Usuario</h3>
+                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button (click)="cambiarContenido('boton1')" class="boton">
+                    Favourites
+                </button>
+                <button (click)="cambiarContenido('boton2')" class="boton">
+                    Recomended
+                </button>
+                <button (click)="cambiarContenido('boton3')" class="boton">
+                    Your reviews
+                </button>
+            </div>
+        </div>
+
+
+        <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
+            <div class="rectangulo">
+                <h2 id="favourites">
+                    Favourites<b><i class="fas fa-star" style="color: yellow">&#9733;</i></b>
+                </h2>
+                <div id="caja" class="d-flex align-items-center justify-content-center">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
+                            <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 2 || showAllMovies">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+
+                                        <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start" alt="...">
+
+                                    </div>
+                                    <div id="bgCard" class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
+                                            <span *ngFor="let director of movie.director" id="colorLetterCard"
+                                                class="card-text">{{director.name}} {{director.lastName}}</span>
+                                            <br>
+                                            <span *ngFor="let genre of movie.genre" id="colorLetterCard"
+                                                class="card-text">{{genre.genre}} </span>
+                                            <br>
+                                            <button class="cardInfoButton"
+                                                [routerLink]="['film-view',movie.id]">More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="buttonFeatured w-100" *ngIf="showLoadMoreButton" (click)="loadMore()">Show more</button>
+                <button class="buttonFeatured" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
+            </div>
+        </div>
+
+
+        <div class="row result text-center" *ngIf="contenidoActual === 'boton2'">
+            <div class="rectangulo">
+                <h2 id="favourites">
+                    Recomended<b><i class="fas fa-star" style="color: yellow">&#9733;</i></b>
+                </h2>
+                <div id="caja" class="d-flex align-items-center justify-content-center">
+                    <div class="row text-white justify-content-center" *ngFor="let movie of movies.slice(0, 5)">
+
+                        <div id="contenedor" class="col-md-12 col-lg-12 col-sm-12 col-12" style="margin-left: 1em">
+                            <img id="imagenes" class="img-fluid" [src]="movie.poster[0].url" />
+                            <p style="margin-bottom: 0.5rem">{{ movie.movieName }}</p>
+                            <p style="margin-bottom: 0.5rem">Chris Miller</p>
+                            <button id="boton2" class="btn btn-primary mb-3">Información</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row result text-center" *ngIf="contenidoActual === 'boton3'">
+            <div class="rectangulo">
+                <h2 id="reviews">
+                    Your reviews<b><i class="fas fa-star" style="color: yellow">&#9733;</i></b>
+                </h2>
+                <div id="caja" class="d-flex align-items-center justify-content-center"></div>
+            </div>
+        </div>
+    </section>
+</div>

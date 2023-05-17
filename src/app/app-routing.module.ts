@@ -14,6 +14,7 @@ import { SeriesComponent } from './list/series/series.component';
 import { MoviesByGenreComponent } from './list/movies-by-genre/movies-by-genre.component';
 import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-by-movie-name.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ComunityComponent } from './comunity/comunity.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'login/register', component: RegisterComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },
+  { path: 'comunity', component: ComunityComponent },
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
   { path: 'pageNotFound', redirectTo: '/PageNotFoundComponent', pathMatch: 'full' }
 

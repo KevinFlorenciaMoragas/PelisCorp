@@ -26,6 +26,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SeriesComponent } from './list/series/series.component';
 import { MoviesByGenreComponent } from './list/movies-by-genre/movies-by-genre.component';
 import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-by-movie-name.component';
+import { ComunityComponent } from './comunity/comunity.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-b
     AboutusComponent,
     PrivacyComponent,
     ConditionsComponent,
+    ComunityComponent,
     
 
   ],
