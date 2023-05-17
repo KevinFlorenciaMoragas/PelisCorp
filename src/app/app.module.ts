@@ -23,10 +23,14 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ConditionsComponent } from './conditions/conditions.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-
+import { SeriesComponent } from './list/series/series.component';
+import { MoviesByGenreComponent } from './list/movies-by-genre/movies-by-genre.component';
+import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-by-movie-name.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MoviesByGenreComponent,
+    MoviesByMovieNameComponent,
     RegisterComponent,
     LoginComponent,
     HeaderComponent,

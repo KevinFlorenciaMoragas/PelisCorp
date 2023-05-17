@@ -66,7 +66,7 @@ export class PrincipalComponent implements OnInit{
     let random : number = Math.floor(Math.random() * 28) + 1
     this.http.getMovieById(random).subscribe(data => {
      console.log(data)
-      this.movieRecommended = data.movie as Movies
+      this.movieRecommended = data as Movies
        console.log(this.movieRecommended)
     })
   

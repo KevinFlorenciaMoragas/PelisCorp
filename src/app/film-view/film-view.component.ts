@@ -5,7 +5,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -16,7 +16,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FilmViewComponent {
 
-  constructor(private http: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
+  constructor(private http: MoviesService,private router:Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
 
   }
   movieArray: any
@@ -49,11 +49,16 @@ export class FilmViewComponent {
     if (movieIdParam !== null) {
       this.id = +movieIdParam;
     }
+    console.log(this.id)
     this.http.getMovieById(this.id).subscribe(data => {
-      this.movie = data.movie;
+      console.log(data)
+      this.movie = data;
     //  this.movieArray = Array.from(this.movie)
 
      console.log(data.movie)
+    },
+    (error) => {
+      this.router.navigate(['/pageNotFound'])
     })
     this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailer)
   }

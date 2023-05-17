@@ -20,7 +20,7 @@ export class Service {
   }
   // register
   registerUser(registerForm: RegisterComponent): Observable<RegisterComponent> {
-    let url: string = "http://172.17.40.89:8080/user"
+    let url: string = "http://localhost:8080/user"
     return this.http.post<RegisterComponent>(url, JSON.stringify(registerForm), this.httpOptions).pipe(
       catchError((err) => {
         console.log("hay un error")
@@ -31,7 +31,7 @@ export class Service {
   }
   //login
   login(creds:Credentials): Observable<LoginComponent> {
-    let url: string = "http://172.17.40.89:8080/login"
+    let url: string = "http://localhost:8080/login"
    /* return this.http.post<LoginComponent>(url, JSON.stringify(loginForm), this.httpOptions).pipe(
       catchError((err) => {
         console.error(err)

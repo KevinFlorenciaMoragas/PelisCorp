@@ -32,4 +32,10 @@ ngOnInit() {
   this.getAllMovies()
   this.getAllGenres()
 }
+getMovieName(){
+  this.movieName= (<HTMLInputElement> document.getElementById("movieName")).value;
+  console.log(this.movieName)
+  return this.movieName;
+}
+movieName:string = "";
 }
