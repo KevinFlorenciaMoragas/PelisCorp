@@ -61,16 +61,8 @@
         <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
             <br>
             <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE DIRECTOR</h2>
-            <form [formGroup]="MyNewForm" (ngSubmit)="Clic(MyNewForm.value)">
+            <form [formGroup]="MyNewForm" (ngSubmit)="CreateDirector()">
                 <div class="row">
-                    <div class="form-group col-md-2">
-                        <label for="id">Id</label>
-                        <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id"
-                            required>
-                        <div *ngIf="MyNewForm.get('id')?.invalid" class="alert alert-danger mt-2">El campo ID es
-                            obligatorio
-                        </div>
-                    </div>
                     <div class="form-group col-md-3">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="name"
@@ -86,7 +78,7 @@
                             es
                             obligatorio</div>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label for="photo">Photo</label>
                         <input type="text" class="form-control" id="photo" placeholder="photo"
                             formControlName="photo" required>

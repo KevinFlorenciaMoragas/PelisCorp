@@ -59,4 +59,11 @@ export class DirectorsComponent {
       }
     );
   }
+
+  CreateDirector() {
+    this.http.createDirector(this.MyNewForm.value).subscribe(data => {
+      console.log(this.MyNewForm.value)
+      this.getAllDirectors()
+    })
+  }
 }

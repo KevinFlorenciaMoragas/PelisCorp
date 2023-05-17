@@ -59,4 +59,11 @@ export class ActorsComponent {
       }
     );
   }
+
+  CreateActor() {
+    this.http.createActor(this.MyNewForm.value).subscribe(data => {
+      console.log(this.MyNewForm.value)
+      this.getAllActors()
+    })
+  }
 }

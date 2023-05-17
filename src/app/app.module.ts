@@ -41,15 +41,7 @@ import { UpdateAwardComponent } from './admin/update-award/update-award.componen
     FooterComponent,
     AdminComponent,
     MoviesComponent,
-    ActorsComponent,
-    DirectorsComponent,
-    AwardsComponent,
-    UsersComponent,
-    UpdateMovieComponent,
-    UpdateActorsComponent,
-    UpdateDirectorComponent,
-    UpdateAwardComponent,
-
+    UpdateMovieComponent
   ],
   imports: [
     BrowserModule,

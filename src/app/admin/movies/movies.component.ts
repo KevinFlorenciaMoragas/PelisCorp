@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Movies } from 'src/app/interfaces/interfaces.component';
 
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -62,5 +63,21 @@ export class MoviesComponent {
       this.movies = data as Movies[]
       console.log(this.movies)
     })
+  }
+
+  deleteMovie(id: number) {
+    this.http.deleteMovieById(id).subscribe(
+      data => {
+        console.log(data);
+        this.getAllMovies();
+      },
+      error => {
+        console.log("Error al eliminar el actor", error);
+        // Manejar el error de eliminación de actor
+      }
+    );
+  }
+  Create(id: number) {
+
   }
 }

@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-director.component.css']
 })
 export class UpdateDirectorComponent {
+
+  constructor(private http: MoviesService, private activatedRoute: ActivatedRoute,private formBuilder: FormBuilder,private router: Router) { }
   id: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
   name: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(50)]);
   lastName: FormControl = new FormControl('',  [Validators.minLength(1), Validators.maxLength(50)]);
@@ -34,5 +36,31 @@ export class UpdateDirectorComponent {
     name: '',
     lastName: '',
     photo: '',
+  }
+
+  ngOnInit() {
+    this.getDirector()
+  }
+
+  getDirector() {
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.http.getDirectorById(id).subscribe(data => {
+      console.log(data);
+      this.director = data as Director; 
+      console.log(this.director);
+    });
+  }
+
+  onUpdateDirector() {
+    const updatedDirector = this.MyNewForm.value;
+    console.log(updatedDirector)
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.http.updateDirector(updatedDirector).subscribe(result => {
+      console.log('Director actualizado:', result);
+      window.location.href = '/admin/directors';
+      // Aquí puedes realizar alguna acción adicional, como actualizar la lista de usuarios
+    }, error => {
+      console.error('Error al actualizar el Director:', error);
+    });
   }
 }

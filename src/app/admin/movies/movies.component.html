@@ -52,7 +52,7 @@
                             <td>{{movie.releaseDate}}</td>
                             <td>
                                 <button class="btn btn-primary" routerLink="/update/movie/{{movie.id}}">Editar</button>
-                                <button class="btn btn-danger">Eliminar</button>
+                                <button class="btn btn-danger" (click)="deleteMovie(movie.id)">Eliminar</button>
                             </td>
                         </tr>
                     </tbody>
@@ -63,7 +63,7 @@
         <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
             <br>
             <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE MOVIE</h2>
-            <form [formGroup]="MyNewForm" (ngSubmit)="Clic(MyNewForm.value)">
+            <form [formGroup]="MyNewForm" (ngSubmit)="Create(movie.id)">
                 <div class="row">
                     <div class="form-group col-md-2">
                         <label for="id">Id</label>

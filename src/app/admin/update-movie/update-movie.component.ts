@@ -18,11 +18,11 @@ export class UpdateMovieComponent implements OnInit{
 
   constructor(private http: MoviesService, private activatedRoute: ActivatedRoute,private formBuilder: FormBuilder) { }
 
-  id: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
+  id: FormControl = new FormControl(null, [Validators.minLength(1), Validators.maxLength(100)]);
   duration: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(20)]);
   income: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(20)]);
   movieName: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
-  release_date: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(10)]);
+  releaseDate: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(10)]);
   plot: FormControl = new FormControl('', [Validators.minLength(10), Validators.maxLength(8000)]);
   score: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(3)]);
   trailer: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(200)]);
@@ -32,7 +32,7 @@ export class UpdateMovieComponent implements OnInit{
     duration: this.duration,
     income: this.income,
     movieName: this.movieName,
-    release_date: this.release_date,
+    releaseDate: this.releaseDate,
     plot: this.plot,
     score: this.score,
     trailer: this.trailer
@@ -40,6 +40,20 @@ export class UpdateMovieComponent implements OnInit{
 
   Clic(datos: FormGroup) {
     console.log(datos.value);
+  }
+
+  onUpdateMovie() {
+    const jsonData = {
+      movie: this.MyNewForm.value
+    };
+    console.log(jsonData)
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.http.updateMovie(jsonData).subscribe(result => {
+      console.log('Movie actualizado:', result);
+      // Aquí puedes realizar alguna acción adicional, como actualizar la lista de usuarios
+    }, error => {
+      console.error('Error al actualizar el movie:', error);
+    });
   }
 
   movies: Movies[] = []
@@ -72,7 +86,6 @@ export class UpdateMovieComponent implements OnInit{
       console.log(data);
       this.movie = data as Movies; 
       console.log(this.movie);
-      console.log(this.movie.movieName);
     });
   }
 }
