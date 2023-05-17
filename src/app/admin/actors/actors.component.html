@@ -1,0 +1,105 @@
+<body>
+    <br><br><br><br>
+    <div class="container">
+        <div class="row" style="margin-bottom: 30px;">
+            <div class="col-lg-12">
+                <h1 style="margin-bottom: 40px;">Page Actors Admin</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                    <a href="/admin/movies" class="btnprincipal">Movies</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                    <a href="/admin/actors" class="btnprincipal">Actors</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin/directors" class="btnprincipal">Director</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin/awards" class="btnprincipal">Awards</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin/users" class="btnprincipal">Users</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin" class="btnprincipal">Admin</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>Photo</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr *ngFor="let actor of actors" style="text-align: center;">
+                            <td >{{actor.id}}</td>
+                            <td>{{actor.name}}</td>
+                            <td>{{actor.lastName}}</td>
+                            <td ><img class="starterImg" src="{{actor.photo}}"></td>
+                            <td>
+                                <button class="btn btn-primary" routerLink="/update/actor/{{actor.id}}">Editar</button>
+                                <button class="btn btn-danger" (click)="deleteActor(actor.id)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
+            <br>
+            <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE ACTOR</h2>
+            <form [formGroup]="MyNewForm" (ngSubmit)="Clic(MyNewForm.value)">
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="id">Id</label>
+                        <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id"
+                            required>
+                        <div *ngIf="MyNewForm.get('id')?.invalid" class="alert alert-danger mt-2">El campo ID es
+                            obligatorio
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="name"
+                            formControlName="name" required>
+                        <div *ngIf="MyNewForm.get('name')?.invalid" class="alert alert-danger mt-2">El campo
+                            NAME es obligatorio</div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="lastName"
+                            formControlName="lastName" required>
+                        <div *ngIf="MyNewForm.get('lastName')?.invalid" class="alert alert-danger mt-2">El campo LAST NAME
+                            es
+                            obligatorio</div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="photo">Photo</label>
+                        <input type="text" class="form-control" id="photo" placeholder="photo"
+                            formControlName="photo" required>
+                        <div *ngIf="MyNewForm.get('photo')?.invalid" class="alert alert-danger mt-2">El campo PHOTO
+                            es
+                            obligatorio</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+</body>

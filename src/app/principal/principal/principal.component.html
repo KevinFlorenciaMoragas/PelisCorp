@@ -2,7 +2,9 @@
     <br><br><br>
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
             <h1 id="index-text">Welcome to FilmCorp</h1>
+        </div>
             <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
                 [noPause]="true">
                 <slide *ngFor="let movie of movies" class="carousel-slide">
@@ -69,3 +71,4 @@
         </div>
     </div>
 </div>
+

@@ -23,17 +23,10 @@ export class FilmsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getAllMovies(),
+    this.getMoviesAsc(),
     this.getAllGenres(),
     this.getAllActor(),
     this.getAllMovieReview()
-  }
-  getAllMovies() {
-    this.http.listAllMovies().subscribe(data => {
-      console.log(data)
-      this.movies = data as Movies[]
-      console.log(this.movies)
-    })
   }
 
   getAllGenres() {
@@ -66,6 +59,13 @@ export class FilmsComponent implements OnInit {
     })
   }
 
+  getMoviesAsc(){
+    this.http.listmoviesAsc().subscribe(data => {
+     console.log(data)
+     this.movies = data as Movies[]
+     console.log(this.movies)
+     })
+   }
 
   contenidoActual: string = '';
 
@@ -73,8 +73,6 @@ export class FilmsComponent implements OnInit {
     this.contenidoActual = boton;
   }
 
-
-
-
+  
 
 }

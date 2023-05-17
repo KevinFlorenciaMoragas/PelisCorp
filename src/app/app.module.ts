@@ -17,6 +17,16 @@ import { Service } from './services/service.service';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InterfacesComponent } from './interfaces/interfaces.component';
 import { FilmViewComponent } from './film-view/film-view.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { MoviesComponent } from './admin/movies/movies.component';
+import { ActorsComponent } from './admin/actors/actors.component';
+import { DirectorsComponent } from './admin/directors/directors.component';
+import { AwardsComponent } from './admin/awards/awards.component';
+import { UsersComponent } from './admin/users/users.component';
+import { UpdateMovieComponent } from './admin/update-movie/update-movie.component';
+import { UpdateActorsComponent } from './admin/update-actors/update-actors.component';
+import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
+import { UpdateAwardComponent } from './admin/update-award/update-award.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +39,16 @@ import { FilmViewComponent } from './film-view/film-view.component';
     FilmViewComponent,
     InterfacesComponent,
     FooterComponent,
+    AdminComponent,
+    MoviesComponent,
+    ActorsComponent,
+    DirectorsComponent,
+    AwardsComponent,
+    UsersComponent,
+    UpdateMovieComponent,
+    UpdateActorsComponent,
+    UpdateDirectorComponent,
+    UpdateAwardComponent,
 
   ],
   imports: [
