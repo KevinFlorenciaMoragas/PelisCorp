@@ -5,11 +5,11 @@
             <div class="d-lg-block col-lg-6  d-sm-none d-none imageView">
                 <h1> {{movie.movieName}}</h1>
 
-                 <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize"> 
+                 <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize">
                 <br>
-                
+
             </div>
-            
+
             <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
                 <div class="featured-text text-center">
                     <h2>Genero</h2>
@@ -72,12 +72,19 @@
                     </div><br>
                 </div>
 
-                <div class="result" *ngIf="contenidoActual === 'boton2'">
-                    <div class="col-lg-12" *ngFor="let review of movie.reviews">
-                        <span class="namesMainCast" *ngFor="let user of review.user">{{user.username}}</span>
-                        <p class="namesMainCast">{{review.text}}</p>
-                    </div>
+                <div class="result " *ngIf="contenidoActual === 'boton2'">
+                  <div class="col-lg-12" *ngFor="let review of movie.reviews">
+                    <span class="namesMainCast" *ngFor="let user of review.user">{{user.username}}</span>
+                    <p class="namesMainCast">{{review.text}}</p>
+                  </div>
+
+                  <div class="review-form">
+                    <textarea  id="review" rows="4"  placeholder="Escribe tu reseña"></textarea><br>
+                    <button class="btn-enviar text-center" id="enviar">Enviar</button>
+                  </div>
                 </div>
+
+
 
                 <div class="result" *ngIf="contenidoActual === 'boton3'">
                     <p>Contenido del botón 3</p>
@@ -193,7 +200,7 @@
                     entre ellos será más que una pelea.</p>
             </div>
         </div>
-        <!-- 
+        <!--
         <div class="d-lg-none d-sm-none d-block col-12 imgView">
             <h2 id="trailerTitle">TRAILER</h2>
         </div>
