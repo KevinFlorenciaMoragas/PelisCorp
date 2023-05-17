@@ -63,11 +63,13 @@
           <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
       </div>
       <div *ngIf="usernameLocalStorage != null && usernameLocalStorage != 'admin'" class="d-flex d-lg-block d-sm-none d-none">
-          <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
-          <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
+          <button class="btn ml-auto" id="log" [routerLink]="['login']">{{usernameLocalStorage}}</button>
+          <button class="btn ml-2" id="sign" mat-menu-item (click)="logOut()" [routerLink]="['register']">Logout</button>
       </div>
       <div *ngIf="usernameLocalStorage == 'admin'"  class="d-flex d-lg-block d-sm-none d-none">
         <button class="btn ml-auto" id="log" [routerLink]="['admin']">Admin</button>
+        <button class="btn ml-2" id="sign" (click)="logOut()">Logout</button>
+        
     </div>
     </div>
   </nav>

@@ -26,6 +26,10 @@ export class HeaderComponent implements OnInit{
       this.youtubeApiLoaded = true;
     }
   }
+  logOut(){
+    localStorage.clear()
+    window.location.reload()
+  }
   searchMovie() {
     let search = (document.getElementById("search") as HTMLInputElement).value;
     console.log(search)

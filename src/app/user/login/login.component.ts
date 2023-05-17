@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
     console.log("Login")
     console.log(this.loginForm.value)
     this.http.login(this.loginForm.value).subscribe(response => {
+   
      this.router.navigate(['/'])
+      window.location.reload()
     })
   }
   username: FormControl = new FormControl<string | null>("", { /*validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)]*/ })

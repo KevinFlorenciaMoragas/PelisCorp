@@ -6,8 +6,8 @@
                 <h1 id="index-text">Welcome to FilmCorp</h1>
             </div>
             <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
-                [noPause]="true">
-                <slide *ngFor="let movie of movies" class="carousel-slide">
+                [noPause]="true" >
+                <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['film-view',movie.id]">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="carousel text-center">
@@ -96,7 +96,7 @@
 
 
     <div class="button-container">
-        <button class="container buttonFeatured w-100">More</button>
+        <button class="container buttonFeatured w-100" [routerLink]="['film-view',movieRecommended.id]">More</button>
     </div>
 
     <div class="container-fluid">
