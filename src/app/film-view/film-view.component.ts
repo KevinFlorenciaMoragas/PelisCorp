@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-
+import { User } from 'src/app/interfaces/interfaces.component';
 
 @Component({
   selector: 'app-film-view',
@@ -20,6 +20,7 @@ export class FilmViewComponent {
 
   }
   movieArray: any
+  user : User[] = []
   movie: Movies = {
     id: 0,
     movieName: '',
@@ -42,12 +43,14 @@ export class FilmViewComponent {
   genres: Genre[] = []
   movieId: any
   id: any
+  idUser: any
   trailer : any
   ngOnInit() {
     console.log("Estoy en ngOnInit")
     const movieIdParam = this.route.snapshot.paramMap.get('id');
     if (movieIdParam !== null) {
       this.id = +movieIdParam;
+      this.idUser = +movieIdParam;
     }
     console.log(this.id)
     this.http.getMovieById(this.id).subscribe(data => {
@@ -60,6 +63,7 @@ export class FilmViewComponent {
     (error) => {
       this.router.navigate(['/pageNotFound'])
     })
+  //  this.http.getUserById()
     this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailer)
   }
   contenidoActual: string = '';

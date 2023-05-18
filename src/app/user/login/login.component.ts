@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     })
     this.http.getUserByUsername(username).subscribe(data => {
       localStorage.setItem('role', data.role)
+      
       console.log(data)
     }
     )

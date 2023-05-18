@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-import { Movies } from 'src/app/interfaces/interfaces/interfaces.component';
-import { MovieReview } from '../../../app/interfaces/interfaces/interfaces.component';
-import { Actor } from '../../../app/interfaces/interfaces/interfaces.component';
+import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Actor } from '../../../app/interfaces/interfaces.component';
 import { Genre } from 'src/app/interfaces/interfaces.component';
-import { Reviews } from '../../../app/interfaces/interfaces/interfaces.component';
+import { Reviews } from '../../../app/interfaces/interfaces.component';
 
 @Component({
   selector: 'app-series',
@@ -18,13 +17,13 @@ export class SeriesComponent {
   movies: Movies[] = [];
   genres: Genre[] = [];
   actor: Actor[] = [];
-  movieReview: MovieReview[] = [];
+ // movieReview: MovieReview[] = [];
   reviews: Reviews[] = [];
 
   ngOnInit() {
     this.getAllMovies(),
       this.getAllGenres(),
-      this.getAllActor(),
+      //this.getAllActor(),
       this.getAllMovieReview();
   }
   getAllMovies() {
@@ -43,18 +42,18 @@ export class SeriesComponent {
     });
   }
 
-  getAllActor() {
-    this.http.listAllActor().subscribe((data) => {
-      console.log(data);
-      this.actor = data as Actor[];
-      console.log(this.actor);
-    });
-  }
+  // getAllActor() {
+  //   this.http.listAllActor().subscribe((data) => {
+  //     console.log(data);
+  //     this.actor = data as Actor[];
+  //     console.log(this.actor);
+  //   });
+  // }
   getAllMovieReview() {
     this.http.listAllMovieReview().subscribe((data) => {
       console.log(data);
-      this.movieReview = data as MovieReview[];
-      console.log(this.movieReview);
+      //this.movieReview = data as MovieReview[];
+      //console.log(this.movieReview);
     });
   }
   getAllReviews() {

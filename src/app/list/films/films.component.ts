@@ -35,7 +35,8 @@ ngOnInit() {
   this.getAllGenres()
 }
 searchMovie() {
-  this.search = (document.getElementById("search") as HTMLInputElement).value;
+  console.log("search")
+  this.search = (document.getElementById("busqueda") as HTMLInputElement).value;
   console.log(this.search)
   if(this.search != null){
     this.http.listAllMoviesByTitle(this.search).subscribe(data => {

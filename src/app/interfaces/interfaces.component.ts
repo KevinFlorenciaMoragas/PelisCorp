@@ -43,14 +43,14 @@ export interface Poster {
 }
 //3
 export interface User {
-  name: string;
-  lastName: string;
+  id: number;
   username: string;
   email: string;
   password: string;
   photo: string;
   userRol: number;
 }
+
 //4
 export interface Genre {
   id: number;

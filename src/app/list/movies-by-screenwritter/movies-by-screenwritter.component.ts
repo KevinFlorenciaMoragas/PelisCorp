@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Movies, Screenwritter } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -16,6 +16,13 @@ export class MoviesByScreenwritterComponent {
   }
   movies: Movies[] = []
   id: any
+  idScreenwritter: any
+  screenwritter: Screenwritter = {
+    id: 0,
+    name: "",
+    lastName: "",
+    photo: "",
+  }
   getAllMoviesByScreenwritter() {
     const genreIdParam = this.route.snapshot.paramMap.get('id');
     if (genreIdParam !== null) {
@@ -26,5 +33,11 @@ export class MoviesByScreenwritterComponent {
       this.movies = data as Movies[]
       console.log(this.movies)
     })
+    this.http.getScreenwritterById(this.id).subscribe(screenwritterData => {
+      console.log(screenwritterData)
+      this.screenwritter = screenwritterData as Screenwritter
+      console.log(this.screenwritter)
+    }
+    )
   }
 }

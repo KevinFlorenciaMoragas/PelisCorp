@@ -70,7 +70,7 @@
                             {{actor.lastName}}</p>
                     </div><br> -->
                     <div class="card" style="width: 18rem;">
-                        <img src="../../assets/img/actorPhoto.jpg" class="card-img-top" alt="..." [routerLink]="['../../movies-by-actor',actor.id]">
+                        <img src="{{actor.photo}}" class="card-img-top" alt="..." [routerLink]="['../../movies-by-actor',actor.id]">
                         <div class="card-body">
                           <h5 class="card-title">{{actor.name}} {{actor.lastName}}</h5>
                         </div>
@@ -79,15 +79,20 @@
                 </div>
 
                 <div class="result" *ngIf="contenidoActual === 'boton2'">
+
                     <div class="col-lg-12" *ngFor="let review of movie.reviews">
-                        <span class="namesMainCast" *ngFor="let user of review.user">{{user.username}}</span>
+                        <span class="namesMainCast justify-content-between " *ngFor="let user of review.user">{{user.username}} <span>{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></span></span>
                         <p class="namesMainCast">{{review.text}}</p>
                     </div>
+                    <form>
+                        <input type="text" placeholder="Escribe tu comentario" name="comment" required>
+                        <button type="submit">Enviar</button>
+                    </form>
                 </div>
-
                 <div class="result" *ngIf="contenidoActual === 'boton3'">
                     <p>Contenido del botón 3</p>
                 </div>
+               
             </div>
         </div>
     </div>

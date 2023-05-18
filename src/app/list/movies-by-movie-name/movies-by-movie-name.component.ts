@@ -12,7 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class MoviesByMovieNameComponent {
   movies: Movies[] = []
-
+  
   constructor(private http: MoviesService, private router: Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
   id: any
   getAllMoviesByMovieName() {

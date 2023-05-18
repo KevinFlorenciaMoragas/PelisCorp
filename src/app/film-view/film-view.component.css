@@ -7,7 +7,12 @@
 body{
     background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
   }
-
+.namesMainCast{
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    background-color: #583c654b;
+}
 
 @media(max-width:2000px) {
     .container{
