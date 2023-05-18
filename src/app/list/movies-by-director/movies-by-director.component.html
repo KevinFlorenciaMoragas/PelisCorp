@@ -1,22 +1,7 @@
-  <div class="container-fluid fondo">
 
+<div class="container-fluid fondo">
     <div class="row">
-      <aside class="col-lg-2 col-md-2 col-12 offset-lg-2">
-
-        <div class="btn-group-vertical d-none d-sm-none d-md-block">
-          <h2 class="title">Filtros</h2>
-          <button *ngFor="let genre of genres" class="btn button" [routerLink]="['../movies-by-genre',genre.id]">
-            <div class="featured-text">{{genre.genre}}</div>
-          </button>
-        </div>
-        <form class="form-inline" (ngSubmit)="searchMovie()">
-          <input type="text" class="form-control" id="search" [(ngModel)]="search" name="search" [ngModelOptions]="{standalone: true}"
-              placeholder="Introduzca su busqueda">
-          <button class="btn search" type="submit" >Search</button>
-        </form>
-      </aside>
-      
-      <main class="col-lg-6 col-md-10 col-sm-12 border-left">
+      <main class="col-lg-6 col-md-10 col-sm-12 offset-lg-3">
         <h1 class="title">Top Films</h1>
         <div *ngFor="let movie of movies" class="card mb-3" style="background-color: #7a6585"
          >
@@ -50,4 +35,4 @@
 
       </main>
     </div>
-  </div>
+  </div> 

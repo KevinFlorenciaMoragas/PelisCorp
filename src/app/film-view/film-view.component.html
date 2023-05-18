@@ -1,10 +1,9 @@
-<body>
+
     <div class="container fondo">
         <br /><br /><br /><br /><br />
         <div class="row">
             <div class="d-lg-block col-lg-6  d-sm-none d-none imageView">
                 <h1> {{movie.movieName}}</h1>
-
                  <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize"> 
                 <br>
                 
@@ -13,14 +12,14 @@
             <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
                 <div class="featured-text text-center">
                     <h2>Genero</h2>
-                    <ul class="txt" *ngFor="let genre of movie.genre">
+                    <ul class="txt" *ngFor="let genre of movie.genre" [routerLink]="['../../movies-by-genre',genre.id]">
                         <a> {{genre.genre}}</a>
                     </ul>
                 </div>
                 <hr>
                 <div class="featured-text text-center">
                     <h2>Director</h2>
-                    <ul class="txt" *ngFor="let director of movie.director">
+                    <ul class="txt" *ngFor="let director of movie.director" [routerLink]="['../../movies-by-director',director.id]">
                         <a> {{director.name}} {{director.lastName}}</a>
                     </ul>
                 </div>
@@ -29,7 +28,7 @@
                     <h2>Guíon</h2>
                     <div class="txt">
                         <ul *ngFor="let screenwritters of movie.screenwritter">
-                            <a>{{screenwritters.name}} {{screenwritters.lastName}}</a>
+                            <a [routerLink]="['../../movies-by-screenwritter',screenwritters.id]">{{screenwritters.name}} {{screenwritters.lastName}} </a>
                         </ul>
                     </div>
                 </div>
@@ -66,10 +65,17 @@
 
                 <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
                     <div class="col-lg-3 text-center" *ngFor="let actor of movie.actors">
-                        <img class="imgMainCast" [src]="actor.photo" alt=""><br>
+                        <!-- <img class="imgMainCast" [src]="actor.photo" alt=""><br>
                         <p class="namesMainCast">{{actor.name}}
                             {{actor.lastName}}</p>
-                    </div><br>
+                    </div><br> -->
+                    <div class="card" style="width: 18rem;">
+                        <img src="../../assets/img/actorPhoto.jpg" class="card-img-top" alt="..." [routerLink]="['../../movies-by-actor',actor.id]">
+                        <div class="card-body">
+                          <h5 class="card-title">{{actor.name}} {{actor.lastName}}</h5>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="result" *ngIf="contenidoActual === 'boton2'">

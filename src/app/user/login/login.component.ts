@@ -14,16 +14,22 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  constructor(private http: Service, private cookieService: CookieService, private router:Router) { }
+  constructor(private http: Service, private cookieService: CookieService, private router: Router) { }
 
 
 
   userLogin() {
     console.log("Login")
     console.log(this.loginForm.value)
+    let username = this.loginForm.value.username
     this.http.login(this.loginForm.value).subscribe(response => {
-     this.router.navigate(['/'])
+      this.router.navigate(['/'])
     })
+    this.http.getUserByUsername(username).subscribe(data => {
+      localStorage.setItem('role', data.role)
+      console.log(data)
+    }
+    )
   }
   username: FormControl = new FormControl<string | null>("", { /*validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)]*/ })
   password: FormControl = new FormControl<string | null>("", {/* validators: [Validators.required, Validators.minLength(5), Validators.maxLength(100)]*/ })

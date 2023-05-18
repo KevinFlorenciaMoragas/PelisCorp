@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>FilmCorp</title>
-
-</head>
-
-
-<body class="p-1 m-0 fixed-top" id="mainNav">
-
-  <nav class="navbar navbar-expand-lg">
+  <div class="p-1 m-0 fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg" >
     <img class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/img/logo.png">
     <div class="container-fluid">
       <a id="title" class="navbar-brand" [routerLink]="['principal']">FilmCorp</a>
@@ -30,19 +17,19 @@
           <li class="nav-item">
             <a id="navLinks" class="nav-link" [routerLink]="['films']">Films</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a id="navLinks" class="nav-link" [routerLink]="['series']">Series</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a id="navLinks" class="nav-link" [routerLink]="['comunity']">Community</a>
+            <a id="navLinks" class="nav-link active" [routerLink]="['comunity']">Community</a>
           </li>
           <li class="nav-item">
             <a id="navLinks" class="nav-link active" [routerLink]="['aboutus']">Sobre Nosotros</a>
           </li>
-          <li class="nav-item">
-            <input type="text" class="form-control" id="search" (change)="searchMovie()"
+          <form class="nav-item" (ngSubmit)="searchMovie()">
+            <input type="text" class="form-control" id="search" [(ngModel)]="search" name="search" [ngModelOptions]="{standalone: true}"
               placeholder="Introduzca su busqueda">
-          </li>
+          </form>
           <li>
             <div *ngIf="usernameLocalStorage == null" class="d-lg-none d-sm-block d-block">
                 <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
@@ -62,15 +49,15 @@
           <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
           <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
       </div>
-      <div *ngIf="usernameLocalStorage != null && usernameLocalStorage != 'admin'" class="d-flex d-lg-block d-sm-none d-none">
-          <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
-          <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
+      <div *ngIf="usernameLocalStorage != null && roleLocalStorage != 'ADMIN'" class="d-flex d-lg-block d-sm-none d-none">
+          <button class="btn ml-auto" id="log" [routerLink]="['login']">{{usernameLocalStorage}}</button>
+          <button class="btn ml-2" id="sign" mat-menu-item (click)="logOut()" [routerLink]="['register']">Logout</button>
       </div>
-      <div *ngIf="usernameLocalStorage == 'admin'"  class="d-flex d-lg-block d-sm-none d-none">
+      <div *ngIf="roleLocalStorage == 'ADMIN'"  class="d-flex d-lg-block d-sm-none d-none">
         <button class="btn ml-auto" id="log" [routerLink]="['admin']">Admin</button>
+        <button class="btn ml-2" id="sign" (click)="logOut()">Logout</button>
+        
     </div>
     </div>
   </nav>
-  <div class="col-12 col-md-4 col-lg-4" *ngIf="searchMovie() == true">
-    <h1>hello</h1>
-  </div>
+</div>

@@ -19,7 +19,7 @@ export class MoviesService {
   }
   listAllMovies(): Observable<any> {
 
-    let url: string = "http://172.17.40.233:8080/allMovies"
+    let url: string = "http://172.17.40.240:8080/allMovies"
 
     return this.http.get<any>(url).pipe(
       catchError((err) => {
@@ -28,9 +28,17 @@ export class MoviesService {
       })
     )
   }
-
+  listAllMoviesByDirector(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/moviesByDirector/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
   listAllMoviesByTitle(title: string): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/movies/title/" + title
+    let url: string = "http://172.17.40.240:8080/moviesByMovieName/" + title
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -38,8 +46,27 @@ export class MoviesService {
       })
     )
   }
+  listAllMoviesByActor(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/moviesByActor/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllMoviesByScreenwritter(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/moviesByScreenwritter/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
   listAllMovieByTitleInput(title: string): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/movies/titleInput/" + title
+    let url: string = "http://172.17.40.240:8080/movies/titleInput/" + title
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -48,7 +75,7 @@ export class MoviesService {
     )
   }
   getMovieById(id: number): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/movies/" + id;
+    let url: string = "http://172.17.40.240:8080/movies/" + id;
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.log(err)
@@ -57,7 +84,7 @@ export class MoviesService {
     )
   }
   listAllActors(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/allActors"
+    let url: string = "http://172.17.40.240:8080/allActors"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -66,7 +93,7 @@ export class MoviesService {
     )
   }
   listAllDirectors(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/director"
+    let url: string = "http://172.17.40.240:8080/director"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -75,7 +102,7 @@ export class MoviesService {
     )
   }
   getMovieByGenreId(id:number): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/movies/genre/" + id;
+    let url: string = "http://172.17.40.240:8080/movies/genre/" + id;
     return this.http.get<any>(url).pipe(
       catchError((err:HttpErrorResponse) => {
         if(err.status === 404){
@@ -86,7 +113,7 @@ export class MoviesService {
     )
   }
   listAllGenres(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/genre"
+    let url: string = "http://172.17.40.240:8080/genre"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -96,7 +123,7 @@ export class MoviesService {
   }
 
   movieByScoreDesc(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/movies/topDesc"
+    let url: string = "http://172.17.40.240:8080/movies/topDesc"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -106,7 +133,7 @@ export class MoviesService {
   }
 
   listAllScreenWritter(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/screenwritter"
+    let url: string = "http://172.17.40.240:8080/screenwritter"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -116,7 +143,7 @@ export class MoviesService {
   }
 
   listAllActor(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/allActors"
+    let url: string = "http://172.17.40.240:8080/allActors"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -125,7 +152,7 @@ export class MoviesService {
     )
   }
   listAllMovieReview(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/movieReview"
+    let url: string = "http://172.17.40.240:8080/movieReview"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -134,7 +161,7 @@ export class MoviesService {
     )
   }
   listAllReview(): Observable<any> {
-    let url: string = "http://172.17.40.233:8080/reviews"
+    let url: string = "http://172.17.40.240:8080/reviews"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)

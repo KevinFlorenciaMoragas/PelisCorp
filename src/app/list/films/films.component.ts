@@ -3,6 +3,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Genre, Movies } from 'src/app/interfaces/interfaces.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -11,7 +12,8 @@ import { Genre, Movies } from 'src/app/interfaces/interfaces.component';
 export class FilmsComponent implements OnInit {
   movies: Movies[] = []
   genres : Genre[] = []
-  constructor(private http: MoviesService) { }
+  search:string = ""
+  constructor(private http: MoviesService,private router: Router) { }
   
   getAllMovies() {
   this.http.movieByScoreDesc().subscribe(data => {
@@ -32,10 +34,18 @@ ngOnInit() {
   this.getAllMovies()
   this.getAllGenres()
 }
-getMovieName(){
-  this.movieName= (<HTMLInputElement> document.getElementById("movieName")).value;
-  console.log(this.movieName)
-  return this.movieName;
+searchMovie() {
+  this.search = (document.getElementById("search") as HTMLInputElement).value;
+  console.log(this.search)
+  if(this.search != null){
+    this.http.listAllMoviesByTitle(this.search).subscribe(data => {
+      this.movies = data;
+      console.log(this.movies)
+      this.router.navigate(['../movie-by-movie-name', this.search])
+    })
+  }else{
+
+  }
 }
-movieName:string = "";
+
 }

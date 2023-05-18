@@ -1,0 +1,38 @@
+
+<div class="container-fluid fondo">
+    <div class="row">
+      <main class="col-lg-6 col-md-10 col-sm-12 offset-lg-3">
+        <h1 class="title">Top Films</h1>
+        <div *ngFor="let movie of movies" class="card mb-3" style="background-color: #7a6585"
+         >
+          <div class="row g-0">
+            <div class="col-md-2">
+              <img src="{{movie.poster[0].url}}"  [routerLink]="['../film-view',movie.id]" class="img-fluid rounded-start image-size" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="title d-flex d-sm-block d-md-none justify-content-between"  [routerLink]="['../../film-view',movie.id]">{{movie.movieName}}
+                  <span>{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></span></h2>
+                <h2 class="title d-none d-sm-none d-md-block">{{movie.movieName}} </h2>
+                <a *ngFor="let director of movie.director" class="card-text title"  [routerLink]="['../../movies-by-director',director.id]" >{{director.name}}
+                  {{director.lastName}}
+                </a>
+                <br>
+                <a *ngFor="let actor of movie.actors" [routerLink]="['../movies-by-actor',actor.id]" class="card-text title">{{actor.name}} {{actor.lastName}}
+                </a>
+                <br>
+                <span *ngFor="let genre of movie.genre" [routerLink]="['../movies-by-genre',genre.id]" class="card-text"><small class="title">{{genre.genre}}
+                  </small></span>
+              </div>
+            </div>
+            <div class="col-md-2 d-none d-sm-none d-md-block ">
+              <h2 class="title score">{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></h2>
+            </div>
+          </div>
+        </div>
+
+
+
+      </main>
+    </div>
+  </div> 
