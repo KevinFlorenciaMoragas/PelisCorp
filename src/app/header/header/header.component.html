@@ -17,12 +17,12 @@
           <li class="nav-item">
             <a id="navLinks" class="nav-link" [routerLink]="['films']">Films</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a id="navLinks" class="nav-link" [routerLink]="['series']">Series</a>
           </li>
           <li class="nav-item">
             <a id="navLinks" class="nav-link active" href="#">Community</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a id="navLinks" class="nav-link active" [routerLink]="['aboutus']">Sobre Nosotros</a>
           </li>
@@ -49,11 +49,11 @@
           <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
           <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
       </div>
-      <div *ngIf="usernameLocalStorage != null && usernameLocalStorage != 'admin'" class="d-flex d-lg-block d-sm-none d-none">
+      <div *ngIf="usernameLocalStorage != null && roleLocalStorage != 'ADMIN'" class="d-flex d-lg-block d-sm-none d-none">
           <button class="btn ml-auto" id="log" [routerLink]="['login']">{{usernameLocalStorage}}</button>
           <button class="btn ml-2" id="sign" mat-menu-item (click)="logOut()" [routerLink]="['register']">Logout</button>
       </div>
-      <div *ngIf="usernameLocalStorage == 'admin'"  class="d-flex d-lg-block d-sm-none d-none">
+      <div *ngIf="roleLocalStorage == 'ADMIN'"  class="d-flex d-lg-block d-sm-none d-none">
         <button class="btn ml-auto" id="log" [routerLink]="['admin']">Admin</button>
         <button class="btn ml-2" id="sign" (click)="logOut()">Logout</button>
         

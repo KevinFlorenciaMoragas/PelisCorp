@@ -58,4 +58,17 @@ export class Service {
   getUserName(){
     return localStorage.getItem('username')
   }
+  getRole(){
+    return localStorage.getItem('role')
+  }
+  //get user by username
+  getUserByUsername(username: string): Observable<any> {
+    let url: string = "http://localhost:8080/userByUsername/" + username
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
 }
