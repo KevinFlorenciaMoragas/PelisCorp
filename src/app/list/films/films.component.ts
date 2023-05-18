@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class FilmsComponent implements OnInit {
   movies: Movies[] = []
   genres : Genre[] = []
+  search:string = ""
   constructor(private http: MoviesService,private router: Router) { }
   
   getAllMovies() {
@@ -33,13 +34,18 @@ ngOnInit() {
   this.getAllMovies()
   this.getAllGenres()
 }
-getMovieName(){
-  this.movieName= (<HTMLInputElement> document.getElementById("movieName")).value;
-  console.log(this.movieName)
-  return this.movieName;
+searchMovie() {
+  this.search = (document.getElementById("search") as HTMLInputElement).value;
+  console.log(this.search)
+  if(this.search != null){
+    this.http.listAllMoviesByTitle(this.search).subscribe(data => {
+      this.movies = data;
+      console.log(this.movies)
+      this.router.navigate(['../movie-by-movie-name', this.search])
+    })
+  }else{
+
+  }
 }
-movieName:string = "";
-goHome(){
-  this.router.navigate([''])
-}
+
 }

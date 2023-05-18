@@ -14,9 +14,11 @@ import { SeriesComponent } from './list/series/series.component';
 import { MoviesByGenreComponent } from './list/movies-by-genre/movies-by-genre.component';
 import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-by-movie-name.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MoviesByDirectorComponent } from './list/movies-by-director/movies-by-director.component';
+import { MoviesByActorComponent } from './list/movies-by-actor/movies-by-actor.component';
+import { MoviesByScreenwritterComponent } from './list/movies-by-screenwritter/movies-by-screenwritter.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'login/register', component: RegisterComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'header', component: HeaderComponent },
@@ -24,17 +26,19 @@ const routes: Routes = [
   { path: 'films', component: FilmsComponent },
   { path: 'series', component: SeriesComponent },
   { path: 'carousel', component: PrincipalComponent },
-  { path: 'principal/film-view/:id', component: FilmViewComponent },
-  { path: 'films/film-view/:id', component: FilmViewComponent },
-  { path: 'films/movies-by-genre/:id', component: MoviesByGenreComponent },
-  { path: 'films/movies-by-movie-name/:id', component: MoviesByMovieNameComponent },
+  { path: 'film-view/:id', component: FilmViewComponent },
+  { path: 'movies-by-director/:id', component: MoviesByDirectorComponent },
+  { path: 'movies-by-genre/:id', component: MoviesByGenreComponent },
+  //{ path: 'movies-by-movie-name/:id', component: MoviesByMovieNameComponent },
   { path: 'movie-by-movie-name/:movieName', component: MoviesByMovieNameComponent },
-  { path: 'movies-by-genre/:id/film-view/:id', component: MoviesByGenreComponent },
+  { path: 'movies-by-genre/film-view/:id', component: FilmViewComponent },
+  { path: 'movies-by-actor/:id', component: MoviesByActorComponent },
+  { path: 'movies-by-screenwritter/:id', component: MoviesByScreenwritterComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },
   { path: '', component:PrincipalComponent, pathMatch: 'full' },
-  { path: 'pageNotFound', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent },
 
 
 ];

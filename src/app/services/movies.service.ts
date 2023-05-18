@@ -28,7 +28,15 @@ export class MoviesService {
       })
     )
   }
-
+  listAllMoviesByDirector(id: number): Observable<any> {
+    let url: string = "http://localhost:8080/moviesByDirector/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
   listAllMoviesByTitle(title: string): Observable<any> {
     let url: string = "http://localhost:8080/moviesByMovieName/" + title
     return this.http.get<any>(url).pipe(
@@ -38,6 +46,25 @@ export class MoviesService {
       })
     )
   }
+  listAllMoviesByActor(id: number): Observable<any> {
+    let url: string = "http://localhost:8080/moviesByActor/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllMoviesByScreenwritter(id: number): Observable<any> {
+    let url: string = "http://localhost:8080/moviesByScreenwritter/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
   listAllMovieByTitleInput(title: string): Observable<any> {
     let url: string = "http://localhost:8080/movies/titleInput/" + title
     return this.http.get<any>(url).pipe(
