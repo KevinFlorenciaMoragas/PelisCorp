@@ -1,5 +1,5 @@
-  <div class="p-1 m-0 fixed-top" id="mainNav">
-  <nav class="navbar navbar-expand-lg" >
+  <div class="fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg" [ngClass]="{'navbar-scrolled': isScrolled}">
     <img class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/img/logo.png">
     <div class="container-fluid">
       <a id="title" class="navbar-brand" [routerLink]="['principal']">FilmCorp</a>
@@ -12,24 +12,19 @@
           <li class="nav-item">
             <a id="navLinks" class="nav-link active" aria-current="page" [routerLink]="['principal']">Home</a>
           </li>
-
-
           <li class="nav-item">
             <a id="navLinks" class="nav-link" [routerLink]="['films']">Films</a>
           </li>
-          <!-- <li class="nav-item">
-            <a id="navLinks" class="nav-link" [routerLink]="['series']">Series</a>
-          </li> -->
           <li class="nav-item">
-            <a id="navLinks" class="nav-link active" [routerLink]="['comunity']">Community</a>
+            <a id="navLinks" class="nav-link" [routerLink]="['aboutus']">Sobre Nosotros</a>
           </li>
-          <li class="nav-item">
-            <a id="navLinks" class="nav-link active" [routerLink]="['aboutus']">Sobre Nosotros</a>
-          </li>
-          <form class="nav-item" (ngSubmit)="searchMovie()">
-            <input type="text" class="form-control" id="search" [(ngModel)]="search" name="search" [ngModelOptions]="{standalone: true}"
-              placeholder="Introduzca su busqueda">
-          </form>
+          <div class="search-section d-flex d-lg-none d-sm-block d-block">
+            <form class="search-form" (ngSubmit)="searchMovie()">
+              <input type="text" class="search-input form-control" id="search" [(ngModel)]="search" name="search" [ngModelOptions]="{standalone: true}"
+                placeholder="Introduzca su búsqueda">
+              <button type="submit" class="search-button">Buscar</button>
+            </form>
+          </div>
           <li>
             <div *ngIf="usernameLocalStorage == null" class="d-lg-none d-sm-block d-block">
                 <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
@@ -45,6 +40,13 @@
           </li>
         </ul>
       </div>
+      <div class="search-section d-flex d-lg-block d-sm-none d-none">
+        <form class="search-form" (ngSubmit)="searchMovie()">
+          <input type="text" class="search-input form-control" id="search" [(ngModel)]="search" name="search" [ngModelOptions]="{standalone: true}"
+            placeholder="Introduzca su búsqueda">
+          <button type="submit" class="search-button">Buscar</button>
+        </form>
+      </div>
       <div *ngIf="usernameLocalStorage == null"  class="d-flex d-lg-block d-sm-none d-none" >
           <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
           <button class="btn ml-2" id="sign" mat-menu-item [routerLink]="['register']">Sign Up</button>
@@ -58,6 +60,7 @@
         <button class="btn ml-2" id="sign" (click)="logOut()">Logout</button>
         
     </div>
+    
     </div>
   </nav>
 </div>

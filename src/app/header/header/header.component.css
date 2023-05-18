@@ -1,3 +1,7 @@
+
+.navbar{
+  transition: background-color 0.5s ease-out;
+}
 #logoNavbar{
   width: 3.5%;
   margin-left: 2em;
@@ -12,33 +16,37 @@
 }
 #navLinks{
   color: white;
-  font-family: helvetica;
+  font-family: monospace;
   font-size: 15px;
   padding-left: 30px;
 }
 #log{
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   padding-inline: 1.5em;
   color: white;
-  font-family: helvetica;
+  font-family: monospace;
   font-size: 15px;
+  transition: background-color 0.5s ease-out;
 }
 #sign{
     background-color: white;
     color: rgb(88, 60, 101);
     padding-inline: 1.5em;
     margin-left: 10px;
-    font-family: helvetica;
+    font-family: monospace;
     font-size: 15px;
+    transition: background-color 0.5s ease-out;
 }
 #log:hover {
     background-color: #EEC24F;
     color: black;
+    transition: background-color 0.5s ease-out;
 }
 #sign:hover {
     background-color: #EEC24F;
     color: black;
-    border: 2px solid white;
+    border: 1px solid black;
+    transition: background-color 0.5s ease-out;
 }
 .navbar-scrolled {
   background-color: #333;
@@ -46,3 +54,48 @@
   transition: background-color 0.5s ease-out;
 }
 
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-button {
+  padding: 6px;
+  font-family: monospace;
+  padding-inline: 1.5em;
+  background-color: #eec14faf;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  border: 1px solid black;
+  margin-left: 10px;
+  transition: background-color 0.5s ease-out;
+}
+
+.search-button:hover {
+  font-family: monospace;
+  padding-inline: 1.5em;
+  background-color: rgb(88, 60, 101);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  border: 1px solid white;
+  margin-left: 10px;
+  transition: background-color 0.5s ease-out;
+}

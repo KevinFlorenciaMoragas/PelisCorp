@@ -1,6 +1,10 @@
-* CSS DEL CAROUSEL */
+/* CSS DEL CAROUSEL */
 .container {
   position: relative;
+}
+h2, h1{
+  font-family: monospace;
+  padding: 20px;
 }
 .imgCarousel {
   width: 100%;
@@ -92,6 +96,7 @@
 .masthead {
   padding: 1.5rem 0;
   background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+  margin-top: 3em;
 }
 #rest{
   background-color: #583C65;
@@ -452,6 +457,7 @@
 
 }
 
+
 /* CAROUSEL INFINITO */
 
 body {
@@ -478,7 +484,7 @@ body {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(calc(-250px * 2000));
+    -webkit-transform: translateX(calc(-250px * 2200));
             transform: translateX(calc(-250px * 36));
   }
 }
@@ -511,7 +517,7 @@ body {
 }
 .slider .slide-track {
   -webkit-animation: scroll 36s linear infinite;
-          animation: scroll 150s linear infinite;
+          animation: scroll 160s linear infinite;
   display: flex;
   width: calc(250px * 36);
 }
@@ -524,3 +530,14 @@ body {
   margin-right: 10em;
 }
 
+/*SCROLLBAR CSS*/
+.element-without-scrollbar {
+  overflow: hidden;
+}
+.scrollable-content::-webkit-scrollbar{
+  width: 7px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb{
+  background: violet;
+}
