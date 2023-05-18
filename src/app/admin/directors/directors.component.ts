@@ -48,7 +48,7 @@ export class DirectorsComponent {
   }
 
   deleteDirector(id: number) {
-    this.http.deleteActorById(id).subscribe(
+    this.http.deleteDirectorsById(id).subscribe(
       data => {
         console.log(data);
         this.getAllDirectors();

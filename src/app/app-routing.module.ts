@@ -20,6 +20,7 @@ import { UpdateMovieComponent } from './admin/update-movie/update-movie.componen
 import { UpdateActorsComponent } from './admin/update-actors/update-actors.component';
 import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
 import { UpdateAwardComponent } from './admin/update-award/update-award.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'update/actor/:id', component: UpdateActorsComponent},
   {path: 'update/director/:id', component: UpdateDirectorComponent},
   {path: 'update/award/:id', component: UpdateAwardComponent},
+  {path: 'update/user/:id', component: UpdateUserComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'}
 ];
 

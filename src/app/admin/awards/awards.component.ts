@@ -21,9 +21,6 @@ export class AwardsComponent {
   festival: this.festival
   });
 
-  Clic(datos: FormGroup) {
-    console.log(datos.value);
-  }
 
   awards: Awards[] = []
   award: Awards = {
@@ -33,10 +30,10 @@ export class AwardsComponent {
   }
 
   ngOnInit(){
-    this.getAllActors()
+    this.getAllAwards()
   }
 
-  getAllActors() {
+  getAllAwards() {
     this.http.listAllAwards().subscribe(data => {
       console.log(data)
       this.awards = data as Awards[]
@@ -45,15 +42,22 @@ export class AwardsComponent {
   }
 
   deleteAward(id: number) {
-    this.http.deleteActorById(id).subscribe(
+    this.http.deleteAwardById(id).subscribe(
       data => {
         console.log(data);
-        this.getAllActors();
+        this.getAllAwards();
       },
       error => {
         console.log("Error al eliminar el actor", error);
         // Manejar el error de eliminación de actor
       }
     );
+  }
+
+  CreateAward() {
+    this.http.createAward(this.MyNewForm.value).subscribe(data => {
+      console.log(this.MyNewForm.value)
+      this.getAllAwards()
+    })
   }
 }

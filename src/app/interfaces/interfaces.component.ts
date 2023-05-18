@@ -39,13 +39,12 @@ export interface Poster {
 }
 
 export interface User { 
-  name: string; 
-  lastName: string; 
+  id: number;
   username: string; 
   email: string; 
   password: string; 
-  photo: string; 
-  userRol: number; 
+  avatar: string; 
+  role: string; 
 }
 
 export interface Genre { 

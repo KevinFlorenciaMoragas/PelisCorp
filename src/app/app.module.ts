@@ -27,6 +27,7 @@ import { UpdateMovieComponent } from './admin/update-movie/update-movie.componen
 import { UpdateActorsComponent } from './admin/update-actors/update-actors.component';
 import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
 import { UpdateAwardComponent } from './admin/update-award/update-award.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,15 @@ import { UpdateAwardComponent } from './admin/update-award/update-award.componen
     FooterComponent,
     AdminComponent,
     MoviesComponent,
-    UpdateMovieComponent
+    UpdateMovieComponent,
+    UpdateActorsComponent,
+    UpdateDirectorComponent,
+    UpdateAwardComponent,
+    UsersComponent,
+    DirectorsComponent,
+    ActorsComponent,
+    AwardsComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
