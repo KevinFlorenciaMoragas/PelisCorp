@@ -5,61 +5,66 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
-import { Actor } from 'src/app/interfaces/interfaces.component';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
-import { Reviews } from 'src/app/interfaces/interfaces.component';
+
 @Component({
   selector: 'app-film-view',
   templateUrl: './film-view.component.html',
-  styleUrls: ['./film-view.component.css'],
+  styleUrls: ['./film-view.component.css']
 })
 export class FilmViewComponent {
-  constructor(private http: MoviesService) {}
-  movies: Movies[] = [];
-  genres: Genre[] = [];
-  actor: Actor[] = [];
-  reviews: Reviews[] = [];
 
+  constructor(private http: MoviesService,private router:Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
+
+  }
+  movieArray: any
+  movie: Movies = {
+    id: 0,
+    movieName: '',
+    releaseDate: new Date(),
+    plot: '',
+    duration: 0,
+    income: 0,
+    score: 0,
+    poster: [],
+    trailer: '',
+    favorites: [],
+    director: [],
+    actors: [],
+    genre: [],
+    awards: [],
+    reviews: [],
+    screenwritter: []
+  }
+  moviePrueba: Movies [] = []
+  genres: Genre[] = []
+  movieId: any
+  id: any
+  trailer : any
   ngOnInit() {
-    this.getAllMovies(),
-      this.getAllGenres(),
-      this.getAllActor();
-  }
-  getAllMovies() {
-    this.http.listAllMovies().subscribe((data) => {
-      console.log(data);
-      this.movies = data as Movies[];
-      console.log(this.movies);
-    });
-  }
+    console.log("Estoy en ngOnInit")
+    const movieIdParam = this.route.snapshot.paramMap.get('id');
+    if (movieIdParam !== null) {
+      this.id = +movieIdParam;
+    }
+    console.log(this.id)
+    this.http.getMovieById(this.id).subscribe(data => {
+      console.log(data)
+      this.movie = data;
+    //  this.movieArray = Array.from(this.movie)
 
-  getAllGenres() {
-    this.http.listAllGenres().subscribe((data) => {
-      console.log(data);
-      this.genres = data as Genre[];
-      console.log(this.genres);
-    });
+     console.log(data.movie)
+    },
+    (error) => {
+      this.router.navigate(['/pageNotFound'])
+    })
+    this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailer)
   }
-
-  getAllActor() {
-    this.http.listAllActor().subscribe((data) => {
-      console.log(data);
-      this.actor = data as Actor[];
-      console.log(this.actor);
-    });
-  }
-
-  getAllReviews() {
-    this.http.listAllReview().subscribe((data) => {
-      console.log(data);
-      this.reviews = data as Reviews[];
-      console.log(this.reviews);
-    });
-  }
-
   contenidoActual: string = '';
-
   cambiarContenido(boton: string) {
     this.contenidoActual = boton;
   }
+
 }

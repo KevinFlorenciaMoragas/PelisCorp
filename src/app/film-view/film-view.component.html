@@ -1,200 +1,214 @@
 <body>
-  <br>
-  <div class="container">
-      <div class="row wallpaperView">
-          <div class="d-lg-block col-lg-6  d-sm-none d-none imageView">
-              <h1>
-                  <ul *ngFor="let movie of movies">
-                      <a>{{movie.movieName}}</a>
-                  </ul>
-              </h1>
-              <br>
-              <ul *ngFor="let movie of movies">
-                  <img class="imgSize" [src]="movie.poster" alt="">
-              </ul>
-          </div>
-          <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
-              <div class="featured-text text-center">
-                  <h2>Genero</h2>
-                  <p class="txt">
-                  <ul *ngFor="let movie of genres">
-                      <a>{{movie.genre}}</a>
-                  </ul>
-              </div>
-              <hr>
-              <div class="featured-text text-center">
-                  <h2>Director</h2>
-                  <p class="txt">Michael B. Jordan</p>
-              </div>
-              <hr>
-              <div class="featured-text text-center">
-                  <h2>Guíon</h2>
-                  <p class="txt">Keenan Coogler, Zach Baylin, Ryan Coogler</p>
-              </div>
-              <hr>
-              <div class="featured-text text-center">
-                  <h2>Reparto</h2>
-                  <p class="txt">Michael B. Jordan, Jonathan Majors</p>
-              </div>
-          </div>
-          <div class="d-lg-block d-sm-none d-none">
-              <div class=" text-center ">
-                  <hr>
-                  <h2>Synopsis</h2>
-                  <p id="txt" class="col-lg-12">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y
-                      en su vida
-                      familiar.
-                      Cuando un amigo de la infancia y antiguo prodigio del boxeo resurge, el enfrentamiento
-                      entre ellos será más que una pelea.</p>
-                  <hr>
-              </div>
-          </div>
-          <div class="d-lg-block col-lg-12 d-sm-none  d-none imgView">
-              <h2 id="trailerTitle">TRAILER</h2>
-          </div>
-          <div class="text-center d-lg-block d-sm-none d-none">
-              <div class="d-lg-block d-sm-none col-lg-12 d-none imgView" id="trailer">
-                  <br>
-                  <iframe class="trailerSize" width="680" height="415" src="https://www.youtube.com/embed/jdEEZeRiyeQ"
-                      frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                  <br>
+    <div class="container fondo">
+        <br /><br /><br /><br /><br />
+        <div class="row">
+            <div class="d-lg-block col-lg-6  d-sm-none d-none imageView">
+                <h1> {{movie.movieName}}</h1>
 
-              </div><br>
-              <hr>
-          </div>
-          <div class="butonNav col-lg-12">
-              <button (click)="cambiarContenido('boton1')">Main cast</button>
-              <button (click)="cambiarContenido('boton2')">Critics</button>
-              <button (click)="cambiarContenido('boton3')">Did you know...?</button>
+                 <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize">
+                <br>
 
-              <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
-                  <div class="col-lg-3 text-center" *ngFor="let movie of actor">
-                      <img class="imgMainCast" [src]="movie.photo" alt=""><br>
-                      <p class="namesMainCast">{{movie.name}}
-                       {{movie.lastName}}</p>
-                  </div><br>
-              </div>
+            </div>
 
-              <div class="result" *ngIf="contenidoActual === 'boton2'">
-                  <div class="col-lg-3" *ngFor="let item of reviews">
-                      <p class="namesMainCast">{{item.text}}</p>
+            <div class="d-lg-block col-lg-4 d-sm-none  d-none txtInf">
+                <div class="featured-text text-center">
+                    <h2>Genero</h2>
+                    <ul class="txt" *ngFor="let genre of movie.genre">
+                        <a> {{genre.genre}}</a>
+                    </ul>
+                </div>
+                <hr>
+                <div class="featured-text text-center">
+                    <h2>Director</h2>
+                    <ul class="txt" *ngFor="let director of movie.director">
+                        <a> {{director.name}} {{director.lastName}}</a>
+                    </ul>
+                </div>
+                <hr>
+                <div class="featured-text text-center">
+                    <h2>Guíon</h2>
+                    <div class="txt">
+                        <ul *ngFor="let screenwritters of movie.screenwritter">
+                            <a>{{screenwritters.name}} {{screenwritters.lastName}}</a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <hr>
+                <div class="featured-text text-center">
+                    <h2>Reparto</h2>
+                    <p class="txt">Michael B. Jordan, Jonathan Majors</p>
+                </div> -->
+            </div>
+            <div class="d-lg-block d-sm-none d-none">
+                <div class=" text-center ">
+                    <hr>
+                    <h2>Synopsis</h2>
+                    <p id="txt" class="col-lg-12">{{movie.plot}}</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="d-lg-block col-lg-12 d-sm-none  d-none imgView">
+                <h2 id="trailerTitle">TRAILER</h2>
+            </div>
+            <div class="text-center d-lg-block d-sm-none d-none">
+                <div class="d-lg-block d-sm-none col-lg-12 d-none imgView" id="trailer">
+                    <br>
+                    <youtube-player class="trailerSize" videoId="{{movie.trailer}}"></youtube-player>
+                    <br>
+
+                </div><br>
+                <hr>
+            </div>
+            <div class="butonNav col-lg-12">
+                <button (click)="cambiarContenido('boton1')">Main cast</button>
+                <button (click)="cambiarContenido('boton2')">Critics</button>
+                <button (click)="cambiarContenido('boton3')">Did you know...?</button>
+
+                <div class="row result text-center" *ngIf="contenidoActual === 'boton1'">
+                    <div class="col-lg-3 text-center" *ngFor="let actor of movie.actors">
+                        <img class="imgMainCast" [src]="actor.photo" alt=""><br>
+                        <p class="namesMainCast">{{actor.name}}
+                            {{actor.lastName}}</p>
+                    </div><br>
+                </div>
+
+                <div class="result " *ngIf="contenidoActual === 'boton2'">
+                  <div class="col-lg-12" *ngFor="let review of movie.reviews">
+                    <span class="namesMainCast" *ngFor="let user of review.user">{{user.username}}</span>
+                    <p class="namesMainCast">{{review.text}}</p>
                   </div>
-              </div>
 
-              <div class="result" *ngIf="contenidoActual === 'boton3'">
-              <p>Contenido del botón 3</p>
-              </div>
-          </div>
-
-
-      </div>
-  </div>
+                  <div class="review-form">
+                    <textarea  id="review" rows="4"  placeholder="Escribe tu reseña"></textarea><br>
+                    <button class="btn-enviar text-center" id="enviar">Enviar</button>
+                  </div>
+                </div>
 
 
 
-
-  <div class="row wallpaperView">
-      <div class="d-lg-none d-sm-block col-sm-6 d-none imageView">
-          <h1>CREED III</h1><br>
-          <img class="imgSize" src="../../../assets/img/creed.jpg">
-      </div>
-      <div class="d-lg-none d-sm-block col-sm-6 d-none txtInf">
-          <div class="featured-text text-center">
-              <h2>Genero</h2>
-              <p class="txt">Drama, Deportes</p>
-          </div>
-          <hr>
-          <div class="featured-text text-center">
-              <h2>Director</h2>
-              <p class="txt">Michael B. Jordan</p>
-          </div>
-          <hr>
-          <div class="featured-text text-center">
-              <h2>Guíon</h2>
-              <p class="txt">Keenan Coogler, Zach Baylin, Ryan Coogler</p>
-          </div>
-          <hr>
-          <div class="featured-text text-center">
-              <h2>Reparto</h2>
-              <p class="txt">Michael B. Jordan, Jonathan Majors</p>
-          </div>
-      </div>
-
-      <div class="d-lg-none d-sm-block d-none">
-          <div class="text-center">
-              <hr>
-              <h2>Synopsis</h2>
-              <p id="txt">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y en su vida
-                  familiar.
-                  Cuando un amigo de la infancia y antiguo prodigio del boxeo resurge, el enfrentamiento
-                  entre ellos será más que una pelea.</p>
-              <hr>
-          </div>
-      </div>
-      <div class="d-lg-none d-sm-block col-sm-12 d-none imgView">
-          <h2 id="trailerTitle">TRAILER</h2>
-      </div>
-      <div class="text-center d-lg-none d-sm-block d-none">
-          <div class="d-lg-none d-sm-block col-sm-12 d-none imgView" id="trailer">
-              <iframe class="trailerSize" width="500" height="315" src="https://www.youtube.com/embed/jdEEZeRiyeQ"
-                  frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-          </div><br>
-      </div>
-
-  </div>
+                <div class="result" *ngIf="contenidoActual === 'boton3'">
+                    <p>Contenido del botón 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
-  <div class="row wallpaperView d-lg-none">
-      <div class="d-lg-none d-sm-none d-block col-12 imgView">
-          <h1>CREED III</h1><br>
-          <img class="imgSize" src="../../../assets/img/creed.jpg">
-      </div>
-      <div class="d-lg-none d-sm-none d-block col-12 txtInf">
-          <div class="featured-text text-center">
-              <h2>Genero</h2>
-              <p id="txt">Drama, Deportes</p>
-          </div>
-          <hr>
-          <div class="featured-text text-center">
-              <h2>Director</h2>
-              <p id="txt">Michael B. Jordan</p>
-          </div>
-          <hr>
-          <div class="featured-text text-center">
-              <h2>Guíon</h2>
-              <p id="txt">Keenan Coogler,
-                  Zach Baylin ,Ryan Coogler</p>
-          </div>
-          <hr>
-          <div class="featured-text text-center">
-              <h2>Reparto</h2>
-              <p id="txt"> Michael B.Jordan,
-                  Jonathan Majors</p>
-          </div>
-          <hr>
-      </div>
 
-      <div class="d-lg-none d-sm-none d-block col-12 txtMid">
-          <div class=" text-center">
-              <h2>Synopsis</h2>
-              <p id="txt">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y en su vida
-                  familiar.
-                  Cuando un amigo de la infancia y antiguo prodigio del boxeo resurge, el enfrentamiento
-                  entre ellos será más que una pelea.</p>
-          </div>
-      </div>
+    <div class="row wallpaperView">
+        <div class="d-lg-none d-sm-block col-sm-6 d-none imageView">
+            <h1>{{movie.movieName}}</h1><br>
+            <img class="imgSize" src="../../assets/img/padrino.jpg">
+        </div>
+        <div class="d-lg-none d-sm-block col-sm-6 d-none txtInf">
+            <div class="featured-text text-center">
+                <h2>Genero</h2>
+                <p class="txt">Drama, Deportes</p>
+            </div>
+            <hr>
+            <div class="featured-text text-center">
+                <h2>Director</h2>
+                <p class="txt">Michael B. Jordan</p>
 
-      <div class="d-lg-none d-sm-none d-block col-12 imgView">
-          <h2 id="trailerTitle">TRAILER</h2>
-      </div>
-      <div class="d-lg-none d-sm-none d-block col-12 imgView" id="trailer">
+            </div>
+            <div class="d-lg-none d-sm-block col-sm-6 d-none txtInf">
+                <div class="featured-text text-center">
+                    <h2>Genero</h2>
+                    <p class="txt">Drama, Deportes</p>
+                </div>
+                <hr>
+                <div class="featured-text text-center">
+                    <h2>Director</h2>
+                    <p class="txt">Michael B. Jordan</p>
+                </div>
+                <hr>
+                <div class="featured-text text-center">
+                    <h2>Guíon</h2>
+                    <p class="txt">Keenan Coogler, Zach Baylin, Ryan Coogler</p>
+                </div>
+                <hr>
+                <div class="featured-text text-center">
+                    <h2>Reparto</h2>
+                    <p class="txt">Michael B. Jordan, Jonathan Majors</p>
+                </div>
+            </div>
 
-          <iframe class="trailerSize" width="420" height="315" src="https://www.youtube.com/embed/jdEEZeRiyeQ"
-              frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-      </div><br>
-  </div>
+            <div class="d-lg-none d-sm-block d-none">
+                <div class="text-center">
+                    <hr>
+                    <h2>Synopsis</h2>
+                    <p id="txt">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y en su vida
+                        familiar.
+                        Cuando un amigo de la infancia y antiguo prodigio del boxeo resurge, el enfrentamiento
+                        entre ellos será más que una pelea.</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="d-lg-none d-sm-block col-sm-12 d-none imgView">
+                <h2 id="trailerTitle">TRAILER</h2>
+            </div>
+            <div class="text-center d-lg-none d-sm-block d-none">
+                <div class="d-lg-none d-sm-block col-sm-12 d-none imgView" id="trailer">
+                    <iframe class="trailerSize" width="500" height="315" src="https://www.youtube.com/embed/jdEEZeRiyeQ"
+                        frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                </div><br>
+            </div>
 
-</body>
+        </div>
+
+
+
+
+        <div class="d-lg-none d-sm-none d-block col-12 imgView">
+            <h1>CREED III</h1><br>
+            <img class="imgSize" src="../../../assets/img/creed.jpg">
+        </div>
+        <div class="d-lg-none d-sm-none d-block col-12 txtInf">
+            <div class="featured-text text-center">
+                <h2>Genero</h2>
+                <p id="txt">Drama, Deportes</p>
+            </div>
+            <hr>
+            <div class="featured-text text-center">
+                <h2>Director</h2>
+                <p id="txt">Michael B. Jordan</p>
+            </div>
+            <hr>
+            <div class="featured-text text-center">
+                <h2>Guíon</h2>
+                <p id="txt">Keenan Coogler,
+                    Zach Baylin ,Ryan Coogler</p>
+            </div>
+            <hr>
+            <div class="featured-text text-center">
+                <h2>Reparto</h2>
+                <p id="txt"> Michael B.Jordan,
+                    Jonathan Majors</p>
+            </div>
+            <hr>
+        </div>
+
+        <div class="d-lg-none d-sm-none d-block col-12 txtMid">
+            <div class=" text-center">
+                <h2>Synopsis</h2>
+                <p id="txt">Tras dominar el mundo del boxeo, Adonis ha prosperado en su carrera y en su vida
+                    familiar.
+                    Cuando un amigo de la infancia y antiguo prodigio del boxeo resurge, el enfrentamiento
+                    entre ellos será más que una pelea.</p>
+            </div>
+        </div>
+        <!--
+        <div class="d-lg-none d-sm-none d-block col-12 imgView">
+            <h2 id="trailerTitle">TRAILER</h2>
+        </div>
+        <div class="d-lg-none d-sm-none d-block col-12 imgView" id="trailer">
+
+            <iframe class="trailerSize" width="420" height="315" src="https://www.youtube.com/embed/jdEEZeRiyeQ"
+                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+        </div><br> -->
+    </div>
+

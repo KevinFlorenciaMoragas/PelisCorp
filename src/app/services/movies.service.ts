@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
+import { Movies } from '../interfaces/interfaces.component';
+import { HttpErrorResponse } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,11 @@ export class MoviesService {
   }
   listAllMovies(): Observable<any> {
 
-    let url: string = "http://localhost:8080/allMovies"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/allMovies"
+=======
+    let url: string = "http://172.17.40.240:8080/allMovies"
+>>>>>>> Stashed changes
 
     return this.http.get<any>(url).pipe(
       catchError((err) => {
@@ -29,7 +34,24 @@ export class MoviesService {
   }
 
   listAllMoviesByTitle(title: string): Observable<any> {
-    let url: string = "http://localhost:8080/movies/title/" + title
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/movies/title/" + title
+=======
+    let url: string = "http://172.17.40.240:8080/movies/title/" + title
+>>>>>>> Stashed changes
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  listAllMovieByTitleInput(title: string): Observable<any> {
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/movies/titleInput/" + title
+=======
+    let url: string = "http://172.17.40.240:8080/movies/titleInput/" + title
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -38,7 +60,11 @@ export class MoviesService {
     )
   }
   getMovieById(id: number): Observable<any> {
-    let url: string = "http://localhost:8080/movies/" + id;
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/movies/" + id;
+=======
+    let url: string = "http://172.17.40.240:8080/movies/" + id;
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.log(err)
@@ -47,7 +73,11 @@ export class MoviesService {
     )
   }
   listAllActors(): Observable<any> {
-    let url: string = "http://localhost:8080/allActors"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/allActors"
+=======
+    let url: string = "http://172.17.40.240:8080/allActors"
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -56,16 +86,39 @@ export class MoviesService {
     )
   }
   listAllDirectors(): Observable<any> {
-    let url: string = "http://localhost:8080/allDirectors"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/director"
+=======
+    let url: string = "http://172.17.40.240:8080/director"
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  getMovieByGenreId(id:number): Observable<any> {
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/movies/genre/" + id;
+=======
+    let url: string = "http://172.17.40.240:8080/movies/genre/" + id;
+>>>>>>> Stashed changes
+    return this.http.get<any>(url).pipe(
+      catchError((err:HttpErrorResponse) => {
+        if(err.status === 404){
+          console.log("No se ha encontrado la pelicula")
+        }
         return throwError(err)
       })
     )
   }
   listAllGenres(): Observable<any> {
-    let url: string = "http://localhost:8080/allGenres"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/genre"
+=======
+    let url: string = "http://172.17.40.240:8080/genre"
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -73,8 +126,41 @@ export class MoviesService {
       })
     )
   }
+
+  movieByScoreDesc(): Observable<any> {
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/movies/topDesc"
+=======
+    let url: string = "http://172.17.40.240:8080/movies/topDesc"
+>>>>>>> Stashed changes
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
+  listAllScreenWritter(): Observable<any> {
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/screenwritter"
+=======
+    let url: string = "http://172.17.40.240:8080/screenwritter"
+>>>>>>> Stashed changes
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+
   listAllActor(): Observable<any> {
-    let url: string = "http://localhost:8080/allActors"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/allActors"
+=======
+    let url: string = "http://172.17.40.240:8080/allActors"
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -83,7 +169,11 @@ export class MoviesService {
     )
   }
   listAllMovieReview(): Observable<any> {
-    let url: string = "http://localhost:8080/movieReview"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/movieReview"
+=======
+    let url: string = "http://172.17.40.240:8080/movieReview"
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -92,7 +182,11 @@ export class MoviesService {
     )
   }
   listAllReview(): Observable<any> {
-    let url: string = "http://localhost:8080/reviews"
+<<<<<<< Updated upstream
+    let url: string = "http://172.17.40.233:8080/reviews"
+=======
+    let url: string = "http://172.17.40.240:8080/reviews"
+>>>>>>> Stashed changes
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -100,6 +194,11 @@ export class MoviesService {
       })
     )
   }
+<<<<<<< Updated upstream
+  
+=======
 
+>>>>>>> Stashed changes
 
 }
+

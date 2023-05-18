@@ -13,15 +13,19 @@ export class RegisterComponent implements OnInit {
   constructor(private http:Service){
   }
   ngOnInit(): void {
-
+      
   }
   postUser(){
     this.http.registerUser(this.registerForm.value).subscribe(data =>{
       console.log(data)
+      // this.http.login(this.registerForm.value).subscribe(data =>{
+      //   console.log(data)
+      // } 
+      // )
     })
   }
-
-
+ 
+  
   username: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)]})
   email: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)]})
   password: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)]})
@@ -31,5 +35,6 @@ export class RegisterComponent implements OnInit {
     username: this.username,
     email: this.email,
     password: this.password,
+    repeatPassword: this.repeatPassword
 })
 }

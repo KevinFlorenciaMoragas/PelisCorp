@@ -1,4 +1,4 @@
-/*import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-interfaces',
@@ -8,6 +8,7 @@
 export class InterfacesComponent {
 
 }
+//1
 export interface Movies {
   id: number;
   movieName: string;
@@ -130,7 +131,7 @@ export interface UserReview{
   id: number;
   id_user: number;
   id_review: number;
-}
+} 
 //17
 export interface Screenwritter{
   id: number;
@@ -144,4 +145,5 @@ export interface MovieScreenwritter{
   id: number;
   id_movie: number;
   id_screenwritter: number;
-}*/
+}
+//19

@@ -17,12 +17,21 @@ import { Service } from './services/service.service';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InterfacesComponent } from './interfaces/interfaces.component';
 import { FilmViewComponent } from './film-view/film-view.component';
-import { PrivacyComponent } from './privacy/privacy/privacy.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './helpers/auth.interceptor';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { ConditionsComponent } from './conditions/conditions.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SeriesComponent } from './list/series/series.component';
-import { ComunityComponent } from './comunity/comunity/comunity.component';
+import { MoviesByGenreComponent } from './list/movies-by-genre/movies-by-genre.component';
+import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-by-movie-name.component';
+import { ComunityComponent } from './comunity/comunity.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MoviesByGenreComponent,
+    MoviesByMovieNameComponent,
     RegisterComponent,
     LoginComponent,
     HeaderComponent,
@@ -31,9 +40,12 @@ import { ComunityComponent } from './comunity/comunity/comunity.component';
     FilmViewComponent,
     InterfacesComponent,
     FooterComponent,
+    AboutusComponent,
     PrivacyComponent,
+    ConditionsComponent,
     ComunityComponent,
-    SeriesComponent,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -42,10 +54,14 @@ import { ComunityComponent } from './comunity/comunity/comunity.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    YouTubePlayerModule,
     CarouselModule.forRoot()
 
   ],
-  providers: [Service],
+  providers: [Service,
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

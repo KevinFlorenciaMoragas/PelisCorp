@@ -9,6 +9,7 @@
     .cards {
         background-color: rgb(153, 112, 170);
         height: 320px;
+        border: 1px solid black;
     }
 }
 

@@ -1,8 +1,10 @@
-.background{
-    background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+.background {
+    background: linear-gradient(0deg, rgba(210, 210, 210, 1) 45%, rgba(88, 60, 101, 1) 93%);
 }
-.cards{
+
+.cards {
     background-color: rgb(153, 112, 170);
+    border: 1px solid black;
 }
 
 @media (min-width: 1200px) {
