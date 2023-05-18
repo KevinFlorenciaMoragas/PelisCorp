@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>FilmCorp</title>
-
-</head>
-
-
-<body class="p-1 m-0 fixed-top" id="mainNav">
-
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg" class="p-1 m-0 fixed-top" id="mainNav">
     <img class="align-items-center d-lg-block d-none" id="logoNavbar" src="../../../assets/img/logo.png">
     <div class="container-fluid">
       <a id="title" class="navbar-brand" [routerLink]="['principal']">FilmCorp</a>
@@ -39,10 +25,10 @@
           <li class="nav-item">
             <a id="navLinks" class="nav-link active" [routerLink]="['aboutus']">Sobre Nosotros</a>
           </li>
-          <li class="nav-item">
-            <input type="text" class="form-control" id="search" (change)="searchMovie()"
+          <form class="nav-item" (ngSubmit)="searchMovie()">
+            <input type="text" class="form-control" id="search" [(ngModel)]="search" name="search" [ngModelOptions]="{standalone: true}"
               placeholder="Introduzca su busqueda">
-          </li>
+          </form>
           <li>
             <div *ngIf="usernameLocalStorage == null" class="d-lg-none d-sm-block d-block">
                 <button class="btn ml-auto" id="log" [routerLink]="['login']">Log In</button>
@@ -73,6 +59,3 @@
     </div>
     </div>
   </nav>
-  <div class="col-12 col-md-4 col-lg-4" *ngIf="searchMovie() == true">
-    <h1>hello</h1>
-  </div>

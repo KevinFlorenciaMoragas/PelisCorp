@@ -17,10 +17,12 @@ export class MoviesByMovieNameComponent {
   id: any
   getAllMoviesByMovieName() {
     const genreIdParam = this.route.snapshot.paramMap.get('movieName');
+    console.log(genreIdParam)
     if (genreIdParam !== null) {
-      this.id = +genreIdParam;
+      this.id = genreIdParam;
+      console.log(this.id)
     }
-    this.http.getMovieByGenreId(this.id).subscribe(data => {
+    this.http.listAllMoviesByTitle(this.id).subscribe(data => {
       console.log(data)
       this.movies = data as Movies[]
       console.log(this.movies)

@@ -3,6 +3,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Genre, Movies } from 'src/app/interfaces/interfaces.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -11,7 +12,7 @@ import { Genre, Movies } from 'src/app/interfaces/interfaces.component';
 export class FilmsComponent implements OnInit {
   movies: Movies[] = []
   genres : Genre[] = []
-  constructor(private http: MoviesService) { }
+  constructor(private http: MoviesService,private router: Router) { }
   
   getAllMovies() {
   this.http.movieByScoreDesc().subscribe(data => {
@@ -38,4 +39,7 @@ getMovieName(){
   return this.movieName;
 }
 movieName:string = "";
+goHome(){
+  this.router.navigate([''])
+}
 }

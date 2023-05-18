@@ -53,6 +53,7 @@ import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-b
     HttpClientModule,
     RouterModule,
     YouTubePlayerModule,
+   // RouterModule.forRoot([]),
     CarouselModule.forRoot()
 
   ],

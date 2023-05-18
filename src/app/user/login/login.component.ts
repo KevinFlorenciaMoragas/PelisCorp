@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  constructor(private http: Service, private cookieService: CookieService, private router:Router) { }
+  constructor(private http: Service, private cookieService: CookieService, private router: Router) { }
 
 
 
@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
     console.log("Login")
     console.log(this.loginForm.value)
     this.http.login(this.loginForm.value).subscribe(response => {
-   
-     this.router.navigate(['/'])
-      window.location.reload()
+      this.router.navigate(['/'])
     })
   }
   username: FormControl = new FormControl<string | null>("", { /*validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)]*/ })
