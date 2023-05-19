@@ -29,6 +29,7 @@ import { MoviesByMovieNameComponent } from './list/movies-by-movie-name/movies-b
 import { MoviesByDirectorComponent } from './list/movies-by-director/movies-by-director.component';
 import { MoviesByActorComponent } from './list/movies-by-actor/movies-by-actor.component';
 import { MoviesByScreenwritterComponent } from './list/movies-by-screenwritter/movies-by-screenwritter.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,7 @@ import { MoviesByScreenwritterComponent } from './list/movies-by-screenwritter/m
     MoviesByDirectorComponent,
     MoviesByActorComponent,
     MoviesByScreenwritterComponent,
+    PageNotFoundComponent,
     
 
   ],

@@ -44,12 +44,18 @@ export class MoviesByActorComponent implements OnInit {
       
       console.log(this.actor)
       console.log(this.movies)
+    },
+    (error) => {
+      this.router.navigate(['**'])
     })
     this.http.getActorById(this.idActor).subscribe(actorData => {
       console.log(actorData)
       this.actor = actorData as Actor
       console.log(this.actor)
 
+    },
+    (error) => {
+      this.router.navigate(['**'])
     })
   }
 }

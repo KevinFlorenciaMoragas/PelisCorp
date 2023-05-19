@@ -11,42 +11,45 @@ import { Router } from '@angular/router';
 })
 export class FilmsComponent implements OnInit {
   movies: Movies[] = []
-  genres : Genre[] = []
-  search:string = ""
-  constructor(private http: MoviesService,private router: Router) { }
-  
+  genres: Genre[] = []
+  search: string = ""
+  constructor(private http: MoviesService, private router: Router) { }
+
   getAllMovies() {
-  this.http.movieByScoreDesc().subscribe(data => {
-    console.log(data)
-    this.movies = data as Movies[]
-    console.log(this.movies)
-  })
-}
-getAllGenres() {
-
-  this.http.listAllGenres().subscribe(data => {
-    console.log(data)
-    this.genres = data as Genre[]
-    console.log(this.movies)
-  })
-}
-ngOnInit() {
-  this.getAllMovies()
-  this.getAllGenres()
-}
-searchMovie() {
-  console.log("search")
-  this.search = (document.getElementById("busqueda") as HTMLInputElement).value;
-  console.log(this.search)
-  if(this.search != null){
-    this.http.listAllMoviesByTitle(this.search).subscribe(data => {
-      this.movies = data;
+    this.http.movieByScoreDesc().subscribe(data => {
+      console.log(data)
+      this.movies = data as Movies[]
       console.log(this.movies)
-      this.router.navigate(['../movie-by-movie-name', this.search])
     })
-  }else{
-
   }
-}
+  getAllGenres() {
+
+    this.http.listAllGenres().subscribe(data => {
+      console.log(data)
+      this.genres = data as Genre[]
+      console.log(this.movies)
+    })
+  }
+  ngOnInit() {
+    this.getAllMovies()
+    this.getAllGenres()
+  }
+  searchMovie() {
+    console.log("search")
+    this.search = (document.getElementById("busqueda") as HTMLInputElement).value;
+    console.log(this.search)
+    if (this.search != null) {
+      this.http.listAllMoviesByTitle(this.search).subscribe(data => {
+        this.movies = data;
+        console.log(this.movies)
+        this.router.navigate(['../movie-by-movie-name', this.search])
+      },
+        (error) => {
+          this.router.navigate(['**'])
+        })
+    } else {
+
+    }
+  }
 
 }

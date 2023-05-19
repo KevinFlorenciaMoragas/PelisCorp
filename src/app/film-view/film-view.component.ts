@@ -61,7 +61,7 @@ export class FilmViewComponent {
      console.log(data.movie)
     },
     (error) => {
-      this.router.navigate(['/pageNotFound'])
+      this.router.navigate(['**'])
     })
   //  this.http.getUserById()
     this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailer)

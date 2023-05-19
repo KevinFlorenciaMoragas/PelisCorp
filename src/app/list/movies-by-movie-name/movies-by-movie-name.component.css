@@ -8,10 +8,7 @@
   .card{
     cursor: pointer;
   }
-  .container-fluid {
-    padding-top: 10em;
-  }
-  
+
   .button:hover {
     background-color: #eec14f85;
     border: none;

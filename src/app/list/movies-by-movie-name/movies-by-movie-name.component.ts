@@ -26,6 +26,9 @@ export class MoviesByMovieNameComponent {
       console.log(data)
       this.movies = data as Movies[]
       console.log(this.movies)
+    },
+    (error) => {
+      this.router.navigate(['**'])
     })
   }
 

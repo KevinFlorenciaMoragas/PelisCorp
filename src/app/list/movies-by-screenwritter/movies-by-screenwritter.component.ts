@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movies, Screenwritter } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -10,7 +10,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./movies-by-screenwritter.component.css']
 })
 export class MoviesByScreenwritterComponent {
-  constructor(private http: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
+  constructor(private http: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer,private router: Router) { }
   ngOnInit(): void {
     this.getAllMoviesByScreenwritter()
   }
@@ -32,11 +32,17 @@ export class MoviesByScreenwritterComponent {
       console.log(data)
       this.movies = data as Movies[]
       console.log(this.movies)
+    },
+    (error) => {
+      this.router.navigate(['**'])
     })
     this.http.getScreenwritterById(this.id).subscribe(screenwritterData => {
       console.log(screenwritterData)
       this.screenwritter = screenwritterData as Screenwritter
       console.log(this.screenwritter)
+    },
+    (error) => {
+      this.router.navigate(['**'])
     }
     )
   }

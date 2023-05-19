@@ -37,6 +37,9 @@ export class MoviesByGenreComponent implements OnInit {
       this.genre = genreData as Genre
       console.log(this.genre)
 
+    },
+    (error) => {
+      this.router.navigate(['**'])
     }
     )
   }

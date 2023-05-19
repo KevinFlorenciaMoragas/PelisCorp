@@ -43,6 +43,9 @@ movies: Movies [] = []
       this.director = directorData as Director
       console.log(this.director)
 
+    },
+    (error) => {
+      this.router.navigate(['**'])
     }
     )
 
