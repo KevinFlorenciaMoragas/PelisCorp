@@ -1,0 +1,75 @@
+<br><br><br><br>
+<div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
+    <br>
+    <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">UPDATE MOVIE</h2>
+    <form [formGroup]="MyNewForm" (ngSubmit)="onUpdateMovie()" *ngIf="movie">
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label for="id">Id</label>
+                <input type="number" class="form-control" id="id" formControlName="id" [(ngModel)]="movie.id" required
+                     >
+                <div *ngIf="MyNewForm.get('id')?.invalid " class="alert alert-danger mt-2">El campo ID es
+                    obligatorio
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="moviename">Movie name</label>
+                <input type="text" class="form-control" id="moviename" formControlName="movieName" [(ngModel)]="movie.movieName" required>
+                <div *ngIf="MyNewForm.get('movieName')?.invalid" class="alert alert-danger mt-2">El campo MOVIE NAME es
+                    obligatorio</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="trailer">Trailer</label>
+                <input type="text" class="form-control" id="trailer" placeholder="Trailer" formControlName="trailer" [(ngModel)]="movie.trailer"
+                    required>
+                <div *ngIf="MyNewForm.get('trailer')?.invalid" class="alert alert-danger mt-2">El campo TRAILER
+                    es
+                    obligatorio</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="releaseDate">Release date</label>
+                <input type="number" class="form-control" id="releaseDate" placeholder="Release date" [(ngModel)]="movie.releaseDate"
+                    formControlName="releaseDate" required>
+                <div *ngIf="MyNewForm.get('releaseDate')?.invalid" class="alert alert-danger mt-2">El campo
+                    RELEASE
+                    DATE es obligatorio</div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="duration">Duration</label>
+                <input type="number" class="form-control" id="duration" placeholder="Duration" [(ngModel)]="movie.duration"
+                    formControlName="duration" required>
+                <div *ngIf="MyNewForm.get('duration')?.invalid" class="alert alert-danger mt-2">El campo
+                    DURATION es
+                    obligatorio</div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="income">Income</label>
+                <input type="number" class="form-control" id="income" placeholder="Income" formControlName="income" [(ngModel)]="movie.income"
+                    required>
+                <div *ngIf="MyNewForm.get('income')?.invalid" class="alert alert-danger mt-2">El campo INCOME es
+                    obligatorio</div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="score">Score</label>
+                <input type="number" class="form-control" id="score" placeholder="Score" formControlName="score" [(ngModel)]="movie.score"
+                    required>
+                <div *ngIf="MyNewForm.get('score')?.invalid" class="alert alert-danger mt-2">El campo SCORE es
+                    obligatorio</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="plot">Plot</label>
+                <input type="text" class="form-control" id="plot" placeholder="Plot" formControlName="plot" [(ngModel)]="movie.plot" required>
+                <div *ngIf="MyNewForm.get('plot')?.invalid" class="alert alert-danger mt-2">El campo PLOT es
+                    obligatorio</div>
+            </div>
+
+        </div>
+        <div style="text-align: center;">
+            <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
+        </div>
+    </form>
+</div>

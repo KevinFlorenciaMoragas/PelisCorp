@@ -1,0 +1,86 @@
+<body>
+    <br><br><br><br>
+    <div class="container">
+        <div class="row" style="margin-bottom: 30px;">
+            <div class="col-lg-12">
+                <h1 style="margin-bottom: 40px;">Page Awards Admin</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                    <a href="/admin/movies" class="btnprincipal">Movies</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                    <a href="/admin/actors" class="btnprincipal">Actors</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin/directors" class="btnprincipal">Director</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin/awards" class="btnprincipal">Awards</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin/users" class="btnprincipal">Users</a>
+            </div>
+            <div class="col-6 col-md-2" style="margin-bottom: 30px;">
+                <a href="/admin" class="btnprincipal">Admin</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Festival</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr *ngFor="let award of awards" style="text-align: center;">
+                            <td >{{award.id}}</td>
+                            <td>{{award.name}}</td>
+                            <td>{{award.festival}}</td>
+                            <td>
+                                <button class="btn btn-primary" routerLink="/update/award/{{award.id}}">Editar</button>
+                                <button class="btn btn-danger" (click)="deleteAward(award.id)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
+            <br>
+            <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE AWARD</h2>
+            <form [formGroup]="MyNewForm" (ngSubmit)="CreateAward()">
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="name"
+                            formControlName="name" required>
+                        <div *ngIf="MyNewForm.get('name')?.invalid" class="alert alert-danger mt-2">El campo
+                            NAME es obligatorio</div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="festival">Festival</label>
+                        <input type="text" class="form-control" id="festival" placeholder="Festival"
+                            formControlName="festival" required>
+                        <div *ngIf="MyNewForm.get('festival')?.invalid" class="alert alert-danger mt-2">El campo FESTIVAL
+                            es
+                            obligatorio</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+</body>

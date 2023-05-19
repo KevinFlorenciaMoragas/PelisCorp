@@ -18,6 +18,17 @@ import { MoviesByDirectorComponent } from './list/movies-by-director/movies-by-d
 import { MoviesByActorComponent } from './list/movies-by-actor/movies-by-actor.component';
 import { MoviesByScreenwritterComponent } from './list/movies-by-screenwritter/movies-by-screenwritter.component';
 import { ComunityComponent } from './comunity/comunity.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { MoviesComponent } from './admin/movies/movies.component';
+import { UsersComponent } from './admin/users/users.component';
+import { ActorsComponent } from './admin/actors/actors.component';
+import { AwardsComponent } from './admin/awards/awards.component';
+import { DirectorsComponent } from './admin/directors/directors.component';
+import { UpdateMovieComponent } from './admin/update-movie/update-movie.component';
+import { UpdateActorsComponent } from './admin/update-actors/update-actors.component';
+import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
+import { UpdateAwardComponent } from './admin/update-award/update-award.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -40,6 +51,17 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },
+  {path:'admin', component: AdminComponent},
+  {path:'admin/movies', component: MoviesComponent},
+  {path:'admin/users', component: UsersComponent},
+  {path:'admin/actors', component: ActorsComponent},
+  {path:'admin/awards', component: AwardsComponent},
+  {path:'admin/directors', component: DirectorsComponent},
+  {path: 'update/movie/:id', component: UpdateMovieComponent},
+  {path: 'update/actor/:id', component: UpdateActorsComponent},
+  {path: 'update/director/:id', component: UpdateDirectorComponent},
+  {path: 'update/award/:id', component: UpdateAwardComponent},
+  {path: 'update/user/:id', component: UpdateUserComponent},
   { path: '', component:PrincipalComponent, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 

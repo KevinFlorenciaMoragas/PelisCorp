@@ -42,14 +42,13 @@ export interface Poster {
   url: string;
 }
 //3
-export interface User {
-  name: string;
-  lastName: string;
-  username: string;
-  email: string;
-  password: string;
-  photo: string;
-  userRol: number;
+export interface User { 
+  id: number;
+  username: string; 
+  email: string; 
+  password: string; 
+  avatar: string; 
+  role: string; 
 }
 //4
 export interface Genre {
@@ -123,15 +122,6 @@ export interface Poster {
   url: string; 
 }
 
-export interface User { 
-  name: string; 
-  lastName: string; 
-  username: string; 
-  email: string; 
-  password: string; 
-  photo: string; 
-  userRol: number; 
-}
 
 export interface Genre { 
   id: number; 

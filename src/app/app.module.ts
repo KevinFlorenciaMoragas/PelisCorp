@@ -30,6 +30,17 @@ import { MoviesByDirectorComponent } from './list/movies-by-director/movies-by-d
 import { MoviesByActorComponent } from './list/movies-by-actor/movies-by-actor.component';
 import { MoviesByScreenwritterComponent } from './list/movies-by-screenwritter/movies-by-screenwritter.component';
 import { ComunityComponent } from './comunity/comunity.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { MoviesComponent } from './admin/movies/movies.component';
+import { ActorsComponent } from './admin/actors/actors.component';
+import { DirectorsComponent } from './admin/directors/directors.component';
+import { AwardsComponent } from './admin/awards/awards.component';
+import { UsersComponent } from './admin/users/users.component';
+import { UpdateMovieComponent } from './admin/update-movie/update-movie.component';
+import { UpdateActorsComponent } from './admin/update-actors/update-actors.component';
+import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
+import { UpdateAwardComponent } from './admin/update-award/update-award.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +61,17 @@ import { ComunityComponent } from './comunity/comunity.component';
     MoviesByActorComponent,
     MoviesByScreenwritterComponent,
     ComunityComponent,
-    
+    AdminComponent,
+    MoviesComponent,
+    UpdateMovieComponent,
+    UpdateActorsComponent,
+    UpdateDirectorComponent,
+    UpdateAwardComponent,
+    UsersComponent,
+    DirectorsComponent,
+    ActorsComponent,
+    AwardsComponent,
+    UpdateUserComponent
 
   ],
   imports: [
@@ -61,6 +82,7 @@ import { ComunityComponent } from './comunity/comunity.component';
     HttpClientModule,
     RouterModule,
     YouTubePlayerModule,
+    FormsModule,
    // RouterModule.forRoot([]),
     CarouselModule.forRoot()
 

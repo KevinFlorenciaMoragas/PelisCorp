@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Movies } from '../interfaces/interfaces.component';
+import { DirectorsComponent } from '../admin/directors/directors.component';
+import { ActorsComponent } from '../admin/actors/actors.component';
 import { HttpErrorResponse } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,64 @@ export class MoviesService {
       })
     )
   }
+  updateMovie(movie: any): Observable<any> {
+    console.log(movie.movie.id)
+    const url = "http://172.17.40.240:8080/movies/" + movie.movie.id;
+    return this.http.put<any>(url, movie, this.httpOptions).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(err);
+      })
+    );
+  }
+  listAllUsers(): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/user"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  createUser(MyNewForm: ActorsComponent):Observable<ActorsComponent>{
+    let url:string = "http://172.17.40.240:8080/user"
+    console.log(MyNewForm)
+    return this.http.post<ActorsComponent>(url,JSON.stringify(MyNewForm),this.httpOptions).pipe(
+      catchError((err) =>{
+        console.log("hay un error")
+        console.error(err)
+        return throwError(err)
+      })
+      )
+  }
+  getUserById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/user/" +id;
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  updateUser(user: any): Observable<any> {
+    console.log(user)
+    const url = "http://172.17.40.240:8080/user/" + user.id;
+    return this.http.put<any>(url, user, this.httpOptions).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(err);
+      })
+    );
+  }
+  deleteUserById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/user/" + id;
+    return this.http.delete<any>(url).pipe(
+      catchError((err) => {
+        console.log(err);
+        return throwError(err);
+      })
+    );
+  }
   listAllMoviesByDirector(id: number): Observable<any> {
     let url: string = "http://172.17.40.240:8080/moviesByDirector/" + id
     return this.http.get<any>(url).pipe(
@@ -36,6 +96,45 @@ export class MoviesService {
         return throwError(err)
       })
     )
+  }
+  getDirectorById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/director/" +id;
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  updateDirector(director: any): Observable<any> {
+    console.log(director.id)
+    const url = "http://172.17.40.240:8080/director/" + director.id;
+    return this.http.put<any>(url, director, this.httpOptions).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(err);
+      })
+    );
+  }
+  createDirector(MyNewForm: DirectorsComponent):Observable<DirectorsComponent>{
+    let url:string = "http://172.17.40.240:8080/director"
+    console.log(MyNewForm)
+    return this.http.post<DirectorsComponent>(url,JSON.stringify(MyNewForm),this.httpOptions).pipe(
+      catchError((err) =>{
+        console.log("hay un error")
+        console.error(err)
+        return throwError(err)
+      })
+      )
+  }
+  deleteDirectorsById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/director/" + id;
+    return this.http.delete<any>(url).pipe(
+      catchError((err) => {
+        console.log(err);
+        return throwError(err);
+      })
+    );
   }
   listAllMoviesByTitle(title: string): Observable<any> {
     let url: string = "http://172.17.40.240:8080/moviesByMovieName/" + title
@@ -54,6 +153,25 @@ export class MoviesService {
         return throwError(err)
       })
     )
+  }
+  getActorById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/actors/" +id;
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  updateActor(actor: any): Observable<any> {
+    console.log(actor.id)
+    const url = "http://172.17.40.240:8080/actors/" + actor.id;
+    return this.http.put<any>(url, actor, this.httpOptions).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(err);
+      })
+    );
   }
   listAllMoviesByScreenwritter(id: number): Observable<any> {
     let url: string = "http://172.17.40.240:8080/moviesByScreenwritter/" + id
@@ -151,6 +269,27 @@ export class MoviesService {
       })
     )
   }
+  deleteActorById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/actors/" + id;
+    
+    return this.http.delete<any>(url).pipe(
+      catchError((err) => {
+        console.log(err);
+        return throwError(err);
+      })
+    );
+  }
+  createActor(MyNewForm: ActorsComponent):Observable<ActorsComponent>{
+    let url:string = "http://172.17.40.240:8080/actors"
+    console.log(MyNewForm)
+    return this.http.post<ActorsComponent>(url,JSON.stringify(MyNewForm),this.httpOptions).pipe(
+      catchError((err) =>{
+        console.log("hay un error")
+        console.error(err)
+        return throwError(err)
+      })
+      )
+  }
   listAllMovieReview(): Observable<any> {
     let url: string = "http://172.17.40.240:8080/movieReview"
     return this.http.get<any>(url).pipe(
@@ -170,6 +309,45 @@ export class MoviesService {
     )
   }
   
+  deleteMovieById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/movies/" + id;
+    return this.http.delete<any>(url).pipe(
+      catchError((err) => {
+        console.log(err);
+        return throwError(err);
+      })
+    );
+  }
+  listAllAwards(): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/awards"
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
+  deleteAwardById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/awards/" + id;
+    
+    return this.http.delete<any>(url).pipe(
+      catchError((err) => {
+        console.log(err);
+        return throwError(err);
+      })
+    );
+  }
+  createAward(MyNewForm: ActorsComponent):Observable<ActorsComponent>{
+    let url:string = "http://172.17.40.240:8080/awards"
+    console.log(MyNewForm)
+    return this.http.post<ActorsComponent>(url,JSON.stringify(MyNewForm),this.httpOptions).pipe(
+      catchError((err) =>{
+        console.log("hay un error")
+        console.error(err)
+        return throwError(err)
+      })
+      )
+  }
 
 }
 

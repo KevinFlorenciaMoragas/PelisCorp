@@ -1,0 +1,44 @@
+<br><br><br><br>
+<div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
+    <br>
+    <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">UPDATE ACTOR</h2>
+    <form [formGroup]="MyNewForm" (ngSubmit)="onUpdateDirector()">
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label for="id">Id</label>
+                <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id" [(ngModel)]="director.id"
+                    required>
+                <div *ngIf="MyNewForm.get('id')?.invalid" class="alert alert-danger mt-2">El campo ID es
+                    obligatorio
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="name" [(ngModel)]="director.name"
+                    formControlName="name" required>
+                <div *ngIf="MyNewForm.get('name')?.invalid" class="alert alert-danger mt-2">El campo
+                    NAME es obligatorio</div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="lastName" [(ngModel)]="director.lastName"
+                    formControlName="lastName" required>
+                <div *ngIf="MyNewForm.get('lastName')?.invalid" class="alert alert-danger mt-2">El campo LAST NAME
+                    es
+                    obligatorio</div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="photo">Photo</label>
+                <input type="text" class="form-control" id="photo" placeholder="photo" [(ngModel)]="director.photo"
+                    formControlName="photo" required>
+                <div *ngIf="MyNewForm.get('photo')?.invalid" class="alert alert-danger mt-2">El campo PHOTO
+                    es
+                    obligatorio</div>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
