@@ -258,8 +258,9 @@ h2, h1{
   color: rgb(0, 0, 0);
   width: 7em;
   border: none;
+  transform: scale(1.1);
   transition: all 0.3s ease-in-out;
-  transform: scale(1.2);
+
 }
 
 #lista {
@@ -498,6 +499,15 @@ body {
             transform: translateX(calc(-250px * 36));
   }
 }
+.bgSlider{
+  background-color: rgb(88, 60, 101);
+  transition: all 0.3s ease-in-out;
+}
+.bgSlider:hover{
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+}
 .slider {
 
   /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);*/
@@ -506,6 +516,18 @@ body {
   overflow: hidden;
   position: relative;
   width: 95%;
+  transition: all 0.3s ease-in-out;
+}
+.slider:hover {
+
+  /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);*/
+  height: 25em;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 95%;
+  transition: all 0.3s ease-in-out;
+
 }
 .slider::before, .slider::after {
 
