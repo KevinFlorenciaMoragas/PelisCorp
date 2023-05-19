@@ -4,7 +4,7 @@ h1{
 }
 
 .bg{
-
+	margin-top: 1em;
 	background:url(../../../assets/img/wallpaper_def.png);
 	background-size: cover;
 	display: flex;

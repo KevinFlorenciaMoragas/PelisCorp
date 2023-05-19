@@ -1,1 +1,144 @@
 /* You can add global styles to this file, and also import other style files */
+/* body::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar
+    }
+    
+    body::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.411);
+        
+    }*/
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+/* roundness of the scroll thumb */
+    border: 3px solid #ffffff;  /*creates padding around scroll thumb */
+    }  
+
+::-webkit-scrollbar {
+
+
+
+
+    width: 0;
+
+}
+
+#scrollpath {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    width: 10px;
+
+    height: 100%;
+
+    background: rgb(#8b38d9);
+
+}
+
+#progressbar {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    width: 10px;
+
+    height: 100%;
+
+    background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+
+    /* animation: animate 5s linear infinite; */
+
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+
+        filter: hue-rotate(0deg);
+
+    }
+
+    50% {
+
+        filter: hue-rotate(360deg);
+
+    }
+
+}
+
+#progressbar:before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    /* background: linear-gradient(to top, #008aff, #00ffe7); */
+
+    filter: blur(10px);
+
+}
+
+
+
+
+#maps {
+
+    width: 250px;
+
+    height: auto;
+
+    margin: 2%;
+
+    border-radius: 20px;
+
+}
+
+
+
+
+.footerlogos {
+
+    width: 100px;
+
+}
+
+#socialmedia {
+
+    display: flex;
+
+    flex-direction: row-reverse;
+
+}
+
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+
+input[type=number]::-webkit-outer-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

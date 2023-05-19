@@ -1,6 +1,6 @@
 
 .bg{
-
+	margin-top: 2em;
 	background:url(../../../assets/img/wallpaper_def.png);
 	background-size: cover;
 	display: flex;
