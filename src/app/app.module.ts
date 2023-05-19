@@ -41,6 +41,8 @@ import { UpdateActorsComponent } from './admin/update-actors/update-actors.compo
 import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
 import { UpdateAwardComponent } from './admin/update-award/update-award.component';
 import { UpdateUserComponent } from './admin/update-user/update-user.component';
+import { CarouselConfig } from 'ngx-bootstrap/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +89,9 @@ import { UpdateUserComponent } from './admin/update-user/update-user.component';
     CarouselModule.forRoot()
 
   ],
-  providers: [Service,
+  providers: [
+    Service,
+    CarouselConfig,
   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
   
   ],

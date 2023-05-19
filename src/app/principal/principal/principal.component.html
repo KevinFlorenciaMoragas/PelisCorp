@@ -1,118 +1,69 @@
 <script src="./principal.js"></script>
 <div class="element-without-scrollbar">
-<div class="masthead">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="index-text">Welcome to FilmCorp</h1>
-            </div>
-            <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
-                [noPause]="true" >
-                <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['/film-view',movie.id]">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="carousel text-center">
-                                <p *ngFor="let poster of movie.poster">
-                                    <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
-                                </p>
-                                <div class="card-body">
-                                    <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6"
-                            style="background-color: rgb(88, 60, 101); font-family: monospace; color: white; border: 1px solid black; ">
-                            <div class="carousel text-center">
-                                <div class="featured-text text-center">
-                                    <h2>Genre</h2>
-                                    <p *ngFor="let genre of movie.genre">{{genre.genre}}</p>
-                                </div>
-                                <hr>
-                                <div class="featured-text text-center">
-                                    <h2>Director</h2>
-                                    <p *ngFor="let director of movie.director">{{director.name}} {{director.lastName}}
+    <div class="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 id="index-text">Welcome to FilmCorp</h1>
+                </div>
+                <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
+                    [noPause]="true">
+                    <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['/film-view',movie.id]">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="carousel text-center">
+                                    <p *ngFor="let poster of movie.poster">
+                                        <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
                                     </p>
-                                </div>
-                                <hr>
-                                <div class="featured-text text-center">
-                                    <h2>Sinopsis</h2>
-                                    <p>{{movie.plot}}</p>
+                                    <div class="card-body">
+                                        <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-lg-6"
+                                style="background-color: rgb(88, 60, 101); font-family: monospace; color: white; border: 1px solid black; ">
+                                <div class="carousel text-center">
+                                    <div class="featured-text text-center">
+                                        <h2>Genre</h2>
+                                        <p *ngFor="let genre of movie.genre">{{genre.genre}}</p>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-text text-center">
+                                        <h2>Director</h2>
+                                        <p *ngFor="let director of movie.director">{{director.name}}
+                                            {{director.lastName}}
+                                        </p>
+                                    </div>
+                                    <hr>
+                                    <div class="featured-text text-center">
+                                        <h2>Sinopsis</h2>
+                                        <p>{{movie.plot}}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </slide>
-            </carousel>
-        </div>
-    </div>
-
-    <div class="bgSlider">
-        <div class="row bg-purple text-white justify-content-center">
-            <h2 class="col-12 text-center">The most Popular</h2>
-            <div class="col-md-12 col-lg-12 col-sm-12 col-6">
-                <div class="slider">
-                    <div class="slide-track">
-                        <div class="slide" *ngFor="let movie of movies">
-                            <div class="slide" *ngFor="let poster of movie.poster">
-                                <img class="infiniteCarousel" [src]="poster.url">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: aliceblue">{{movie.movieName}}</h5>
-                                <button id="buttonCarousel" class="btn mb-3" [routerLink]="['/film-view',movie.id]">MORE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </slide>
+                </carousel>
             </div>
         </div>
 
-    </div>
-
-
- 
-    <h1 id="subtitleFreatured" class="col-12 text-center">Recomended</h1>
-    <div class="card-container">
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-xs-12 trailer-container2" style="display: flex; justify-content: center;">
-                <img class="img-responsive" style="display:block; margin-left: auto; margin-right: auto;"
-                    src="{{movieRecommended.poster[0].url}} " >
-            </div>
-            <div class="col-lg-5 col-md-8 col-xs-12">
-                <h2 class="title">{{movieRecommended.movieName}}</h2>
-                <p class="subtitle">Plot</p>
-                <p class="plot">{{movieRecommended.plot}}</p>
-            </div>
-            <div class="trailer-container col-lg-5 col-md-12 col-xs-12 " style="margin: auto; display: block;">
-                <div class="col-lg-12 d-lg-block d-md-none d-none">
-                    <div class="ratio ratio-16x9">
-                        <youtube-player  class=" embed-responsive-item" videoId="{{movieRecommended.trailer}}"
-                            allowfullscreen style="display:block; margin-left: auto; margin-right: auto;"></youtube-player><br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div> 
-
-
-    <div class="button-container">
-        <button class="container buttonFeatured w-100" [routerLink]="['/film-view',movieRecommended.id]">More</button>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row bg-purple text-white justify-content-center" style="background-color: rgb(88, 60, 101)">
-            <h2 class="col-12 text-center">The most Interesting</h2>
-            <div class="col-md-4 col-lg-8 col-sm-4 col-6">
-                <div class="slider">
-                    <div class="slide-track">
-                        <div class="slide" *ngFor="let movie of movies">
-                            <div class="slide" *ngFor="let poster of movie.poster">
-                                <img class="infiniteCarousel" [src]="poster.url">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: aliceblue">{{movie.movieName}}</h5>
-                                <button id="buttonCarousel" class="btn mb-3" [routerLink]="['/film-view',movie.id]">MORE</button>
+        <div class="bgSlider">
+            <div class="row bg-purple text-white justify-content-center">
+                <h2 class="col-12 text-center">The most Popular</h2>
+                <div class="col-md-8 col-lg-12 col-sm-12 col-6">
+                    <div class="slider">
+                        <div class="slide-track">
+                            <div class="slide" *ngFor="let movie of movies">
+                                <div class="slide" *ngFor="let poster of movie.poster">
+                                    <img class="infiniteCarousel" [src]="poster.url">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"
+                                        style="color: aliceblue; margin-left: 3%; font-family: monospace;">
+                                        {{movie.movieName}}</h5>
+                                    <button id="buttonCarousel" style="margin-left: 3%;" class="btn mb-3"
+                                        [routerLink]="['/film-view',movie.id]">MORE</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,17 +71,69 @@
             </div>
         </div>
 
-    </div>
-    <br>
-    <div class="container">
-    <h1 id="subtitleFreatured" class="col-12 text-center">Featured</h1>
+
+
+        <h1 id="subtitleFreatured" class="col-12 text-center">Recomended</h1>
+        <div class="card-container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-xs-12 trailer-container2" style="margin: auto;"> <img
+                        class="img-responsive" style="display:block; margin-left: auto; margin-right: auto;"
+                        src="{{movieRecommended.poster[0].url}} "> </div>
+                <div class="col-lg-5 col-md- col-xs-12">
+                    <h2 class="title">{{movieRecommended.movieName}}</h2>
+                    <p class="subtitle">Plot</p>
+                    <p class="plot">{{movieRecommended.plot}}</p>
+                </div>
+                <div class="trailer-container col-lg-5 col-md-12 col-xs-12 " style="margin: auto; ">
+                    <div class="col-lg-12 d-lg-block d-md-none d-none">
+                        <div class=" text-center"> <youtube-player class="recomended-video"
+                                videoId="{{movieRecommended.trailer}}" allowfullscreen [height]="playerHeight"
+                                [width]="playerWidth"></youtube-player><br> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="button-container">
+            <button class="container buttonFeatured w-100"
+                [routerLink]="['/film-view',movieRecommended.id]">More</button>
+        </div>
+
+        <div class="bgSlider">
+            <div class="row bg-purple text-white justify-content-center">
+                <h2 class="col-12 text-center">The most Interesting</h2>
+                <div class="col-md-8 col-lg-12 col-sm-12 col-6">
+                    <div class="slider">
+                        <div class="slide-track">
+                            <div class="slide" *ngFor="let movie of movies">
+                                <div class="slide" *ngFor="let poster of movie.poster">
+                                    <img class="infiniteCarousel" [src]="poster.url">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"
+                                        style="color: aliceblue; margin-left: 3%; font-family: monospace;">
+                                        {{movie.movieName}}</h5>
+                                    <button id="buttonCarousel" style="margin-left: 3%;" class="btn mb-3"
+                                        [routerLink]="['/film-view',movie.id]">MORE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <h1 id="subtitleFreatured" class="col-12 text-center">Featured</h1>
             <div class="d-flex justify-content-center row">
                 <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
                     <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
                         <div class="row g-0">
                             <div class="col-md-4">
 
-                                <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start" [routerLink]="['/film-view',movie.id]" alt="...">
+                                <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start"
+                                    [routerLink]="['/film-view',movie.id]" alt="...">
 
                             </div>
                             <div id="bgCard" class="col-md-8">
@@ -142,7 +145,8 @@
                                     <span *ngFor="let genre of movie.genre" id="colorLetterCard"
                                         class="card-text">{{genre.genre}} </span>
                                     <br>
-                                    <button id="buttonCarousel" class="btn mb-3" [routerLink]="['/film-view',movie.id]">MORE</button>
+                                    <button id="buttonCarousel" class="btn mb-3"
+                                        [routerLink]="['/film-view',movie.id]">MORE</button>
                                 </div>
                             </div>
                         </div>
@@ -151,6 +155,6 @@
             </div>
             <button class="buttonFeatured w-100" *ngIf="showLoadMoreButton" (click)="loadMore()">Show more</button>
             <button class="buttonFeatured" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
+        </div>
     </div>
-</div>
 </div>

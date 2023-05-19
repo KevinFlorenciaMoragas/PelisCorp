@@ -20,7 +20,7 @@
         <h1 class="title">Top Films</h1>
         <div *ngFor="let movie of movies" class="card mb-3" style="background-color: #7a6585"
          >
-          <div class="row g-0">
+          <div class="row g-0 films">
             <div class="col-md-2">
               <img src="{{movie.poster[0].url}}"  [routerLink]="['../film-view',movie.id]" class="img-fluid rounded-start image-size" alt="...">
             </div>
