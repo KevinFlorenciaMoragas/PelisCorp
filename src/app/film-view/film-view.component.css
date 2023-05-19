@@ -7,6 +7,9 @@
 body{
     background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
   }
+.cursor{
+    cursor: pointer;
+}
 .namesMainCast{
     color: white;
     font-size: 25px;
