@@ -211,7 +211,7 @@ export class MoviesService {
     )
   }
   listAllDirectors(): Observable<any> {
-    let url: string = "http://172.17.40.240:8080/director"
+    let url: string = "http://172.17.40.240:8080/allDirectors"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
