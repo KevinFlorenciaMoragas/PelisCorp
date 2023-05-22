@@ -36,6 +36,9 @@ export class UpdateDirectorComponent {
     name: '',
     lastName: '',
     photo: '',
+    biography: '',
+    birthPlace: '',
+    birthDate: 0
   }
 
   ngOnInit() {

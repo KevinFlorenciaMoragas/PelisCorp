@@ -2,16 +2,19 @@
 .container {
   position: relative;
 }
-h2, h1{
+
+h2,
+h1 {
   font-family: monospace;
   padding: 20px;
 }
+
 .imgCarousel {
   width: 100%;
   height: auto;
 }
 
-.starterImg{
+.starterImg {
   width: 50%;
   height: auto;
 }
@@ -19,6 +22,7 @@ h2, h1{
 .carousel-item {
   margin-bottom: 2rem;
 }
+
 .carousel-control-prev,
 .carousel-control-next {
   font-size: 1.5rem;
@@ -26,6 +30,7 @@ h2, h1{
   height: 2rem;
   line-height: 2rem;
 }
+
 .carousel-container {
   width: 1800px;
   height: 400px;
@@ -34,74 +39,88 @@ h2, h1{
 .carousel-wrapper {
   position: relative;
 }
-.cardTitle{
+
+.cardTitle {
   font-size: 30px;
   color: black;
   font-family: monospace;
 }
+
 .carousel-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 /*CSS COLORES & WALLPAPERS*/
-#bgCard{
-  background: linear-gradient(90deg, rgba(0,0,0,0.80015756302521) 0%, rgba(88,60,101,1) 4%, rgba(88,60,101,0.8029586834733894) 61%, rgba(210,210,210,1) 100%);
+#bgCard {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.80015756302521) 0%, rgba(88, 60, 101, 1) 4%, rgba(88, 60, 101, 0.8029586834733894) 61%, rgba(210, 210, 210, 1) 100%);
   border-radius: 1px;
   border: 1px solid black;
 }
-#bgNameCarousel{
+
+#bgNameCarousel {
   background-color: #eec14f94;
   border: 1px solid black;
   margin-top: 10px;
 }
-.bgSecondSlice{
+
+.bgSecondSlice {
   background-color: rgb(153, 112, 170);
 }
-.cardInfoButton{
+
+.cardInfoButton {
   background-color: rgb(153, 112, 170);
   color: white;
   border: 1px solid black;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
 }
-.cardInfoButton:hover{
+
+.cardInfoButton:hover {
   background-color: #EEC24F;
   color: black;
   border: 1px solid black;
   border-radius: 6px;
 }
-#colorLetterCard{
+
+#colorLetterCard {
   color: white;
 }
-#subtitleFreatured{
+
+#subtitleFreatured {
   font-family: monospace;
 }
-.options{
+
+.options {
   padding-top: 7em;
 }
-#index-text{
+
+#index-text {
   color: white;
 }
-#index-textSlice{
+
+#index-textSlice {
   color: white;
   margin: 10px;
   font-family: monospace;
   text-align: center;
 }
+
 .masthead {
   padding: 1.5rem 0;
-  background: linear-gradient(0deg, rgba(210,210,210,1) 45%, rgba(88,60,101,1) 93%);
+  background: linear-gradient(0deg, rgba(210, 210, 210, 1) 45%, rgba(88, 60, 101, 1) 93%);
   margin-top: 3em;
 }
-#rest{
+
+#rest {
   background-color: #583C65;
 }
-.buttonFeatured{
+
+.buttonFeatured {
   background-color: rgb(153, 112, 170);
   color: white;
   margin-bottom: 3em;
@@ -112,7 +131,7 @@ h2, h1{
   border: 1px solid black;
 }
 
-.buttonFeatured:hover{
+.buttonFeatured:hover {
   background-color: #EEC24F;
   color: black;
   margin-bottom: 3em;
@@ -252,6 +271,7 @@ h2, h1{
   border: none;
   transition: all 0.3s ease-in-out;
 }
+
 #buttonCarousel:hover {
   margin: 4px;
   background-color: #EEC24F;
@@ -346,6 +366,7 @@ h2, h1{
 .img-responsive {
   width: 100%;
   height: auto;
+  border-radius: 7px;
 }
 
 .carousel-slide {
@@ -374,25 +395,80 @@ h2, h1{
   }
 }
 
+.show-more-effect {
+  animation: showMoreAnimation 0.5s ease;
+}
+
+@keyframes showMoreAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* CARD MID */
-.card-container, #cardMid{
+.card-container,
+#cardMid {
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+.card {
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0);
+}
 
 .card-container {
   width: 85%;
   height: auto;
   background-color: #d2d2d2;
   border-radius: 10px;
-  box-shadow: 0px 3px 10px rgb(0, 0, 0);
+  box-shadow: 0px 10px 40px rgb(153, 112, 170);
   display: flex;
   margin: auto;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.truncate {
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+  /* Número de líneas a mostrar antes de truncar */
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+}
+
+.card-container:hover {
+  width: 85%;
+  height: auto;
+  background-color: #d2d2d2;
+  border-radius: 10px;
+  box-shadow: 0px 20px 50px rgb(0, 0, 0);
+  display: flex;
+  margin: auto;
+  border-radius: 5px;
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;
 }
 
 .image-container img {
@@ -426,33 +502,46 @@ h2, h1{
 @media (min-width: 992px) {
   .trailer-container {
     padding: 20px;
-    background: linear-gradient(90deg, rgba(210, 210, 210, 1) 0%, rgba(0, 0, 0, 1) 3%);
     border-radius: 5px;
   }
+
   .trailer-container2 {
     padding: 20px;
-    background: linear-gradient(90deg, rgba(210, 210, 210, 1) 0%, rgba(0, 0, 0, 1) 3%);
     border-radius: 5px;
   }
+}
+
+@media (max-width: 1401px) {
+
+  .img-responsive {
+
+    width: 100%;
+
+    height: 65%;
+
+  }
+
 }
 
 @media (max-width: 991px) {
   .trailer-container {
     background-color: none;
-   }
+  }
 }
 
 @media (max-width: 767px) {
-  .img-responsive{
+  .img-responsive {
     width: 30%;
     height: auto;
   }
+
   .trailer-container2 {
     background-color: none;
-   }
+  }
 }
+
 @media (max-width: 320px) {
-  .img-responsive{
+  .img-responsive {
     width: 60%;
     height: auto;
   }
@@ -464,7 +553,7 @@ h2, h1{
   display: flex;
   margin: 0;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 35px;
 
 }
 
@@ -478,36 +567,59 @@ body {
   height: 100vh;
   justify-content: center;
 }
+
 @-webkit-keyframes scroll {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
     -webkit-transform: translateX(calc(-250px * 66));
-            transform: translateX(calc(-250px * 66));
+    transform: translateX(calc(-250px * 66));
   }
 }
 
 @keyframes scroll {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
     -webkit-transform: translateX(calc(-250px * 2200));
-            transform: translateX(calc(-250px * 36));
+    transform: translateX(calc(-250px * 36));
   }
 }
-.bgSlider{
-  background-color: rgb(88, 60, 101);
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none !important;
+}
+
+.slide {
+  transform: scale(0.95);
   transition: all 0.3s ease-in-out;
 }
-.bgSlider:hover{
+
+.slide:hover {
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;
+}
+
+.bgSlider {
+  background-color: rgb(88, 60, 101);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 40px rgb(88, 60, 101);
+}
+
+.bgSlider:hover {
   transform: scale(1.0);
   transition: all 0.3s ease-in-out;
   background-color: #333;
+  box-shadow: 0px 10px 30px rgb(0, 0, 0);
 }
+
 .slider {
 
   /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);*/
@@ -518,6 +630,7 @@ body {
   width: 95%;
   transition: all 0.3s ease-in-out;
 }
+
 .slider:hover {
 
   /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);*/
@@ -529,7 +642,9 @@ body {
   transition: all 0.3s ease-in-out;
 
 }
-.slider::before, .slider::after {
+
+.slider::before,
+.slider::after {
 
   content: "";
   height: 100px;
@@ -537,27 +652,27 @@ body {
   width: 200px;
   z-index: 2;
 }
+
 .slider::after {
   right: 0;
   top: 0;
   -webkit-transform: rotateZ(180deg);
-          transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
 }
+
 .slider::before {
   left: 0;
   top: 0;
 }
+
 .slider .slide-track {
   -webkit-animation: scroll 36s linear infinite;
-          animation: scroll 160s linear infinite;
+  animation: scroll 160s linear infinite;
   display: flex;
   width: calc(250px * 36);
 }
-.slider .slide {
 
-}
-
-.infiniteCarousel{
+.infiniteCarousel {
   height: 20em;
   margin-right: 10em;
 }
@@ -566,10 +681,11 @@ body {
 .element-without-scrollbar {
   overflow: hidden;
 }
-.scrollable-content::-webkit-scrollbar{
+
+.scrollable-content::-webkit-scrollbar {
   width: 7px;
 }
 
-.scrollable-content::-webkit-scrollbar-thumb{
+.scrollable-content::-webkit-scrollbar-thumb {
   background: violet;
 }

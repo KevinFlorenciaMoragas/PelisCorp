@@ -12,7 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class MoviesByMovieNameComponent {
   movies: Movies[] = []
-
+  
   constructor(private http: MoviesService, private router: Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
   id: any
   getAllMoviesByMovieName() {
@@ -26,6 +26,9 @@ export class MoviesByMovieNameComponent {
       console.log(data)
       this.movies = data as Movies[]
       console.log(this.movies)
+    },
+    (error) => {
+      this.router.navigate(['**'])
     })
   }
 

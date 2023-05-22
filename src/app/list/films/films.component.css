@@ -5,6 +5,14 @@
   font-size: small;
 
 }
+.films{
+
+  transition: all 0.3s ease-in-out;
+}
+.films:hover{
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+}
 .card{
   cursor: pointer;
 }

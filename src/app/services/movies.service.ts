@@ -211,7 +211,7 @@ export class MoviesService {
     )
   }
   listAllDirectors(): Observable<any> {
-    let url: string = "http://172.17.40.240:8080/director"
+    let url: string = "http://172.17.40.240:8080/allDirectors"
     return this.http.get<any>(url).pipe(
       catchError((err) => {
         console.error(err)
@@ -219,6 +219,7 @@ export class MoviesService {
       })
     )
   }
+  
   getMovieByGenreId(id:number): Observable<any> {
     let url: string = "http://172.17.40.240:8080/movies/genre/" + id;
     return this.http.get<any>(url).pipe(
@@ -226,6 +227,48 @@ export class MoviesService {
         if(err.status === 404){
           console.log("No se ha encontrado la pelicula")
         }
+        return throwError(err)
+      })
+    )
+  }
+
+  getAwardById(id: number): Observable<any> { 
+    let url: string = "http://172.17.40.240:8080/awards/" +id; 
+    return this.http.get<any>(url).pipe( 
+      catchError((err) => { 
+        console.error(err) 
+        return throwError(err) 
+      }) 
+      ) 
+    } 
+    
+    updateAward(awards: any): Observable<any> { 
+      console.log(awards.id) 
+      const url = "http://172.17.40.240:8080/awards/" + awards.id; 
+      return this.http.put<any>(url, awards, this.httpOptions).pipe( 
+        catchError((err) => { 
+          console.error(err); 
+          return throwError(err); 
+        }) 
+        ); 
+      }
+
+
+
+  getScreenwritterById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/screenwritter/" + id;
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.log(err)
+        return throwError(err)
+      })
+    )
+  }
+  getGenreById(id:number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/genre/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
         return throwError(err)
       })
     )

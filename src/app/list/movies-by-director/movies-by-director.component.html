@@ -1,38 +1,44 @@
-
-<div class="container-fluid fondo">
-    <div class="row">
-      <main class="col-lg-6 col-md-10 col-sm-12 offset-lg-3">
-        <h1 class="title">Top Films</h1>
-        <div *ngFor="let movie of movies" class="card mb-3" style="background-color: #7a6585"
-         >
-          <div class="row g-0">
-            <div class="col-md-2">
-              <img src="{{movie.poster[0].url}}"  [routerLink]="['../film-view',movie.id]" class="img-fluid rounded-start image-size" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h2 class="title d-flex d-sm-block d-md-none justify-content-between"  [routerLink]="['../film-view',movie.id]">{{movie.movieName}}
-                  <span>{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></span></h2>
-                <h2 class="title d-none d-sm-none d-md-block">{{movie.movieName}} </h2>
-                <span *ngFor="let director of movie.director" class="card-text title"  [routerLink]="['../movies-by-director',director.id]" >{{director.name}}
-                  {{director.lastName}}
-                </span>
-                <br>
-                <span *ngFor="let actor of movie.actors" [routerLink]="['../movies-by-actor',actor.id]" class="card-text title">{{actor.name}} {{actor.lastName}}
-                </span>
-                <br>
-                <span *ngFor="let genre of movie.genre" [routerLink]="['../movies-by-genre',genre.id]" class="card-text"><small class="title">{{genre.genre}}
-                  </small></span>
-              </div>
-            </div>
-            <div class="col-md-2 d-none d-sm-none d-md-block ">
-              <h2 class="title score">{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></h2>
-            </div>
-          </div>
-        </div>
-
-
-
-      </main>
+<div class="container-fluid fondo height">
+  <div class="row" >
+    <div class="col-lg-2 col-md-4 col-sm-12 offset-lg-2" style="display: flex;">
+      <img src="../../../assets/img/actores/AlbertBroocks.jpg" class="img-thumbnail"
+        alt="image {{director.name}} {{director.lastName}}" >
     </div>
-  </div> 
+    <div class="col-lg-6 col-md-8 col-sm-12" style="color: rgb(255, 255, 255); background-color: #7a6585;">
+      <div class="info">
+        <h1 style="margin-bottom: 20px;">{{director.name}} {{director.lastName}}</h1>
+        <p><b>Nationality: </b>Estados Unidos ({{1945}})</p>
+        <b>Biography:</b>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aspernatur ex commodi reiciendis
+          laudantium veritatis dignissimos est eaque! Suscipit, earum laboriosam. Eos eius voluptatem nemo dolores
+          asperiores tenetur quis optio autem, incidunt saepe harum possimus odit cum natus non voluptates itaque
+          sequi
+          ut debitis inventore quos minima hic provident praesentium! Vero qui est laboriosam sunt.</p>
+      </div>
+    </div>
+  </div>
+  <section class="dark">
+    <div class="container py-4">
+      <h1 class="h1 text-center" id="pageHeaderTitle">Films</h1>
+      <article class="postcard" *ngFor="let movie of movies">
+        <a class="postcard__img_link"[routerLink]="['../../film-view',movie.id]">
+          <img class="postcard__img" src="{{movie.poster[0].url}}" [routerLink]="['../../film-view',movie.id]" alt="Image Title" />	
+        </a>
+        <div class="postcard__text">
+          <h1 class="postcard__title"><a class="postcard__title" [routerLink]="['../../film-view',movie.id]">{{movie.movieName}} </a></h1>
+          <ul class="postcard__tagbox">
+            <li class="tag__item" *ngFor="let director of movie.director"><i [routerLink]="['../../movies-by-director',director.id]" class="fas fa-tag mr-2">{{director.name}} {{director.lastName}}</i></li>
+          </ul>
+          <ul class="postcard__tagbox">
+            <li class="tag__item" *ngFor="let actor of movie.actors"><i [routerLink]="['../../movies-by-actor',actor.id]" class="fas fa-tag mr-2">{{actor.name}} {{actor.lastName}}</i></li>
+          </ul>
+          <div class="postcard__preview-txt">{{movie.plot}}</div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item" *ngFor="let genre of movie.genre"><i [routerLink]="['../../movies-by-genre',genre.id]" class="fas fa-tag mr-2">{{genre.genre}}</i></li>
+          </ul>
+          <h1 class="postcard__title"><a style="float: right;">{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></a></h1>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>

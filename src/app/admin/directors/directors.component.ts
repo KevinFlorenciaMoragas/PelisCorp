@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MoviesService } from 'src/app/services/movies.service';
-import { Actor, Director } from 'src/app/interfaces/interfaces.component';
+import { Director } from 'src/app/interfaces/interfaces.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -33,6 +33,9 @@ export class DirectorsComponent {
     name: '',
     lastName: '',
     photo: '',
+    biography: '',
+    birthPlace: '',
+    birthDate: 0
   }
 
   ngOnInit(){
@@ -42,7 +45,7 @@ export class DirectorsComponent {
   getAllDirectors() {
     this.http.listAllDirectors().subscribe(data => {
       console.log(data)
-      this.directors = data as Actor[]
+      this.directors = data as Director[]
       console.log(this.directors)
       })
   }

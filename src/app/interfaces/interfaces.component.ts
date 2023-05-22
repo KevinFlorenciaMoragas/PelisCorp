@@ -133,6 +133,9 @@ export interface Director {
   name: string; 
   lastName: string; 
   photo: string; 
+  biography: string;
+  birthPlace: string;
+  birthDate: number;
 }
 
 export interface Actor { 

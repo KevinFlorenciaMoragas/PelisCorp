@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Movies } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { OnInit } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
+
 
 @Component({
   selector: 'app-principal',
@@ -28,7 +29,7 @@ export class PrincipalComponent implements OnInit {
   showLoadLessButton: boolean = false;
   initialLoad = true;
   showAllMovies: boolean = false;
-  
+
   movieRecommended: Movies = {
     id: 0,
     movieName: '',
@@ -47,7 +48,45 @@ export class PrincipalComponent implements OnInit {
     reviews: [],
     screenwritter: []
   }
+  @HostListener('window:resize')
 
+  onResize() {
+
+    this.updatePlayerWidth();
+
+  }
+
+  playerWidth: number = 0;
+
+  playerHeight: number = 0;
+
+  updatePlayerWidth() {
+
+    const screenWidth = window.innerWidth;
+
+    // Puedes definir tus propias reglas para establecer el ancho en función del tamaño de la pantalla
+
+    if (screenWidth > 1723) {
+
+      this.playerWidth = 600;
+
+      this.playerHeight = 400;
+
+    } else if (screenWidth < 1027) {
+
+      this.playerWidth = 300;
+
+      this.playerHeight = 200;
+
+    } else {
+
+      this.playerWidth = 400;
+
+      this.playerHeight = 300;
+
+    }
+
+  }
   ngOnInit() {
     if (!this.youtubeApiLoaded) {
       const tag = document.createElement('script');
@@ -91,21 +130,20 @@ export class PrincipalComponent implements OnInit {
     });
   }
 
-  loadMore() {
-    const startIndex = this.displayedMovies.length;
-    const endIndex = startIndex + 3;
-    this.displayedMovies = this.displayedMovies.concat(this.movies.slice(startIndex, endIndex));
-    if (endIndex >= this.movies.length) {
-      this.showLoadMoreButton = false;
-      this.showLoadLessButton = true;
-    }
+  loadMore() { 
     this.showAllMovies = true;
-  }
-
-  loadLess() {
-    this.displayedMovies = this.movies.slice(0, 3);
-    this.showLoadMoreButton = true;
-    this.showLoadLessButton = false;
+    const startIndex = this.displayedMovies.length;
+    const endIndex = startIndex + 6; 
+    this.displayedMovies = this.displayedMovies.concat(this.movies.slice(startIndex, endIndex)); 
+    if (endIndex >= this.movies.length) { 
+      this.showLoadMoreButton = false; 
+      this.showLoadLessButton = true; 
+    } 
+    this.showAllMovies = true; 
+  } loadLess() 
+  { this.displayedMovies = this.movies.slice(0, 3);
+    this.showLoadMoreButton = true; 
+    this.showLoadLessButton = false; 
   }
 
 }
