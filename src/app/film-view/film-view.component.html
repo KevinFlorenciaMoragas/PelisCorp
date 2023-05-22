@@ -1,62 +1,46 @@
 <div class="container-fluid height fondo">
-
+    <img class="col-lg-12 col-md-12 col-12 banner" src="../../assets/img/bannerPadrino.jpg" alt="">
     <div class="row">
-        <div class="d-lg-block col-lg-6 col-md-6 col-12   imageView">
-            <h1> {{movie.movieName}}</h1>
-             <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize"> 
-            <br>
-            
+        <div class="d-lg-block col-lg-4 col-md-12 col-12 imageView">
+            <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize">
+            <h1>{{movie.movieName}}</h1> 
         </div>
-        
-        <div class="d-lg-block col-lg-4 col-md-6 col-12  txtInf">
-            <div class=" text-center">
-                <h2>Genero</h2>
-                <ul class="txt cursor" *ngFor="let genre of movie.genre" [routerLink]="['../../movies-by-genre',genre.id]">
-                    <a> {{genre.genre}}</a>
-                </ul>
-            </div>
-            <hr>
-            <div class="text-center">
-                <h2>Director</h2>
-                <ul class="txt cursor" *ngFor="let director of movie.director" [routerLink]="['../../movies-by-director',director.id]">
-                    <a> {{director.name}} {{director.lastName}}</a>
-                </ul>
-            </div>
-            <hr>
-            <div class="text-center">
-                <h2>Guíon</h2>
-                <div >
-                    <ul class="txt cursor" *ngFor="let screenwritters of movie.screenwritter" [routerLink]="['../../movies-by-screenwritter',screenwritters.id]">
-                        <a >{{screenwritters.name}} {{screenwritters.lastName}} </a>
-                    </ul>
-                </div>
-            </div>
-            <!-- <hr>
-            <div class="featured-text text-center">
-                <h2>Reparto</h2>
-                <p class="txt">Michael B. Jordan, Jonathan Majors</p>
-            </div> -->
-        </div>
-        <div class="d-lg-block ">
-            <div class=" text-center ">
-                <hr>
-                <h2>Synopsis</h2>
-                <p id="txt" class="col-lg-12">{{movie.plot}}</p>
-                <hr>
-            </div>
-        </div>
-        <div class="d-lg-block col-lg-12  imgView">
-            <h2 id="trailerTitle">TRAILER</h2>
-        </div>
-        <div class="text-center d-lg-block ">
-            <div class="d-lg-block  col-lg-12 d-none imgView" id="trailer">
-                <br>
-                <youtube-player class="trailerSize" videoId="{{movie.trailer}}"></youtube-player>
-                <br>
 
-            </div><br>
-            <hr>
-        </div>
+
+        <!-- <div class="d-lg-block col-lg-4 col-sm-12 col-md-12 col-12 trailer">
+                <youtube-player class="trailerSize" videoId="{{movie.trailer}}"></youtube-player>
+        </div>-->
+
+        <section class="d-lg-block col-lg-7 col-sm-12 col-md-12 col-12">
+            <div class="container py-4">
+              <h1 class="h1 text-center" id="pageHeaderTitle">Films</h1>
+              <article class="postcard">
+                <div class="postcard__text">
+                  <h1 class="postcard__title"><a class="postcard__title" [routerLink]="['../../film-view',movie.id]">Movie Details:</a></h1>
+                  <ul class="postcard__tagbox">
+                    <li class="tag__item" *ngFor="let director of movie.director"><i [routerLink]="['../../movies-by-director',director.id]" class="fas fa-tag mr-2">{{director.name}} {{director.lastName}}</i></li>
+                  </ul>
+                  <ul class="postcard__tagbox">
+                    <li class="tag__item" *ngFor="let actor of movie.actors"><i [routerLink]="['../../movies-by-actor',actor.id]" class="fas fa-tag mr-2">{{actor.name}} {{actor.lastName}}</i></li>
+                  </ul>
+                  <div class="postcard__preview-txt">{{movie.plot}}</div>
+                  <ul class="postcard__tagbox">
+                    <li class="tag__item" *ngFor="let genre of movie.genre"><i [routerLink]="['../../movies-by-genre',genre.id]" class="fas fa-tag mr-2">{{genre.genre}}</i></li>
+                  </ul>
+                  <h1 class="postcard__title"><a style="float: right;">{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></a></h1>
+                </div>
+              </article>
+            </div>
+          </section>
+
+
+
+
+
+
+
+    
+        
         <div class="butonNav col-lg-12">
             <button (click)="cambiarContenido('boton1')">Main cast</button>
             <button (click)="cambiarContenido('boton2')">Critics</button>
