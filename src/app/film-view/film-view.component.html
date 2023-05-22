@@ -9,21 +9,21 @@
         </div>
         
         <div class="d-lg-block col-lg-4 col-md-6 col-12  txtInf">
-            <div class="featured-text text-center">
+            <div class=" text-center">
                 <h2>Genero</h2>
                 <ul class="txt cursor" *ngFor="let genre of movie.genre" [routerLink]="['../../movies-by-genre',genre.id]">
                     <a> {{genre.genre}}</a>
                 </ul>
             </div>
             <hr>
-            <div class="featured-text text-center">
+            <div class="text-center">
                 <h2>Director</h2>
                 <ul class="txt cursor" *ngFor="let director of movie.director" [routerLink]="['../../movies-by-director',director.id]">
                     <a> {{director.name}} {{director.lastName}}</a>
                 </ul>
             </div>
             <hr>
-            <div class="featured-text text-center">
+            <div class="text-center">
                 <h2>Guíon</h2>
                 <div >
                     <ul class="txt cursor" *ngFor="let screenwritters of movie.screenwritter" [routerLink]="['../../movies-by-screenwritter',screenwritters.id]">

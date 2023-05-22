@@ -37,7 +37,7 @@
                                     <hr>
                                     <div class="featured-text text-center">
                                         <h2>Sinopsis</h2>
-                                        <p>{{movie.plot}}</p>
+                                        <p class="truncate">{{movie.plot}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -127,9 +127,9 @@
         <div class="container">
             <h1 id="subtitleFreatured" class="col-12 text-center">Featured</h1>
             <div class="d-flex justify-content-center row">
-                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
+                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index" [ngClass]="{'show-more-effect': showAllMovies && i >= 0}">
                     <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
-                        <div class="row g-0">
+                        <div  class="row g-0">
                             <div class="col-md-4">
 
                                 <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start"
@@ -154,7 +154,7 @@
                 </div>
             </div>
             <button class="buttonFeatured w-100" *ngIf="showLoadMoreButton" (click)="loadMore()">Show more</button>
-            <button class="buttonFeatured" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
+            <button class="buttonFeatured w-100" *ngIf="showLoadLessButton" (click)="loadLess()">Show less</button>
         </div>
     </div>
 </div>

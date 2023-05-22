@@ -1,4 +1,4 @@
-import { Component,HostListener } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Movies } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
@@ -130,21 +130,20 @@ export class PrincipalComponent implements OnInit {
     });
   }
 
-  loadMore() {
-    const startIndex = this.displayedMovies.length;
-    const endIndex = startIndex + 3;
-    this.displayedMovies = this.displayedMovies.concat(this.movies.slice(startIndex, endIndex));
-    if (endIndex >= this.movies.length) {
-      this.showLoadMoreButton = false;
-      this.showLoadLessButton = true;
-    }
+  loadMore() { 
     this.showAllMovies = true;
-  }
-
-  loadLess() {
-    this.displayedMovies = this.movies.slice(0, 3);
-    this.showLoadMoreButton = true;
-    this.showLoadLessButton = false;
+    const startIndex = this.displayedMovies.length;
+    const endIndex = startIndex + 6; 
+    this.displayedMovies = this.displayedMovies.concat(this.movies.slice(startIndex, endIndex)); 
+    if (endIndex >= this.movies.length) { 
+      this.showLoadMoreButton = false; 
+      this.showLoadLessButton = true; 
+    } 
+    this.showAllMovies = true; 
+  } loadLess() 
+  { this.displayedMovies = this.movies.slice(0, 3);
+    this.showLoadMoreButton = true; 
+    this.showLoadLessButton = false; 
   }
 
 }
