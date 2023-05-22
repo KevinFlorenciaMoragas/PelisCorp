@@ -36,6 +36,7 @@
             </div>
             <div *ngIf="usernameLocalStorage == 'admin'" class="d-lg-none d-sm-block d-block">
               <button class="btn ml-auto" id="log" [routerLink]="['admin']">Admin</button>
+              <button class="btn ml-2" id="sign" (click)="logOut()">Logout</button>
             </div>
           </li>
         </ul>
