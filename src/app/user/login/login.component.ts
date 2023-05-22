@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/'])
     })
     this.http.getUserByUsername(username).subscribe(data => {
-      localStorage.setItem('role', data.role)
+      localStorage.setItem('ROLE', data.role)
       
       console.log(data)
     }

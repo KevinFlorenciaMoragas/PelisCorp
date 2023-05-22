@@ -17,8 +17,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MoviesByDirectorComponent } from './list/movies-by-director/movies-by-director.component';
 import { MoviesByActorComponent } from './list/movies-by-actor/movies-by-actor.component';
 import { MoviesByScreenwritterComponent } from './list/movies-by-screenwritter/movies-by-screenwritter.component';
+import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,canActivate: [AuthGuard], data: { role: [ 'ADMIN'] } },
   { path: 'register', component: RegisterComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'header', component: HeaderComponent },

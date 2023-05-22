@@ -59,7 +59,7 @@ export class Service {
     return localStorage.getItem('username')
   }
   getRole(){
-    return localStorage.getItem('role')
+    return localStorage.getItem('ROLE')
   }
   //get user by username
   getUserByUsername(username: string): Observable<any> {
@@ -71,4 +71,10 @@ export class Service {
       })
     )
   }
+  isLogged(): boolean {
+    const loggedIn = localStorage.getItem('token');
+    return (loggedIn !== null) ? true : false;
+
+  }
+
 }
