@@ -13,8 +13,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MoviesByGenreComponent implements OnInit {
   movies: Movies[] = []
   genres: Genre[] = []
+
+  genre: Genre = {
+    id: 0,
+    genre: "",
+  }
+
   constructor(private http: MoviesService, private router: Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
   id: any
+  idGenre: any
   getAllMoviesByGenre() {
     const genreIdParam = this.route.snapshot.paramMap.get('id');
     if (genreIdParam !== null) {
@@ -25,6 +32,16 @@ export class MoviesByGenreComponent implements OnInit {
       this.movies = data as Movies[]
       console.log(this.movies)
     })
+    this.http.getGenreById(this.id).subscribe(genreData => {
+      console.log(genreData)
+      this.genre = genreData as Genre
+      console.log(this.genre)
+
+    },
+    (error) => {
+      this.router.navigate(['**'])
+    }
+    )
   }
   getAllGenres() {
 

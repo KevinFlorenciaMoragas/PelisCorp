@@ -230,6 +230,24 @@ export class MoviesService {
       })
     )
   }
+  getScreenwritterById(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/screenwritter/" + id;
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.log(err)
+        return throwError(err)
+      })
+    )
+  }
+  getGenreById(id:number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/genre/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(err)
+      })
+    )
+  }
   listAllGenres(): Observable<any> {
     let url: string = "http://172.17.40.240:8080/genre"
     return this.http.get<any>(url).pipe(
