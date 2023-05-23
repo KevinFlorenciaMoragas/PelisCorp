@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/interfaces/interfaces.component';
 
+
 @Component({
   selector: 'app-film-view',
   templateUrl: './film-view.component.html',
