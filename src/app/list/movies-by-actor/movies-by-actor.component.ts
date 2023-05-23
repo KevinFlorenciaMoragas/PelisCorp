@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MoviesService } from 'src/app/services/movies.service';
 import { Movies } from 'src/app/interfaces/interfaces.component';
+import { MoviesService } from 'src/app/services/movies.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Genre } from 'src/app/interfaces/interfaces.component';
+import { Actor } from 'src/app/interfaces/interfaces.component';
 import { OnInit } from '@angular/core';
 import { Director } from 'src/app/interfaces/interfaces.component';
-import { Actor } from 'src/app/interfaces/interfaces.component';
 
 @Component({
   selector: 'app-movies-by-actor',
@@ -26,6 +27,9 @@ export class MoviesByActorComponent implements OnInit {
     name: "",
     lastName: "",
     photo: "",
+    biography: "",
+    birthPlace: "",
+    birthDate: 0
   }
   refresh(id: any) {
     console.log("Estoy en refresh")

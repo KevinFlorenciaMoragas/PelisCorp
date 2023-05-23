@@ -1,27 +1,23 @@
 <div class="container-fluid fondo height">
   <div class="row" >
     <div class="col-lg-2 col-md-4 col-sm-12 offset-lg-2" style="display: flex;">
-      <img src="../../../assets/img/actores/AlbertBroocks.jpg" class="img-thumbnail"
+      <img src="{{director.photo}}" class="img-director"
         alt="image {{director.name}} {{director.lastName}}" >
     </div>
-    <div class="col-lg-6 col-md-8 col-sm-12" style="color: rgb(255, 255, 255); background-color: #7a6585;">
+    <div class="col-lg-6 col-md-8 col-sm-12" style="color: rgb(255, 255, 255); background-image: linear-gradient(-70deg, #424242, transparent 50%);">
       <div class="info">
         <h1 style="margin-bottom: 20px;">{{director.name}} {{director.lastName}}</h1>
-        <p><b>Nationality: </b>Estados Unidos ({{1945}})</p>
+        <p><b>Nationality: </b>{{director.birthPlace}} ({{director.birthDate}})</p>
         <b>Biography:</b>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aspernatur ex commodi reiciendis
-          laudantium veritatis dignissimos est eaque! Suscipit, earum laboriosam. Eos eius voluptatem nemo dolores
-          asperiores tenetur quis optio autem, incidunt saepe harum possimus odit cum natus non voluptates itaque
-          sequi
-          ut debitis inventore quos minima hic provident praesentium! Vero qui est laboriosam sunt.</p>
+        <p>{{director.biography}}</p>
       </div>
     </div>
   </div>
   <section class="dark">
     <div class="container py-4">
-      <h1 class="h1 text-center" id="pageHeaderTitle">Films</h1>
+      <h1 class="h1" id="pageHeaderTitle">Films</h1>
       <article class="postcard" *ngFor="let movie of movies">
-        <a class="postcard__img_link"[routerLink]="['../../film-view',movie.id]">
+        <a class="postcard__img_link" [routerLink]="['../../film-view',movie.id]">
           <img class="postcard__img" src="{{movie.poster[0].url}}" [routerLink]="['../../film-view',movie.id]" alt="Image Title" />	
         </a>
         <div class="postcard__text">

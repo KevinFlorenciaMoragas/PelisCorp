@@ -20,3 +20,15 @@
      border: 3px solid orange;
      /* creates padding around scroll thumb */
  }
+
+ body {
+    height: 100vh;
+}
+
+.height {
+    height: 100%;
+}
+
+.container-fluid {
+    padding-top: 10em;
+}

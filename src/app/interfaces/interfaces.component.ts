@@ -142,7 +142,10 @@ export interface Actor {
   id: number; 
   name: string; 
   lastName: string; 
-  photo: string; 
+  photo: string;
+  biography: string;
+  birthPlace: string;
+  birthDate: number;
 }
 
 export interface Awards{ 
@@ -163,5 +166,8 @@ export interface Screenwritter{
   name: string; 
   lastName: string; 
   photo: string; 
+  biography: string;
+  birthPlace: string;
+  birthDate: number;
 }
 

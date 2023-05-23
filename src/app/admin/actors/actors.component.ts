@@ -33,6 +33,9 @@ export class ActorsComponent {
     name: '',
     lastName: '',
     photo: '',
+    biography: "",
+    birthPlace: "",
+    birthDate: 0
   }
 
   ngOnInit(){
