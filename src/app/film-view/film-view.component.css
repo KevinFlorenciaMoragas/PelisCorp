@@ -1,311 +1,341 @@
 .fondo {
-    background-color: #93819b;
-    background: linear-gradient(0deg, #93819b 45%, rgb(0, 0, 0) 93%);
-  }
-  .container-fluid{
-    margin-top: 10%;
-  }
+  background-color: #93819b;
+  background: linear-gradient(0deg, #93819b 45%, rgb(0, 0, 0) 93%);
+}
+
+.container-fluid {
+  margin-top: 10%;
+}
 
 
 
 
 
 @media(max-width:2000px) {
-    .imageView {
-        position: relative;
-        z-index: 1;
-    }
-    .banner {
-        /* margin-top: 35px; */
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        box-shadow: 0px 30px 50px rgb(0, 0, 0);
-    } 
-    .trailer{
-        z-index: 1;
-        margin-top: 7%;
-    }
-    .details{
-        z-index: 1;
-    }
+  .imageView {
+    position: relative;
+    z-index: 1;
+  }
 
-    .imageView, .details{
-      padding-top: 7%;
-    }
-    .imageView{
-      text-align: center;
-    }
-    .imgSize {
-      width: 21em;
-      box-shadow: 1px 20px 20px rgb(0, 0, 0);
-      border-radius: 5px;
-    }
+  .banner {
+    /* margin-top: 35px; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    box-shadow: 0px 30px 50px rgb(0, 0, 0);
+  }
 
-    #txt, 
-    .txt {
-        font-size: 15px;
-        color: white;
-        background-color: rgb(88, 60, 101);
-        padding: 8px;
-        border-top-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        border: 1px solid black;
-    }
-    h1 {
-        margin-top: 4%;
-        font-size: 48px;
-        font-family: monospace;
-    }
-    h2, h1 {
-        color: white;
-    }
-    .featured-text {
-        margin-left: 20px;
-        padding: 4px;
-        border-left: 0.7rem solid #EEC24F;
-        border-radius: 0.5rem;
-    }
+  .trailer {
+    z-index: 1;
+    margin-top: 7%;
+  }
 
-    .result{
-        background-color: #583c654b;
-    }
-    button{
-        background-color: #583c65;
-        font-size: 20px;
-        border: transparent;
-        padding-left: 30px;
-        padding-right: 30px;
-        color: white;
-        padding-top: 10px;
-        z-index: 1;
-    }
-    button:hover{
-        background-color: #583c654b;
-    }
-    .card-img-top{
-        border-radius: 50%;
-        width: 60%;
-    }
-    .card-title{
-        color: white;
-        font-size: 20px;
-        text-align: center;
-        font-family: monospace;
-    }
+  .details {
+    z-index: 1;
+  }
+
+  .imageView,
+  .details {
+    padding-top: 7%;
+  }
+
+  .imageView {
+    text-align: center;
+  }
+
+  .imgSize {
+    width: 21em;
+    box-shadow: 1px 20px 20px rgb(0, 0, 0);
+    border-radius: 5px;
+  }
+
+  #txt,
+  .txt {
+    font-size: 15px;
+    color: white;
+    background-color: rgb(88, 60, 101);
+    padding: 8px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid black;
+  }
+
+  h1 {
+    margin-top: 4%;
+    font-size: 48px;
+    font-family: monospace;
+  }
+
+  h2,
+  h1,
+  h5 {
+    color: white;
+    font-family: monospace;
+  }
+
+  .featured-text {
+    margin-left: 20px;
+    padding: 4px;
+    border-left: 0.7rem solid #EEC24F;
+    border-radius: 0.5rem;
+  }
+
+  .trailerSize {
+    border-radius: 10px;
+  }
+
+
+  .result {
+    background-color: #583c654b;
+  }
+
+  button {
+    background-color: #583c65;
+    font-size: 20px;
+    border: transparent;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    padding-top: 10px;
+    z-index: 1;
+  }
+
+  button:hover {
+    background-color: #583c654b;
+  }
+
+  .card-img-top {
+    border-radius: 50%;
+    width: 60%;
+  }
+
+  .card-title {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: monospace;
+  }
 }
-.bg2{
+
+.bg2 {
   background-color: rgb(88, 60, 101);
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 10px 40px rgb(88, 60, 101);
 
 }
-.bg2:hover{
+
+.bg2:hover {
   transform: scale(1.0);
   transition: all 0.3s ease-in-out;
   background-color: #333;
   box-shadow: 0px 10px 30px rgb(0, 0, 0);
 }
-.bg3{
+
+.bg3 {
   transition: all 0.3s ease-in-out;
 }
-.bg3:hover{
+
+.bg3:hover {
   transform: scale(1.0);
   transition: all 0.3s ease-in-out;
   background-color: #33333341;
 }
-.trailer-container2{
+
+.trailer-container2 {
   transition: all 0.3s ease-in-out;
   color: white;
 }
-.trailer-container2:hover{
+
+.trailer-container2:hover {
   transform: scale(1.2);
   transition: all 0.3s ease-in-out;
 }
-h2{
+
+h2 {
   font-family: monospace;
   margin-top: 1%;
 }
 
 
 .postcard {
-    flex-wrap: wrap;
-    display: flex;
-    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-    border-radius: 10px;
-    margin: 0 0 2rem 0;
-    overflow: hidden;
+  flex-wrap: wrap;
+  display: flex;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+  margin-top: 10%;
+
+  &.dark {
+    background-color: #18151f;
+  }
+
+  &.light {
+    background-color: #e1e5ea;
+  }
+
+  .t-dark {
+    color: #18151f;
+  }
+
+  .h1,
+  h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .small {
+    font-size: 80%;
+  }
+
+  .postcard__title {
+    font-size: 1.75rem;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .postcard__img {
+    max-height: 90%;
+    width: 100%;
+    object-fit: cover;
     position: relative;
-    color: #ffffff;
-    margin-top: 10%;
-  
-    &.dark {
-      background-color: #18151f;
-    }
-  
-    &.light {
-      background-color: #e1e5ea;
-    }
-  
-    .t-dark {
-      color: #18151f;
-    }
-  
-    .h1,h1 {
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-  
-    .small {
-      font-size: 80%;
-    }
-  
-    .postcard__title {
-      font-size: 1.75rem;
-      color: #000000;
-      text-decoration: none;
-    }
-  
-    .postcard__img {
-      max-height: 90%;
-      width: 100%;
-      object-fit: cover;
-      position: relative;
-    }
-  
-    .postcard__img_link {
-      display: contents;
-    }
-  
-    .postcard__bar {
-      width: 50px;
-      height: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      background-color: #424242;
-      transition: width 0.2s ease;
-    }
-  
-    .postcard__text {
-      padding: 1.5rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .actor_text{
+  }
+
+  .postcard__img_link {
+    display: contents;
+  }
+
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #424242;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .actor_text {
+    display: inline-block;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    justify-content: center;
+
+    .tag__item {
       display: inline-block;
-    }
-  
-    .postcard__preview-txt {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: justify;
-      height: 100%;
-    }
-  
-    .postcard__tagbox {
-      display: flex;
-      flex-flow: row wrap;
-      font-size: 14px;
-      margin: 20px 0 0 0;
-      padding: 0;
-      justify-content: center;
-  
-      .tag__item {
-        display: inline-block;
-        background: rgba(83, 83, 83, 0.4);
-        border-radius: 3px;
-        padding: 2.5px 10px;
-        margin: 0 5px 5px 0;
-        cursor: default;
-        user-select: none;
-        transition: background-color 0.3s;
-  
-        &:hover {
-          background: rgba(83, 83, 83, 0.8);
-        }
+      background: rgba(83, 83, 83, 0.4);
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: rgba(83, 83, 83, 0.8);
       }
     }
-  
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: rgba(168, 150, 177, 0.822);
-      opacity: 1;
-      border-radius: 10px;
-    }
-  
-    &:hover .postcard__bar {
-      width: 100px;
-    }
+    opacity: 1;
+    border-radius: 10px;
   }
-  
-  @media screen and (min-width: 769px) {
-    .postcard {
-      flex-wrap: inherit;
-  
-      .postcard__title {
-        font-size: 2rem;
-      }
-  
-      .postcard__tagbox {
-        justify-content: start;
-      }
-  
-      .postcard__img {
-        max-width: 300px;
-        max-height: 100%;
-        transition: transform 0.3s ease;
-      }
-  
-      .postcard__text {
-        padding: 3rem;
-        width: 100%;
-      }
-  
-      .media.postcard__text:before {
-        content: "";
-        position: absolute;
-        display: block;
-        background: #18151f;
-        top: -20%;
-        height: 130%;
-        width: 55px;
-      }
-  
-      &:hover .postcard__img {
-        transform: scale(1.1);
-      }
-    }
+
+  &:hover .postcard__bar {
+    width: 100px;
   }
-  
-  @media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+
+    .postcard__title {
+      font-size: 2rem;
+    }
+
+    .postcard__tagbox {
+      justify-content: start;
+    }
+
+    .postcard__img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
     .postcard__text {
-      padding: 2rem 3.5rem;
+      padding: 3rem;
+      width: 100%;
     }
-  
-    .postcard__text:before {
+
+    .media.postcard__text:before {
       content: "";
       position: absolute;
       display: block;
-  
+      background: #18151f;
       top: -20%;
       height: 130%;
       width: 55px;
     }
-  
-    .postcard.dark {
-      .postcard__text:before {
-        background: #18151f;
-      }
+
+    &:hover .postcard__img {
+      transform: scale(1.1);
     }
-  
-  
   }
+}
+
+@media screen and (min-width: 1024px) {
+  .postcard__text {
+    padding: 2rem 3.5rem;
+  }
+
+  .postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+
+  .postcard.dark {
+    .postcard__text:before {
+      background: #18151f;
+    }
+  }
+
+
+}
