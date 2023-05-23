@@ -1,5 +1,5 @@
 <div class="container-fluid height fondo">
-  <img class="col-lg-12 col-md-12 col-12 banner" src="../../assets/img/bannerPadrino.jpg" alt="">
+  <img class="col-lg-12 col-md-12 col-12 banner" src="{{movie.banner}}" alt="">
   <div class="row">
     <div class="d-lg-block col-lg-4 col-md-12 col-12 imageView">
       <img class="imgSize" src="{{movie.poster[0].url}}" alt="" class="imgSize">
@@ -10,7 +10,6 @@
       <div class="container py-4">
         <article class="postcard">
           <div class="postcard__text">
-            <h2>Movie details:</h2>
             <h1 class="postcard__title"><a class="postcard__title" [routerLink]="['../../film-view',movie.id]"></a></h1>
               <h5>Movie director:</h5>
             <ul class="postcard__tagbox">
@@ -82,7 +81,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </div><br>
     </div>
     
     

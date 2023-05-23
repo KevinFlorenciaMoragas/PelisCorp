@@ -46,7 +46,8 @@ export class PrincipalComponent implements OnInit {
     genre: [],
     awards: [],
     reviews: [],
-    screenwritter: []
+    screenwritter: [],
+    banner: ''
   }
   @HostListener('window:resize')
 

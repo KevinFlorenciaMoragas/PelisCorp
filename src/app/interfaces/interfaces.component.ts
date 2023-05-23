@@ -30,6 +30,7 @@ export interface Movies {
   awards: Awards[];
   reviews: Reviews[];
   screenwritter: Screenwritter[];
+  banner: string;
 }
 //2
 export interface Favorites {

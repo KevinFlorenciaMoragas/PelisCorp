@@ -73,7 +73,8 @@ export class UpdateMovieComponent implements OnInit{
     genre: [],
     awards: [],
     reviews: [],
-    screenwritter: []
+    screenwritter: [],
+    banner: ''
   }
 
   ngOnInit() {

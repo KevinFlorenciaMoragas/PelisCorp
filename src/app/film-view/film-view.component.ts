@@ -38,7 +38,8 @@ export class FilmViewComponent {
     genre: [],
     awards: [],
     reviews: [],
-    screenwritter: []
+    screenwritter: [],
+    banner: ''
   }
   moviePrueba: Movies [] = []
   genres: Genre[] = []

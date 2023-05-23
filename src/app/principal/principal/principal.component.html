@@ -9,39 +9,48 @@
                 <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
                     [noPause]="true">
                     <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['/film-view',movie.id]">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="carousel text-center">
-                                    <p *ngFor="let poster of movie.poster">
-                                        <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
-                                    </p>
-                                    <div class="card-body">
-                                        <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6"
-                                style="background-color: rgb(88, 60, 101); font-family: monospace; color: white; border: 1px solid black; ">
-                                <div class="carousel text-center">
-                                    <div class="featured-text text-center">
-                                        <h2>Genre</h2>
-                                        <p *ngFor="let genre of movie.genre">{{genre.genre}}</p>
-                                    </div>
-                                    <hr>
-                                    <div class="featured-text text-center">
-                                        <h2>Director</h2>
-                                        <p *ngFor="let director of movie.director">{{director.name}}
-                                            {{director.lastName}}
-                                        </p>
-                                    </div>
-                                    <hr>
-                                    <div class="featured-text text-center">
-                                        <h2>Sinopsis</h2>
-                                        <p class="truncate">{{movie.plot}}</p>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="row">
+                        <div class="d-lg-block col-lg-6 col-md-12 col-12 imageView text-center">
+                            <p *ngFor="let poster of movie.poster">
+                                <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
+                            </p>
+                            <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
                         </div>
+
+                        <section class="d-lg-block col-lg-6 col-sm-12 col-md-12 col-12">
+                            <div class="container py-4">
+                                <article class="postcard">
+                                    <div class="postcard__text">
+                                        
+                                        <h5>Movie director:</h5>
+                                        <ul class="postcard__tagbox">
+                                            <li class="tag__item" *ngFor="let director of movie.director"><i
+                                                    [routerLink]="['../../movies-by-director',director.id]"
+                                                    class="fas fa-tag mr-2">{{director.name}}
+                                                    {{director.lastName}}</i></li>
+                                        </ul>
+                                        <h5>Cast:</h5>
+                                        <ul class="postcard__tagbox">
+                                            <li class="tag__item" *ngFor="let actor of movie.actors"><i
+                                                    [routerLink]="['../../movies-by-actor',actor.id]"
+                                                    class="fas fa-tag mr-2">{{actor.name}}
+                                                    {{actor.lastName}}</i></li>
+                                        </ul>
+                                        <h5>Plot:</h5>
+                                        <p class="truncate">{{movie.plot}}</p>
+                                        <ul class="postcard__tagbox">
+                                            <li class="tag__item" *ngFor="let genre of movie.genre"><i
+                                                    [routerLink]="['../../movies-by-genre',genre.id]"
+                                                    class="fas fa-tag mr-2">{{genre.genre}}</i></li>
+                                        </ul>
+                                        <h2 class="postcard__title">{{movie.score}}<i class="fas fa-star"
+                                            style="color: yellow">&#9733;</i></h2>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
+                         </div>
                     </slide>
                 </carousel>
             </div>
@@ -127,9 +136,10 @@
         <div class="container">
             <h1 id="subtitleFreatured" class="col-12 text-center">Featured</h1>
             <div class="d-flex justify-content-center row">
-                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index" [ngClass]="{'show-more-effect': showAllMovies && i >= 0}">
+                <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index"
+                    [ngClass]="{'show-more-effect': showAllMovies && i >= 0}">
                     <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
-                        <div  class="row g-0">
+                        <div class="row g-0">
                             <div class="col-md-4">
 
                                 <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start"

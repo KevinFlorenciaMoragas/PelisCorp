@@ -50,7 +50,8 @@ export class MoviesComponent {
     genre: [],
     awards: [],
     reviews: [],
-    screenwritter: []
+    screenwritter: [],
+    banner: ''
   }
 
   ngOnInit(){
