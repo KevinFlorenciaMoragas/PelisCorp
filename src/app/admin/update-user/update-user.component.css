@@ -1,0 +1,15 @@
+.fondo{
+    background: linear-gradient(0deg, rgba(88, 60, 101, 0.342) 45%, rgba(88, 60, 101, 1) 93%);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(179, 0, 255);
+    border-radius: 5px;
+    transition: background-color 0.10s ease;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}

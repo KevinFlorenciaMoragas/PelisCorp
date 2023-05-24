@@ -1,52 +1,53 @@
-<br><br><br><br>
-<div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
-    <br>
-    <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">UPDATE USER</h2>
-    <form [formGroup]="MyNewForm" (ngSubmit)="onUpdateUser()">
-        <div class="row">
-            <div class="form-group col-md-2">
-                <label for="id">Id</label>
-                <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id" [(ngModel)]="user.id"
-                    required>
-                <div *ngIf="MyNewForm.get('id')?.invalid" class="alert alert-danger mt-2">El campo ID es
-                    obligatorio
+<div style="padding-top: 7em; " class="fondo">
+    <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
+        <br>
+        <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">UPDATE USER</h2>
+        <form [formGroup]="MyNewForm" (ngSubmit)="onUpdateUser()">
+            <div class="row">
+                <div class="form-group col-md-2">
+                    <label for="id">Id</label>
+                    <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id"
+                        [(ngModel)]="user.id" required>
+                    <div *ngIf="MyNewForm.get('id')?.invalid" class="alert alert-danger mt-2">El campo ID es
+                        obligatorio
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="username"
+                        [(ngModel)]="user.username" formControlName="username" required>
+                    <div *ngIf="MyNewForm.get('username')?.invalid" class="alert alert-danger mt-2">El campo
+                        USERNAME es obligatorio</div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control" id="password" placeholder="password"
+                        [(ngModel)]="user.password" formControlName="password" required>
+                    <div *ngIf="MyNewForm.get('password')?.invalid" class="alert alert-danger mt-2">El campo PASSWORD
+                        es
+                        obligatorio</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="email" [(ngModel)]="user.email"
+                        formControlName="email" required>
+                    <div *ngIf="MyNewForm.get('email')?.invalid" class="alert alert-danger mt-2">El campo EMAIL
+                        es
+                        obligatorio</div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" id="role" placeholder="role" [(ngModel)]="user.role"
+                        formControlName="role" required>
+                    <div *ngIf="MyNewForm.get('role')?.invalid" class="alert alert-danger mt-2">El campo ROLE
+                        es
+                        obligatorio</div>
+                </div>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
                 </div>
             </div>
-            <div class="form-group col-md-3">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="username" [(ngModel)]="user.username"
-                    formControlName="username" required>
-                <div *ngIf="MyNewForm.get('username')?.invalid" class="alert alert-danger mt-2">El campo
-                    USERNAME es obligatorio</div>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="password">Password</label>
-                <input type="text" class="form-control" id="password" placeholder="password" [(ngModel)]="user.password"
-                    formControlName="password" required>
-                <div *ngIf="MyNewForm.get('password')?.invalid" class="alert alert-danger mt-2">El campo PASSWORD
-                    es
-                    obligatorio</div>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="email" [(ngModel)]="user.email"
-                    formControlName="email" required>
-                <div *ngIf="MyNewForm.get('email')?.invalid" class="alert alert-danger mt-2">El campo EMAIL
-                    es
-                    obligatorio</div>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="role">Role</label>
-                <input type="text" class="form-control" id="role" placeholder="role" [(ngModel)]="user.role"
-                    formControlName="role" required>
-                <div *ngIf="MyNewForm.get('role')?.invalid" class="alert alert-danger mt-2">El campo ROLE
-                    es
-                    obligatorio</div>
-            </div>
-            <div style="text-align: center; margin-bottom: 20px;">
-                <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    <br>
 </div>
-<br>

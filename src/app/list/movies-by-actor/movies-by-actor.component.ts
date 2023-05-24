@@ -26,6 +26,9 @@ export class MoviesByActorComponent implements OnInit {
     name: "",
     lastName: "",
     photo: "",
+    biography: "",
+    birthPlace: "",
+    birthDate: 0
   }
   refresh(id: any) {
     console.log("Estoy en refresh")

@@ -22,6 +22,9 @@ export class MoviesByScreenwritterComponent {
     name: "",
     lastName: "",
     photo: "",
+    biography: "",
+    birthPlace: "",
+    birthDate: 0
   }
   getAllMoviesByScreenwritter() {
     const genreIdParam = this.route.snapshot.paramMap.get('id');

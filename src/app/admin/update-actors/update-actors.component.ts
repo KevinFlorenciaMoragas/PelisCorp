@@ -17,12 +17,18 @@ export class UpdateActorsComponent {
   name: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(50)]);
   lastName: FormControl = new FormControl('',  [Validators.minLength(1), Validators.maxLength(50)]);
   photo: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(200)]);
+  biography: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(1000)]);
+  birthPlace: FormControl = new FormControl('',  [Validators.minLength(1), Validators.maxLength(50)]);
+  birthDate: FormControl = new FormControl('',  [Validators.minLength(1), Validators.maxLength(4)]);
 
   MyNewForm: FormGroup = new FormGroup({
   id: this.id,
   name: this.name,
   lastName: this.lastName,
   photo: this.photo,
+  biography: this.biography,
+  birthPlace: this.birthPlace,
+  birthDate: this.birthDate
   });
   isDisabled: boolean = true;
 
@@ -36,6 +42,9 @@ export class UpdateActorsComponent {
     name: '',
     lastName: '',
     photo: '',
+    biography: "",
+    birthPlace: "",
+    birthDate: 0
   }
 
   ngOnInit() {

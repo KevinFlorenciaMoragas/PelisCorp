@@ -27,3 +27,7 @@
         height: 350px;
     }
   }
+
+  .container-fluid {
+    padding-top: 10em;
+}

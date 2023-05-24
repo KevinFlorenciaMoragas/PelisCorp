@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { Movies } from 'src/app/interfaces/interfaces.component';
 import { Genre } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -71,6 +71,46 @@ export class FilmViewComponent {
   contenidoActual: string = '';
   cambiarContenido(boton: string) {
     this.contenidoActual = boton;
+  }
+
+  @HostListener('window:resize')
+
+  onResize() {
+
+    this.updatePlayerWidth();
+
+  }
+
+  playerWidth: number = 0;
+
+  playerHeight: number = 0;
+
+  updatePlayerWidth() {
+
+    const screenWidth = window.innerWidth;
+
+    // Puedes definir tus propias reglas para establecer el ancho en función del tamaño de la pantalla
+
+    if (screenWidth > 1723) {
+
+      this.playerWidth = 600;
+
+      this.playerHeight = 400;
+
+    } else if (screenWidth < 1027) {
+
+      this.playerWidth = 300;
+
+      this.playerHeight = 200;
+
+    } else {
+
+      this.playerWidth = 400;
+
+      this.playerHeight = 300;
+
+    }
+
   }
 
 }

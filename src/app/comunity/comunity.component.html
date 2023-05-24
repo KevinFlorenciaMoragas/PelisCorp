@@ -41,10 +41,10 @@
                         <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
                             <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
                                 <div class="row g-0">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-5" style="background: linear-gradient(90deg, rgba(0,0,0,0.80015756302521) 0%, rgba(88,60,101,1) 4%, rgba(88,60,101,0.8029586834733894) 61%, rgba(210,210,210,1) 100%);">
                                         <img id="img-midium" src="{{movie.poster[0].url}}" class="img-fluid rounded-start" alt="...">
                                     </div>
-                                    <div id="bgCard" class="col-md-8">
+                                    <div id="bgCard" class="col-md-8 col-7">
                                         <div class="card-body">
                                             <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
                                             <span *ngFor="let director of movie.director" id="colorLetterCard"
@@ -79,10 +79,10 @@
                         <div class="col-md-4" *ngFor="let movie of displayedMovies; let i = index">
                             <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
                                 <div class="row g-0">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-5" style="background: linear-gradient(90deg, rgba(0,0,0,0.80015756302521) 0%, rgba(88,60,101,1) 4%, rgba(88,60,101,0.8029586834733894) 61%, rgba(210,210,210,1) 100%);">
                                         <img id="img-midium" src="{{movie.poster[0].url}}" class="img-fluid rounded-start" alt="...">
                                     </div>
-                                    <div id="bgCard" class="col-md-8">
+                                    <div id="bgCard" class="col-md-8 col-7">
                                         <div class="card-body">
                                             <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
                                             <span *ngFor="let director of movie.director" id="colorLetterCard"

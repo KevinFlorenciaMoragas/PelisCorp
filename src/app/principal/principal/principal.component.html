@@ -9,48 +9,48 @@
                 <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
                     [noPause]="true">
                     <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['/film-view',movie.id]">
-                         <div class="row">
-                        <div class="d-lg-block col-lg-6 col-md-12 col-12 imageView text-center">
-                            <p *ngFor="let poster of movie.poster">
-                                <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
-                            </p>
-                            <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
-                        </div>
-
-                        <section class="d-lg-block col-lg-6 col-sm-12 col-md-12 col-12">
-                            <div class="container py-4">
-                                <article class="postcard">
-                                    <div class="postcard__text">
-                                        
-                                        <h5>Movie director:</h5>
-                                        <ul class="postcard__tagbox">
-                                            <li class="tag__item" *ngFor="let director of movie.director"><i
-                                                    [routerLink]="['../../movies-by-director',director.id]"
-                                                    class="fas fa-tag mr-2">{{director.name}}
-                                                    {{director.lastName}}</i></li>
-                                        </ul>
-                                        <h5>Cast:</h5>
-                                        <ul class="postcard__tagbox">
-                                            <li class="tag__item" *ngFor="let actor of movie.actors"><i
-                                                    [routerLink]="['../../movies-by-actor',actor.id]"
-                                                    class="fas fa-tag mr-2">{{actor.name}}
-                                                    {{actor.lastName}}</i></li>
-                                        </ul>
-                                        <h5>Plot:</h5>
-                                        <p class="truncate">{{movie.plot}}</p>
-                                        <ul class="postcard__tagbox">
-                                            <li class="tag__item" *ngFor="let genre of movie.genre"><i
-                                                    [routerLink]="['../../movies-by-genre',genre.id]"
-                                                    class="fas fa-tag mr-2">{{genre.genre}}</i></li>
-                                        </ul>
-                                        <h2 class="postcard__title">{{movie.score}}<i class="fas fa-star"
-                                            style="color: yellow">&#9733;</i></h2>
-                                    </div>
-                                </article>
+                        <div class="row">
+                            <div class="d-lg-block col-lg-6 col-md-12 col-12 imageView text-center">
+                                <p *ngFor="let poster of movie.poster">
+                                    <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
+                                </p>
+                                <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
                             </div>
-                        </section>
 
-                         </div>
+                            <section class="d-lg-block col-lg-6 col-sm-12 col-md-12 col-12">
+                                <div class="container py-4">
+                                    <article class="postcard">
+                                        <div class="postcard__text">
+
+                                            <h5>Movie director:</h5>
+                                            <ul class="postcard__tagbox">
+                                                <li class="tag__item" *ngFor="let director of movie.director"><i
+                                                        [routerLink]="['../../movies-by-director',director.id]"
+                                                        class="fas fa-tag mr-2">{{director.name}}
+                                                        {{director.lastName}}</i></li>
+                                            </ul>
+                                            <h5>Cast:</h5>
+                                            <ul class="postcard__tagbox">
+                                                <li class="tag__item" *ngFor="let actor of movie.actors"><i
+                                                        [routerLink]="['../../movies-by-actor',actor.id]"
+                                                        class="fas fa-tag mr-2">{{actor.name}}
+                                                        {{actor.lastName}}</i></li>
+                                            </ul>
+                                            <h5>Plot:</h5>
+                                            <p class="truncate">{{movie.plot}}</p>
+                                            <ul class="postcard__tagbox">
+                                                <li class="tag__item" *ngFor="let genre of movie.genre"><i
+                                                        [routerLink]="['../../movies-by-genre',genre.id]"
+                                                        class="fas fa-tag mr-2">{{genre.genre}}</i></li>
+                                            </ul>
+                                            <h2 class="postcard__title">{{movie.score}}<i class="fas fa-star"
+                                                    style="color: yellow">&#9733;</i></h2>
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+
+                        </div>
                     </slide>
                 </carousel>
             </div>
@@ -140,13 +140,13 @@
                     [ngClass]="{'show-more-effect': showAllMovies && i >= 0}">
                     <div class="card mb-3" style="max-width: 540px;" *ngIf="i < 3 || showAllMovies">
                         <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-3 col-4">
 
                                 <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start"
                                     [routerLink]="['/film-view',movie.id]" alt="...">
 
                             </div>
-                            <div id="bgCard" class="col-md-8">
+                            <div id="bgCard" class="col-md-8 col-sm-9 col-8">
                                 <div class="card-body">
                                     <h5 id="colorLetterCard" class="card-title">{{movie.movieName}}</h5>
                                     <span *ngFor="let director of movie.director" id="colorLetterCard"

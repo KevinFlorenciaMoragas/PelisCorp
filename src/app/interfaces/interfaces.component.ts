@@ -57,12 +57,7 @@ export interface Genre {
   genre: string;
 }
 //5
-export interface Director {
-  id: number;
-  name: string;
-  lastName: string;
-  photo: string;
-}
+
 //6
 export interface Actor {
   id: number;
@@ -134,6 +129,9 @@ export interface Director {
   name: string; 
   lastName: string; 
   photo: string; 
+  biography: string;
+  birthPlace: string;
+  birthDate: number;
 }
 
 export interface Actor { 
@@ -141,6 +139,9 @@ export interface Actor {
   name: string; 
   lastName: string; 
   photo: string; 
+  biography: string;
+  birthPlace: string;
+  birthDate: number;
 }
 
 export interface Awards{ 
@@ -161,5 +162,8 @@ export interface Screenwritter{
   name: string; 
   lastName: string; 
   photo: string; 
+  biography: string;
+  birthPlace: string;
+  birthDate: number;
 }
 

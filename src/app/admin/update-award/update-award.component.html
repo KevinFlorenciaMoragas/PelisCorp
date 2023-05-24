@@ -1,4 +1,4 @@
-<body> <br><br><br><br>
+<div style="padding-top: 7em; " class="fondo">
     <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);"> <br>
         <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">UPDATE AWARD</h2>
         <form [formGroup]="MyNewForm" (ngSubmit)="onUpdateAward()">
@@ -22,6 +22,7 @@
                 <div style="text-align: center;"> <button type="submit" class="btnprincipal mt-3"
                         [disabled]="MyNewForm.invalid">CREATE</button> </div>
             </div>
+            <br>
         </form>
     </div> <br>
-</body>
+</div>

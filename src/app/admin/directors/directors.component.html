@@ -47,7 +47,7 @@
                             <td>{{director.id}}</td>
                             <td>{{director.name}}</td>
                             <td>{{director.lastName}}</td>
-                            <td ><img class="starterImg" src="{{director.photo}}"></td>
+                            <td ><img class="starterImg" src="{{director.photo}}" alt="Photo {{director.name}} {{director.lastName}}"></td>
                             <td>
                                 <button class="btn btn-primary" routerLink="/update/director/{{director.id}}">Editar</button>
                                 <button class="btn btn-danger" (click)="deleteDirector(director.id)">Eliminar</button>
@@ -77,6 +77,21 @@
                         <label for="photo">Photo</label>
                         <input type="text" class="form-control" id="photo" placeholder="photo" formControlName="photo" required>
                         <div *ngIf="MyNewForm.get('photo')?.invalid" class="alert alert-danger mt-2">The PHOTO field is required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="biography">Biography</label>
+                        <input type="text" class="form-control" id="biography" placeholder="biography" formControlName="biography" required>
+                        <div *ngIf="MyNewForm.get('biography')?.invalid" class="alert alert-danger mt-2">The BIOGRAPHY field is required</div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="birthPlace">BirthPlace</label>
+                        <input type="text" class="form-control" id="birthPlace" placeholder="birthPlace" formControlName="birthPlace" required>
+                        <div *ngIf="MyNewForm.get('birthPlace')?.invalid" class="alert alert-danger mt-2">The BIRTHPLACE field is required</div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="birthDate">BirthDate</label>
+                        <input type="text" class="form-control" id="birthDate" placeholder="birthDate" formControlName="birthDate" required>
+                        <div *ngIf="MyNewForm.get('birthDate')?.invalid" class="alert alert-danger mt-2">The BIRTHDATE field is required</div>
                     </div>
                     <div style="text-align: center;">
                         <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>

@@ -1,3 +1,55 @@
-.mainContent{
-    margin-top:20em;
+.body {
+    background: linear-gradient(0deg, rgba(88, 60, 101, 0.342) 45%, rgba(88, 60, 101, 1) 93%);
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 6rem;
+    color: rgb(85, 51, 100);
+    margin-bottom: 0;
+  }
+  
+  .error-message {
+    margin-top: 2rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  
+  a {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: rgb(85, 51, 100);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: rgb(85, 51, 100);
+    color: #fff;
+  }
+
+body {
+    height: 100vh;
+}
+
+.height {
+    height: 83%;
+    background: linear-gradient(0deg, rgba(88, 60, 101, 0.342) 45%, rgba(88, 60, 101, 1) 93%);
 }
