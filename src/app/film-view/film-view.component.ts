@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Movies, Reviews } from 'src/app/interfaces/interfaces.component';
 import { Genre } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/interfaces/interfaces.component';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-film-view',
   templateUrl: './film-view.component.html',
@@ -39,18 +39,20 @@ export class FilmViewComponent {
     reviews: [],
     screenwritter: []
   }
+  reviews: Reviews[] = []
   moviePrueba: Movies [] = []
   genres: Genre[] = []
-  movieId: any
-  id: any
-  idUser: any
+
+
+  idMovie = this.route.snapshot.paramMap.get('id');
+  id: number = +this.idMovie!;
+  idUser: number|null = localStorage.getItem('id') ? +localStorage.getItem('id')! : null;
   trailer : any
   ngOnInit() {
     console.log("Estoy en ngOnInit")
     const movieIdParam = this.route.snapshot.paramMap.get('id');
     if (movieIdParam !== null) {
       this.id = +movieIdParam;
-      this.idUser = +movieIdParam;
     }
     console.log(this.id)
     this.http.getMovieById(this.id).subscribe(data => {
@@ -63,12 +65,38 @@ export class FilmViewComponent {
     (error) => {
       this.router.navigate(['**'])
     })
-  //  this.http.getUserById()
+    this.getReviews()
     this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.trailer)
   }
   contenidoActual: string = '';
   cambiarContenido(boton: string) {
     this.contenidoActual = boton;
   }
+  getReviews() {
+    this.http.listReviewByMovieId(this.id).subscribe(data => {
+      this.reviews = data;
+      console.log(data)
+    })
+  }
+  postReview() {
+    console.log(this.reviewForm.value)
+    this.http.insertReviews(this.reviewForm.value).subscribe(respponse => {
+      console.log(respponse)
+    }, error => {
+      if(error.status == 500){
+        alert("Ya has realizado una review de esta pelicula")
+      }
+      console.log(error)
+    })
 
+  }
+  text: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)] })
+  averageRating: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(100)] })
+
+  reviewForm: FormGroup = new FormGroup({
+    text: this.text,
+    averageRating: this.averageRating,
+    id_movie: new FormControl(this.id),
+    id_user: new FormControl(this.idUser)
+  })
 }

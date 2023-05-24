@@ -7,6 +7,7 @@ import { Movies } from '../interfaces/interfaces.component';
 import { DirectorsComponent } from '../admin/directors/directors.component';
 import { ActorsComponent } from '../admin/actors/actors.component';
 import { HttpErrorResponse } from '@angular/common/http';
+import { FilmViewComponent } from '../film-view/film-view.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -325,6 +326,26 @@ export class MoviesService {
         return throwError(err)
       })
     )
+  }
+  listReviewByMovieId(id: number): Observable<any> {
+    let url: string = "http://172.17.40.240:8080/reviews/movies/" + id
+    return this.http.get<any>(url).pipe(
+      catchError((err) => {
+        console.log(err)
+        return throwError(err)
+      })
+    )
+  }
+  insertReviews(MyNewForm: FilmViewComponent):Observable<FilmViewComponent>{
+    let url:string = "http://172.17.40.240:8080/movies/reviews/" 
+    console.log(MyNewForm)
+    return this.http.post<FilmViewComponent>(url,JSON.stringify(MyNewForm),this.httpOptions).pipe(
+      catchError((err) =>{
+        console.log("hay un error")
+        console.error(err)
+        return throwError(err)
+      })
+      )
   }
   
   deleteMovieById(id: number): Observable<any> {

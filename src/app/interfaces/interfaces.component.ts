@@ -77,12 +77,7 @@ export interface Awards{
 }
 
 //14
-export interface Reviews{
-  id: number;
-  text: string;
-  averageScore: number;
-  user: User[];
-}
+
 
 //17
 export interface Screenwritter{
@@ -149,10 +144,11 @@ export interface Awards{
 }
 
 export interface Reviews{ 
-  id: number; 
+
   text: string; 
   averageScore: number; 
-  user: User[]; 
+  id_movie: Movies[]; 
+  id_user: User[];
 }
 
 export interface Screenwritter{ 

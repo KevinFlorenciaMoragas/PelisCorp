@@ -11,21 +11,28 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   user: User[] = []
   usernameLocalStorage = localStorage.getItem('username')
-  constructor(private http: Service,private router: Router) {
+  constructor(private http: Service, private router: Router) {
   }
   ngOnInit(): void {
 
   }
   postUser() {
-    this.http.registerUser(this.registerForm.value).subscribe(data => {
-      console.log(data)
+    if (this.registerForm.value.password != this.registerForm.value.repeatPassword) {
+      alert("Las contraseñas no coinciden")
+      return
+    }
+    else {
+      this.http.registerUser(this.registerForm.value).subscribe(data => {
+        console.log(data)
+        this.router.navigate(['/login'])
 
-    })
-    // this.http.login(this.registerForm.value).subscribe(data => {
-    //   console.log(data)
-    //   this.router.navigate(['/'])
-    // }
-    // )
+      }, catchError => {
+        console.log(catchError)
+        if (catchError.status == 500) {
+          alert("El usuario o el email ya existe")
+        }
+      })
+    }
   }
 
 
