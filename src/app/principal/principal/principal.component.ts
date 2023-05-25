@@ -19,7 +19,9 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 
 export class PrincipalComponent implements OnInit {
 
-  constructor(private http: MoviesService) { }
+  constructor(private http: MoviesService) {
+
+   }
 
   movies: Movies[] = []
   youtubeApiLoaded = false;

@@ -72,14 +72,6 @@ export interface Awards{
   festival:string;
 }
 
-//14
-export interface Reviews{
-  id: number;
-  text: string;
-  averageScore: number;
-  user: User[];
-}
-
 //17
 export interface Screenwritter{
   id: number;
@@ -150,11 +142,12 @@ export interface Awards{
   festival:string; 
 }
 
-export interface Reviews{ 
-  id: number; 
+export interface Reviews{
+  id:number;
   text: string; 
-  averageScore: number; 
-  user: User[]; 
+  averageRating: number; 
+  movies: Movies; 
+  reviewUser: User;
 }
 
 export interface Screenwritter{ 
@@ -166,4 +159,22 @@ export interface Screenwritter{
   birthPlace: string;
   birthDate: number;
 }
+
+export interface MovieDTO {
+  movieName: string;
+  releaseDate: number;
+  plot: string;
+  duration: number;
+  income: number;
+  score: number;
+  banner: string;
+  trailer: string;
+  id_poster: number[];
+  id_actors: number[];
+  id_genre: number[];
+  id_director: number[];
+  id_screenwritter: number[];
+}
+
+
 

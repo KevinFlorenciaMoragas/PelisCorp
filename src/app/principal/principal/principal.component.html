@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <h1 id="index-text">Welcome to FilmCorp</h1>
                 </div>
-                <carousel [itemsPerSlide]="1" [singleSlideOffset]="true" [showIndicators]="false" [interval]="8000"
+                <carousel [itemsPerSlide]="1" [singleSlideOffset]="false" [showIndicators]="true" [interval]="8000"
                     [noPause]="true">
                     <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['/film-view',movie.id]">
                         <div class="row">
@@ -52,6 +52,7 @@
 
                         </div>
                     </slide>
+
                 </carousel>
             </div>
         </div>

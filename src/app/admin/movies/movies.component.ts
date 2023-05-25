@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators, FormBuilder,FormArray } from '@angular/forms';
 import { MoviesService } from 'src/app/services/movies.service';
-import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Movies, MovieDTO } from 'src/app/interfaces/interfaces.component';
 
 
 @Component({
@@ -9,30 +9,88 @@ import { Movies } from 'src/app/interfaces/interfaces.component';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent {
-  constructor(private http: MoviesService) { }
-  id: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
-  duration: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(20)]);
-  income: FormControl = new FormControl('',  [Validators.minLength(1), Validators.maxLength(20)]);
-  movie_name: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
-  release_date: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(10)]);
-  plot: FormControl = new FormControl('', [Validators.minLength(10), Validators.maxLength(8000)]);
-  score: FormControl = new FormControl('',  [Validators.minLength(1), Validators.maxLength(3)]);
-  trailer: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(200)]);
+export class MoviesComponent implements OnInit {
+  constructor(private http: MoviesService,private formBuilder: FormBuilder) { }
+  movieDTO: MovieDTO [] = [];
 
-  MyNewForm: FormGroup = new FormGroup({
-  id: this.id,
-  duration: this.duration,
-  income: this.income,
-  movie_name: this.movie_name,
-  release_date: this.release_date,
-  plot: this.plot,
-  score: this.score,
-  trailer: this.trailer
+  movieForm = this.formBuilder.group({
+    movieName: [null, Validators.required],
+    releaseDate: [null, Validators.required],
+    plot: [null, Validators.required],
+    duration: [null, Validators.required],
+    income: [null, Validators.required],
+    score: [null, Validators.required],
+    banner: [null, Validators.required],
+    trailer: [null, Validators.required],
+    id_poster: this.formBuilder.array([]),
+    id_actors: this.formBuilder.array([]),
+    id_genre: this.formBuilder.array([]),
+    id_director: this.formBuilder.array([]),
+    id_screenwritter: this.formBuilder.array([])
   });
-  Clic(datos: FormGroup) {
-    console.log(datos.value);
+
+  
+
+  get idPosterArray(): FormArray {
+    return this.movieForm.get('id_poster') as FormArray;
   }
+
+  get idActorsArray(): FormArray {
+    return this.movieForm.get('id_actors') as FormArray;
+  }
+
+  get idGenreArray(): FormArray {
+    return this.movieForm.get('id_genre') as FormArray;
+  }
+
+  get idDirectorArray(): FormArray {
+    return this.movieForm.get('id_director') as FormArray;
+  }
+
+  get idScreenwriterArray(): FormArray {
+    return this.movieForm.get('id_screenwritter') as FormArray;
+  }
+
+  addIdPoster() {
+    this.idPosterArray.push(this.formBuilder.control(''));
+  }
+
+  addIdActor() {
+    this.idActorsArray.push(this.formBuilder.control(''));
+  }
+
+  addIdGenre() {
+    this.idGenreArray.push(this.formBuilder.control(''));
+  }
+
+  addIdDirector() {
+    this.idDirectorArray.push(this.formBuilder.control(''));
+  }
+
+  addIdScreenwriter() {
+    this.idScreenwriterArray.push(this.formBuilder.control(''));
+  }
+
+  removeIdPoster(index: number) {
+    this.idPosterArray.removeAt(index);
+  }
+
+  removeIdActor(index: number) {
+    this.idActorsArray.removeAt(index);
+  }
+
+  removeIdGenre(index: number) {
+    this.idGenreArray.removeAt(index);
+  }
+
+  removeIdDirector(index: number) {
+    this.idDirectorArray.removeAt(index);
+  }
+
+  removeIdScreenwriter(index: number) {
+    this.idScreenwriterArray.removeAt(index);
+  }
+
   movies: Movies[] = []
   movie: Movies = {
     id: 0,
@@ -78,7 +136,16 @@ export class MoviesComponent {
       }
     );
   }
-  Create(id: number) {
-
-  }
+  // Create() {
+  //   this.http.createMovie(this.movieForm.value).subscribe(
+  //     (response) => {
+  //       console.log('Película creada exitosamente:', response);
+  //       this.getAllMovies();
+  //     },
+  //     (error) => {
+  //       console.error('Error al crear la película:', error);
+  //     }
+  //   );
+  // }
+  
 }

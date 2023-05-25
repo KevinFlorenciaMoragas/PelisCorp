@@ -1,5 +1,5 @@
 import { Component,HostListener } from '@angular/core';
-import { Movies } from 'src/app/interfaces/interfaces.component';
+import { Movies, Reviews } from 'src/app/interfaces/interfaces.component';
 import { Genre } from 'src/app/interfaces/interfaces.component';
 import { MoviesService } from 'src/app/services/movies.service';
 import { HttpClient } from '@angular/common/http';
@@ -8,6 +8,8 @@ import { OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/interfaces/interfaces.component';
+import { FormControl, FormGroup, Validators,AbstractControl} from '@angular/forms';
+
 
 
 @Component({
@@ -41,13 +43,16 @@ export class FilmViewComponent {
     screenwritter: [],
     banner: ''
   }
+  reviews: Reviews [] = []
   moviePrueba: Movies [] = []
   genres: Genre[] = []
-  movieId: any
-  id: any
-  idUser: any
+
+  idMovie = this.route.snapshot.paramMap.get('id');
+  id: number = +this.idMovie!;
+  idUser: number|null = localStorage.getItem('id') ? +localStorage.getItem('id')! : null;
   trailer : any
   ngOnInit() {
+    this.getReviews()
     console.log("Estoy en ngOnInit")
     const movieIdParam = this.route.snapshot.paramMap.get('id');
     if (movieIdParam !== null) {
@@ -72,6 +77,45 @@ export class FilmViewComponent {
   cambiarContenido(boton: string) {
     this.contenidoActual = boton;
   }
+
+  getReviews() {
+    console.log("get reviews" +this.id)
+    this.http.listReviewByMovieId(this.id).subscribe(data => {
+      this.reviews = data
+
+      console.log(this.reviews)
+    })
+  }
+  postReview() {
+    console.log(this.reviewForm.value)
+    this.http.insertReviews(this.reviewForm.value).subscribe(respponse => {
+      console.log(respponse)
+    }, error => {
+      if(error.status == 500){
+        alert("Ya has realizado una review de esta pelicula")
+      }
+      console.log(error)
+    })
+
+  }
+
+  numberRangeaverageRating(campo: FormControl){
+    if (campo.value !== null && (isNaN(campo.value) || campo.value < 0 || campo.value > 10)) {
+      return { 'numberRange': true };
+    }
+  
+    return null;
+  }
+
+  text: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)] })
+  averageRating: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.min(0), Validators.max(10)] })
+
+  reviewForm: FormGroup = new FormGroup({
+    text: this.text,
+    averageRating: this.averageRating,
+    id_movie: new FormControl(this.id),
+    id_user: new FormControl(this.idUser)
+  })
 
   @HostListener('window:resize')
 
@@ -112,5 +156,7 @@ export class FilmViewComponent {
     }
 
   }
+
+  
 
 }

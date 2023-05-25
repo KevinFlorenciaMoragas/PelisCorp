@@ -8,10 +8,10 @@
         </div>
         <div class="row">
             <div class="col-6 col-md-2" style="margin-bottom: 30px;">
-                    <a href="/admin/movies" class="btnprincipal">Movies</a>
+                <a href="/admin/movies" class="btnprincipal">Movies</a>
             </div>
             <div class="col-6 col-md-2" style="margin-bottom: 30px;">
-                    <a href="/admin/actors" class="btnprincipal">Actors</a>
+                <a href="/admin/actors" class="btnprincipal">Actors</a>
             </div>
             <div class="col-6 col-md-2" style="margin-bottom: 30px;">
                 <a href="/admin/directors" class="btnprincipal">Director</a>
@@ -63,55 +63,118 @@
         <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
             <br>
             <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE MOVIE</h2>
-            <form [formGroup]="MyNewForm" (ngSubmit)="Create(movie.id)">
+            <form [formGroup]="movieForm">
                 <div class="row">
                     <div class="form-group col-md-2">
                         <label for="id">Id</label>
-                        <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id" required>
-                        <div *ngIf="MyNewForm.get('id')?.invalid" class="alert alert-danger mt-2">The ID field is required</div>
+                        <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id"
+                            required>
+                        <div *ngIf="movieForm.get('id')?.invalid" class="alert alert-danger mt-2">The ID field is
+                            required</div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="moviename">Movie name</label>
-                        <input type="text" class="form-control" id="moviename" placeholder="Movie name" formControlName="movie_name" required>
-                        <div *ngIf="MyNewForm.get('movie_name')?.invalid" class="alert alert-danger mt-2">The MOVIE NAME field is required</div>
+                        <input type="text" class="form-control" id="moviename" placeholder="Movie name"
+                            formControlName="movie_name" required>
+                        <div *ngIf="movieForm.get('movie_name')?.invalid" class="alert alert-danger mt-2">The MOVIE NAME
+                            field is required</div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="trailer">Trailer</label>
-                        <input type="text" class="form-control" id="trailer" placeholder="Trailer" formControlName="trailer" required>
-                        <div *ngIf="MyNewForm.get('trailer')?.invalid" class="alert alert-danger mt-2">The TRAILER field is required</div>
+                        <input type="text" class="form-control" id="trailer" placeholder="Trailer"
+                            formControlName="trailer" required>
+                        <div *ngIf="movieForm.get('trailer')?.invalid" class="alert alert-danger mt-2">The TRAILER field
+                            is required</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-3">
                         <label for="release_date">Release date</label>
-                        <input type="number" class="form-control" id="release_date" placeholder="Release date" formControlName="release_date" required>
-                        <div *ngIf="MyNewForm.get('release_date')?.invalid" class="alert alert-danger mt-2">The RELEASE DATE field is required</div>
+                        <input type="number" class="form-control" id="release_date" placeholder="Release date"
+                            formControlName="release_date" required>
+                        <div *ngIf="movieForm.get('release_date')?.invalid" class="alert alert-danger mt-2">The RELEASE
+                            DATE field is required</div>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="duration">Duration</label>
-                        <input type="number" class="form-control" id="duration" placeholder="Duration" formControlName="duration" required>
-                        <div *ngIf="MyNewForm.get('duration')?.invalid" class="alert alert-danger mt-2">The DURATION field is required</div>
+                        <input type="number" class="form-control" id="duration" placeholder="Duration"
+                            formControlName="duration" required>
+                        <div *ngIf="movieForm.get('duration')?.invalid" class="alert alert-danger mt-2">The DURATION
+                            field is required</div>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="income">Income</label>
-                        <input type="number" class="form-control" id="income" placeholder="Income" formControlName="income" required>
-                        <div *ngIf="MyNewForm.get('income')?.invalid" class="alert alert-danger mt-2">The INCOME field is required</div>
+                        <input type="number" class="form-control" id="income" placeholder="Income"
+                            formControlName="income" required>
+                        <div *ngIf="movieForm.get('income')?.invalid" class="alert alert-danger mt-2">The INCOME field
+                            is required</div>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="score">Score</label>
-                        <input type="number" class="form-control" id="score" placeholder="Score" formControlName="score" required>
-                        <div *ngIf="MyNewForm.get('score')?.invalid" class="alert alert-danger mt-2">The SCORE field is required</div>
+                        <input type="number" class="form-control" id="score" placeholder="Score" formControlName="score"
+                            required>
+                        <div *ngIf="movieForm.get('score')?.invalid" class="alert alert-danger mt-2">The SCORE field is
+                            required</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label for="plot">Plot</label>
-                        <input type="text" class="form-control" id="plot" placeholder="Plot" formControlName="plot" required>
-                        <div *ngIf="MyNewForm.get('plot')?.invalid" class="alert alert-danger mt-2">The PLOT field is required</div>
+                        <input type="text" class="form-control" id="plot" placeholder="Plot" formControlName="plot"
+                            required>
+                        <div *ngIf="movieForm.get('plot')?.invalid" class="alert alert-danger mt-2">The PLOT field is
+                            required</div>
                     </div>
                 </div>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-2">
+                    <div formArrayName="id_poster">
+                        <div *ngFor="let idPosterControl of idPosterArray.controls; let i = index">
+                            <input type="text" [formControlName]="i">
+                            <button type="button" (click)="removeIdPoster(i)">Remove</button>
+                        </div>
+                        <button type="button" (click)="addIdPoster()">Add Id Poster</button>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div formArrayName="id_actors">
+                        <div *ngFor="let idActorControl of idActorsArray.controls; let i = index">
+                            <input type="text" [formControlName]="i">
+                            <button type="button" (click)="removeIdActor(i)">Remove</button>
+                        </div>
+                        <button type="button" (click)="addIdActor()">Add Id Actor</button>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div formArrayName="id_genre">
+                        <div *ngFor="let idGenreControl of idGenreArray.controls; let i = index">
+                            <input type="text" [formControlName]="i">
+                            <button type="button" (click)="removeIdGenre(i)">Remove</button>
+                        </div>
+                        <button type="button" (click)="addIdGenre()">Add Id Genre</button>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div formArrayName="id_director">
+                        <div *ngFor="let idDirectorControl of idDirectorArray.controls; let i = index">
+                            <input type="text" [formControlName]="i">
+                            <button type="button" (click)="removeIdDirector(i)">Remove</button>
+                        </div>
+                        <button type="button" (click)="addIdDirector()">Add Id Director</button>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div formArrayName="id_screenwritter">
+                        <div *ngFor="let idScreenwriterControl of idScreenwriterArray.controls; let i = index">
+                            <input type="text" [formControlName]="i">
+                            <button type="button" (click)="removeIdScreenwriter(i)">Remove</button>
+                        </div>
+                        <button type="button" (click)="addIdScreenwriter()">Add Id Screenwriter</button>
+                    </div>
+                </div>
+            </div>
                 <div style="text-align: center;">
-                    <button type="submit" class="btnprincipal mt-3" [disabled]="MyNewForm.invalid">CREATE</button>
+                    <button type="submit" class="btnprincipal mt-3" [disabled]="movieForm.invalid">CREATE</button>
                 </div>
             </form>
         </div>
