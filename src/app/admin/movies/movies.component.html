@@ -73,10 +73,10 @@
                             required</div>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="moviename">Movie name</label>
-                        <input type="text" class="form-control" id="moviename" placeholder="Movie name"
-                            formControlName="movie_name" required>
-                        <div *ngIf="movieForm.get('movie_name')?.invalid" class="alert alert-danger mt-2">The MOVIE NAME
+                        <label for="movieName">Movie name</label>
+                        <input type="text" class="form-control" id="movieName" placeholder="Movie name"
+                            formControlName="movieName" required>
+                        <div *ngIf="movieForm.get('movieName')?.invalid" class="alert alert-danger mt-2">The MOVIE NAME
                             field is required</div>
                     </div>
                     <div class="form-group col-md-6">
@@ -118,11 +118,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label for="plot">Plot</label>
                         <input type="text" class="form-control" id="plot" placeholder="Plot" formControlName="plot"
                             required>
                         <div *ngIf="movieForm.get('plot')?.invalid" class="alert alert-danger mt-2">The PLOT field is
+                            required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="banner">Banner</label>
+                        <input type="text" class="form-control" id="banner" placeholder="Banner" formControlName="banner"
+                            required>
+                        <div *ngIf="movieForm.get('banner')?.invalid" class="alert alert-danger mt-2">The BANNER field is
                             required</div>
                     </div>
                 </div>

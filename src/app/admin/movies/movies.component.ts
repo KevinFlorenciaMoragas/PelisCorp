@@ -29,12 +29,12 @@ export class MoviesComponent implements OnInit {
   //   id_screenwritter: new FormArray([]),
   // })
   movieName: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
-  releaseDate: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)] })
+  releaseDate: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
   plot: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
-  duration: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(100)] })
-  income: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
-  score: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
-  banner: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
+  duration: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
+  income: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
+  score: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
+  banner: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(100)] })
   trailer: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
 
 
