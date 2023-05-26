@@ -29,7 +29,7 @@ import { UpdateActorsComponent } from './admin/update-actors/update-actors.compo
 import { UpdateDirectorComponent } from './admin/update-director/update-director.component';
 import { UpdateAwardComponent } from './admin/update-award/update-award.component';
 import { UpdateUserComponent } from './admin/update-user/update-user.component';
-
+import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -51,20 +51,19 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'conditions', component: ConditionsComponent },
-  {path:'admin', component: AdminComponent},
-  {path:'admin/movies', component: MoviesComponent},
-  {path:'admin/users', component: UsersComponent},
-  {path:'admin/actors', component: ActorsComponent},
-  {path:'admin/awards', component: AwardsComponent},
-  {path:'admin/directors', component: DirectorsComponent},
-  {path: 'update/movie/:id', component: UpdateMovieComponent},
-  {path: 'update/actor/:id', component: UpdateActorsComponent},
-  {path: 'update/director/:id', component: UpdateDirectorComponent},
-  {path: 'update/award/:id', component: UpdateAwardComponent},
-  {path: 'update/user/:id', component: UpdateUserComponent},
-  { path: '', component:PrincipalComponent, pathMatch: 'full' },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'admin/movies', component: MoviesComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'admin/users', component: UsersComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'admin/actors', component: ActorsComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'admin/awards', component: AwardsComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'admin/directors', component: DirectorsComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'update/movie/:id', component: UpdateMovieComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'update/actor/:id', component: UpdateActorsComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'update/director/:id', component: UpdateDirectorComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'update/award/:id', component: UpdateAwardComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: 'update/user/:id', component: UpdateUserComponent, canActivate: [AuthGuard], data: { role: 'ADMIN' } },
+  { path: '', component: PrincipalComponent, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
-
 
 ];
 

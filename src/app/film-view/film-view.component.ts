@@ -22,6 +22,11 @@ export class FilmViewComponent {
   constructor(private http: MoviesService,private router:Router, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
 
   }
+  displayedReviews: any[] = [];
+  showLoadMoreButton: boolean = true;
+  showLoadLessButton: boolean = false;
+  initialLoad = true;
+  showAllReviews: boolean = false;
   movieArray: any
   user : User[] = []
   movie: Movies = {
@@ -46,7 +51,7 @@ export class FilmViewComponent {
   reviews: Reviews [] = []
   moviePrueba: Movies [] = []
   genres: Genre[] = []
-
+  usernameLocalStorage = localStorage.getItem('username')
   idMovie = this.route.snapshot.paramMap.get('id');
   id: number = +this.idMovie!;
   idUser: number|null = localStorage.getItem('id') ? +localStorage.getItem('id')! : null;
@@ -155,6 +160,23 @@ export class FilmViewComponent {
 
     }
 
+  }
+
+
+  loadMore() { 
+    this.showAllReviews = true;
+    const startIndex = this.displayedReviews.length;
+    const endIndex = startIndex + 6; 
+    this.displayedReviews = this.displayedReviews.concat(this.reviews.slice(startIndex, endIndex)); 
+    if (endIndex >= this.reviews.length) { 
+      this.showLoadMoreButton = false; 
+      this.showLoadLessButton = true; 
+    } 
+    this.showAllReviews = true; 
+  } loadLess() 
+  { this.displayedReviews = this.reviews.slice(0, 3);
+    this.showLoadMoreButton = true; 
+    this.showLoadLessButton = false; 
   }
 
   

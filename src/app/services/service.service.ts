@@ -71,4 +71,12 @@ export class Service {
       })
     )
   }
+
+  isLogged(): boolean {
+    if (localStorage.getItem('token')) {
+      return true
+    } else {
+      return false
+    }
+  }
 }

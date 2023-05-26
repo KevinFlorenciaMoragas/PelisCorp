@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Movies } from '../interfaces/interfaces.component';
+import { MovieDTO, Movies } from '../interfaces/interfaces.component';
 import { DirectorsComponent } from '../admin/directors/directors.component';
 import { ActorsComponent } from '../admin/actors/actors.component';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -416,10 +416,10 @@ export class MoviesService {
       )
   }
 
-  createMovie(movieForm: MoviesComponent): Observable<MoviesComponent> {
+  createMovie(movieForm: MovieDTO): Observable<MovieDTO> {
     const url: string = 'http://172.17.40.240:8080/allDataMovies';
     console.log(movieForm);
-    return this.http.post<MoviesComponent>(url, movieForm, this.httpOptions).pipe(
+    return this.http.post<MovieDTO>(url, movieForm, this.httpOptions).pipe(
       catchError((err) => {
         console.log('hay un error');
         console.error(err);

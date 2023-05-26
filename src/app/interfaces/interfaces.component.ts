@@ -161,19 +161,19 @@ export interface Screenwritter{
 }
 
 export interface MovieDTO {
-  movieName: string;
-  releaseDate: number;
-  plot: string;
-  duration: number;
-  income: number;
-  score: number;
-  banner: string;
-  trailer: string;
-  id_poster: number[];
-  id_actors: number[];
-  id_genre: number[];
-  id_director: number[];
-  id_screenwritter: number[];
+  movieName: string|null;
+  releaseDate: number|null;
+  plot: string|null;
+  duration: number|null;
+  income: number|null;
+  score: number|null;
+  banner: string|null;
+  trailer: string|null;
+  id_poster: number[]|null;
+  id_actors: number[]|null;
+  id_genre: number[]|null;
+  id_director: number[]|null;
+  id_screenwritter: number[]|null;
 }
 
 

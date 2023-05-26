@@ -63,7 +63,7 @@
         <div class="container" style="border: 1px solid rgba(88, 60, 101, 1);">
             <br>
             <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE MOVIE</h2>
-            <form [formGroup]="movieForm">
+            <form [formGroup]="movieForm" (ngSubmit)="Create()">
                 <div class="row">
                     <div class="form-group col-md-2">
                         <label for="id">Id</label>
@@ -128,15 +128,79 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="form-group col-md-2">
-                    <div formArrayName="id_poster">
-                        <div *ngFor="let idPosterControl of idPosterArray.controls; let i = index">
-                            <input type="text" [formControlName]="i">
-                            <button type="button" (click)="removeIdPoster(i)">Remove</button>
+                        <div formArrayName="id_poster">
+                            <div *ngFor="let item of id_poster.controls; let i=index">
+                                <div [formGroupName]="i">
+                                <h3>id_poster {{i}}</h3>
+                                <input type="number" formControlName="id">
+                            </div>
+                            </div>
                         </div>
-                        <button type="button" (click)="addIdPoster()">Add Id Poster</button>
                     </div>
+                    <button (click)="AddIdPoster()">Add Poster</button>
                 </div>
-                <div class="form-group col-md-2">
+                <!-- Formulario para id_actors -->
+<div class="row justify-content-center">
+    <div class="form-group col-md-2">
+      <div formArrayName="id_actors">
+        <div *ngFor="let item of id_actors.controls; let i = index">
+          <div [formGroupName]="i">
+            <h3>id_actors {{i}}</h3>
+            <input type="number" formControlName="id">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button (click)="AddIdActors()">Add Actor</button>
+  </div>
+  
+  <!-- Formulario para id_genre -->
+  <div class="row justify-content-center">
+    <div class="form-group col-md-2">
+      <div formArrayName="id_genre">
+        <div *ngFor="let item of id_genre.controls; let i = index">
+          <div [formGroupName]="i">
+            <h3>id_genre {{i}}</h3>
+            <input type="number" formControlName="id">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button (click)="AddIdGenre()">Add Genre</button>
+  </div>
+  
+  <!-- Formulario para id_director -->
+  <div class="row justify-content-center">
+    <div class="form-group col-md-2">
+      <div formArrayName="id_director">
+        <div *ngFor="let item of id_director.controls; let i = index">
+          <div [formGroupName]="i">
+            <h3>id_director {{i}}</h3>
+            <input type="number" formControlName="id">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button (click)="AddIdDirector()">Add Director</button>
+  </div>
+  
+  <!-- Formulario para id_screenwritter -->
+  <div class="row justify-content-center">
+    <div class="form-group col-md-2">
+      <div formArrayName="id_screenwritter">
+        <div *ngFor="let item of id_screenwritter.controls; let i = index">
+          <div [formGroupName]="i">
+            <h3>id_screenwritter {{i}}</h3>
+            <input type="number" formControlName="id">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button (click)="AddIdScreenwritter()">Add Screenwriter</button>
+  </div>
+  
+
+        <!-- <div class="form-group col-md-2">
                     <div formArrayName="id_actors">
                         <div *ngFor="let idActorControl of idActorsArray.controls; let i = index">
                             <input type="text" [formControlName]="i">
@@ -169,15 +233,15 @@
                             <input type="text" [formControlName]="i">
                             <button type="button" (click)="removeIdScreenwriter(i)">Remove</button>
                         </div>
-                        <button type="button" (click)="addIdScreenwriter()">Add Id Screenwriter</button>
+                        <button [disabled]="movieForm.invalid" type="button" (click)="addIdScreenwriter()">Add Id Screenwriter</button>
                     </div>
                 </div>
-            </div>
-                <div style="text-align: center;">
-                    <button type="submit" class="btnprincipal mt-3" [disabled]="movieForm.invalid">CREATE</button>
-                </div>
-            </form>
+            </div> -->
+        <div style="text-align: center;">
+            <button type="submit" class="btnprincipal mt-3 " >CREATE</button>
         </div>
-        <br>
+        </form>
+    </div>
+    <br>
     </div>
 </body>
