@@ -46,7 +46,7 @@
                     <tbody>
                         <tr *ngFor="let movie of movies">
                             <td>{{movie.id}}</td>
-                            <td *ngFor="let poster of movie.poster"><img class="starterImg" src="{{poster.url}}"></td>
+                            <td><img class="starterImg" src="{{movie.photo}}"></td>
                             <td>{{movie.movieName}}</td>
                             <td>{{movie.duration}} min</td>
                             <td>{{movie.releaseDate}}</td>
@@ -65,13 +65,6 @@
             <h2 style="text-align: center; margin-bottom: 30px; color: rgba(88, 60, 101, 1);">CREATE MOVIE</h2>
             <form [formGroup]="movieForm" (ngSubmit)="Create()">
                 <div class="row">
-                    <div class="form-group col-md-2">
-                        <label for="id">Id</label>
-                        <input type="number" class="form-control" id="id" placeholder="Id" formControlName="id"
-                            required>
-                        <div *ngIf="movieForm.get('id')?.invalid" class="alert alert-danger mt-2">The ID field is
-                            required</div>
-                    </div>
                     <div class="form-group col-md-4">
                         <label for="movieName">Movie name</label>
                         <input type="text" class="form-control" id="movieName" placeholder="Movie name"
@@ -79,22 +72,22 @@
                         <div *ngIf="movieForm.get('movieName')?.invalid" class="alert alert-danger mt-2">The MOVIE NAME
                             field is required</div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-5">
                         <label for="trailer">Trailer</label>
                         <input type="text" class="form-control" id="trailer" placeholder="Trailer"
                             formControlName="trailer" required>
                         <div *ngIf="movieForm.get('trailer')?.invalid" class="alert alert-danger mt-2">The TRAILER field
                             is required</div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="form-group col-md-3">
-                        <label for="release_date">Release date</label>
-                        <input type="number" class="form-control" id="release_date" placeholder="Release date"
-                            formControlName="release_date" required>
-                        <div *ngIf="movieForm.get('release_date')?.invalid" class="alert alert-danger mt-2">The RELEASE
+                        <label for="releaseDate">Release date</label>
+                        <input type="number" class="form-control" id="releaseDate" placeholder="Release date"
+                            formControlName="releaseDate" required>
+                        <div *ngIf="movieForm.get('releaseDate')?.invalid" class="alert alert-danger mt-2">The RELEASE
                             DATE field is required</div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="form-group col-md-3">
                         <label for="duration">Duration</label>
                         <input type="number" class="form-control" id="duration" placeholder="Duration"
@@ -116,6 +109,14 @@
                         <div *ngIf="movieForm.get('score')?.invalid" class="alert alert-danger mt-2">The SCORE field is
                             required</div>
                     </div>
+                    <div class="form-group col-md-3">
+                        <label for="Banner">Banner</label>
+                        <input type="text" class="form-control" id="banner" placeholder="Banner"
+                            formControlName="banner" required>
+                        <div *ngIf="movieForm.get('banner')?.invalid" class="alert alert-danger mt-2">The BANNER field
+                            is
+                            required</div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
@@ -125,89 +126,76 @@
                         <div *ngIf="movieForm.get('plot')?.invalid" class="alert alert-danger mt-2">The PLOT field is
                             required</div>
                     </div>
+                    
                     <div class="form-group col-md-6">
-                        <label for="banner">Banner</label>
-                        <input type="text" class="form-control" id="banner" placeholder="Banner" formControlName="banner"
+                        <label for="photo">Poster</label>
+                        <input type="text" class="form-control" id="photo" placeholder="photo" formControlName="photo"
                             required>
-                        <div *ngIf="movieForm.get('banner')?.invalid" class="alert alert-danger mt-2">The BANNER field is
+                        <div *ngIf="movieForm.get('photo')?.invalid" class="alert alert-danger mt-2">The poster field is
                             required</div>
                     </div>
                 </div>
+
+                <!-- Formulario para id_actors -->
                 <div class="row justify-content-center">
                     <div class="form-group col-md-2">
-                        <div formArrayName="id_poster">
-                            <div *ngFor="let item of id_poster.controls; let i=index">
+                        <div formArrayName="id_actors">
+                            <div *ngFor="let item of id_actors.controls; let i = index">
                                 <div [formGroupName]="i">
-                                <h3>id_poster {{i}}</h3>
-                                <input type="number" formControlName="id">
-                            </div>
+                                    <h3>id_actors {{1+i}}</h3>
+                                    <input type="number" formControlName="id">
+                                    <button (click)="RemoveActor(i)">Remove Actor</button>
+                                </div>
                             </div>
                         </div>
+                        <button (click)="AddIdActors()">Add Actor</button>
                     </div>
-                    <button (click)="AddIdPoster()">Add Poster</button>
-                </div>
-                <!-- Formulario para id_actors -->
-<div class="row justify-content-center">
-    <div class="form-group col-md-2">
-      <div formArrayName="id_actors">
-        <div *ngFor="let item of id_actors.controls; let i = index">
-          <div [formGroupName]="i">
-            <h3>id_actors {{i}}</h3>
-            <input type="number" formControlName="id">
-          </div>
-        </div>
-      </div>
-    </div>
-    <button (click)="AddIdActors()">Add Actor</button>
-  </div>
-  
-  <!-- Formulario para id_genre -->
-  <div class="row justify-content-center">
-    <div class="form-group col-md-2">
-      <div formArrayName="id_genre">
-        <div *ngFor="let item of id_genre.controls; let i = index">
-          <div [formGroupName]="i">
-            <h3>id_genre {{i}}</h3>
-            <input type="number" formControlName="id">
-          </div>
-        </div>
-      </div>
-    </div>
-    <button (click)="AddIdGenre()">Add Genre</button>
-  </div>
-  
-  <!-- Formulario para id_director -->
-  <div class="row justify-content-center">
-    <div class="form-group col-md-2">
-      <div formArrayName="id_director">
-        <div *ngFor="let item of id_director.controls; let i = index">
-          <div [formGroupName]="i">
-            <h3>id_director {{i}}</h3>
-            <input type="number" formControlName="id">
-          </div>
-        </div>
-      </div>
-    </div>
-    <button (click)="AddIdDirector()">Add Director</button>
-  </div>
-  
-  <!-- Formulario para id_screenwritter -->
-  <div class="row justify-content-center">
-    <div class="form-group col-md-2">
-      <div formArrayName="id_screenwritter">
-        <div *ngFor="let item of id_screenwritter.controls; let i = index">
-          <div [formGroupName]="i">
-            <h3>id_screenwritter {{i}}</h3>
-            <input type="number" formControlName="id">
-          </div>
-        </div>
-      </div>
-    </div>
-    <button (click)="AddIdScreenwritter()">Add Screenwriter</button>
-  </div>
-  
 
-        <!-- <div class="form-group col-md-2">
+                    <div class="form-group col-md-2">
+                        <div formArrayName="id_genre">
+                            <div *ngFor="let item of id_genre.controls; let i = index">
+                                <div [formGroupName]="i">
+                                    <h3>id_genre {{1+i}}</h3>
+                                    <input type="number" formControlName="id">
+                                    <button (click)="RemoveGenre(i)">Remove Genre</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button (click)="AddIdGenre()">Add Genre</button>
+                    </div>
+                    
+
+                    <div class="form-group col-md-2">
+                        <div formArrayName="id_director">
+                            <div *ngFor="let item of id_director.controls; let i = index">
+                                <div [formGroupName]="i">
+                                    <h3>id_director {{1+i}}</h3>
+                                    <input type="number" formControlName="id">
+                                    <button (click)="RemoveDirector(i)">Remove Director</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button (click)="AddIdDirector()">Add Director</button>
+                    </div>
+                    
+
+                    <div class="form-group col-md-3">
+                        <div formArrayName="id_screenwritter">
+                            <div *ngFor="let item of id_screenwritter.controls; let i = index">
+                                <div [formGroupName]="i">
+                                    <h3>id_screenwritter {{1+i}}</h3>
+                                    <input type="number" formControlName="id">
+                                    <button (click)="RemoveScreenwritter(i)">Remove Screenwriter</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button (click)="AddIdScreenwritter()">Add Screenwriter</button>
+                    </div>
+                    
+                </div>
+
+
+                <!-- <div class="form-group col-md-2">
                     <div formArrayName="id_actors">
                         <div *ngFor="let idActorControl of idActorsArray.controls; let i = index">
                             <input type="text" [formControlName]="i">
@@ -244,11 +232,11 @@
                     </div>
                 </div>
             </div> -->
-        <div style="text-align: center;">
-            <button type="submit" class="btnprincipal mt-3 " >CREATE</button>
+                <div style="text-align: center;">
+                    <button type="submit" class="btnprincipal mt-3 ">CREATE</button>
+                </div>
+            </form>
         </div>
-        </form>
-    </div>
-    <br>
+        <br>
     </div>
 </body>

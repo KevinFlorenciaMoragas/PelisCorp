@@ -11,8 +11,8 @@
                     <slide *ngFor="let movie of movies" class="carousel-slide" [routerLink]="['/film-view',movie.id]">
                         <div class="row">
                             <div class="d-lg-block col-lg-6 col-md-12 col-12 imageView text-center">
-                                <p *ngFor="let poster of movie.poster">
-                                    <img class="starterImg" src="{{poster.url}}" style="object-fit: cover;">
+                                <p>
+                                    <img class="starterImg" src="{{movie.photo}}" style="object-fit: cover;">
                                 </p>
                                 <h5 id="bgNameCarousel" class="cardTitle">{{movie.movieName}}</h5>
                             </div>
@@ -64,8 +64,8 @@
                     <div class="slider">
                         <div class="slide-track">
                             <div class="slide" *ngFor="let movie of movies">
-                                <div class="slide" *ngFor="let poster of movie.poster">
-                                    <img class="infiniteCarousel" [src]="poster.url">
+                                <div class="slide">
+                                    <img class="infiniteCarousel" [src]="movie.photo">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title"
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-4 col-xs-12 trailer-container2" style="margin: auto;"> <img
                         class="img-responsive" style="display:block; margin-left: auto; margin-right: auto;"
-                        src="{{movieRecommended.poster[0].url}} "> </div>
+                        src="{{movieRecommended.photo}} "> </div>
                 <div class="col-lg-5 col-md- col-xs-12">
                     <h2 class="title">{{movieRecommended.movieName}}</h2>
                     <p class="subtitle">Plot</p>
@@ -117,8 +117,8 @@
                     <div class="slider">
                         <div class="slide-track">
                             <div class="slide" *ngFor="let movie of movies">
-                                <div class="slide" *ngFor="let poster of movie.poster">
-                                    <img class="infiniteCarousel" [src]="poster.url">
+                                <div class="slide">
+                                    <img class="infiniteCarousel" [src]="movie.photo">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title"
@@ -143,7 +143,7 @@
                         <div class="row g-0">
                             <div class="col-md-4 col-sm-3 col-4">
 
-                                <img src="{{movie.poster[0].url}}" class="img-fluid rounded-start"
+                                <img src="{{movie.photo}}" class="img-fluid rounded-start"
                                     [routerLink]="['/film-view',movie.id]" alt="...">
 
                             </div>

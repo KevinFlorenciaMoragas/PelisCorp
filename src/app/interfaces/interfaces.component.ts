@@ -21,8 +21,9 @@ export interface Movies {
   duration: number;
   income: number;
   score: number;
-  poster: Poster[];
+  photo: string;
   trailer: string;
+  poster: Poster[];
   favorites: Favorites[];
   director: Director[];
   actors: Actor[];
@@ -88,8 +89,8 @@ export interface Movies {
   duration: number; 
   income: number; 
   score: number; 
-  poster: Poster[]; 
   trailer: string; 
+  poster: Poster[];
   favorites: Favorites[]; 
   director: Director[]; 
   actors: Actor[]; 
@@ -169,7 +170,8 @@ export interface MovieDTO {
   score: number|null;
   banner: string|null;
   trailer: string|null;
-  id_poster: number[]|null;
+  photo: string|null;
+  poster: Poster[];
   id_actors: number[]|null;
   id_genre: number[]|null;
   id_director: number[]|null;

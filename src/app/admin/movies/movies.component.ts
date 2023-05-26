@@ -31,15 +31,17 @@ export class MoviesComponent implements OnInit {
   movieName: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
   releaseDate: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
   plot: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
+  photo: FormControl = new FormControl<string | null>("", { validators: [Validators.required] })
   duration: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
   income: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
   score: FormControl = new FormControl<number | null>(0, { validators: [Validators.required] })
   banner: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(100)] })
   trailer: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(20)] })
-
+  
 
   movieForm: FormGroup = new FormGroup({
     movieName: this.movieName,
+    photo: this.photo,
     releaseDate: this.releaseDate,
     plot: this.plot,
     duration: this.duration,
@@ -54,19 +56,7 @@ export class MoviesComponent implements OnInit {
     id_screenwritter: new FormArray([])
   })
 
-  AddIdPoster() {
-    this.items = this.movieForm.get("id_poster") as FormArray;
-    this.items.push(this.GenRowPoster())
-  }
 
-  get id_poster() {
-    return this.movieForm.get("id_poster") as FormArray;
-  }
-  GenRowPoster(): FormGroup {
-    return new FormGroup({
-      id: new FormControl('')
-    })
-  }
   AddIdActors() {
     this.items = this.movieForm.get("id_actors") as FormArray;
     this.items.push(this.GenRowActors());
@@ -126,6 +116,22 @@ export class MoviesComponent implements OnInit {
       id: new FormControl('')
     });
   }
+  RemoveActor(index:any){
+    this.items = this.movieForm.get("id_actors") as FormArray;
+    this.items.removeAt(index)
+  }
+  RemoveGenre(index:any){
+    this.items = this.movieForm.get("id_genre") as FormArray;
+    this.items.removeAt(index)
+  }
+  RemoveDirector(index:any){
+    this.items = this.movieForm.get("id_director") as FormArray;
+    this.items.removeAt(index)
+  }
+  RemoveScreenwritter(index:any){
+    this.items = this.movieForm.get("id_screenwritter") as FormArray;
+    this.items.removeAt(index)
+  }
   movies: Movies[] = []
   movie: Movies = {
     id: 0,
@@ -134,9 +140,10 @@ export class MoviesComponent implements OnInit {
     plot: '',
     duration: 0,
     income: 0,
+    photo:'',
     score: 0,
-    poster: [],
     trailer: '',
+    poster: [],
     favorites: [],
     director: [],
     actors: [],
@@ -150,12 +157,13 @@ export class MoviesComponent implements OnInit {
     movieName: '',
     releaseDate: 0,
     plot: '',
+    photo:'',
     duration: 0,
     income: 0,
     score: 0,
     banner: '',
     trailer: '',
-    id_poster: [0],
+    poster: [],
     id_actors: [0],
     id_genre: [0],
     id_director: [0],
@@ -190,12 +198,13 @@ export class MoviesComponent implements OnInit {
       movieName: this.movieForm.value.movieName,
       releaseDate: this.movieForm.value.releaseDate,
       plot: this.movieForm.value.plot,
+      photo:this.movieForm.value.photo,
       duration: this.movieForm.value.duration,
       income: this.movieForm.value.income,
       score: this.movieForm.value.score,
       banner: this.movieForm.value.banner,
       trailer: this.movieForm.value.trailer,
-      id_poster: this.movieForm.value.id_poster.map((item: any) => item.id),
+      poster: this.movieForm.value.id_poster.map((item: any) => item.id),
       id_actors: this.movieForm.value.id_actors.map((item: any) => item.id),
       id_genre: this.movieForm.value.id_genre.map((item: any) => item.id),
       id_director: this.movieForm.value.id_director.map((item: any) => item.id),

@@ -14,7 +14,7 @@
         <div class="container py-4">
           <article class="postcard" *ngFor="let movie of movies">
             <a class="postcard__img_link" [routerLink]="['../film-view',movie.id]">
-              <img class="postcard__img" src="{{movie.poster[0].url}}" [routerLink]="['../film-view',movie.id]"
+              <img class="postcard__img" src="{{movie.photo}}" [routerLink]="['../film-view',movie.id]"
                 alt="Image Title" />
             </a>
             <div class="postcard__text">

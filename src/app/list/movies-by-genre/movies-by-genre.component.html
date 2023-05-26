@@ -4,7 +4,7 @@
       <h1 class="h1" id="pageHeaderTitle">Top films from {{genre.genre}}</h1>
       <article class="postcard" *ngFor="let movie of movies">
         <a class="postcard__img_link" [routerLink]="['../../film-view',movie.id]">
-          <img class="postcard__img" src="{{movie.poster[0].url}}" [routerLink]="['../../film-view',movie.id]" alt="Image Title" />	
+          <img class="postcard__img" src="{{movie.photo}}" [routerLink]="['../../film-view',movie.id]" alt="Image Title" />	
         </a>
         <div class="postcard__text">
           <h1 class="postcard__title"><a class="postcard__title" [routerLink]="['../../film-view',movie.id]">{{movie.movieName}} </a></h1>

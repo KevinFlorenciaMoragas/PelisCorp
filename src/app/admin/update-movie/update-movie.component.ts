@@ -26,10 +26,12 @@ export class UpdateMovieComponent implements OnInit{
   plot: FormControl = new FormControl('', [Validators.minLength(10), Validators.maxLength(8000)]);
   score: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(3)]);
   trailer: FormControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(200)]);
+  photo: FormControl = new FormControl('', [Validators.minLength(10), Validators.maxLength(8000)]);
 
   MyNewForm: FormGroup = new FormGroup({
     id: this.id,
     duration: this.duration,
+    photo:this.photo,
     income: this.income,
     movieName: this.movieName,
     releaseDate: this.releaseDate,
@@ -64,9 +66,10 @@ export class UpdateMovieComponent implements OnInit{
     plot: '',
     duration: 0,
     income: 0,
+    photo:'',
     score: 0,
-    poster: [],
     trailer: '',
+    poster: [],
     favorites: [],
     director: [],
     actors: [],
