@@ -96,7 +96,7 @@
     <h2 class="col-12 text-center">Critics</h2>
     <div class="row">
       <div class="col-lg-12" *ngFor="let review of reviews">
-        <h1>{{review.text}}</h1>
+        <h1 *ngFor="let user of review.id_user"> {{user.username}}</h1>
         <!-- <span class="namesMainCast justify-content-between" *ngFor="let user of review.user">{{user.username}} <span>{{movie.score}}<i class="fas fa-star" style="color: yellow">&#9733;</i></span></span> -->
         <p class="namesMainCast">{{review.text}}</p>
       </div>
