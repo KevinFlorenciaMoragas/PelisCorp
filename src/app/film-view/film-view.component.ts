@@ -113,7 +113,7 @@ export class FilmViewComponent {
     return null;
   }
 
-  text: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(50)] })
+  text: FormControl = new FormControl<string | null>("", { validators: [Validators.required, Validators.minLength(5), Validators.maxLength(800)] })
   averageRating: FormControl = new FormControl<number | null>(0, { validators: [Validators.required, Validators.min(0), Validators.max(10)] })
 
   reviewForm: FormGroup = new FormGroup({

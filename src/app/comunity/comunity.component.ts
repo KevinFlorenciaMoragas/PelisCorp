@@ -14,6 +14,7 @@ import { Poster } from 'src/app/interfaces/interfaces.component';
   styleUrls: ['./comunity.component.css']
 })
 export class ComunityComponent implements OnInit {
+  usernameLocalStorage = localStorage.getItem('username')
   movies: Movies[] = [];
   genres: Genre[] = [];
   actor: Actor[] = [];

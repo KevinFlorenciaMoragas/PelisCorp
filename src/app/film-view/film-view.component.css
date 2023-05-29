@@ -87,7 +87,7 @@
   }
 
   button {
-    background-color: #583c65;
+    background-color: #a06db8;
     font-size: 20px;
     border: transparent;
     padding-left: 30px;
@@ -341,4 +341,17 @@ h2 {
     box-shadow: 1px 20px 20px rgb(0, 0, 0);
     border-radius: 5px;
   }
+}
+
+#bgCard {
+  background-color: #333;
+  border-radius: 3px;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+}
+#bgCard:hover {
+  background-color: rgb(88, 60, 101);
+  border-radius: 1px;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
 }
